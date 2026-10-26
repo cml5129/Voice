@@ -183,7 +183,8 @@ class SleepTimerImplTest {
   fun `the listener being awake restarts the countdown`() = testScope.runTest {
     sleepTimer.enable(SleepTimerMode.TimedWithDuration(10.seconds))
     advanceTimeBy(5.seconds)
-    assertLeftAtMost(5.seconds)
+    // the tick due at exactly 5 seconds hasn't run yet
+    assertLeftAtMost(6.seconds)
 
     sleepTimer.onListenerAwake()
     advanceTimeBy(600.milliseconds)
