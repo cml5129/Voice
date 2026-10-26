@@ -385,6 +385,8 @@
     <string name="settings.appearance.theme.title">ערכת נושא</string>
     <string name="settings.appearance.title">מראה</string>
     <string name="settings.auto_sleep_timer.end.label">בחירת זמן סיום</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">שינוי עוצמת הקול, דילוג או לחיצה חוזרת על הפעלה מתחילים את הספירה לאחור מחדש</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">הפעלה מחדש כל עוד לא נרדמתי</string>
     <string name="settings.auto_sleep_timer.start.label">בחירת זמן התחלה</string>
     <string name="settings.auto_sleep_timer.summary">הפעלה אוטומטית של טיימר-השינה כשההשמעה מתחילה בין %1$s ל-%2$s</string>
     <string name="settings.auto_sleep_timer.title">טיימר-שינה אוטומטי</string>
@@ -462,6 +464,10 @@
     <string name="sleep_timer.dialog.shake_hint">נערו את הטלפון מיד אחרי שהטיימר מסתיים כדי להפעיל אותו מחדש.</string>
     <string name="sleep_timer.dialog.title">טיימר-שינה</string>
     <string name="sleep_timer.end_of_chapter">סוף פרק</string>
+    <string name="sleep_timer.rewind.dismiss">בלי חזרה אחורה</string>
+    <string name="sleep_timer.rewind.message">טיימר-השינה עצר את ההשמעה. כמה אחורה לחזור?</string>
+    <string name="sleep_timer.rewind.timer_start">איפה שהטיימר התחיל</string>
+    <string name="sleep_timer.rewind.title">נרדמתם?</string>
     <string name="time.relative.last_night">אתמול בלילה</string>
     <string name="time.relative.this_afternoon">היום אחר הצהריים</string>
     <string name="time.relative.this_evening">הערב</string>

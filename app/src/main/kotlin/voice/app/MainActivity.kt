@@ -47,6 +47,7 @@ import voice.core.ui.ThemeColorSchemeStore
 import voice.core.ui.ThemeMode
 import voice.core.ui.ThemeModeStore
 import voice.core.ui.VoiceTheme
+import voice.features.playbackScreen.sleepTimerRewind.SleepTimerRewindPrompt
 import voice.features.review.ReviewFeature
 import voice.navigation.Destination
 import voice.navigation.NavigationCommand
@@ -223,6 +224,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         ReviewFeature(canShow = backStack.lastOrNull() is Destination.BookOverview)
+        SleepTimerRewindPrompt()
       }
     }
 

@@ -367,6 +367,8 @@
     <string name="settings.appearance.theme.title">Drakt</string>
     <string name="settings.appearance.title">Utseende</string>
     <string name="settings.auto_sleep_timer.end.label">Sett sluttid</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Når du endrer volumet, hopper eller trykker på spill av igjen, starter nedtellingen på nytt</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Start på nytt når jeg er våken</string>
     <string name="settings.auto_sleep_timer.start.label">Sett starttid</string>
     <string name="settings.auto_sleep_timer.summary">Start innsovningstidsuret automatisk når avspillingen begynner mellom %1$s og %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatisk innsovningstidsur</string>
@@ -444,6 +446,10 @@
     <string name="sleep_timer.dialog.shake_hint">Rist telefonen rett etter at tidsuret er ferdig for å starte det på nytt.</string>
     <string name="sleep_timer.dialog.title">Innsovningstidsur</string>
     <string name="sleep_timer.end_of_chapter">Kapittelslutt</string>
+    <string name="sleep_timer.rewind.dismiss">Ikke spol tilbake</string>
+    <string name="sleep_timer.rewind.message">Innsovningstidsuret stoppet avspillingen. Hvor langt vil du tilbake?</string>
+    <string name="sleep_timer.rewind.timer_start">Der tidsuret startet</string>
+    <string name="sleep_timer.rewind.title">Sovnet du?</string>
     <string name="time.relative.last_night">I natt</string>
     <string name="time.relative.this_afternoon">I ettermiddag</string>
     <string name="time.relative.this_evening">I kveld</string>

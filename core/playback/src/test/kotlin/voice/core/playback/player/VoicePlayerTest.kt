@@ -174,6 +174,18 @@ class VoicePlayerTest {
   }
 
   @Test
+  fun `skipping tells the sleep timer that the listener is awake`() = scope.runTest {
+    setMediaItems(listOf(chapter(ChapterMark(startMs = 0, endMs = 30_000, name = null))))
+    player.prepare()
+    awaitReady()
+
+    player.seekForward()
+    player.seekBack()
+
+    assertEquals(expected = 2, actual = sleepTimer.awakeSignals)
+  }
+
+  @Test
   fun `seekToPrevious carries over into the previous chapter mark`() = scope.runTest {
     setMediaItems(
       listOf(

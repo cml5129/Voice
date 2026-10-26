@@ -385,6 +385,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Apariencia</string>
     <string name="settings.auto_sleep_timer.end.label">Hora fin</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Cambiar el volumen, saltar o volver a reproducir reinicia la cuenta atrás</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Reiniciar si no me he dormido</string>
     <string name="settings.auto_sleep_timer.start.label">Hora inicio</string>
     <string name="settings.auto_sleep_timer.summary">Activa automáticamente el temporizador al iniciar la reproducción entre las %1$s y %2$s</string>
     <string name="settings.auto_sleep_timer.title">Temporizador automático</string>
@@ -462,6 +464,10 @@
     <string name="sleep_timer.dialog.shake_hint">Agita el teléfono justo después de que termine el temporizador para reiniciarlo.</string>
     <string name="sleep_timer.dialog.title">Temporizador de apagado</string>
     <string name="sleep_timer.end_of_chapter">Fin del capítulo</string>
+    <string name="sleep_timer.rewind.dismiss">No retroceder</string>
+    <string name="sleep_timer.rewind.message">El temporizador de apagado detuvo la reproducción. ¿Cuánto quieres retroceder?</string>
+    <string name="sleep_timer.rewind.timer_start">Donde empezó el temporizador</string>
+    <string name="sleep_timer.rewind.title">¿Te venció el sueño?</string>
     <string name="time.relative.last_night">Anoche</string>
     <string name="time.relative.this_afternoon">Esta tarde</string>
     <string name="time.relative.this_evening">Esta noche</string>

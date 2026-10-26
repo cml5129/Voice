@@ -367,6 +367,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Görünüm</string>
     <string name="settings.auto_sleep_timer.end.label">Bitiş zamanı</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Sesi değiştirmek, atlamak veya yeniden oynatmak geri sayımı baştan başlatır</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Uyanıkken yeniden başlat</string>
     <string name="settings.auto_sleep_timer.start.label">Başlama zamanı</string>
     <string name="settings.auto_sleep_timer.summary">Oynatma %1$s ile %2$s arasında başladığında uyku zamanlayıcısı otomatik olarak açılır</string>
     <string name="settings.auto_sleep_timer.title">Otomatik uyku zamanlayıcısı</string>
@@ -444,6 +446,10 @@
     <string name="sleep_timer.dialog.shake_hint">Zamanlayıcıyı yeniden başlatmak için süre dolduktan hemen sonra telefonunuzu sallayın.</string>
     <string name="sleep_timer.dialog.title">Uyku zamanlayıcısı</string>
     <string name="sleep_timer.end_of_chapter">Bölüm sonu</string>
+    <string name="sleep_timer.rewind.dismiss">Geri sarma</string>
+    <string name="sleep_timer.rewind.message">Uyku zamanlayıcısı oynatmayı durdurdu. Ne kadar geri gitmek istersiniz?</string>
+    <string name="sleep_timer.rewind.timer_start">Zamanlayıcının başladığı yer</string>
+    <string name="sleep_timer.rewind.title">Uyuyakaldınız mı?</string>
     <string name="time.relative.last_night">Dün gece</string>
     <string name="time.relative.this_afternoon">Bugün öğleden sonra</string>
     <string name="time.relative.this_evening">Bu akşam</string>

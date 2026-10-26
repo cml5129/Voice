@@ -367,6 +367,8 @@
     <string name="settings.appearance.color_scheme.sunset">Naplemente</string>
     <string name="settings.appearance.title">Megjelenés</string>
     <string name="settings.auto_sleep_timer.end.label">Befejezési idő beállítása</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">A hangerő módosítása, a léptetés vagy az újbóli lejátszás újraindítja a visszaszámlálást</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Újraindítás, amíg ébren vagyok</string>
     <string name="settings.auto_sleep_timer.start.label">Kezdési idő beállítása</string>
     <string name="settings.auto_sleep_timer.summary">Automatikusan elindítja az alvásidőzítőt, ha a lejátszás %1$s és %2$s között kezdődik</string>
     <string name="settings.auto_sleep_timer.title">Automatikus alvásidőzítő</string>
@@ -444,6 +446,10 @@
     <string name="sleep_timer.dialog.shake_hint">Közvetlenül az időzítő lejárta után rázza meg a telefont az újraindításhoz.</string>
     <string name="sleep_timer.dialog.title">Alvásidőzítő</string>
     <string name="sleep_timer.end_of_chapter">Fejezet vége</string>
+    <string name="sleep_timer.rewind.dismiss">Nincs visszatekerés</string>
+    <string name="sleep_timer.rewind.message">Az alvásidőzítő leállította a lejátszást. Mennyit szeretne visszamenni?</string>
+    <string name="sleep_timer.rewind.timer_start">Ahol az időzítő indult</string>
+    <string name="sleep_timer.rewind.title">Elaludt?</string>
     <string name="time.relative.last_night">Tegnap este</string>
     <string name="time.relative.this_afternoon">Ma délután</string>
     <string name="time.relative.this_evening">Ma este</string>

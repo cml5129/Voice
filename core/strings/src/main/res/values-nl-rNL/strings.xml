@@ -367,6 +367,8 @@
     <string name="settings.appearance.theme.title">Thema</string>
     <string name="settings.appearance.title">Uiterlijk</string>
     <string name="settings.auto_sleep_timer.end.label">Eindtijd instellen</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Het volume aanpassen, overslaan of opnieuw afspelen start het aftellen opnieuw</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Opnieuw starten als ik wakker ben</string>
     <string name="settings.auto_sleep_timer.start.label">Starttijd instellen</string>
     <string name="settings.auto_sleep_timer.summary">Start automatisch een slaaptimer wanneer het afspelen begint tussen %1$s en %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatische slaaptimer</string>
@@ -444,6 +446,10 @@
     <string name="sleep_timer.dialog.shake_hint">Schud je telefoon direct nadat de timer is afgelopen om hem opnieuw te starten.</string>
     <string name="sleep_timer.dialog.title">Slaaptimer</string>
     <string name="sleep_timer.end_of_chapter">Einde van hoofdstuk</string>
+    <string name="sleep_timer.rewind.dismiss">Niet terugspoelen</string>
+    <string name="sleep_timer.rewind.message">De slaaptimer heeft het afspelen gestopt. Hoe ver wil je terug?</string>
+    <string name="sleep_timer.rewind.timer_start">Waar de timer begon</string>
+    <string name="sleep_timer.rewind.title">In slaap gevallen?</string>
     <string name="time.relative.last_night">Afgelopen nacht</string>
     <string name="time.relative.this_afternoon">Vanmiddag</string>
     <string name="time.relative.this_evening">Vanavond</string>

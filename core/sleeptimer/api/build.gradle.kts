@@ -6,5 +6,6 @@ plugins {
 
 dependencies {
   implementation(projects.core.common)
+  api(projects.core.data.api)
   api(projects.core.datastore)
 }

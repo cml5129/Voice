@@ -636,6 +636,10 @@
     <string name="settings.appearance.title">Appearance</string>
     <!-- Label for selecting the automatic sleep timer end time. -->
     <string name="settings.auto_sleep_timer.end.label">Set end time</string>
+    <!-- Summary of the setting that restarts a running sleep timer when the listener shows they are awake. -->
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Changing the volume, skipping or pressing play again starts the countdown over</string>
+    <!-- Title of the setting that restarts a running sleep timer when the listener shows they are awake. -->
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Restart when I\'m awake</string>
     <!-- Label for selecting the automatic sleep timer start time. -->
     <string name="settings.auto_sleep_timer.start.label">Set start time</string>
     <!-- Settings summary for the automatic sleep timer time window. -->
@@ -793,6 +797,14 @@
     <string name="sleep_timer.dialog.title">Sleep timer</string>
     <!-- Sleep timer option and playback status for stopping at the end of a chapter. -->
     <string name="sleep_timer.end_of_chapter">End of Chapter</string>
+    <!-- Button that closes the dialog offered after the sleep timer stopped playback, without changing the position. -->
+    <string name="sleep_timer.rewind.dismiss">Don\'t rewind</string>
+    <!-- Message of the dialog shown when the app opens after the sleep timer stopped playback. -->
+    <string name="sleep_timer.rewind.message">The sleep timer stopped playback. How far do you want to go back?</string>
+    <!-- Supporting text under the option that goes back to where the sleep timer last started counting down. -->
+    <string name="sleep_timer.rewind.timer_start">Where the timer started</string>
+    <!-- Title of the dialog shown when the app opens after the sleep timer stopped playback. -->
+    <string name="sleep_timer.rewind.title">Fell asleep?</string>
     <string name="time.relative.last_night">Last night</string>
     <string name="time.relative.this_afternoon">This afternoon</string>
     <string name="time.relative.this_evening">This evening</string>

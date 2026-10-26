@@ -349,6 +349,8 @@
     <string name="settings.appearance.theme.title">テーマ</string>
     <string name="settings.appearance.title">外観</string>
     <string name="settings.auto_sleep_timer.end.label">終了時刻を設定</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">音量の変更、スキップ、再生の再開でカウントダウンが最初からやり直しになります</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">起きている間はリスタート</string>
     <string name="settings.auto_sleep_timer.start.label">開始時刻を設定</string>
     <string name="settings.auto_sleep_timer.summary">%1$s から %2$s の間に再生が始まった場合、自動的にスリープタイマーを開始します</string>
     <string name="settings.auto_sleep_timer.title">自動スリープタイマー</string>
@@ -426,6 +428,10 @@
     <string name="sleep_timer.dialog.shake_hint">タイマー終了直後にスマートフォンを振ると、タイマーを再開できます。</string>
     <string name="sleep_timer.dialog.title">スリープタイマー</string>
     <string name="sleep_timer.end_of_chapter">チャプターの終わり</string>
+    <string name="sleep_timer.rewind.dismiss">巻き戻さない</string>
+    <string name="sleep_timer.rewind.message">スリープタイマーが再生を停止しました。どこまで戻りますか？</string>
+    <string name="sleep_timer.rewind.timer_start">タイマーを開始した位置</string>
+    <string name="sleep_timer.rewind.title">眠ってしまいましたか？</string>
     <string name="time.relative.last_night">昨夜</string>
     <string name="time.relative.this_afternoon">今日の午後</string>
     <string name="time.relative.this_evening">今夜</string>

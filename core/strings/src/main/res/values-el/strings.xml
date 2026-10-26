@@ -367,6 +367,8 @@
     <string name="settings.appearance.theme.title">Θέμα</string>
     <string name="settings.appearance.title">Εμφάνιση</string>
     <string name="settings.auto_sleep_timer.end.label">Ορισμός ώρας λήξης</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Η αλλαγή έντασης, η παράλειψη ή το πάτημα της αναπαραγωγής ξανά ξεκινά την αντίστροφη μέτρηση από την αρχή</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Επανεκκίνηση όσο δεν κοιμάμαι</string>
     <string name="settings.auto_sleep_timer.start.label">Ορισμός ώρας έναρξης</string>
     <string name="settings.auto_sleep_timer.summary">Ο χρονοδιακόπτης ύπνου ξεκινά αυτόματα όταν η αναπαραγωγή αρχίζει μεταξύ %1$s και %2$s</string>
     <string name="settings.auto_sleep_timer.title">Αυτόματος χρονοδιακόπτης ύπνου</string>
@@ -444,6 +446,10 @@
     <string name="sleep_timer.dialog.shake_hint">Κουνήστε το τηλέφωνό σας αμέσως μόλις λήξει ο χρονοδιακόπτης για να τον ξεκινήσετε ξανά.</string>
     <string name="sleep_timer.dialog.title">Χρονοδιακόπτης ύπνου</string>
     <string name="sleep_timer.end_of_chapter">Τέλος κεφαλαίου</string>
+    <string name="sleep_timer.rewind.dismiss">Χωρίς επαναφορά</string>
+    <string name="sleep_timer.rewind.message">Ο χρονοδιακόπτης ύπνου σταμάτησε την αναπαραγωγή. Πόσο πίσω θέλετε να πάτε;</string>
+    <string name="sleep_timer.rewind.timer_start">Εκεί που ξεκίνησε ο χρονοδιακόπτης</string>
+    <string name="sleep_timer.rewind.title">Σας πήρε ο ύπνος;</string>
     <string name="time.relative.last_night">Χθες βράδυ</string>
     <string name="time.relative.this_afternoon">Σήμερα το απόγευμα</string>
     <string name="time.relative.this_evening">Απόψε</string>

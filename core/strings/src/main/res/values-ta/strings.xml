@@ -367,6 +367,8 @@
     <string name="settings.appearance.theme.title">தீம்</string>
     <string name="settings.appearance.title">தோற்றம்</string>
     <string name="settings.auto_sleep_timer.end.label">இறுதி நேரத்தை அமை</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">ஒலியளவை மாற்றினாலோ, தாவினாலோ, மீண்டும் இயக்கினாலோ கவுண்ட்டவுன் மீண்டும் தொடங்கும்</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">விழித்திருக்கும்போது மீண்டும் தொடங்கு</string>
     <string name="settings.auto_sleep_timer.start.label">தொடக்க நேரத்தை அமை</string>
     <string name="settings.auto_sleep_timer.summary">%1$s முதல் %2$s வரை கேட்கத் தொடங்கினால், ஸ்லீப் டைமர் தானாகத் தொடங்கும்</string>
     <string name="settings.auto_sleep_timer.title">தானியங்கி ஸ்லீப் டைமர்</string>
@@ -444,6 +446,10 @@
     <string name="sleep_timer.dialog.shake_hint">டைமர் முடிந்தவுடன் அதை மீண்டும் தொடங்க உங்கள் போனை குலுக்கவும்.</string>
     <string name="sleep_timer.dialog.title">ஸ்லீப் டைமர்</string>
     <string name="sleep_timer.end_of_chapter">அத்தியாயத்தின் முடிவு</string>
+    <string name="sleep_timer.rewind.dismiss">பின்னோக்கிச் செல்ல வேண்டாம்</string>
+    <string name="sleep_timer.rewind.message">ஸ்லீப் டைமர் இயக்கத்தை நிறுத்தியது. எவ்வளவு பின்னோக்கிச் செல்ல வேண்டும்?</string>
+    <string name="sleep_timer.rewind.timer_start">டைமர் தொடங்கிய இடம்</string>
+    <string name="sleep_timer.rewind.title">தூங்கிவிட்டீர்களா?</string>
     <string name="time.relative.last_night">நேற்றிரவு</string>
     <string name="time.relative.this_afternoon">இன்று மதியம்</string>
     <string name="time.relative.this_evening">இன்று மாலை</string>
