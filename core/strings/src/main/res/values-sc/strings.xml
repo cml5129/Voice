@@ -367,6 +367,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Aspetu</string>
     <string name="settings.auto_sleep_timer.end.label">Ora de fine</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Cambiare su volume, brincare o torrare a pònnere play faghet incumintzare torra su contu a s\'imbesse</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Torra a aviare si no so dormende</string>
     <string name="settings.auto_sleep_timer.start.label">Ora de cumintzu</string>
     <string name="settings.auto_sleep_timer.summary">Allughe unu temporizadore de suspensione cando sa riprodutzione incumintzat intre sas %1$s e sas %2$s</string>
     <string name="settings.auto_sleep_timer.title">Temporizadore de suspensione automàticu</string>
@@ -444,6 +446,10 @@
     <string name="sleep_timer.dialog.shake_hint">Iscùtzina su telèfonu deretu a pustis chi su temporizadore acabbat pro lu torrare a aviare.</string>
     <string name="sleep_timer.dialog.title">Temporizadore de suspensione</string>
     <string name="sleep_timer.end_of_chapter">Fine de capìtulu</string>
+    <string name="sleep_timer.rewind.dismiss">Non torres a in segus</string>
+    <string name="sleep_timer.rewind.message">Su temporizadore de suspensione at firmadu sa riprodutzione. Cantu boles torrare a in segus?</string>
+    <string name="sleep_timer.rewind.timer_start">Inue est incumintzadu su temporizadore</string>
+    <string name="sleep_timer.rewind.title">T\'est bènnidu su sonnu?</string>
     <string name="time.relative.last_night">Eris a de note</string>
     <string name="time.relative.this_afternoon">Oe a merie</string>
     <string name="time.relative.this_evening">Oe a sero</string>

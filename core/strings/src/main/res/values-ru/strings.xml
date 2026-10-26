@@ -403,6 +403,8 @@
     <string name="settings.appearance.theme.title">Тема</string>
     <string name="settings.appearance.title">Оформление</string>
     <string name="settings.auto_sleep_timer.end.label">Время конца</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Изменение громкости, перемотка или повторное воспроизведение запускают отсчёт заново</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Перезапускать, пока я не сплю</string>
     <string name="settings.auto_sleep_timer.start.label">Время начала</string>
     <string name="settings.auto_sleep_timer.summary">Запускать таймер сна автоматически, когда воспроизведение начинается между %1$s и %2$s</string>
     <string name="settings.auto_sleep_timer.title">Автоматический таймер сна</string>
@@ -480,6 +482,10 @@
     <string name="sleep_timer.dialog.shake_hint">Встряхните телефон сразу после окончания таймера, чтобы запустить его снова.</string>
     <string name="sleep_timer.dialog.title">Таймер сна</string>
     <string name="sleep_timer.end_of_chapter">Конец главы</string>
+    <string name="sleep_timer.rewind.dismiss">Не перематывать</string>
+    <string name="sleep_timer.rewind.message">Таймер сна остановил воспроизведение. Насколько вернуться назад?</string>
+    <string name="sleep_timer.rewind.timer_start">Где запустился таймер</string>
+    <string name="sleep_timer.rewind.title">Уснули?</string>
     <string name="time.relative.last_night">Прошлой ночью</string>
     <string name="time.relative.this_afternoon">Сегодня днём</string>
     <string name="time.relative.this_evening">Сегодня вечером</string>

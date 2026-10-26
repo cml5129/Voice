@@ -349,6 +349,8 @@
     <string name="settings.appearance.color_scheme.sunset">日落</string>
     <string name="settings.appearance.title">外观</string>
     <string name="settings.auto_sleep_timer.end.label">设置结束时间</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">调节音量、快进快退或重新播放时，倒计时会重新开始</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">醒着时重新计时</string>
     <string name="settings.auto_sleep_timer.start.label">设置开始时间</string>
     <string name="settings.auto_sleep_timer.summary">在 %1$s 到 %2$s 之间开始播放时，自动启动睡眠定时器</string>
     <string name="settings.auto_sleep_timer.title">自动睡眠定时器</string>
@@ -426,6 +428,10 @@
     <string name="sleep_timer.dialog.shake_hint">定时器结束后立即摇一摇手机，即可重新开始计时。</string>
     <string name="sleep_timer.dialog.title">睡眠定时器</string>
     <string name="sleep_timer.end_of_chapter">本章结束</string>
+    <string name="sleep_timer.rewind.dismiss">不倒回</string>
+    <string name="sleep_timer.rewind.message">睡眠定时器已停止播放。您想倒回多少？</string>
+    <string name="sleep_timer.rewind.timer_start">定时器开始的位置</string>
+    <string name="sleep_timer.rewind.title">睡着了？</string>
     <string name="time.relative.last_night">昨晚</string>
     <string name="time.relative.this_afternoon">今天下午</string>
     <string name="time.relative.this_evening">今天晚上</string>

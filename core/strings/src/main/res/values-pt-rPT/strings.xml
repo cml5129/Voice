@@ -385,6 +385,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Aspeto</string>
     <string name="settings.auto_sleep_timer.end.label">Definir hora de fim</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Alterar o volume, saltar ou retomar a reprodução reinicia a contagem decrescente</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Reiniciar se não estiver a dormir</string>
     <string name="settings.auto_sleep_timer.start.label">Definir hora de início</string>
     <string name="settings.auto_sleep_timer.summary">Inicia o temporizador automaticamente quando a reprodução começa entre %1$s e %2$s</string>
     <string name="settings.auto_sleep_timer.title">Temporizador automático</string>
@@ -462,6 +464,10 @@
     <string name="sleep_timer.dialog.shake_hint">Agite o telemóvel logo após o fim do temporizador para o reiniciar.</string>
     <string name="sleep_timer.dialog.title">Temporizador</string>
     <string name="sleep_timer.end_of_chapter">Fim do capítulo</string>
+    <string name="sleep_timer.rewind.dismiss">Não recuar</string>
+    <string name="sleep_timer.rewind.message">O temporizador parou a reprodução. Quanto pretende recuar?</string>
+    <string name="sleep_timer.rewind.timer_start">Onde o temporizador começou</string>
+    <string name="sleep_timer.rewind.title">Adormeceu?</string>
     <string name="time.relative.last_night">Ontem à noite</string>
     <string name="time.relative.this_afternoon">Esta tarde</string>
     <string name="time.relative.this_evening">Esta noite</string>

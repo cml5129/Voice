@@ -367,6 +367,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Udseende</string>
     <string name="settings.auto_sleep_timer.end.label">Vælg sluttid</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Når du skruer op eller ned, springer eller trykker på afspil igen, starter nedtællingen forfra</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Genstart, når jeg er vågen</string>
     <string name="settings.auto_sleep_timer.start.label">Vælg starttid</string>
     <string name="settings.auto_sleep_timer.summary">Start automatisk en sleep-timer, når afspilningen begynder mellem %1$s og %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatisk sleep-timer</string>
@@ -444,6 +446,10 @@
     <string name="sleep_timer.dialog.shake_hint">Ryst telefonen lige efter, at timeren er udløbet, for at starte den igen.</string>
     <string name="sleep_timer.dialog.title">Sleep-timer</string>
     <string name="sleep_timer.end_of_chapter">Kapitlets slutning</string>
+    <string name="sleep_timer.rewind.dismiss">Spol ikke tilbage</string>
+    <string name="sleep_timer.rewind.message">Sleep-timeren stoppede afspilningen. Hvor langt vil du tilbage?</string>
+    <string name="sleep_timer.rewind.timer_start">Hvor timeren startede</string>
+    <string name="sleep_timer.rewind.title">Faldt du i søvn?</string>
     <string name="time.relative.last_night">I nat</string>
     <string name="time.relative.this_afternoon">I eftermiddag</string>
     <string name="time.relative.this_evening">I aften</string>

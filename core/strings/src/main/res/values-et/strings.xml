@@ -367,6 +367,8 @@
     <string name="settings.appearance.theme.title">Kujundus</string>
     <string name="settings.appearance.title">Välimus</string>
     <string name="settings.auto_sleep_timer.end.label">Määra lõpuaeg</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Helitugevuse muutmine, edasi-tagasi hüppamine või uuesti esitamine alustab loendust otsast</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Taaskäivita, kui olen ärkvel</string>
     <string name="settings.auto_sleep_timer.start.label">Määra algusaeg</string>
     <string name="settings.auto_sleep_timer.summary">Käivita unetaimer automaatselt, kui taasesitus algab %1$s ja %2$s vahel</string>
     <string name="settings.auto_sleep_timer.title">Automaatne unetaimer</string>
@@ -444,6 +446,10 @@
     <string name="sleep_timer.dialog.shake_hint">Raputa telefoni kohe pärast taimeri lõppu, et see uuesti käivitada.</string>
     <string name="sleep_timer.dialog.title">Unetaimer</string>
     <string name="sleep_timer.end_of_chapter">Peatüki lõpp</string>
+    <string name="sleep_timer.rewind.dismiss">Ära keri tagasi</string>
+    <string name="sleep_timer.rewind.message">Unetaimer peatas taasesituse. Kui kaugele soovid tagasi minna?</string>
+    <string name="sleep_timer.rewind.timer_start">Kus taimer algas</string>
+    <string name="sleep_timer.rewind.title">Jäid magama?</string>
     <string name="time.relative.last_night">Möödunud öösel</string>
     <string name="time.relative.this_afternoon">Täna pärastlõunal</string>
     <string name="time.relative.this_evening">Täna õhtul</string>

@@ -349,6 +349,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Tampilan</string>
     <string name="settings.auto_sleep_timer.end.label">Atur waktu selesai</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Mengubah volume, melompat, atau memutar lagi akan memulai ulang hitungan mundur</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Mulai ulang saat saya terjaga</string>
     <string name="settings.auto_sleep_timer.start.label">Atur waktu mulai</string>
     <string name="settings.auto_sleep_timer.summary">Mulai pengatur waktu tidur secara otomatis saat pemutaran dimulai antara %1$s dan %2$s</string>
     <string name="settings.auto_sleep_timer.title">Pengatur waktu tidur otomatis</string>
@@ -426,6 +428,10 @@
     <string name="sleep_timer.dialog.shake_hint">Goyangkan ponsel Anda segera setelah pengatur waktu berakhir untuk memulainya lagi.</string>
     <string name="sleep_timer.dialog.title">Pengatur waktu tidur</string>
     <string name="sleep_timer.end_of_chapter">Akhir bab</string>
+    <string name="sleep_timer.rewind.dismiss">Jangan mundur</string>
+    <string name="sleep_timer.rewind.message">Pengatur waktu tidur menghentikan pemutaran. Seberapa jauh Anda ingin mundur?</string>
+    <string name="sleep_timer.rewind.timer_start">Saat pengatur waktu dimulai</string>
+    <string name="sleep_timer.rewind.title">Tertidur?</string>
     <string name="time.relative.last_night">Tadi malam</string>
     <string name="time.relative.this_afternoon">Siang ini</string>
     <string name="time.relative.this_evening">Malam ini</string>

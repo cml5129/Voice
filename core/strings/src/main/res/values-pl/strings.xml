@@ -403,6 +403,8 @@
     <string name="settings.appearance.theme.title">Motyw</string>
     <string name="settings.appearance.title">Wygląd</string>
     <string name="settings.auto_sleep_timer.end.label">Ustaw godzinę zakończenia</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Zmiana głośności, przewinięcie lub ponowne odtworzenie zaczyna odliczanie od nowa</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Uruchom ponownie, gdy nie śpię</string>
     <string name="settings.auto_sleep_timer.start.label">Ustaw godzinę rozpoczęcia</string>
     <string name="settings.auto_sleep_timer.summary">Automatycznie uruchamia wyłącznik czasowy po rozpoczęciu odtwarzania pomiędzy %1$s a %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatyczny wyłącznik czasowy</string>
@@ -480,6 +482,10 @@
     <string name="sleep_timer.dialog.shake_hint">Potrząśnij telefonem tuż po upływie czasu, aby ponownie uruchomić wyłącznik czasowy.</string>
     <string name="sleep_timer.dialog.title">Wyłącznik czasowy</string>
     <string name="sleep_timer.end_of_chapter">Koniec rozdziału</string>
+    <string name="sleep_timer.rewind.dismiss">Nie przewijaj</string>
+    <string name="sleep_timer.rewind.message">Wyłącznik czasowy zatrzymał odtwarzanie. Jak daleko chcesz się cofnąć?</string>
+    <string name="sleep_timer.rewind.timer_start">Tam, gdzie zaczęło się odliczanie</string>
+    <string name="sleep_timer.rewind.title">Zmorzył cię sen?</string>
     <string name="time.relative.last_night">Zeszłej nocy</string>
     <string name="time.relative.this_afternoon">Dziś po południu</string>
     <string name="time.relative.this_evening">Dziś wieczorem</string>

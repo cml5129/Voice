@@ -385,6 +385,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Aparença</string>
     <string name="settings.auto_sleep_timer.end.label">Hora de final</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Si canvieu el volum, salteu o torneu a reproduir, el compte enrere torna a començar</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Reinicia\'l si no dormo</string>
     <string name="settings.auto_sleep_timer.start.label">Hora d\'inici</string>
     <string name="settings.auto_sleep_timer.summary">Inicia automàticament el temporitzador de repòs quan la reproducció comença entre les %1$s i les %2$s</string>
     <string name="settings.auto_sleep_timer.title">Temporitzador de repòs automàtic</string>
@@ -462,6 +464,10 @@
     <string name="sleep_timer.dialog.shake_hint">Sacsegeu el telèfon just després que s\'acabi el temporitzador per tornar-lo a iniciar.</string>
     <string name="sleep_timer.dialog.title">Temporitzador de repòs</string>
     <string name="sleep_timer.end_of_chapter">Final del capítol</string>
+    <string name="sleep_timer.rewind.dismiss">No rebobinis</string>
+    <string name="sleep_timer.rewind.message">El temporitzador de repòs ha aturat la reproducció. Fins on voleu tornar enrere?</string>
+    <string name="sleep_timer.rewind.timer_start">On va començar el temporitzador</string>
+    <string name="sleep_timer.rewind.title">Us ha vençut la son?</string>
     <string name="time.relative.last_night">Ahir a la nit</string>
     <string name="time.relative.this_afternoon">Aquesta tarda</string>
     <string name="time.relative.this_evening">Aquest vespre</string>

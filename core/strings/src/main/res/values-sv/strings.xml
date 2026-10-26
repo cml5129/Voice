@@ -367,6 +367,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Utseende</string>
     <string name="settings.auto_sleep_timer.end.label">Ange sluttid</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Om du ändrar volymen, hoppar eller trycker på spela igen börjar nedräkningen om</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Starta om när jag är vaken</string>
     <string name="settings.auto_sleep_timer.start.label">Ange starttid</string>
     <string name="settings.auto_sleep_timer.summary">Starta en insomningstimer automatiskt när uppspelningen börjar mellan %1$s och %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatisk insomningstimer</string>
@@ -444,6 +446,10 @@
     <string name="sleep_timer.dialog.shake_hint">Skaka telefonen direkt efter att timern har gått ut för att starta om den.</string>
     <string name="sleep_timer.dialog.title">Insomningstimer</string>
     <string name="sleep_timer.end_of_chapter">Vid kapitlets slut</string>
+    <string name="sleep_timer.rewind.dismiss">Spola inte tillbaka</string>
+    <string name="sleep_timer.rewind.message">Insomningstimern stoppade uppspelningen. Hur långt vill du gå tillbaka?</string>
+    <string name="sleep_timer.rewind.timer_start">Där timern startade</string>
+    <string name="sleep_timer.rewind.title">Somnade du?</string>
     <string name="time.relative.last_night">I natt</string>
     <string name="time.relative.this_afternoon">I eftermiddag</string>
     <string name="time.relative.this_evening">I kväll</string>

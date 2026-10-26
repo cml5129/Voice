@@ -385,6 +385,8 @@
     <string name="settings.appearance.color_scheme.sunset">Apus</string>
     <string name="settings.appearance.title">Aspect</string>
     <string name="settings.auto_sleep_timer.end.label">Setează ora de final</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Schimbarea volumului, saltul sau reluarea redării pornesc numărătoarea inversă de la capăt</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Repornește cât nu dorm</string>
     <string name="settings.auto_sleep_timer.start.label">Setează ora de început</string>
     <string name="settings.auto_sleep_timer.summary">Pornește automat oprirea temporizată când redarea începe între %1$s și %2$s</string>
     <string name="settings.auto_sleep_timer.title">Oprire temporizată automată</string>
@@ -462,6 +464,10 @@
     <string name="sleep_timer.dialog.shake_hint">Scutură telefonul imediat după ce expiră temporizatorul pentru a-l reporni.</string>
     <string name="sleep_timer.dialog.title">Oprire temporizată</string>
     <string name="sleep_timer.end_of_chapter">Sfârșitul capitolului</string>
+    <string name="sleep_timer.rewind.dismiss">Nu derula înapoi</string>
+    <string name="sleep_timer.rewind.message">Oprirea temporizată a oprit redarea. Cât de mult vrei să te întorci?</string>
+    <string name="sleep_timer.rewind.timer_start">Unde a pornit temporizatorul</string>
+    <string name="sleep_timer.rewind.title">Ai adormit?</string>
     <string name="time.relative.last_night">Aseară</string>
     <string name="time.relative.this_afternoon">Azi după-amiază</string>
     <string name="time.relative.this_evening">În seara asta</string>

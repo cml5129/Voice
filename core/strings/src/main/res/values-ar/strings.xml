@@ -439,6 +439,8 @@
     <string name="settings.appearance.theme.title">الوضع</string>
     <string name="settings.appearance.title">المظهر</string>
     <string name="settings.auto_sleep_timer.end.label">تعيين وقت الانتهاء</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">يعيد تغيير مستوى الصوت أو التخطي أو الضغط على التشغيل مجددًا بدءَ العدّ التنازلي من جديد</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">إعادة التشغيل عند الاستيقاظ</string>
     <string name="settings.auto_sleep_timer.start.label">تعيين وقت البدء</string>
     <string name="settings.auto_sleep_timer.summary">يبدأ مؤقت النوم تلقائيًا عند بدء التشغيل بين %1$s و%2$s</string>
     <string name="settings.auto_sleep_timer.title">مؤقت النوم التلقائي</string>
@@ -516,6 +518,10 @@
     <string name="sleep_timer.dialog.shake_hint">يكفي هزّ هاتفك فور انتهاء المؤقت لإعادة تشغيله.</string>
     <string name="sleep_timer.dialog.title">مؤقت النوم</string>
     <string name="sleep_timer.end_of_chapter">نهاية الفصل</string>
+    <string name="sleep_timer.rewind.dismiss">عدم الترجيع</string>
+    <string name="sleep_timer.rewind.message">أوقف مؤقت النوم التشغيل. ما مقدار الرجوع المطلوب؟</string>
+    <string name="sleep_timer.rewind.timer_start">حيث بدأ المؤقت</string>
+    <string name="sleep_timer.rewind.title">هل حلّ النوم؟</string>
     <string name="time.relative.last_night">الليلة الماضية</string>
     <string name="time.relative.this_afternoon">بعد ظهر اليوم</string>
     <string name="time.relative.this_evening">هذا المساء</string>

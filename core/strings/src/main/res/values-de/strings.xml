@@ -367,6 +367,8 @@
     <string name="settings.appearance.theme.title">Design</string>
     <string name="settings.appearance.title">Erscheinungsbild</string>
     <string name="settings.auto_sleep_timer.end.label">Endzeit</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Lautstärke ändern, springen oder erneut Play drücken startet den Countdown neu</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Neu starten, solange ich wach bin</string>
     <string name="settings.auto_sleep_timer.start.label">Startzeit</string>
     <string name="settings.auto_sleep_timer.summary">Den Einschlaf-Timer automatisch starten, wenn die Wiedergabe zwischen %1$s und %2$s Uhr beginnt</string>
     <string name="settings.auto_sleep_timer.title">Automatischer Einschlaf-Timer</string>
@@ -444,6 +446,10 @@
     <string name="sleep_timer.dialog.shake_hint">Schüttle Dein Handy direkt nach Ablauf des Timers, um ihn neu zu starten.</string>
     <string name="sleep_timer.dialog.title">Einschlaf-Timer</string>
     <string name="sleep_timer.end_of_chapter">Kapitelende</string>
+    <string name="sleep_timer.rewind.dismiss">Nicht zurückspulen</string>
+    <string name="sleep_timer.rewind.message">Der Einschlaf-Timer hat die Wiedergabe gestoppt. Wie weit möchtest Du zurück?</string>
+    <string name="sleep_timer.rewind.timer_start">Wo der Timer gestartet ist</string>
+    <string name="sleep_timer.rewind.title">Eingeschlafen?</string>
     <string name="time.relative.last_night">Letzte Nacht</string>
     <string name="time.relative.this_afternoon">Heute Nachmittag</string>
     <string name="time.relative.this_evening">Heute Abend</string>
