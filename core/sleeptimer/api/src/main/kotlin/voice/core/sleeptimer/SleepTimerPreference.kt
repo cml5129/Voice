@@ -14,6 +14,11 @@ data class SleepTimerPreference(
   val autoSleepStartTime: LocalTime,
   @Serializable(with = LocalTimeSerializer::class)
   val autoSleepEndTime: LocalTime,
+  /**
+   * Restarts a running countdown when the listener shows they are awake: changing the volume, skipping, or
+   * resuming after a pause.
+   */
+  val restartWhenAwake: Boolean = true,
 ) {
 
   companion object {

@@ -7,6 +7,12 @@ interface SleepTimer {
   val state: StateFlow<SleepTimerState>
   fun enable(mode: SleepTimerMode)
   fun disable()
+
+  /**
+   * The listener did something that shows they are still awake, like skipping or changing the volume. A running
+   * countdown then starts over at its full length, unless [SleepTimerPreference.restartWhenAwake] is turned off.
+   */
+  fun onListenerAwake()
 }
 
 sealed interface SleepTimerState {

@@ -23,4 +23,11 @@ class FakeSleepTimer : SleepTimer {
   override fun disable() {
     stateFlow.value = SleepTimerState.Disabled
   }
+
+  var awakeSignals = 0
+    private set
+
+  override fun onListenerAwake() {
+    awakeSignals++
+  }
 }

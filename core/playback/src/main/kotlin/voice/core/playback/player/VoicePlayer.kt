@@ -158,6 +158,7 @@ class VoicePlayer(
   override fun seekBack() {
     val source = commandSourceResolver.current()
     val position = player.playbackPosition()
+    sleepTimer.onListenerAwake()
     scope.launch {
       val skipAmount = seekTimeStore.data.first().seconds
       recordExternalCommand(source, ListeningEvent.Type.SkipBack, position)
@@ -205,6 +206,7 @@ class VoicePlayer(
   override fun seekForward() {
     val source = commandSourceResolver.current()
     val position = player.playbackPosition()
+    sleepTimer.onListenerAwake()
     scope.launch {
       val skipAmount = seekTimeStore.data.first().seconds
       recordExternalCommand(source, ListeningEvent.Type.SkipForward, position)
