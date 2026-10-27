@@ -65,6 +65,7 @@ internal fun AutoSleepTimerSection(
   onEnabledChange: (Boolean) -> Unit,
   onStartChange: (LocalTime) -> Unit,
   onEndChange: (LocalTime) -> Unit,
+  onListeningCheckChange: (Boolean) -> Unit,
   modifier: Modifier = Modifier,
 ) {
   val night = viewState.enabled
@@ -147,7 +148,26 @@ internal fun AutoSleepTimerSection(
             )
           }
           AnimatedVisibility(visible = night) {
-            ShakeHint()
+            Column {
+              ShakeHint()
+              Spacer(Modifier.height(8.dp))
+              IslandSwitchRow(
+                title = stringResource(StringsR.string.settings_auto_sleep_timer_listening_check_title),
+                checked = viewState.listeningCheck,
+                onCheckedChange = onListeningCheckChange,
+                leading = {
+                  ShapedIcon(
+                    icon = VoiceIcons.Headphones,
+                    shape = MaterialShapes.Circle,
+                    containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                    contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
+                  )
+                },
+                summary = {
+                  Text(stringResource(StringsR.string.settings_auto_sleep_timer_listening_check_summary))
+                },
+              )
+            }
           }
           Spacer(Modifier.height(12.dp))
         }
@@ -249,6 +269,7 @@ private fun AutoSleepTimerSectionPreview() {
       onEnabledChange = {},
       onStartChange = {},
       onEndChange = {},
+      onListeningCheckChange = {},
     )
   }
 }

@@ -329,6 +329,8 @@
     <string name="history.empty.title">Nothing here yet</string>
     <string name="history.event.bookmark_jump">Went to a bookmark</string>
     <string name="history.event.chapter_change">Changed chapter</string>
+    <!-- A row in the listening history: the listener didn't answer the listening check, so the book went back to where they last did and paused. -->
+    <string name="history.event.fell_asleep">Fell asleep</string>
     <!-- A row in the listening history: a phone call or a navigation prompt paused the book until it was over. %s is how long, like "3 min". -->
     <string name="history.event.interrupted">Interrupted for %s</string>
     <string name="history.event.jump_back">Jumped back</string>
@@ -352,6 +354,8 @@
     <string name="history.event.sleep_timer_ended">Sleep timer ended</string>
     <!-- A row in the listening history: the sleep timer was turned on. -->
     <string name="history.event.sleep_timer_on">Sleep timer on</string>
+    <!-- A row in the listening history: the listener shook the phone to answer the listening check. -->
+    <string name="history.event.still_listening">Still listening</string>
     <string name="history.location.chapter">Ch. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Interrupted</string>
     <string name="history.source.bluetooth">Bluetooth device</string>
@@ -636,6 +640,10 @@
     <string name="settings.appearance.title">Appearance</string>
     <!-- Label for selecting the automatic sleep timer end time. -->
     <string name="settings.auto_sleep_timer.end.label">Set end time</string>
+    <!-- Settings summary for the listening check, shown below the automatic sleep timer. -->
+    <string name="settings.auto_sleep_timer.listening_check.summary">Every 10 minutes the book gets quieter. Shake your phone within a minute to keep listening. Otherwise it goes back to where you last shook and pauses.</string>
+    <!-- Settings title for checking every few minutes whether the listener is still awake. -->
+    <string name="settings.auto_sleep_timer.listening_check.title">Check that I\'m still listening</string>
     <!-- Label for selecting the automatic sleep timer start time. -->
     <string name="settings.auto_sleep_timer.start.label">Set start time</string>
     <!-- Settings summary for the automatic sleep timer time window. -->

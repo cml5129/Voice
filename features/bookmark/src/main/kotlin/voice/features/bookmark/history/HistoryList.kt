@@ -268,8 +268,13 @@ private fun EventNode(type: Type) {
   val (container, content) = when (type) {
     Type.Play -> colors.primaryContainer to colors.onPrimaryContainer
     Type.Pause -> colors.surfaceContainerHighest to colors.onSurfaceVariant
-    Type.SleepTimerSet, Type.SleepTimerStarted, Type.SleepTimerEnded, Type.SleepTimerExtended ->
-      colors.tertiaryContainer to colors.onTertiaryContainer
+    Type.SleepTimerSet,
+    Type.SleepTimerStarted,
+    Type.SleepTimerEnded,
+    Type.SleepTimerExtended,
+    Type.StillListening,
+    Type.FellAsleep,
+    -> colors.tertiaryContainer to colors.onTertiaryContainer
     Type.Seek, Type.SkipBack, Type.SkipForward, Type.ChapterChange, Type.BookmarkJump, Type.JumpBack ->
       colors.secondaryContainer to colors.onSecondaryContainer
   }
@@ -356,6 +361,8 @@ private fun eventText(event: HistoryEvent): String {
       Type.SleepTimerSet, Type.SleepTimerStarted -> R.string.history_event_sleep_timer_on
       Type.SleepTimerEnded -> R.string.history_event_sleep_timer_ended
       Type.SleepTimerExtended -> R.string.history_event_shook
+      Type.StillListening -> R.string.history_event_still_listening
+      Type.FellAsleep -> R.string.history_event_fell_asleep
       Type.ChapterChange -> R.string.history_event_chapter_change
       Type.BookmarkJump -> R.string.history_event_bookmark_jump
       Type.JumpBack -> R.string.history_event_jump_back
@@ -399,7 +406,8 @@ private fun Type.icon(): ImageVector = when (this) {
   Type.Pause -> VoiceIcons.Pause
   Type.SleepTimerSet, Type.SleepTimerStarted -> VoiceIcons.Bedtime
   Type.SleepTimerEnded -> VoiceIcons.BedtimeOff
-  Type.SleepTimerExtended -> VoiceIcons.Vibration
+  Type.SleepTimerExtended, Type.StillListening -> VoiceIcons.Vibration
+  Type.FellAsleep -> VoiceIcons.Bedtime
   Type.ChapterChange -> VoiceIcons.SkipNext
   Type.BookmarkJump -> VoiceIcons.Bookmark
   Type.JumpBack -> VoiceIcons.Undo

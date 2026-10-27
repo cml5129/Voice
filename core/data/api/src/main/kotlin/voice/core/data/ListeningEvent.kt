@@ -49,6 +49,8 @@ public data class ListeningEvent(
     SleepTimerStarted,
     SleepTimerEnded,
     SleepTimerExtended,
+    StillListening,
+    FellAsleep,
   }
 
   public enum class Source {
@@ -76,13 +78,15 @@ private val minimumJump = 30.seconds
 
 /**
  * Seeks of more than 30 seconds, chapter changes and bookmark jumps can be accidents, so the player
- * offers to undo them and the history shows them. The rewind and fast forward buttons move only a
- * few seconds on purpose, so they don't count.
+ * offers to undo them and the history shows them. Going back to where the listener last answered
+ * the listening check counts too, as they may have heard more. The rewind and fast forward buttons
+ * move only a few seconds on purpose, so they don't count.
  */
 public fun ListeningEvent.isUndoableJump(): Boolean {
   return when (type) {
     ListeningEvent.Type.ChapterChange,
     ListeningEvent.Type.BookmarkJump,
+    ListeningEvent.Type.FellAsleep,
     -> true
     ListeningEvent.Type.Seek -> {
       val toChapterId = toChapterId
