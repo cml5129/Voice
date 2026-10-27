@@ -218,6 +218,7 @@
     <string name="history.empty.title">Zatím tu nic není</string>
     <string name="history.event.bookmark_jump">Přechod na záložku</string>
     <string name="history.event.chapter_change">Změna kapitoly</string>
+    <string name="history.event.fell_asleep">Usnuto</string>
     <string name="history.event.interrupted">Přerušeno na %s</string>
     <string name="history.event.jump_back">Návrat zpět</string>
     <string name="history.event.moved">Posun</string>
@@ -238,6 +239,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Časovač spánku vypršel</string>
     <string name="history.event.sleep_timer_on">Časovač spánku zapnut</string>
+    <string name="history.event.still_listening">Stále poslouchám</string>
     <string name="history.location.chapter">Kap. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Přerušeno</string>
     <string name="history.source.bluetooth">Zařízení Bluetooth</string>
@@ -403,6 +405,8 @@
     <string name="settings.appearance.theme.title">Motiv</string>
     <string name="settings.appearance.title">Vzhled</string>
     <string name="settings.auto_sleep_timer.end.label">Nastavit čas konce</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Každých 10 minut se kniha ztiší. Zatřeste telefonem do minuty a budete poslouchat dál. Jinak se vrátí tam, kde jste naposledy zatřásli, a pozastaví se.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Kontrolovat, že ještě poslouchám</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Změna hlasitosti, přeskočení nebo opětovné spuštění přehrávání začne odpočet znovu</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Restartovat, když jsem vzhůru</string>
     <string name="settings.auto_sleep_timer.start.label">Nastavit čas startu</string>

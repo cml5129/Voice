@@ -240,6 +240,7 @@
     <string name="history.empty.title">لا شيء هنا بعد</string>
     <string name="history.event.bookmark_jump">انتقال إلى علامة مرجعية</string>
     <string name="history.event.chapter_change">تغيير الفصل</string>
+    <string name="history.event.fell_asleep">غفوت</string>
     <string name="history.event.interrupted">مقاطعة لمدة %s</string>
     <string name="history.event.jump_back">عودة إلى الموضع السابق</string>
     <string name="history.event.moved">تغيير الموضع</string>
@@ -264,6 +265,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">انتهاء مؤقت النوم</string>
     <string name="history.event.sleep_timer_on">تفعيل مؤقت النوم</string>
+    <string name="history.event.still_listening">ما زلت أستمع</string>
     <string name="history.location.chapter">فصل %1$d · %2$s</string>
     <string name="history.source.audio_focus">مقاطعة</string>
     <string name="history.source.bluetooth">جهاز بلوتوث</string>
@@ -439,6 +441,8 @@
     <string name="settings.appearance.theme.title">الوضع</string>
     <string name="settings.appearance.title">المظهر</string>
     <string name="settings.auto_sleep_timer.end.label">تعيين وقت الانتهاء</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">كل 10 دقائق ينخفض صوت الكتاب. يكفي هزّ هاتفك خلال دقيقة لمتابعة الاستماع، وإلا يعود الكتاب إلى آخر موضع هززت فيه الهاتف ويتوقف مؤقتًا.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">التحقق من أنني ما زلت أستمع</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">يعيد تغيير مستوى الصوت أو التخطي أو الضغط على التشغيل مجددًا بدءَ العدّ التنازلي من جديد</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">إعادة التشغيل عند الاستيقاظ</string>
     <string name="settings.auto_sleep_timer.start.label">تعيين وقت البدء</string>

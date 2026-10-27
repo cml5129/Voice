@@ -196,6 +196,7 @@
     <string name="history.empty.title">Noch nichts da</string>
     <string name="history.event.bookmark_jump">Zu Lesezeichen gesprungen</string>
     <string name="history.event.chapter_change">Kapitel gewechselt</string>
+    <string name="history.event.fell_asleep">Eingeschlafen</string>
     <string name="history.event.interrupted">%s unterbrochen</string>
     <string name="history.event.jump_back">Zurückgesprungen</string>
     <string name="history.event.moved">Gespult</string>
@@ -212,6 +213,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Einschlaf-Timer abgelaufen</string>
     <string name="history.event.sleep_timer_on">Einschlaf-Timer gestellt</string>
+    <string name="history.event.still_listening">Noch wach</string>
     <string name="history.location.chapter">Kap. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Unterbrochen</string>
     <string name="history.source.bluetooth">Bluetooth-Gerät</string>
@@ -367,6 +369,8 @@
     <string name="settings.appearance.theme.title">Design</string>
     <string name="settings.appearance.title">Erscheinungsbild</string>
     <string name="settings.auto_sleep_timer.end.label">Endzeit</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Alle 10 Minuten wird das Buch leiser. Schüttle Dein Handy innerhalb einer Minute, um weiterzuhören. Sonst springt es dorthin zurück, wo Du zuletzt geschüttelt hast, und pausiert.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Prüfen, ob ich noch zuhöre</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Lautstärke ändern, springen oder erneut Play drücken startet den Countdown neu</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Neu starten, solange ich wach bin</string>
     <string name="settings.auto_sleep_timer.start.label">Startzeit</string>

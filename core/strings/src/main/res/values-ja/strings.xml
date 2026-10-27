@@ -185,6 +185,7 @@
     <string name="history.empty.title">まだ何もありません</string>
     <string name="history.event.bookmark_jump">ブックマークへ移動</string>
     <string name="history.event.chapter_change">チャプターを変更</string>
+    <string name="history.event.fell_asleep">寝落ち</string>
     <string name="history.event.interrupted">%sの中断</string>
     <string name="history.event.jump_back">ジャンプ前に戻る</string>
     <string name="history.event.moved">位置を移動</string>
@@ -199,6 +200,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">スリープタイマー終了</string>
     <string name="history.event.sleep_timer_on">スリープタイマー開始</string>
+    <string name="history.event.still_listening">まだ聴いています</string>
     <string name="history.location.chapter">第%1$d章 · %2$s</string>
     <string name="history.source.audio_focus">割り込み</string>
     <string name="history.source.bluetooth">Bluetooth デバイス</string>
@@ -349,6 +351,8 @@
     <string name="settings.appearance.theme.title">テーマ</string>
     <string name="settings.appearance.title">外観</string>
     <string name="settings.auto_sleep_timer.end.label">終了時刻を設定</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">10 分ごとに音量が下がります。1 分以内にスマートフォンを振ると、そのまま聴き続けられます。振らなかった場合は、最後に振った位置に戻って一時停止します。</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">まだ聴いているか確認</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">音量の変更、スキップ、再生の再開でカウントダウンが最初からやり直しになります</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">起きている間はリスタート</string>
     <string name="settings.auto_sleep_timer.start.label">開始時刻を設定</string>

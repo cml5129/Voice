@@ -207,6 +207,7 @@
     <string name="history.empty.title">אין כאן עדיין כלום</string>
     <string name="history.event.bookmark_jump">מעבר לסימנייה</string>
     <string name="history.event.chapter_change">החלפת פרק</string>
+    <string name="history.event.fell_asleep">נרדמת</string>
     <string name="history.event.interrupted">הפרעה למשך %s</string>
     <string name="history.event.jump_back">חזרה למקום הקודם</string>
     <string name="history.event.moved">הזזה</string>
@@ -225,6 +226,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">סיום טיימר-השינה</string>
     <string name="history.event.sleep_timer_on">הפעלת טיימר-השינה</string>
+    <string name="history.event.still_listening">עדיין מקשיבים</string>
     <string name="history.location.chapter">פרק %1$d · %2$s</string>
     <string name="history.source.audio_focus">הפרעה</string>
     <string name="history.source.bluetooth">מכשיר Bluetooth</string>
@@ -385,6 +387,8 @@
     <string name="settings.appearance.theme.title">ערכת נושא</string>
     <string name="settings.appearance.title">מראה</string>
     <string name="settings.auto_sleep_timer.end.label">בחירת זמן סיום</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">כל 10 דקות הספר נשמע חלש יותר. נערו את הטלפון תוך דקה כדי להמשיך להאזין. אחרת הוא חוזר למקום שבו ניערתם בפעם האחרונה ועובר להשהיה.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">בדיקה שההאזנה נמשכת</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">שינוי עוצמת הקול, דילוג או לחיצה חוזרת על הפעלה מתחילים את הספירה לאחור מחדש</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">הפעלה מחדש כל עוד לא נרדמתי</string>
     <string name="settings.auto_sleep_timer.start.label">בחירת זמן התחלה</string>

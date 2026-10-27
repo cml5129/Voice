@@ -196,6 +196,7 @@
     <string name="history.empty.title">Siin pole veel midagi</string>
     <string name="history.event.bookmark_jump">Hüpe järjehoidjale</string>
     <string name="history.event.chapter_change">Peatükk vahetatud</string>
+    <string name="history.event.fell_asleep">Uinus</string>
     <string name="history.event.interrupted">Katkestatud %s ajaks</string>
     <string name="history.event.jump_back">Tagasi hüpatud</string>
     <string name="history.event.moved">Liigutatud</string>
@@ -212,6 +213,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Unetaimer lõppes</string>
     <string name="history.event.sleep_timer_on">Unetaimer käivitatud</string>
+    <string name="history.event.still_listening">Kuulab veel</string>
     <string name="history.location.chapter">Ptk %1$d · %2$s</string>
     <string name="history.source.audio_focus">Katkestatud</string>
     <string name="history.source.bluetooth">Bluetooth-seade</string>
@@ -367,6 +369,8 @@
     <string name="settings.appearance.theme.title">Kujundus</string>
     <string name="settings.appearance.title">Välimus</string>
     <string name="settings.auto_sleep_timer.end.label">Määra lõpuaeg</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Iga 10 minuti järel läheb raamat vaiksemaks. Raputa telefoni minuti jooksul, et edasi kuulata. Muidu läheb see tagasi kohta, kus viimati raputasid, ja peatub.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Kontrolli, kas ma veel kuulan</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Helitugevuse muutmine, edasi-tagasi hüppamine või uuesti esitamine alustab loendust otsast</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Taaskäivita, kui olen ärkvel</string>
     <string name="settings.auto_sleep_timer.start.label">Määra algusaeg</string>

@@ -196,6 +196,7 @@
     <string name="history.empty.title">Nog niets te zien</string>
     <string name="history.event.bookmark_jump">Naar bladwijzer gegaan</string>
     <string name="history.event.chapter_change">Ander hoofdstuk</string>
+    <string name="history.event.fell_asleep">In slaap gevallen</string>
     <string name="history.event.interrupted">%s onderbroken</string>
     <string name="history.event.jump_back">Teruggesprongen</string>
     <string name="history.event.moved">Verschoven</string>
@@ -212,6 +213,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Slaaptimer afgelopen</string>
     <string name="history.event.sleep_timer_on">Slaaptimer ingesteld</string>
+    <string name="history.event.still_listening">Nog aan het luisteren</string>
     <string name="history.location.chapter">Hfst. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Onderbroken</string>
     <string name="history.source.bluetooth">Bluetooth-apparaat</string>
@@ -367,6 +369,8 @@
     <string name="settings.appearance.theme.title">Thema</string>
     <string name="settings.appearance.title">Uiterlijk</string>
     <string name="settings.auto_sleep_timer.end.label">Eindtijd instellen</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Elke 10 minuten wordt het boek zachter. Schud je telefoon binnen een minuut om verder te luisteren. Anders gaat het terug naar waar je het laatst schudde en pauzeert het.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Controleren of ik nog luister</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Het volume aanpassen, overslaan of opnieuw afspelen start het aftellen opnieuw</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Opnieuw starten als ik wakker ben</string>
     <string name="settings.auto_sleep_timer.start.label">Starttijd instellen</string>

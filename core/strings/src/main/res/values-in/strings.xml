@@ -185,6 +185,7 @@
     <string name="history.empty.title">Belum ada apa-apa</string>
     <string name="history.event.bookmark_jump">Pindah ke markah</string>
     <string name="history.event.chapter_change">Bab berganti</string>
+    <string name="history.event.fell_asleep">Tertidur</string>
     <string name="history.event.interrupted">Terinterupsi selama %s</string>
     <string name="history.event.jump_back">Kembali ke posisi sebelumnya</string>
     <string name="history.event.moved">Posisi digeser</string>
@@ -199,6 +200,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Pengatur waktu tidur berakhir</string>
     <string name="history.event.sleep_timer_on">Pengatur waktu tidur diaktifkan</string>
+    <string name="history.event.still_listening">Masih mendengarkan</string>
     <string name="history.location.chapter">Bab %1$d · %2$s</string>
     <string name="history.source.audio_focus">Terinterupsi</string>
     <string name="history.source.bluetooth">Perangkat Bluetooth</string>
@@ -349,6 +351,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Tampilan</string>
     <string name="settings.auto_sleep_timer.end.label">Atur waktu selesai</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Setiap 10 menit, suara buku dikecilkan. Goyangkan ponsel Anda dalam satu menit untuk lanjut mendengarkan. Jika tidak, buku kembali ke posisi terakhir Anda menggoyangkan ponsel lalu dijeda.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Periksa apakah saya masih mendengarkan</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Mengubah volume, melompat, atau memutar lagi akan memulai ulang hitungan mundur</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Mulai ulang saat saya terjaga</string>
     <string name="settings.auto_sleep_timer.start.label">Atur waktu mulai</string>

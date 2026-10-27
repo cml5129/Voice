@@ -196,6 +196,7 @@
     <string name="history.empty.title">Сè уште нема ништо</string>
     <string name="history.event.bookmark_jump">Скок до обележувач</string>
     <string name="history.event.chapter_change">Променето поглавје</string>
+    <string name="history.event.fell_asleep">Заспано</string>
     <string name="history.event.interrupted">Прекин од %s</string>
     <string name="history.event.jump_back">Враќање на претходното место</string>
     <string name="history.event.moved">Поместено</string>
@@ -212,6 +213,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Тајмерот за спиење истече</string>
     <string name="history.event.sleep_timer_on">Вклучен тајмер за спиење</string>
+    <string name="history.event.still_listening">Сè уште слушате</string>
     <string name="history.location.chapter">Погл. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Прекинато</string>
     <string name="history.source.bluetooth">Bluetooth уред</string>
@@ -367,6 +369,8 @@
     <string name="settings.appearance.theme.title">Тема</string>
     <string name="settings.appearance.title">Изглед</string>
     <string name="settings.auto_sleep_timer.end.label">Внеси време за крај</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">На секои 10 минути книгата се стишува. Протресете го телефонот во рок од една минута за да продолжите да слушате. Инаку се враќа таму каде што последен пат протресовте и паузира.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Провери дали сè уште слушам</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Менувањето на гласноста, прескокнувањето или повторното пуштање го започнува одбројувањето одново</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Рестартирај додека не спијам</string>
     <string name="settings.auto_sleep_timer.start.label">Внеси време за старт</string>

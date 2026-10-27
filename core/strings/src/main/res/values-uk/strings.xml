@@ -218,6 +218,7 @@
     <string name="history.empty.title">Тут поки порожньо</string>
     <string name="history.event.bookmark_jump">Перехід до закладки</string>
     <string name="history.event.chapter_change">Зміна розділу</string>
+    <string name="history.event.fell_asleep">Заснули</string>
     <string name="history.event.interrupted">Перервано на %s</string>
     <string name="history.event.jump_back">Повернення на попереднє місце</string>
     <string name="history.event.moved">Зміщення позиції</string>
@@ -238,6 +239,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Таймер сну спрацював</string>
     <string name="history.event.sleep_timer_on">Таймер сну увімкнено</string>
+    <string name="history.event.still_listening">Досі слухаєте</string>
     <string name="history.location.chapter">Розд. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Перервано</string>
     <string name="history.source.bluetooth">Bluetooth-пристрій</string>
@@ -403,6 +405,8 @@
     <string name="settings.appearance.theme.title">Тема</string>
     <string name="settings.appearance.title">Вигляд</string>
     <string name="settings.auto_sleep_timer.end.label">Час кінця</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Кожні 10 хвилин книга стає тихішою. Струсніть телефон протягом хвилини, щоб слухати далі. Інакше вона повернеться туди, де ви востаннє струснули телефон, і стане на паузу.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Перевіряти, чи я ще слухаю</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Зміна гучності, перемотування або повторне відтворення запускають відлік заново</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Перезапускати, поки я не сплю</string>
     <string name="settings.auto_sleep_timer.start.label">Час початку</string>

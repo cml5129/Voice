@@ -196,6 +196,7 @@
     <string name="history.empty.title">Täällä ei ole vielä mitään</string>
     <string name="history.event.bookmark_jump">Siirryttiin kirjanmerkkiin</string>
     <string name="history.event.chapter_change">Luku vaihtui</string>
+    <string name="history.event.fell_asleep">Nukahdit</string>
     <string name="history.event.interrupted">Keskeytetty %s ajaksi</string>
     <string name="history.event.jump_back">Palattiin aiempaan kohtaan</string>
     <string name="history.event.moved">Kohtaa siirretty</string>
@@ -212,6 +213,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Uniajastin päättyi</string>
     <string name="history.event.sleep_timer_on">Uniajastin asetettu</string>
+    <string name="history.event.still_listening">Kuuntelet yhä</string>
     <string name="history.location.chapter">Luku %1$d · %2$s</string>
     <string name="history.source.audio_focus">Keskeytetty</string>
     <string name="history.source.bluetooth">Bluetooth-laite</string>
@@ -367,6 +369,8 @@
     <string name="settings.appearance.theme.title">Teema</string>
     <string name="settings.appearance.title">Ulkoasu</string>
     <string name="settings.auto_sleep_timer.end.label">Päättymisaika</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">10 minuutin välein kirja hiljenee. Ravista puhelinta minuutin sisällä, niin kuuntelu jatkuu. Muuten kirja palaa kohtaan, jossa viimeksi ravistit, ja pysähtyy.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Tarkista, kuuntelenko vielä</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Äänenvoimakkuuden muuttaminen, hyppääminen tai toiston jatkaminen aloittaa ajastuksen alusta</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Aloita alusta, kun olen hereillä</string>
     <string name="settings.auto_sleep_timer.start.label">Aloitusaika</string>

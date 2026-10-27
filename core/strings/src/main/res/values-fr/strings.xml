@@ -207,6 +207,7 @@
     <string name="history.empty.title">Rien pour l\'instant</string>
     <string name="history.event.bookmark_jump">Saut vers un marque-page</string>
     <string name="history.event.chapter_change">Changement de chapitre</string>
+    <string name="history.event.fell_asleep">Endormissement</string>
     <string name="history.event.interrupted">Interruption de %s</string>
     <string name="history.event.jump_back">Retour à la position précédente</string>
     <string name="history.event.moved">Position déplacée</string>
@@ -225,6 +226,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Minuterie de mise en veille terminée</string>
     <string name="history.event.sleep_timer_on">Minuterie de mise en veille activée</string>
+    <string name="history.event.still_listening">Toujours à l\'écoute</string>
     <string name="history.location.chapter">Chap. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Interruption</string>
     <string name="history.source.bluetooth">Appareil Bluetooth</string>
@@ -385,6 +387,8 @@
     <string name="settings.appearance.theme.title">Thème</string>
     <string name="settings.appearance.title">Apparence</string>
     <string name="settings.auto_sleep_timer.end.label">Heure de fin</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Toutes les 10 minutes, le livre baisse le volume. Secouez votre téléphone dans la minute pour continuer. Sinon, il revient là où vous l\'avez secoué la dernière fois et se met en pause.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Vérifier que j\'écoute encore</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Changer le volume, sauter ou relancer la lecture redémarre le compte à rebours</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Relancer si je ne dors pas</string>
     <string name="settings.auto_sleep_timer.start.label">Heure de début</string>

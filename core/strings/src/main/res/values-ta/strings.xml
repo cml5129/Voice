@@ -196,6 +196,7 @@
     <string name="history.empty.title">இங்கே இன்னும் எதுவும் இல்லை</string>
     <string name="history.event.bookmark_jump">புக்மார்க்கிற்குச் சென்றது</string>
     <string name="history.event.chapter_change">அத்தியாயம் மாற்றப்பட்டது</string>
+    <string name="history.event.fell_asleep">தூங்கிவிட்டீர்கள்</string>
     <string name="history.event.interrupted">%s குறுக்கிடப்பட்டது</string>
     <string name="history.event.jump_back">முந்தைய இடத்துக்குத் திரும்பியது</string>
     <string name="history.event.moved">நிலை நகர்த்தப்பட்டது</string>
@@ -212,6 +213,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">ஸ்லீப் டைமர் முடிந்தது</string>
     <string name="history.event.sleep_timer_on">ஸ்லீப் டைமர் தொடங்கியது</string>
+    <string name="history.event.still_listening">இன்னும் கேட்கிறீர்கள்</string>
     <string name="history.location.chapter">அத். %1$d · %2$s</string>
     <string name="history.source.audio_focus">குறுக்கிடப்பட்டது</string>
     <string name="history.source.bluetooth">புளூடூத் சாதனம்</string>
@@ -367,6 +369,8 @@
     <string name="settings.appearance.theme.title">தீம்</string>
     <string name="settings.appearance.title">தோற்றம்</string>
     <string name="settings.auto_sleep_timer.end.label">இறுதி நேரத்தை அமை</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">ஒவ்வொரு 10 நிமிடத்துக்கும் புத்தகத்தின் ஒலி குறையும். தொடர்ந்து கேட்க ஒரு நிமிடத்துக்குள் உங்கள் போனை குலுக்கவும். இல்லையெனில் நீங்கள் கடைசியாக குலுக்கிய இடத்துக்குத் திரும்பி இடைநிறுத்தப்படும்.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">நான் இன்னும் கேட்கிறேனா என்று சரிபார்</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">ஒலியளவை மாற்றினாலோ, தாவினாலோ, மீண்டும் இயக்கினாலோ கவுண்ட்டவுன் மீண்டும் தொடங்கும்</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">விழித்திருக்கும்போது மீண்டும் தொடங்கு</string>
     <string name="settings.auto_sleep_timer.start.label">தொடக்க நேரத்தை அமை</string>

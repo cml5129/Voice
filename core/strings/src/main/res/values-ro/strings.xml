@@ -207,6 +207,7 @@
     <string name="history.empty.title">Încă nimic aici</string>
     <string name="history.event.bookmark_jump">Salt la un semn de carte</string>
     <string name="history.event.chapter_change">Capitol schimbat</string>
+    <string name="history.event.fell_asleep">Ai adormit</string>
     <string name="history.event.interrupted">Întrerupere de %s</string>
     <string name="history.event.jump_back">Revenire la poziția anterioară</string>
     <string name="history.event.moved">Poziție mutată</string>
@@ -225,6 +226,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Temporizator expirat</string>
     <string name="history.event.sleep_timer_on">Oprire temporizată activată</string>
+    <string name="history.event.still_listening">Încă asculți</string>
     <string name="history.location.chapter">Cap. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Întrerupt</string>
     <string name="history.source.bluetooth">Dispozitiv Bluetooth</string>
@@ -385,6 +387,8 @@
     <string name="settings.appearance.color_scheme.sunset">Apus</string>
     <string name="settings.appearance.title">Aspect</string>
     <string name="settings.auto_sleep_timer.end.label">Setează ora de final</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">La fiecare 10 minute, cartea se aude mai încet. Scutură telefonul în cel mult un minut ca să asculți mai departe. Altfel, revine unde ai scuturat ultima dată și se oprește.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Verifică dacă încă ascult</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Schimbarea volumului, saltul sau reluarea redării pornesc numărătoarea inversă de la capăt</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Repornește cât nu dorm</string>
     <string name="settings.auto_sleep_timer.start.label">Setează ora de început</string>
