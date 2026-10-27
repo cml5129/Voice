@@ -62,7 +62,7 @@ class ListeningCheckTest {
     playerController = playerController,
     shakeDetector = shakeDetector,
     sleepTimer = sleepTimer,
-    clock = Clock.fixed(Instant.parse("2020-01-01T${time}:00Z"), ZoneId.of("UTC")),
+    clock = Clock.fixed(Instant.parse("2020-01-01T$time:00Z"), ZoneId.of("UTC")),
     scope = testScope.backgroundScope,
   )
 
