@@ -151,6 +151,7 @@ class SettingsViewModel(
         startTime = autoSleepTimer.autoSleepStartTime,
         endTime = autoSleepTimer.autoSleepEndTime,
         listeningCheck = autoSleepTimer.listeningCheckEnabled,
+        restartWhenAwake = autoSleepTimer.restartWhenAwake,
       ),
       analyticsEnabled = analyticsEnabled,
       showAnalyticSetting = appInfoProvider.analyticsIncluded,
@@ -320,6 +321,14 @@ class SettingsViewModel(
     mainScope.launch {
       sleepTimerPreferenceStore.updateData { currentPrefs ->
         currentPrefs.copy(listeningCheckEnabled = checked)
+      }
+    }
+  }
+
+  override fun setRestartSleepTimerWhenAwake(checked: Boolean) {
+    mainScope.launch {
+      sleepTimerPreferenceStore.updateData { currentPrefs ->
+        currentPrefs.copy(restartWhenAwake = checked)
       }
     }
   }

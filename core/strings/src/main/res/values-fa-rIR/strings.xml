@@ -367,6 +367,8 @@
     <string name="settings.appearance.theme.title">تم</string>
     <string name="settings.appearance.title">ظاهر</string>
     <string name="settings.auto_sleep_timer.end.label">زمان پایان</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">تغییر صدا، رد کردن یا پخش دوباره، شمارش معکوس را از نو شروع می‌کند</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">شروع دوباره وقتی بیدارم</string>
     <string name="settings.auto_sleep_timer.start.label">زمان شروع</string>
     <string name="settings.auto_sleep_timer.summary">اگر پخش بین %1$s تا %2$s شروع شود، تایمر خواب خودکار روشن می‌شود</string>
     <string name="settings.auto_sleep_timer.title">تایمر خواب خودکار</string>
@@ -444,6 +446,10 @@
     <string name="sleep_timer.dialog.shake_hint">بلافاصله پس از پایان تایمر، گوشی را تکان دهید تا دوباره شروع شود.</string>
     <string name="sleep_timer.dialog.title">تایمر خواب</string>
     <string name="sleep_timer.end_of_chapter">پایان فصل</string>
+    <string name="sleep_timer.rewind.dismiss">عقب نرو</string>
+    <string name="sleep_timer.rewind.message">تایمر خواب پخش را متوقف کرد. چقدر می‌خواهید به عقب برگردید؟</string>
+    <string name="sleep_timer.rewind.timer_start">جایی که تایمر شروع شد</string>
+    <string name="sleep_timer.rewind.title">خوابتان برد؟</string>
     <string name="time.relative.last_night">دیشب</string>
     <string name="time.relative.this_afternoon">امروز بعدازظهر</string>
     <string name="time.relative.this_evening">امشب</string>

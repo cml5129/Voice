@@ -1,0 +1,15 @@
+[Unit]
+Description=Voice audiobook transcriber (faster-whisper on the GPU)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/voice-transcriber/app
+ExecStart=/opt/voice-transcriber/app/run.sh queue_worker.py
+Nice=10
+Restart=on-failure
+RestartSec=60
+Environment=HF_HOME=/opt/voice-transcriber/hf-cache
+
+[Install]
+WantedBy=multi-user.target

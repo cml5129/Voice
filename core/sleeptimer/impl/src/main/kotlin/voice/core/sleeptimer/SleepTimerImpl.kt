@@ -21,6 +21,7 @@ import voice.core.playback.playstate.PlayStateManager.PlayState.Playing
 import kotlin.math.max
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.milliseconds
+import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
 
 @SingleIn(AppScope::class)
@@ -33,6 +34,7 @@ class SleepTimerImpl internal constructor(
   private val fadeOutStore: FadeOutStore,
   dispatcherProvider: DispatcherProvider,
   private val tracker: SleepTimerTracker,
+  private val rewindRecorder: SleepTimerRewindRecorder,
 ) : SleepTimer {
 
   private val scope = MainScope(dispatcherProvider)
@@ -40,6 +42,9 @@ class SleepTimerImpl internal constructor(
     field = MutableStateFlow<SleepTimerState>(SleepTimerState.Disabled)
 
   private var job: Job? = null
+
+  /** Set by [onListenerAwake], picked up by the running countdown with its next tick. */
+  private var awake = false
 
   override fun enable(mode: SleepTimerMode) {
     tracker.enabled(mode)
@@ -56,7 +61,10 @@ class SleepTimerImpl internal constructor(
           // the default duration is only used when the sleep timer turns on by itself
           startCountdown(sleepTimerPreferenceStore.data.first().duration)
         }
-        SleepTimerMode.EndOfChapter -> state.value = SleepTimerState.Enabled.WithEndOfChapter
+        SleepTimerMode.EndOfChapter -> {
+          state.value = SleepTimerState.Enabled.WithEndOfChapter
+          disableWhenPausedForGood()
+        }
       }
     }
   }
@@ -65,8 +73,15 @@ class SleepTimerImpl internal constructor(
     tracker.disabled()
     job?.cancel()
     job = null
+    awake = false
     state.value = SleepTimerState.Disabled
     playerController.setVolume(1F)
+  }
+
+  override fun onListenerAwake() {
+    if (state.value is SleepTimerState.Enabled.WithDuration) {
+      awake = true
+    }
   }
 
   private tailrec suspend fun startCountdown(duration: Duration) {
@@ -74,12 +89,36 @@ class SleepTimerImpl internal constructor(
     var left = duration
     state.value = SleepTimerState.Enabled.WithDuration(left)
     playerController.setVolume(1F)
+    awake = false
+    rewindRecorder.onCountdownStarted()
 
     val fadeOutDuration = fadeOutStore.data.first()
     var interval = 500.milliseconds
 
     while (left > Duration.ZERO) {
-      suspendUntilPlaying()
+      if (playStateManager.playState != Playing) {
+        if (!suspendUntilPlaying()) {
+          // Left paused for so long that the listener is done. Still running, the timer would cut off
+          // whatever they play next, maybe the next morning.
+          Logger.i("Paused for $STALE_PAUSE_TIMEOUT, turning the sleep timer off")
+          disable()
+          return
+        }
+        // pressing play again is as clear a sign of being awake as it gets
+        awake = true
+      }
+      if (awake) {
+        awake = false
+        if (sleepTimerPreferenceStore.data.first().restartWhenAwake && left < duration) {
+          Logger.i("Listener is awake, restarting the sleep timer")
+          left = duration
+          interval = 500.milliseconds
+          state.value = SleepTimerState.Enabled.WithDuration(left)
+          playerController.setVolume(1F)
+          rewindRecorder.onCountdownStarted()
+          continue
+        }
+      }
       if (left < fadeOutDuration) {
         interval = 200.milliseconds
         updateVolume(left, fadeOutDuration)
@@ -93,6 +132,7 @@ class SleepTimerImpl internal constructor(
 
     playerController.record(ListeningEvent.Type.SleepTimerEnded, ListeningEvent.Source.SleepTimer)
     playerController.pauseWithRewind(fadeOutDuration)
+    rewindRecorder.onCountdownFinished(timerDuration = duration)
 
     val shakeDetected = detectShakeWithTimeout()
     playerController.setVolume(1F)
@@ -120,13 +160,35 @@ class SleepTimerImpl internal constructor(
     playerController.setVolume(volume)
   }
 
-  private suspend fun suspendUntilPlaying() {
-    if (playStateManager.playState != Playing) {
-      playStateManager.playStateFlow.first { it == Playing }
+  /**
+   * An end of chapter timer has no countdown that runs out, so without this it would stay on when the listener stops
+   * before the chapter ends, and stop the next listening session after a chapter.
+   */
+  private suspend fun disableWhenPausedForGood() {
+    while (true) {
+      playStateManager.playStateFlow.first { it != Playing }
+      if (!suspendUntilPlaying()) {
+        Logger.i("Paused for $STALE_PAUSE_TIMEOUT, turning the end of chapter sleep timer off")
+        disable()
+        return
+      }
     }
+  }
+
+  /**
+   * @return false if playback didn't continue within [STALE_PAUSE_TIMEOUT]
+   */
+  private suspend fun suspendUntilPlaying(): Boolean {
+    if (playStateManager.playState == Playing) return true
+    return withTimeoutOrNull(STALE_PAUSE_TIMEOUT) {
+      playStateManager.playStateFlow.first { it == Playing }
+    } != null
   }
 
   internal companion object {
     val SHAKE_TO_RESET_TIME = 30.seconds
+
+    /** Long enough that the doorbell or a phone call doesn't turn the timer off. */
+    val STALE_PAUSE_TIMEOUT = 30.minutes
   }
 }

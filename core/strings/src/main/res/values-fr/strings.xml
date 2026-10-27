@@ -385,6 +385,8 @@
     <string name="settings.appearance.theme.title">Thème</string>
     <string name="settings.appearance.title">Apparence</string>
     <string name="settings.auto_sleep_timer.end.label">Heure de fin</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Changer le volume, sauter ou relancer la lecture redémarre le compte à rebours</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Relancer si je ne dors pas</string>
     <string name="settings.auto_sleep_timer.start.label">Heure de début</string>
     <string name="settings.auto_sleep_timer.summary">Démarrer automatiquement la minuterie de mise en veille lorsque la lecture commence entre %1$s et %2$s</string>
     <string name="settings.auto_sleep_timer.title">Minuterie de mise en veille automatique</string>
@@ -462,6 +464,10 @@
     <string name="sleep_timer.dialog.shake_hint">Secouez votre téléphone juste après la fin de la minuterie pour la relancer.</string>
     <string name="sleep_timer.dialog.title">Minuterie de mise en veille</string>
     <string name="sleep_timer.end_of_chapter">Fin du chapitre</string>
+    <string name="sleep_timer.rewind.dismiss">Ne pas revenir en arrière</string>
+    <string name="sleep_timer.rewind.message">La minuterie de mise en veille a arrêté la lecture. Jusqu\'où voulez-vous revenir ?</string>
+    <string name="sleep_timer.rewind.timer_start">Là où la minuterie a démarré</string>
+    <string name="sleep_timer.rewind.title">Le sommeil vous a gagné ?</string>
     <string name="time.relative.last_night">Hier soir</string>
     <string name="time.relative.this_afternoon">Cet après-midi</string>
     <string name="time.relative.this_evening">Ce soir</string>

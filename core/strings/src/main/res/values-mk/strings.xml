@@ -367,6 +367,8 @@
     <string name="settings.appearance.theme.title">Тема</string>
     <string name="settings.appearance.title">Изглед</string>
     <string name="settings.auto_sleep_timer.end.label">Внеси време за крај</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Менувањето на гласноста, прескокнувањето или повторното пуштање го започнува одбројувањето одново</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Рестартирај додека не спијам</string>
     <string name="settings.auto_sleep_timer.start.label">Внеси време за старт</string>
     <string name="settings.auto_sleep_timer.summary">Тајмерот за спиење се вклучува сам кога ќе почнете да слушате меѓу %1$s и %2$s</string>
     <string name="settings.auto_sleep_timer.title">Автоматски тајмер за спиење</string>
@@ -444,6 +446,10 @@
     <string name="sleep_timer.dialog.shake_hint">Протресете го телефонот веднаш по истекот на тајмерот за да го рестартирате.</string>
     <string name="sleep_timer.dialog.title">Тајмер за спиење</string>
     <string name="sleep_timer.end_of_chapter">Крај на поглавје</string>
+    <string name="sleep_timer.rewind.dismiss">Не враќај</string>
+    <string name="sleep_timer.rewind.message">Тајмерот за спиење го запре слушањето. Колку сакате да се вратите назад?</string>
+    <string name="sleep_timer.rewind.timer_start">Каде што почна тајмерот</string>
+    <string name="sleep_timer.rewind.title">Заспавте?</string>
     <string name="time.relative.last_night">Синоќа</string>
     <string name="time.relative.this_afternoon">Попладнево</string>
     <string name="time.relative.this_evening">Вечерва</string>

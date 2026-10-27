@@ -403,6 +403,8 @@
     <string name="settings.appearance.theme.title">Motiv</string>
     <string name="settings.appearance.title">Vzhled</string>
     <string name="settings.auto_sleep_timer.end.label">Nastavit čas konce</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Změna hlasitosti, přeskočení nebo opětovné spuštění přehrávání začne odpočet znovu</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Restartovat, když jsem vzhůru</string>
     <string name="settings.auto_sleep_timer.start.label">Nastavit čas startu</string>
     <string name="settings.auto_sleep_timer.summary">Automatické spuštění časovače spánku při zahájení přehrávání mezi %1$s a %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatický časovač spánku</string>
@@ -480,6 +482,10 @@
     <string name="sleep_timer.dialog.shake_hint">Zatřeste telefonem hned po skončení časovače a znovu ho spustíte.</string>
     <string name="sleep_timer.dialog.title">Časovač spánku</string>
     <string name="sleep_timer.end_of_chapter">Konec kapitoly</string>
+    <string name="sleep_timer.rewind.dismiss">Nepřetáčet</string>
+    <string name="sleep_timer.rewind.message">Časovač spánku zastavil přehrávání. Jak daleko se chcete vrátit?</string>
+    <string name="sleep_timer.rewind.timer_start">Kde časovač začal</string>
+    <string name="sleep_timer.rewind.title">Usnuli jste?</string>
     <string name="time.relative.last_night">Včera v noci</string>
     <string name="time.relative.this_afternoon">Dnes odpoledne</string>
     <string name="time.relative.this_evening">Dnes večer</string>

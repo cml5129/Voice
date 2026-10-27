@@ -40,6 +40,7 @@ class ListeningCheckTest {
       shakes.receive()
     }
   }
+  private val sleepTimer = mockk<SleepTimer>(relaxUnitFun = true)
   private val bookId = BookId("book")
   private val chapter = ChapterId("chapter")
   private var positionMs = 1_000L
@@ -60,6 +61,7 @@ class ListeningCheckTest {
     playStateManager = playStateManager,
     playerController = playerController,
     shakeDetector = shakeDetector,
+    sleepTimer = sleepTimer,
     clock = Clock.fixed(Instant.parse("2020-01-01T${time}:00Z"), ZoneId.of("UTC")),
     scope = testScope.backgroundScope,
   )
@@ -94,6 +96,7 @@ class ListeningCheckTest {
     runCurrent()
     verify { playerController.record(ListeningEvent.Type.StillListening, ListeningEvent.Source.SleepTimer) }
     verify { playerController.setVolume(1F) }
+    verify { sleepTimer.onListenerAwake() }
 
     advanceTimeBy(1.minutes)
     verify(exactly = 0) { playerController.pause() }

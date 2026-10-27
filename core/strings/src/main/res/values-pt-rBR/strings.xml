@@ -385,6 +385,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Aparência</string>
     <string name="settings.auto_sleep_timer.end.label">Definir horário de término</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Mudar o volume, pular ou dar play de novo reinicia a contagem regressiva</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Reiniciar se eu não estiver dormindo</string>
     <string name="settings.auto_sleep_timer.start.label">Definir horário de início</string>
     <string name="settings.auto_sleep_timer.summary">Ativa o desligamento automático quando a reprodução começar entre %1$s e %2$s</string>
     <string name="settings.auto_sleep_timer.title">Desligamento automático programado</string>
@@ -462,6 +464,10 @@
     <string name="sleep_timer.dialog.shake_hint">Agite o celular logo após o desligamento automático para reiniciá-lo.</string>
     <string name="sleep_timer.dialog.title">Desligamento automático</string>
     <string name="sleep_timer.end_of_chapter">Fim do capítulo</string>
+    <string name="sleep_timer.rewind.dismiss">Não voltar</string>
+    <string name="sleep_timer.rewind.message">O desligamento automático parou a reprodução. Quanto você quer voltar?</string>
+    <string name="sleep_timer.rewind.timer_start">Onde o desligamento automático começou</string>
+    <string name="sleep_timer.rewind.title">Pegou no sono?</string>
     <string name="time.relative.last_night">Ontem à noite</string>
     <string name="time.relative.this_afternoon">Hoje à tarde</string>
     <string name="time.relative.this_evening">Hoje à noite</string>

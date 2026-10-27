@@ -385,6 +385,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Aspetto</string>
     <string name="settings.auto_sleep_timer.end.label">Ora di fine</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.summary">Cambiare il volume, saltare o premere di nuovo play fa ripartire il conto alla rovescia</string>
+    <string name="settings.auto_sleep_timer.restart_when_awake.title">Riavvia se non dormo</string>
     <string name="settings.auto_sleep_timer.start.label">Ora di inizio</string>
     <string name="settings.auto_sleep_timer.summary">Avvia automaticamente il timer sospensione quando la riproduzione inizia tra le %1$s e le %2$s</string>
     <string name="settings.auto_sleep_timer.title">Timer sospensione automatico</string>
@@ -462,6 +464,10 @@
     <string name="sleep_timer.dialog.shake_hint">Scuoti il telefono subito dopo la fine del timer per farlo ripartire.</string>
     <string name="sleep_timer.dialog.title">Timer sospensione</string>
     <string name="sleep_timer.end_of_chapter">Fine del capitolo</string>
+    <string name="sleep_timer.rewind.dismiss">Non tornare indietro</string>
+    <string name="sleep_timer.rewind.message">Il timer sospensione ha fermato la riproduzione. Quanto vuoi tornare indietro?</string>
+    <string name="sleep_timer.rewind.timer_start">Dove è partito il timer</string>
+    <string name="sleep_timer.rewind.title">Ti ha preso il sonno?</string>
     <string name="time.relative.last_night">Ieri sera</string>
     <string name="time.relative.this_afternoon">Oggi pomeriggio</string>
     <string name="time.relative.this_evening">Stasera</string>

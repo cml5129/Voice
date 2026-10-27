@@ -66,6 +66,7 @@ internal fun AutoSleepTimerSection(
   onStartChange: (LocalTime) -> Unit,
   onEndChange: (LocalTime) -> Unit,
   onListeningCheckChange: (Boolean) -> Unit,
+  onRestartWhenAwakeChange: (Boolean) -> Unit,
   modifier: Modifier = Modifier,
 ) {
   val night = viewState.enabled
@@ -169,7 +170,25 @@ internal fun AutoSleepTimerSection(
               )
             }
           }
-          Spacer(Modifier.height(12.dp))
+          Spacer(Modifier.height(8.dp))
+          // applies to every timer, not only the automatic one
+          IslandSwitchRow(
+            title = stringResource(StringsR.string.settings_auto_sleep_timer_restart_when_awake_title),
+            checked = viewState.restartWhenAwake,
+            onCheckedChange = onRestartWhenAwakeChange,
+            leading = {
+              ShapedIcon(
+                icon = VoiceIcons.History,
+                shape = MaterialShapes.Cookie9Sided,
+                containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
+              )
+            },
+            summary = {
+              Text(stringResource(StringsR.string.settings_auto_sleep_timer_restart_when_awake_summary))
+            },
+          )
+          Spacer(Modifier.height(4.dp))
         }
       }
     }
@@ -270,6 +289,7 @@ private fun AutoSleepTimerSectionPreview() {
       onStartChange = {},
       onEndChange = {},
       onListeningCheckChange = {},
+      onRestartWhenAwakeChange = {},
     )
   }
 }

@@ -30,6 +30,7 @@ class ListeningCheck(
   private val playStateManager: PlayStateManager,
   private val playerController: PlayerController,
   private val shakeDetector: ShakeDetector,
+  private val sleepTimer: SleepTimer,
   private val clock: Clock,
   private val scope: CoroutineScope,
 ) : AppInitializer {
@@ -54,6 +55,7 @@ class ListeningCheck(
       }
       if (answered()) {
         playerController.record(ListeningEvent.Type.StillListening, ListeningEvent.Source.SleepTimer)
+        sleepTimer.onListenerAwake()
         awake = playerController.livePlaybackState() ?: return
       } else {
         Logger.i("Listening check missed")
