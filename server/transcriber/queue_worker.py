@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Long-running worker that transcribes the whole audiobook library.
+"""Long-running worker that transcribes the books Chris picks, plus new arrivals.
 
 Each pass handles the paths listed in priority.txt first (one per line), then every
-other .m4b under the library, newest first. Files whose output is current are skipped.
-When a pass finds nothing to do, the worker sleeps and rescans.
+.m4b under the library that arrived after the worker was first started (newest first).
+The rest of the library is left alone unless --all is given. Files whose output is
+current are skipped. When a pass finds nothing to do, the worker sleeps and rescans.
 """
 
 import argparse
@@ -28,17 +29,27 @@ def read_priority(path: Path) -> list[Path]:
     return [Path(line) for line in lines if line and not line.startswith("#")]
 
 
-def build_queue(library: Path, priority_file: Path) -> list[Path]:
+def new_since(out_dir: Path) -> float:
+    """When "new" starts: the first time the worker ran, kept in a marker file."""
+    marker = out_dir / ".new-since"
+    if not marker.exists():
+        out_dir.mkdir(parents=True, exist_ok=True)
+        marker.write_text(f"{time.time()}\n", encoding="utf-8")
+    return float(marker.read_text(encoding="utf-8").strip())
+
+
+def build_queue(library: Path, out_dir: Path, priority_file: Path, everything: bool) -> list[Path]:
     priority = [p for p in read_priority(priority_file) if p.is_file()]
     seen = {p.resolve() for p in priority}
-    rest = [p for p in library.rglob("*.m4b") if p.resolve() not in seen]
+    cutoff = 0.0 if everything else new_since(out_dir)
+    rest = [p for p in library.rglob("*.m4b") if p.resolve() not in seen and p.stat().st_mtime > cutoff]
     rest.sort(key=lambda p: p.stat().st_mtime, reverse=True)
     return priority + rest
 
 
-def run_pass(library: Path, out_dir: Path, priority_file: Path) -> int:
+def run_pass(library: Path, out_dir: Path, priority_file: Path, everything: bool = False) -> int:
     done = 0
-    for audio in build_queue(library, priority_file):
+    for audio in build_queue(library, out_dir, priority_file, everything):
         if is_up_to_date(audio, out_dir):
             continue
         log.info("start %s", audio)
@@ -67,11 +78,12 @@ def main() -> int:
     parser.add_argument("--priority", type=Path, default=DEFAULT_PRIORITY)
     parser.add_argument("--idle-sleep", type=int, default=3600, help="seconds between rescans when idle")
     parser.add_argument("--once", action="store_true", help="exit after one pass")
+    parser.add_argument("--all", action="store_true", help="also transcribe the books already in the library")
     args = parser.parse_args()
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     while True:
-        done = run_pass(args.library, args.out, args.priority)
+        done = run_pass(args.library, args.out, args.priority, args.all)
         log.info("pass complete, %d transcribed", done)
         if args.once:
             return 0

@@ -10,6 +10,7 @@ one object per segment, which is what core/transcript's TranscriptParser reads.
 import argparse
 import json
 import os
+import re
 import sys
 import time
 from pathlib import Path
@@ -39,6 +40,22 @@ def is_up_to_date(audio: Path, out_dir: Path) -> bool:
     return all(p.exists() and p.stat().st_mtime > audio_mtime for p in (json_path, lrc_path))
 
 
+def book_prompt(audio: Path) -> str:
+    """Title and author as a starting prompt, so Whisper spells their names right."""
+    title = re.sub(r"\s*\[[A-Z0-9]{10}\]$", "", audio.stem)
+    author = ""
+    try:
+        import av
+
+        with av.open(str(audio)) as container:
+            tags = {k.lower(): v for k, v in container.metadata.items()}
+        title = tags.get("title") or title
+        author = tags.get("artist") or tags.get("album_artist") or ""
+    except Exception:
+        pass
+    return f"{title}, by {author}." if author else f"{title}."
+
+
 def lrc_timestamp(ms: int) -> str:
     minutes, rest = divmod(ms, 60_000)
     seconds, millis = divmod(rest, 1000)
@@ -61,6 +78,7 @@ def transcribe(audio: Path, out_dir: Path = DEFAULT_OUT, force: bool = False) ->
     segments, info = load_model().transcribe(
         str(audio),
         language="en",
+        initial_prompt=book_prompt(audio),
         vad_filter=True,
     )
     entries = []
