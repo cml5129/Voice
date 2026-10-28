@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.merge
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeoutOrNull
@@ -75,7 +76,7 @@ class ListeningCheck(
     playerController.setVolume(PROMPT_VOLUME)
     return try {
       withTimeoutOrNull(ANSWER_TIME) {
-        merge(flow { emit(shakeDetector.detect()) }, listenerActions()).first()
+        merge(flow { emit(shakeDetector.detect()) }, listenerActions().map {}).first()
       } != null
     } finally {
       playerController.setVolume(1F)
