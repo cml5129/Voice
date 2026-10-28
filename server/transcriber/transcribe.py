@@ -10,13 +10,15 @@ one object per segment, which is what core/transcript's TranscriptParser reads.
 import argparse
 import json
 import os
-import re
+import subprocess
 import sys
 import time
 from pathlib import Path
 
 DEFAULT_OUT = Path("/mnt/f/Transcripts")
 MODEL = "large-v3-turbo"
+SAMPLE_RATE = 16000
+CHUNK_SECONDS = 30 * 60
 
 _model = None
 
@@ -40,20 +42,27 @@ def is_up_to_date(audio: Path, out_dir: Path) -> bool:
     return all(p.exists() and p.stat().st_mtime > audio_mtime for p in (json_path, lrc_path))
 
 
-def book_prompt(audio: Path) -> str:
-    """Title and author as a starting prompt, so Whisper spells their names right."""
-    title = re.sub(r"\s*\[[A-Z0-9]{10}\]$", "", audio.stem)
-    author = ""
-    try:
-        import av
+def audio_duration(audio: Path) -> float:
+    result = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(audio)],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    return float(result.stdout.strip())
 
-        with av.open(str(audio)) as container:
-            tags = {k.lower(): v for k, v in container.metadata.items()}
-        title = tags.get("title") or title
-        author = tags.get("artist") or tags.get("album_artist") or ""
-    except Exception:
-        pass
-    return f"{title}, by {author}." if author else f"{title}."
+
+def decode_chunk(audio: Path, offset: int, length: int):
+    """Decode `length` seconds from `offset` as 16 kHz mono float32, the input Whisper expects."""
+    import numpy as np
+
+    result = subprocess.run(
+        ["ffmpeg", "-nostdin", "-v", "error", "-ss", str(offset), "-t", str(length), "-i", str(audio),
+         "-f", "s16le", "-ac", "1", "-ar", str(SAMPLE_RATE), "-"],
+        capture_output=True,
+        check=True,
+    )
+    return np.frombuffer(result.stdout, dtype=np.int16).astype(np.float32) / 32768.0
 
 
 def lrc_timestamp(ms: int) -> str:
@@ -75,24 +84,28 @@ def transcribe(audio: Path, out_dir: Path = DEFAULT_OUT, force: bool = False) ->
         return None
 
     started = time.monotonic()
-    segments, info = load_model().transcribe(
-        str(audio),
-        language="en",
-        initial_prompt=book_prompt(audio),
-        vad_filter=True,
-    )
+    duration = audio_duration(audio)
     entries = []
-    for segment in segments:
-        text = segment.text.strip()
-        if not text:
-            continue
-        entries.append(
-            {
-                "timestamp_start": int(round(segment.start * 1000)),
-                "timestamp_end": int(round(segment.end * 1000)),
-                "text": text,
-            }
-        )
+    # faster-whisper decodes a whole file into RAM (about 6 bytes per sample), which runs
+    # a 40-hour book out of memory, so feed it fixed-length chunks decoded by ffmpeg.
+    for offset in range(0, int(duration) + 1, CHUNK_SECONDS):
+        samples = decode_chunk(audio, offset, CHUNK_SECONDS)
+        if samples.size == 0:
+            break
+        # No initial_prompt or hotwords: both fixed name spellings but made Whisper merge
+        # sentences into 15-30 s segments, which is worse for following along.
+        segments, _ = load_model().transcribe(samples, language="en", vad_filter=True)
+        for segment in segments:
+            text = segment.text.strip()
+            if not text:
+                continue
+            entries.append(
+                {
+                    "timestamp_start": int(round((offset + segment.start) * 1000)),
+                    "timestamp_end": int(round((offset + segment.end) * 1000)),
+                    "text": text,
+                }
+            )
     wall = time.monotonic() - started
 
     json_path, lrc_path = output_paths(audio, out_dir)
@@ -103,9 +116,9 @@ def transcribe(audio: Path, out_dir: Path = DEFAULT_OUT, force: bool = False) ->
     )
     return {
         "file": str(audio),
-        "duration_s": info.duration,
+        "duration_s": duration,
         "wall_s": wall,
-        "speed": info.duration / wall if wall else 0.0,
+        "speed": duration / wall if wall else 0.0,
         "segments": len(entries),
     }
 
