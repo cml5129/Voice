@@ -83,6 +83,8 @@ private class Timeline(
         }
         // syncing and going to a place from here make small seeks too, so they'd only be noise
         event.type == Type.Seek && !event.isUndoableJump() -> Unit
+        // every answered listening check would be a row, while the rewind after a missed one tells the story
+        event.type == Type.StillListening -> Unit
         back != null -> {
           val last = rows.lastOrNull()
           if (last is HistorySkips && last.back == back && gap < SKIP_RUN) {
@@ -95,7 +97,7 @@ private class Timeline(
           val playingBefore = playingBefore(event)
           playing = when (event.type) {
             Type.Play, Type.SleepTimerExtended -> true
-            Type.Pause, Type.SleepTimerEnded -> false
+            Type.Pause, Type.SleepTimerEnded, Type.FellAsleep -> false
             else -> playing
           }
           val place = place(event.chapterId, event.time)

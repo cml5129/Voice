@@ -218,6 +218,7 @@
     <string name="history.empty.title">Na razie nic tu nie ma</string>
     <string name="history.event.bookmark_jump">Przejście do zakładki</string>
     <string name="history.event.chapter_change">Zmiana rozdziału</string>
+    <string name="history.event.fell_asleep">Zaśnięto</string>
     <string name="history.event.interrupted">Przerwa na %s</string>
     <string name="history.event.jump_back">Powrót do poprzedniego miejsca</string>
     <string name="history.event.moved">Przesunięcie</string>
@@ -238,6 +239,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Wyłącznik czasowy zadziałał</string>
     <string name="history.event.sleep_timer_on">Wyłącznik czasowy włączony</string>
+    <string name="history.event.still_listening">Nadal słuchasz</string>
     <string name="history.location.chapter">Rozdz. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Przerwane</string>
     <string name="history.source.bluetooth">Urządzenie Bluetooth</string>
@@ -403,6 +405,8 @@
     <string name="settings.appearance.theme.title">Motyw</string>
     <string name="settings.appearance.title">Wygląd</string>
     <string name="settings.auto_sleep_timer.end.label">Ustaw godzinę zakończenia</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Co 10 minut książka cichnie. Potrząśnij telefonem w ciągu minuty, by słuchać dalej. W przeciwnym razie wróci do miejsca ostatniego potrząśnięcia i się zatrzyma.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Sprawdzaj, czy nadal słucham</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Zmiana głośności, przewinięcie lub ponowne odtworzenie zaczyna odliczanie od nowa</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Uruchom ponownie, gdy nie śpię</string>
     <string name="settings.auto_sleep_timer.start.label">Ustaw godzinę rozpoczęcia</string>

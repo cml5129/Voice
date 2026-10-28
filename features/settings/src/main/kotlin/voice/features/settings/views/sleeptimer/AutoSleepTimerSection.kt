@@ -65,6 +65,7 @@ internal fun AutoSleepTimerSection(
   onEnabledChange: (Boolean) -> Unit,
   onStartChange: (LocalTime) -> Unit,
   onEndChange: (LocalTime) -> Unit,
+  onListeningCheckChange: (Boolean) -> Unit,
   onRestartWhenAwakeChange: (Boolean) -> Unit,
   modifier: Modifier = Modifier,
 ) {
@@ -148,7 +149,26 @@ internal fun AutoSleepTimerSection(
             )
           }
           AnimatedVisibility(visible = night) {
-            ShakeHint()
+            Column {
+              ShakeHint()
+              Spacer(Modifier.height(8.dp))
+              IslandSwitchRow(
+                title = stringResource(StringsR.string.settings_auto_sleep_timer_listening_check_title),
+                checked = viewState.listeningCheck,
+                onCheckedChange = onListeningCheckChange,
+                leading = {
+                  ShapedIcon(
+                    icon = VoiceIcons.Headphones,
+                    shape = MaterialShapes.Circle,
+                    containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                    contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
+                  )
+                },
+                summary = {
+                  Text(stringResource(StringsR.string.settings_auto_sleep_timer_listening_check_summary))
+                },
+              )
+            }
           }
           Spacer(Modifier.height(8.dp))
           // applies to every timer, not only the automatic one
@@ -268,6 +288,7 @@ private fun AutoSleepTimerSectionPreview() {
       onEnabledChange = {},
       onStartChange = {},
       onEndChange = {},
+      onListeningCheckChange = {},
       onRestartWhenAwakeChange = {},
     )
   }

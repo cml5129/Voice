@@ -150,6 +150,7 @@ class SettingsViewModel(
         enabled = autoSleepTimer.autoSleepTimerEnabled,
         startTime = autoSleepTimer.autoSleepStartTime,
         endTime = autoSleepTimer.autoSleepEndTime,
+        listeningCheck = autoSleepTimer.listeningCheckEnabled,
         restartWhenAwake = autoSleepTimer.restartWhenAwake,
       ),
       analyticsEnabled = analyticsEnabled,
@@ -312,6 +313,14 @@ class SettingsViewModel(
     mainScope.launch {
       sleepTimerPreferenceStore.updateData { currentPrefs ->
         currentPrefs.copy(autoSleepEndTime = time)
+      }
+    }
+  }
+
+  override fun setListeningCheck(checked: Boolean) {
+    mainScope.launch {
+      sleepTimerPreferenceStore.updateData { currentPrefs ->
+        currentPrefs.copy(listeningCheckEnabled = checked)
       }
     }
   }

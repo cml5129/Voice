@@ -207,6 +207,7 @@
     <string name="history.empty.title">Ancora niente qui</string>
     <string name="history.event.bookmark_jump">Salto a un segnalibro</string>
     <string name="history.event.chapter_change">Cambio capitolo</string>
+    <string name="history.event.fell_asleep">Colpo di sonno</string>
     <string name="history.event.interrupted">Interruzione di %s</string>
     <string name="history.event.jump_back">Ritorno alla posizione precedente</string>
     <string name="history.event.moved">Posizione spostata</string>
@@ -225,6 +226,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Timer sospensione scaduto</string>
     <string name="history.event.sleep_timer_on">Timer sospensione attivato</string>
+    <string name="history.event.still_listening">Ancora in ascolto</string>
     <string name="history.location.chapter">Cap. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Interruzione</string>
     <string name="history.source.bluetooth">Dispositivo Bluetooth</string>
@@ -385,6 +387,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Aspetto</string>
     <string name="settings.auto_sleep_timer.end.label">Ora di fine</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Ogni 10 minuti il libro abbassa il volume. Scuoti il telefono entro un minuto per continuare ad ascoltare. Altrimenti torna dove l\'hai scosso l\'ultima volta e si mette in pausa.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Controlla che stia ancora ascoltando</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Cambiare il volume, saltare o premere di nuovo play fa ripartire il conto alla rovescia</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Riavvia se non dormo</string>
     <string name="settings.auto_sleep_timer.start.label">Ora di inizio</string>

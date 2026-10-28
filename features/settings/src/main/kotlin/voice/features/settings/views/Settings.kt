@@ -205,6 +205,7 @@ private fun LazyListScope.sections(
       onEnabledChange = listener::setAutoSleepTimer,
       onStartChange = listener::setAutoSleepTimerStart,
       onEndChange = listener::setAutoSleepTimerEnd,
+      onListeningCheckChange = listener::setListeningCheck,
       onRestartWhenAwakeChange = listener::setRestartSleepTimerWhenAwake,
     )
   }

@@ -196,6 +196,7 @@
     <string name="history.empty.title">Galu nudda inoghe</string>
     <string name="history.event.bookmark_jump">Brincu a unu sinnalibru</string>
     <string name="history.event.chapter_change">Capìtulu cambiadu</string>
+    <string name="history.event.fell_asleep">Dormende</string>
     <string name="history.event.interrupted">Interrùmpidu pro %s</string>
     <string name="history.event.jump_back">Brincu in segus</string>
     <string name="history.event.moved">Positzione cambiada</string>
@@ -212,6 +213,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Temporizadore de suspensione acabbadu</string>
     <string name="history.event.sleep_timer_on">Temporizadore de suspensione ativadu</string>
+    <string name="history.event.still_listening">Ses ancora ascurtende</string>
     <string name="history.location.chapter">Cap. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Interrutzione</string>
     <string name="history.source.bluetooth">Dispositivu Bluetooth</string>
@@ -367,6 +369,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Aspetu</string>
     <string name="settings.auto_sleep_timer.end.label">Ora de fine</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Cada 10 minutos su libru si faghet prus pianu. Iscùtzina su telèfonu in intro de unu minutu pro sighire a ascurtare. Si nono, torrat a ue l\'as iscutzinadu s\'ùrtima bia e si pàusat.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Controlla chi so ancora ascurtende</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Cambiare su volume, brincare o torrare a pònnere play faghet incumintzare torra su contu a s\'imbesse</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Torra a aviare si no so dormende</string>
     <string name="settings.auto_sleep_timer.start.label">Ora de cumintzu</string>

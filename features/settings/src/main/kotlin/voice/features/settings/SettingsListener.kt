@@ -24,6 +24,7 @@ interface SettingsListener {
   fun setAutoSleepTimer(checked: Boolean)
   fun setAutoSleepTimerStart(time: LocalTime)
   fun setAutoSleepTimerEnd(time: LocalTime)
+  fun setListeningCheck(checked: Boolean)
   fun setRestartSleepTimerWhenAwake(checked: Boolean)
   fun toggleAnalytics()
   fun openFolderPicker()
@@ -53,6 +54,7 @@ interface SettingsListener {
       override fun setAutoSleepTimer(checked: Boolean) {}
       override fun setAutoSleepTimerStart(time: LocalTime) {}
       override fun setAutoSleepTimerEnd(time: LocalTime) {}
+      override fun setListeningCheck(checked: Boolean) {}
       override fun setRestartSleepTimerWhenAwake(checked: Boolean) {}
       override fun toggleAnalytics() {}
       override fun openFolderPicker() {}

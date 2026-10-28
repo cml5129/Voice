@@ -63,6 +63,7 @@ data class SettingsViewState(
     val enabled: Boolean,
     val startTime: LocalTime,
     val endTime: LocalTime,
+    val listeningCheck: Boolean,
     val restartWhenAwake: Boolean,
   ) {
     companion object {
@@ -71,6 +72,7 @@ data class SettingsViewState(
           enabled = false,
           startTime = LocalTime.of(22, 0),
           endTime = LocalTime.of(6, 0),
+          listeningCheck = false,
           restartWhenAwake = true,
         )
       }

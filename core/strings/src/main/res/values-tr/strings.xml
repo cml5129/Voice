@@ -196,6 +196,7 @@
     <string name="history.empty.title">Henüz burada bir şey yok</string>
     <string name="history.event.bookmark_jump">Yer imine gidildi</string>
     <string name="history.event.chapter_change">Bölüm değiştirildi</string>
+    <string name="history.event.fell_asleep">Uyuyakaldınız</string>
     <string name="history.event.interrupted">%s boyunca kesintiye uğradı</string>
     <string name="history.event.jump_back">Önceki yere dönüldü</string>
     <string name="history.event.moved">Konum değiştirildi</string>
@@ -212,6 +213,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Uyku zamanlayıcısı sona erdi</string>
     <string name="history.event.sleep_timer_on">Uyku zamanlayıcısı açıldı</string>
+    <string name="history.event.still_listening">Hâlâ dinliyorsunuz</string>
     <string name="history.location.chapter">Böl. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Kesintiye uğradı</string>
     <string name="history.source.bluetooth">Bluetooth cihazı</string>
@@ -367,6 +369,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Görünüm</string>
     <string name="settings.auto_sleep_timer.end.label">Bitiş zamanı</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Kitabın sesi her 10 dakikada bir azalır. Dinlemeye devam etmek için bir dakika içinde telefonunuzu sallayın. Aksi hâlde en son salladığınız yere döner ve duraklar.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Hâlâ dinlediğimi kontrol et</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Sesi değiştirmek, atlamak veya yeniden oynatmak geri sayımı baştan başlatır</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Uyanıkken yeniden başlat</string>
     <string name="settings.auto_sleep_timer.start.label">Başlama zamanı</string>

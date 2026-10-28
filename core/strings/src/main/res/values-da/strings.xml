@@ -196,6 +196,7 @@
     <string name="history.empty.title">Intet her endnu</string>
     <string name="history.event.bookmark_jump">Gik til et bogmærke</string>
     <string name="history.event.chapter_change">Skiftede kapitel</string>
+    <string name="history.event.fell_asleep">Faldt i søvn</string>
     <string name="history.event.interrupted">Afbrudt i %s</string>
     <string name="history.event.jump_back">Sprang tilbage</string>
     <string name="history.event.moved">Spolede</string>
@@ -212,6 +213,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Sleep-timeren udløb</string>
     <string name="history.event.sleep_timer_on">Startede sleep-timeren</string>
+    <string name="history.event.still_listening">Lytter stadig</string>
     <string name="history.location.chapter">Kap. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Afbrudt</string>
     <string name="history.source.bluetooth">Bluetooth-enhed</string>
@@ -367,6 +369,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Udseende</string>
     <string name="settings.auto_sleep_timer.end.label">Vælg sluttid</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Hvert 10. minut bliver bogen lavere. Ryst telefonen inden for et minut for at lytte videre. Ellers går den tilbage til der, hvor du sidst rystede, og sætter på pause.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Tjek, at jeg stadig lytter</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Når du skruer op eller ned, springer eller trykker på afspil igen, starter nedtællingen forfra</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Genstart, når jeg er vågen</string>
     <string name="settings.auto_sleep_timer.start.label">Vælg starttid</string>

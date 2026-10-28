@@ -185,6 +185,7 @@
     <string name="history.empty.title">这里还没有内容</string>
     <string name="history.event.bookmark_jump">跳转到书签</string>
     <string name="history.event.chapter_change">切换章节</string>
+    <string name="history.event.fell_asleep">已睡着</string>
     <string name="history.event.interrupted">中断 %s</string>
     <string name="history.event.jump_back">跳回原处</string>
     <string name="history.event.moved">调整进度</string>
@@ -199,6 +200,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">睡眠定时器结束</string>
     <string name="history.event.sleep_timer_on">开启睡眠定时器</string>
+    <string name="history.event.still_listening">仍在收听</string>
     <string name="history.location.chapter">第 %1$d 章 · %2$s</string>
     <string name="history.source.audio_focus">被中断</string>
     <string name="history.source.bluetooth">蓝牙设备</string>
@@ -349,6 +351,8 @@
     <string name="settings.appearance.color_scheme.sunset">日落</string>
     <string name="settings.appearance.title">外观</string>
     <string name="settings.auto_sleep_timer.end.label">设置结束时间</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">每隔 10 分钟，书的音量会降低。请在 1 分钟内摇一摇手机以继续收听，否则会回到您上次摇动的位置并暂停。</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">确认我是否还在听</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">调节音量、快进快退或重新播放时，倒计时会重新开始</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">醒着时重新计时</string>
     <string name="settings.auto_sleep_timer.start.label">设置开始时间</string>

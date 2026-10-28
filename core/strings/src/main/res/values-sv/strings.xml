@@ -196,6 +196,7 @@
     <string name="history.empty.title">Inget här än</string>
     <string name="history.event.bookmark_jump">Gick till ett bokmärke</string>
     <string name="history.event.chapter_change">Bytte kapitel</string>
+    <string name="history.event.fell_asleep">Somnade</string>
     <string name="history.event.interrupted">Avbröts i %s</string>
     <string name="history.event.jump_back">Hoppade tillbaka</string>
     <string name="history.event.moved">Flyttade</string>
@@ -212,6 +213,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Insomningstimern gick ut</string>
     <string name="history.event.sleep_timer_on">Startade insomningstimern</string>
+    <string name="history.event.still_listening">Lyssnar fortfarande</string>
     <string name="history.location.chapter">Kap. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Avbrott</string>
     <string name="history.source.bluetooth">Bluetooth-enhet</string>
@@ -367,6 +369,8 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Utseende</string>
     <string name="settings.auto_sleep_timer.end.label">Ange sluttid</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Var 10:e minut blir boken tystare. Skaka telefonen inom en minut för att lyssna vidare. Annars går den tillbaka dit du senast skakade och pausar.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Kolla att jag fortfarande lyssnar</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Om du ändrar volymen, hoppar eller trycker på spela igen börjar nedräkningen om</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Starta om när jag är vaken</string>
     <string name="settings.auto_sleep_timer.start.label">Ange starttid</string>

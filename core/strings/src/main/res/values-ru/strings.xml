@@ -218,6 +218,7 @@
     <string name="history.empty.title">Здесь пока пусто</string>
     <string name="history.event.bookmark_jump">Переход к закладке</string>
     <string name="history.event.chapter_change">Смена главы</string>
+    <string name="history.event.fell_asleep">Уснули</string>
     <string name="history.event.interrupted">Прервано на %s</string>
     <string name="history.event.jump_back">Возврат на прежнее место</string>
     <string name="history.event.moved">Сдвиг позиции</string>
@@ -238,6 +239,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Таймер сна сработал</string>
     <string name="history.event.sleep_timer_on">Таймер сна включён</string>
+    <string name="history.event.still_listening">Всё ещё слушаете</string>
     <string name="history.location.chapter">Гл. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Прервано</string>
     <string name="history.source.bluetooth">Bluetooth-устройство</string>
@@ -403,6 +405,8 @@
     <string name="settings.appearance.theme.title">Тема</string>
     <string name="settings.appearance.title">Оформление</string>
     <string name="settings.auto_sleep_timer.end.label">Время конца</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Каждые 10 минут книга становится тише. Встряхните телефон в течение минуты, чтобы слушать дальше. Иначе она вернётся туда, где вы встряхнули телефон в последний раз, и встанет на паузу.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Проверять, слушаю ли я</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Изменение громкости, перемотка или повторное воспроизведение запускают отсчёт заново</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Перезапускать, пока я не сплю</string>
     <string name="settings.auto_sleep_timer.start.label">Время начала</string>

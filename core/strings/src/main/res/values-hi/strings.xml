@@ -196,6 +196,7 @@
     <string name="history.empty.title">अभी यहाँ कुछ नहीं है</string>
     <string name="history.event.bookmark_jump">बुकमार्क पर जंप</string>
     <string name="history.event.chapter_change">अध्याय बदला</string>
+    <string name="history.event.fell_asleep">नींद आ गई</string>
     <string name="history.event.interrupted">%s की रुकावट</string>
     <string name="history.event.jump_back">पिछली जगह पर वापसी</string>
     <string name="history.event.moved">स्थिति बदली</string>
@@ -212,6 +213,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">स्लीप-टाइमर खत्म हुआ</string>
     <string name="history.event.sleep_timer_on">स्लीप-टाइमर चालू हुआ</string>
+    <string name="history.event.still_listening">अभी भी सुन रहे हैं</string>
     <string name="history.location.chapter">अध्याय %1$d · %2$s</string>
     <string name="history.source.audio_focus">रुकावट</string>
     <string name="history.source.bluetooth">ब्लूटूथ डिवाइस</string>
@@ -367,6 +369,8 @@
     <string name="settings.appearance.theme.title">थीम</string>
     <string name="settings.appearance.title">दिखावट</string>
     <string name="settings.auto_sleep_timer.end.label">खत्म होने का समय सेट करें</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">हर 10 मिनट में पुस्तक की आवाज़ धीमी होती है। सुनना जारी रखने के लिए एक मिनट के भीतर फ़ोन हिलाएँ। नहीं तो पुस्तक वहीं लौट जाती है जहाँ आपने पिछली बार फ़ोन हिलाया था, और रुक जाती है।</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">जाँचें कि सुनना जारी है</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">आवाज़ बदलने, आगे-पीछे करने या फिर से चलाने पर उलटी गिनती दोबारा शुरू होती है</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">जागते रहने पर फिर से शुरू करें</string>
     <string name="settings.auto_sleep_timer.start.label">शुरू होने का समय सेट करें</string>

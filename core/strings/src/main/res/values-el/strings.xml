@@ -196,6 +196,7 @@
     <string name="history.empty.title">Τίποτα εδώ ακόμη</string>
     <string name="history.event.bookmark_jump">Μετάβαση σε σελιδοδείκτη</string>
     <string name="history.event.chapter_change">Αλλαγή κεφαλαίου</string>
+    <string name="history.event.fell_asleep">Αποκοίμηση</string>
     <string name="history.event.interrupted">Διακοπή για %s</string>
     <string name="history.event.jump_back">Επιστροφή στην προηγούμενη θέση</string>
     <string name="history.event.moved">Αλλαγή θέσης</string>
@@ -212,6 +213,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Λήξη χρονοδιακόπτη ύπνου</string>
     <string name="history.event.sleep_timer_on">Ενεργοποίηση χρονοδιακόπτη ύπνου</string>
+    <string name="history.event.still_listening">Η ακρόαση συνεχίζεται</string>
     <string name="history.location.chapter">Κεφ. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Διακοπή</string>
     <string name="history.source.bluetooth">Συσκευή Bluetooth</string>
@@ -367,6 +369,8 @@
     <string name="settings.appearance.theme.title">Θέμα</string>
     <string name="settings.appearance.title">Εμφάνιση</string>
     <string name="settings.auto_sleep_timer.end.label">Ορισμός ώρας λήξης</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Κάθε 10 λεπτά το βιβλίο χαμηλώνει. Κουνήστε το τηλέφωνό σας μέσα σε ένα λεπτό για να συνεχίσετε. Αλλιώς επιστρέφει εκεί που το κουνήσατε τελευταία φορά και κάνει παύση.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Έλεγχος ότι ακούω ακόμα</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Η αλλαγή έντασης, η παράλειψη ή το πάτημα της αναπαραγωγής ξανά ξεκινά την αντίστροφη μέτρηση από την αρχή</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Επανεκκίνηση όσο δεν κοιμάμαι</string>
     <string name="settings.auto_sleep_timer.start.label">Ορισμός ώρας έναρξης</string>

@@ -196,6 +196,7 @@
     <string name="history.empty.title">Ingenting her ennå</string>
     <string name="history.event.bookmark_jump">Gikk til et bokmerke</string>
     <string name="history.event.chapter_change">Byttet kapittel</string>
+    <string name="history.event.fell_asleep">Sovnet</string>
     <string name="history.event.interrupted">Avbrutt i %s</string>
     <string name="history.event.jump_back">Hoppet tilbake</string>
     <string name="history.event.moved">Flyttet</string>
@@ -212,6 +213,7 @@
     </plurals>
     <string name="history.event.sleep_timer_ended">Innsovningstidsuret gikk ut</string>
     <string name="history.event.sleep_timer_on">Startet innsovningstidsuret</string>
+    <string name="history.event.still_listening">Lytter fortsatt</string>
     <string name="history.location.chapter">Kap. %1$d · %2$s</string>
     <string name="history.source.audio_focus">Avbrutt</string>
     <string name="history.source.bluetooth">Bluetooth-enhet</string>
@@ -367,6 +369,8 @@
     <string name="settings.appearance.theme.title">Drakt</string>
     <string name="settings.appearance.title">Utseende</string>
     <string name="settings.auto_sleep_timer.end.label">Sett sluttid</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Hvert 10. minutt blir boken lavere. Rist telefonen innen ett minutt for å lytte videre. Ellers går den tilbake dit du sist ristet, og setter på pause.</string>
+    <string name="settings.auto_sleep_timer.listening_check.title">Sjekk at jeg fortsatt lytter</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Når du endrer volumet, hopper eller trykker på spill av igjen, starter nedtellingen på nytt</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Start på nytt når jeg er våken</string>
     <string name="settings.auto_sleep_timer.start.label">Sett starttid</string>
