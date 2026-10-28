@@ -18,7 +18,7 @@ exist and are newer than the audio.
 ```bash
 apt-get install -y ffmpeg python3-venv python3-pip
 python3 -m venv /opt/voice-transcriber/venv
-/opt/voice-transcriber/venv/bin/pip install faster-whisper nvidia-cublas-cu12 'nvidia-cudnn-cu12==9.*'
+/opt/voice-transcriber/venv/bin/pip install -r server/transcriber/requirements.txt
 
 # Install the code (re-run after pulling changes)
 mkdir -p /opt/voice-transcriber/app /mnt/f/Transcripts
