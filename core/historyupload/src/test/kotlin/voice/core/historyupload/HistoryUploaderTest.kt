@@ -72,9 +72,9 @@ class HistoryUploaderTest {
   @Test
   fun `the device keeps its id`() = runTest {
     history.add(event(ListeningEvent.Type.Play))
-    uploader.upload()
+    assertTrue(uploader.upload())
     history.add(event(ListeningEvent.Type.Pause))
-    uploader.upload()
+    assertTrue(uploader.upload())
 
     assertEquals(2, api.batches.size)
     assertEquals(1, api.batches.map { it.device }.toSet().size)
@@ -107,10 +107,10 @@ class HistoryUploaderTest {
   @Test
   fun `a new server gets the whole history`() = runTest {
     history.add(event(ListeningEvent.Type.Play))
-    uploader.upload()
+    assertTrue(uploader.upload())
 
     store.updateData { it.withServer("https://other.example.com/", "other") }
-    uploader.upload()
+    assertTrue(uploader.upload())
 
     assertEquals(listOf("https://example.com", "https://other.example.com"), api.servers)
     assertEquals(api.batches[0].events, api.batches[1].events)
