@@ -29,6 +29,10 @@ interface SettingsListener {
   fun toggleAnalytics()
   fun openFolderPicker()
   fun openAudiobookshelf()
+  fun setHistoryUpload(
+    serverUrl: String,
+    key: String,
+  )
   fun onAppVersionClick()
 
   fun openDeveloperMenu()
@@ -59,6 +63,10 @@ interface SettingsListener {
       override fun toggleAnalytics() {}
       override fun openFolderPicker() {}
       override fun openAudiobookshelf() {}
+      override fun setHistoryUpload(
+        serverUrl: String,
+        key: String,
+      ) {}
       override fun onAppVersionClick() {}
       override fun openDeveloperMenu() {}
     }

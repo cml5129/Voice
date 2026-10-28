@@ -23,6 +23,7 @@ import voice.core.data.supporter.SupporterStatus
 import voice.core.data.supporter.SupporterStatusStore
 import voice.core.documentfile.nameWithoutExtension
 import voice.core.featureflag.FeatureFlag
+import voice.core.historyupload.HistoryUploadStore
 import voice.core.kioskmode.KioskModeDemoData
 import voice.core.kioskmode.KioskModeFeatureFlag
 import voice.core.playback.AutoRewindAmountStore
@@ -73,6 +74,7 @@ class SettingsViewModel(
   private val dispatcherProvider: DispatcherProvider,
   private val serverLibrary: ServerLibrary,
   private val audiobookshelfFeatureFlag: AudiobookshelfFeatureFlag,
+  private val historyUploadStore: HistoryUploadStore,
 ) : SettingsListener {
 
   private val mainScope = MainScope(dispatcherProvider)
@@ -107,6 +109,7 @@ class SettingsViewModel(
     }.collectAsState(initial = null).value
     val audiobookshelfEnabled = remember { audiobookshelfFeatureFlag.flow.map { it.value } }
       .collectAsState(initial = null).value
+    val historyUpload = remember { historyUploadStore.data }.collectAsState(initial = null).value
     val dynamicColorAvailable = remember {
       dynamicColorAvailability.isSupported()
     }
@@ -127,7 +130,8 @@ class SettingsViewModel(
       showSupportDevelopment == null ||
       supporterStatus == null ||
       audiobookshelfServer == null ||
-      audiobookshelfEnabled == null
+      audiobookshelfEnabled == null ||
+      historyUpload == null
     ) {
       return null
     }
@@ -166,6 +170,12 @@ class SettingsViewModel(
       audiobookshelfServer = audiobookshelfServer.name,
       // a connected server stays reachable, so it can be signed out of
       showAudiobookshelf = audiobookshelfEnabled || audiobookshelfServer.name != null,
+      historyUpload = SettingsViewState.HistoryUploadViewState(
+        serverUrl = historyUpload.serverUrl,
+        key = historyUpload.key,
+        lastUpload = historyUpload.lastUploadAtMillis?.let(Instant::ofEpochMilli),
+        error = historyUpload.lastError,
+      ),
     )
   }
 
@@ -290,6 +300,15 @@ class SettingsViewModel(
           Destination.AudiobookshelfLogin(Origin.Default)
         },
       )
+    }
+  }
+
+  override fun setHistoryUpload(
+    serverUrl: String,
+    key: String,
+  ) {
+    mainScope.launch {
+      historyUploadStore.updateData { it.withServer(serverUrl = serverUrl, key = key) }
     }
   }
 

@@ -19,6 +19,7 @@ dependencies {
   implementation(projects.core.analytics.api)
   implementation(projects.core.documentfile)
   implementation(projects.core.audiobookshelf)
+  implementation(projects.core.historyupload)
 
   implementation(libs.androidxCore)
 }

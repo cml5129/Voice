@@ -142,4 +142,22 @@ class ListeningHistoryRepoImplTest {
       actual = repo.events(newBook).first().map { it.type },
     )
   }
+
+  @Test
+  fun `events after an id come from every book, oldest first`() = runTest {
+    repo.add(event(ListeningEvent.Type.Play, ago(3.minutes)))
+    repo.add(event(ListeningEvent.Type.Pause, ago(2.minutes), bookId = BookId("other")))
+    repo.add(event(ListeningEvent.Type.Seek, ago(1.minutes)))
+    val all = repo.eventsAfter(id = 0, limit = 10)
+
+    assertEquals(
+      expected = listOf(ListeningEvent.Type.Play, ListeningEvent.Type.Pause, ListeningEvent.Type.Seek),
+      actual = all.map { it.type },
+    )
+    assertEquals(
+      expected = listOf(ListeningEvent.Type.Pause),
+      actual = repo.eventsAfter(id = all[0].id, limit = 1).map { it.type },
+    )
+    assertEquals(expected = all.last().id, actual = repo.newestId().first())
+  }
 }

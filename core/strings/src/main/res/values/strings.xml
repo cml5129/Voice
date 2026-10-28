@@ -654,6 +654,22 @@
     <string name="settings.auto_sleep_timer.summary">Start a sleep timer automatically when playback begins between %1$s and %2$s</string>
     <!-- Settings title for automatically starting a sleep timer. -->
     <string name="settings.auto_sleep_timer.title">Automatic Sleep Timer</string>
+    <!-- Explanation in the dialog for uploading the listening history to the listener's own server. -->
+    <string name="settings.history_upload.explanation">Everything the history shows goes to your server, so it is kept after the phone drops the oldest. The key only lets Voice add history, not read it.</string>
+    <!-- Settings summary when the last upload of the listening history failed. The argument is the reason. -->
+    <string name="settings.history_upload.failed">Not uploading: %1$s</string>
+    <!-- Label of the field for the key that the listener's server accepts for history uploads. -->
+    <string name="settings.history_upload.key">Key</string>
+    <!-- Settings summary with the time of the last successful upload of the listening history. -->
+    <string name="settings.history_upload.last_upload">Last upload %1$s</string>
+    <!-- Settings summary when the listening history isn't uploaded anywhere. -->
+    <string name="settings.history_upload.off">Keep the whole history on your own server</string>
+    <!-- Label of the field for the address of the listener's server, for example https://example.com. -->
+    <string name="settings.history_upload.server">Server address</string>
+    <!-- Settings title for uploading the listening history to the listener's own server. -->
+    <string name="settings.history_upload.title">Upload listening history</string>
+    <!-- Settings summary after the listening history upload was set up, before the first upload went through. -->
+    <string name="settings.history_upload.waiting">Waiting for the first upload</string>
     <!-- Summary of the Audiobookshelf row in the library settings when no server is connected. -->
     <string name="settings.library.audiobookshelf.summary">Stream the books on your own server</string>
     <!-- Summary text for the audiobook folders settings row. Also the subtitle of the audiobook folders screen. -->

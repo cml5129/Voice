@@ -13,6 +13,19 @@ public interface ListeningHistoryRepo {
   public fun events(bookId: BookId): Flow<List<ListeningEvent>>
 
   /**
+   * The events of all books that were stored after the one with [id], oldest first.
+   */
+  public suspend fun eventsAfter(
+    id: Long,
+    limit: Int,
+  ): List<ListeningEvent>
+
+  /**
+   * The id of the newest event of any book, which changes whenever one is stored.
+   */
+  public fun newestId(): Flow<Long?>
+
+  /**
    * Stores the event. Only the newest events of each book are kept.
    */
   public suspend fun add(event: ListeningEvent)

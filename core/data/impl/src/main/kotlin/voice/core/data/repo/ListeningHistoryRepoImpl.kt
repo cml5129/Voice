@@ -19,6 +19,13 @@ internal constructor(
 
   override fun events(bookId: BookId): Flow<List<ListeningEvent>> = dao.events(bookId)
 
+  override suspend fun eventsAfter(
+    id: Long,
+    limit: Int,
+  ): List<ListeningEvent> = dao.eventsAfter(afterId = id, limit = limit)
+
+  override fun newestId(): Flow<Long?> = dao.newestId()
+
   override suspend fun add(event: ListeningEvent) {
     dao.insert(event)
     dao.keepNewest(event.bookId, MAX_EVENTS_PER_BOOK)

@@ -163,6 +163,7 @@ dependencies {
   implementation(projects.features.widget)
   implementation(projects.core.audiobookshelf)
   implementation(projects.core.foldersync)
+  implementation(projects.core.historyupload)
   implementation(projects.features.audiobookshelf)
 
   implementation(libs.appCompat)

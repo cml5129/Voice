@@ -17,6 +17,15 @@ public interface ListeningEventDao {
   @Query("SELECT * FROM listening_event WHERE bookId = :bookId ORDER BY atMillis DESC, id DESC")
   public fun events(bookId: BookId): Flow<List<ListeningEvent>>
 
+  @Query("SELECT * FROM listening_event WHERE id > :afterId ORDER BY id LIMIT :limit")
+  public suspend fun eventsAfter(
+    afterId: Long,
+    limit: Int,
+  ): List<ListeningEvent>
+
+  @Query("SELECT MAX(id) FROM listening_event")
+  public fun newestId(): Flow<Long?>
+
   /**
    * The nights from the sleep timer's bookmarks are older than anything recorded and no more come,
    * so they don't count and stay.
