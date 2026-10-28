@@ -17,6 +17,20 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: ./.github/actions/build_setup
+      # Every runner makes a fresh debug key, and Android won't update an app signed with another key, so each APK
+      # would need an uninstall that wipes the app's data. Putting one saved key where the debug build looks for it
+      # lets each new APK install over the last one.
+      - name: Install saved debug key
+        env:
+          DEBUG_KEYSTORE: ${{ secrets.DEBUG_KEYSTORE }}
+        run: |
+          if [[ -z "$DEBUG_KEYSTORE" ]]; then
+            echo "::warning::The DEBUG_KEYSTORE secret isn't set, so this APK is signed with a one-off key and won't install over an earlier one."
+            exit 0
+          fi
+          mkdir -p ~/.android
+          echo "$DEBUG_KEYSTORE" | base64 --decode > ~/.android/debug.keystore
+          keytool -list -keystore ~/.android/debug.keystore -storepass android | grep SHA-256
       - name: Build
         run: ./gradlew :app:assembleFreeDebug
       - uses: actions/upload-artifact@v7
