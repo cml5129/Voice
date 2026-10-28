@@ -358,6 +358,14 @@
     <string name="settings.auto_sleep_timer.start.label">開始時刻を設定</string>
     <string name="settings.auto_sleep_timer.summary">%1$s から %2$s の間に再生が始まった場合、自動的にスリープタイマーを開始します</string>
     <string name="settings.auto_sleep_timer.title">自動スリープタイマー</string>
+    <string name="settings.history_upload.explanation">履歴に表示される内容はすべてあなたのサーバーに送られるため、スマートフォンが古い記録を削除した後も残ります。キーで Voice ができるのは履歴の追加だけで、読み取りはできません。</string>
+    <string name="settings.history_upload.failed">アップロードできません: %1$s</string>
+    <string name="settings.history_upload.key">キー</string>
+    <string name="settings.history_upload.last_upload">最終アップロード %1$s</string>
+    <string name="settings.history_upload.off">すべての履歴を自分のサーバーに保存</string>
+    <string name="settings.history_upload.server">サーバーのアドレス</string>
+    <string name="settings.history_upload.title">再生履歴をアップロード</string>
+    <string name="settings.history_upload.waiting">最初のアップロードを待っています</string>
     <string name="settings.library.audiobookshelf.summary">自分のサーバーの本をストリーミング再生</string>
     <string name="settings.library.folders.summary">オーディオブックをスキャンするフォルダーを管理</string>
     <string name="settings.library.layout.grid">グリッド</string>

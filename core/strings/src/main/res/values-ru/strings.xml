@@ -412,6 +412,14 @@
     <string name="settings.auto_sleep_timer.start.label">Время начала</string>
     <string name="settings.auto_sleep_timer.summary">Запускать таймер сна автоматически, когда воспроизведение начинается между %1$s и %2$s</string>
     <string name="settings.auto_sleep_timer.title">Автоматический таймер сна</string>
+    <string name="settings.history_upload.explanation">Всё, что показывает история, отправляется на ваш сервер и сохраняется даже после того, как телефон удалит самые старые записи. Ключ позволяет Voice только добавлять историю, но не читать её.</string>
+    <string name="settings.history_upload.failed">Не загружается: %1$s</string>
+    <string name="settings.history_upload.key">Ключ</string>
+    <string name="settings.history_upload.last_upload">Последняя загрузка %1$s</string>
+    <string name="settings.history_upload.off">Хранить всю историю на своём сервере</string>
+    <string name="settings.history_upload.server">Адрес сервера</string>
+    <string name="settings.history_upload.title">Загружать историю прослушивания</string>
+    <string name="settings.history_upload.waiting">Ожидание первой загрузки</string>
     <string name="settings.library.audiobookshelf.summary">Слушайте книги прямо со своего сервера</string>
     <string name="settings.library.folders.summary">Управление папками, в которых Voice ищет аудиокниги</string>
     <string name="settings.library.layout.grid">Сетка</string>

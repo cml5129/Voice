@@ -412,6 +412,14 @@
     <string name="settings.auto_sleep_timer.start.label">Nastavit čas startu</string>
     <string name="settings.auto_sleep_timer.summary">Automatické spuštění časovače spánku při zahájení přehrávání mezi %1$s a %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatický časovač spánku</string>
+    <string name="settings.history_upload.explanation">Vše, co historie ukazuje, se odešle na tvůj server, takže zůstane uloženo i poté, co telefon smaže nejstarší záznamy. Klíč umožňuje aplikaci Voice historii jen přidávat, ne číst.</string>
+    <string name="settings.history_upload.failed">Nenahrává se: %1$s</string>
+    <string name="settings.history_upload.key">Klíč</string>
+    <string name="settings.history_upload.last_upload">Poslední nahrání %1$s</string>
+    <string name="settings.history_upload.off">Uchovej celou historii na vlastním serveru</string>
+    <string name="settings.history_upload.server">Adresa serveru</string>
+    <string name="settings.history_upload.title">Nahrávat historii poslechu</string>
+    <string name="settings.history_upload.waiting">Čeká se na první nahrání</string>
     <string name="settings.library.audiobookshelf.summary">Streamujte knihy z vlastního serveru</string>
     <string name="settings.library.folders.summary">Spravovat složky pro prohledávání audioknih</string>
     <string name="settings.library.layout.grid">Mřížka</string>

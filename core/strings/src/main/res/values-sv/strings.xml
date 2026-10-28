@@ -376,6 +376,14 @@
     <string name="settings.auto_sleep_timer.start.label">Ange starttid</string>
     <string name="settings.auto_sleep_timer.summary">Starta en insomningstimer automatiskt när uppspelningen börjar mellan %1$s och %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatisk insomningstimer</string>
+    <string name="settings.history_upload.explanation">Allt som historiken visar skickas till din server, så det sparas efter att telefonen raderat det äldsta. Nyckeln låter bara Voice lägga till historik, inte läsa den.</string>
+    <string name="settings.history_upload.failed">Laddar inte upp: %1$s</string>
+    <string name="settings.history_upload.key">Nyckel</string>
+    <string name="settings.history_upload.last_upload">Senaste uppladdning %1$s</string>
+    <string name="settings.history_upload.off">Spara hela historiken på din egen server</string>
+    <string name="settings.history_upload.server">Serveradress</string>
+    <string name="settings.history_upload.title">Ladda upp lyssningshistorik</string>
+    <string name="settings.history_upload.waiting">Väntar på första uppladdningen</string>
     <string name="settings.library.audiobookshelf.summary">Strömma böckerna från din egen server</string>
     <string name="settings.library.folders.summary">Hantera mappar som genomsöks efter ljudböcker</string>
     <string name="settings.library.layout.grid">Rutnät</string>

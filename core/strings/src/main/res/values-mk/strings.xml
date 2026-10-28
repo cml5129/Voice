@@ -376,6 +376,14 @@
     <string name="settings.auto_sleep_timer.start.label">Внеси време за старт</string>
     <string name="settings.auto_sleep_timer.summary">Тајмерот за спиење се вклучува сам кога ќе почнете да слушате меѓу %1$s и %2$s</string>
     <string name="settings.auto_sleep_timer.title">Автоматски тајмер за спиење</string>
+    <string name="settings.history_upload.explanation">Сè што покажува историјата се испраќа на твојот сервер, па останува зачувано откако телефонот ќе ги избрише најстарите. Клучот му дозволува на Voice само да додава историја, не и да ја чита.</string>
+    <string name="settings.history_upload.failed">Не се прикачува: %1$s</string>
+    <string name="settings.history_upload.key">Клуч</string>
+    <string name="settings.history_upload.last_upload">Последно прикачување %1$s</string>
+    <string name="settings.history_upload.off">Чувај ја целата историја на сопствен сервер</string>
+    <string name="settings.history_upload.server">Адреса на серверот</string>
+    <string name="settings.history_upload.title">Прикачи историја на слушање</string>
+    <string name="settings.history_upload.waiting">Се чека првото прикачување</string>
     <string name="settings.library.audiobookshelf.summary">Слушајте ги книгите директно од вашиот сервер</string>
     <string name="settings.library.folders.summary">Управувајте со фолдерите што се скенираат за аудио книги</string>
     <string name="settings.library.layout.grid">Мрежа</string>

@@ -376,6 +376,14 @@
     <string name="settings.auto_sleep_timer.start.label">Määra algusaeg</string>
     <string name="settings.auto_sleep_timer.summary">Käivita unetaimer automaatselt, kui taasesitus algab %1$s ja %2$s vahel</string>
     <string name="settings.auto_sleep_timer.title">Automaatne unetaimer</string>
+    <string name="settings.history_upload.explanation">Kõik, mida ajalugu näitab, saadetakse sinu serverisse, nii et see säilib ka pärast seda, kui telefon vanimad kirjed kustutab. Võti lubab Voice\'il ajalugu ainult lisada, mitte lugeda.</string>
+    <string name="settings.history_upload.failed">Ei laadita üles: %1$s</string>
+    <string name="settings.history_upload.key">Võti</string>
+    <string name="settings.history_upload.last_upload">Viimane üleslaadimine %1$s</string>
+    <string name="settings.history_upload.off">Hoia kogu ajalugu oma serveris</string>
+    <string name="settings.history_upload.server">Serveri aadress</string>
+    <string name="settings.history_upload.title">Laadi kuulamisajalugu üles</string>
+    <string name="settings.history_upload.waiting">Ootan esimest üleslaadimist</string>
     <string name="settings.library.audiobookshelf.summary">Voogedasta raamatuid oma serverist</string>
     <string name="settings.library.folders.summary">Halda kaustu, kust otsitakse heliraamatuid</string>
     <string name="settings.library.layout.grid">Ruudustik</string>

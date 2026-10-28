@@ -376,6 +376,14 @@
     <string name="settings.auto_sleep_timer.start.label">Kezdési idő beállítása</string>
     <string name="settings.auto_sleep_timer.summary">Automatikusan elindítja az alvásidőzítőt, ha a lejátszás %1$s és %2$s között kezdődik</string>
     <string name="settings.auto_sleep_timer.title">Automatikus alvásidőzítő</string>
+    <string name="settings.history_upload.explanation">Minden, amit az előzmények mutatnak, a szerveredre kerül, így megmarad akkor is, ha a telefon törli a legrégebbieket. A kulcs csak hozzáadást enged a Voice-nak, olvasást nem.</string>
+    <string name="settings.history_upload.failed">Nincs feltöltés: %1$s</string>
+    <string name="settings.history_upload.key">Kulcs</string>
+    <string name="settings.history_upload.last_upload">Utolsó feltöltés %1$s</string>
+    <string name="settings.history_upload.off">Tartsd meg a teljes előzményt a saját szervereden</string>
+    <string name="settings.history_upload.server">Szervercím</string>
+    <string name="settings.history_upload.title">Hallgatási előzmények feltöltése</string>
+    <string name="settings.history_upload.waiting">Várakozás az első feltöltésre</string>
     <string name="settings.library.audiobookshelf.summary">Könyvek streamelése a saját szerveréről</string>
     <string name="settings.library.folders.summary">A hangoskönyvek keresésére használt mappák kezelése</string>
     <string name="settings.library.layout.grid">Rács</string>

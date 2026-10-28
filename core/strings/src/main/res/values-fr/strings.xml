@@ -394,6 +394,14 @@
     <string name="settings.auto_sleep_timer.start.label">Heure de début</string>
     <string name="settings.auto_sleep_timer.summary">Démarrer automatiquement la minuterie de mise en veille lorsque la lecture commence entre %1$s et %2$s</string>
     <string name="settings.auto_sleep_timer.title">Minuterie de mise en veille automatique</string>
+    <string name="settings.history_upload.explanation">Tout ce que montre l\'historique est envoyé à votre serveur, il est donc conservé quand le téléphone supprime le plus ancien. La clé permet seulement à Voice d\'ajouter de l\'historique, pas de le lire.</string>
+    <string name="settings.history_upload.failed">Pas d\'envoi : %1$s</string>
+    <string name="settings.history_upload.key">Clé</string>
+    <string name="settings.history_upload.last_upload">Dernier envoi %1$s</string>
+    <string name="settings.history_upload.off">Garder tout l\'historique sur votre propre serveur</string>
+    <string name="settings.history_upload.server">Adresse du serveur</string>
+    <string name="settings.history_upload.title">Envoyer l\'historique d\'écoute</string>
+    <string name="settings.history_upload.waiting">En attente du premier envoi</string>
     <string name="settings.library.audiobookshelf.summary">Écoutez les livres de votre propre serveur</string>
     <string name="settings.library.folders.summary">Gérer les dossiers analysés pour les livres audio</string>
     <string name="settings.library.layout.grid">Grille</string>

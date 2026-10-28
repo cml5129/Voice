@@ -394,6 +394,14 @@
     <string name="settings.auto_sleep_timer.start.label">Definir horário de início</string>
     <string name="settings.auto_sleep_timer.summary">Ativa o desligamento automático quando a reprodução começar entre %1$s e %2$s</string>
     <string name="settings.auto_sleep_timer.title">Desligamento automático programado</string>
+    <string name="settings.history_upload.explanation">Tudo o que o histórico mostra vai para o seu servidor, então fica guardado depois que o celular apaga o mais antigo. A chave só permite que o Voice adicione histórico, não que o leia.</string>
+    <string name="settings.history_upload.failed">Não está enviando: %1$s</string>
+    <string name="settings.history_upload.key">Chave</string>
+    <string name="settings.history_upload.last_upload">Último envio %1$s</string>
+    <string name="settings.history_upload.off">Guarde todo o histórico no seu próprio servidor</string>
+    <string name="settings.history_upload.server">Endereço do servidor</string>
+    <string name="settings.history_upload.title">Enviar histórico de audição</string>
+    <string name="settings.history_upload.waiting">Aguardando o primeiro envio</string>
     <string name="settings.library.audiobookshelf.summary">Ouça os livros do seu próprio servidor</string>
     <string name="settings.library.folders.summary">Gerenciar pastas verificadas para audiolivros</string>
     <string name="settings.library.layout.grid">Grade</string>

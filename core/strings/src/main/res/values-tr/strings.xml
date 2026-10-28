@@ -376,6 +376,14 @@
     <string name="settings.auto_sleep_timer.start.label">Başlama zamanı</string>
     <string name="settings.auto_sleep_timer.summary">Oynatma %1$s ile %2$s arasında başladığında uyku zamanlayıcısı otomatik olarak açılır</string>
     <string name="settings.auto_sleep_timer.title">Otomatik uyku zamanlayıcısı</string>
+    <string name="settings.history_upload.explanation">Geçmişte görünen her şey sunucuna gönderilir, böylece telefon en eskileri sildikten sonra da saklanır. Anahtar, Voice\'un yalnızca geçmiş eklemesine izin verir, okumasına değil.</string>
+    <string name="settings.history_upload.failed">Yüklenmiyor: %1$s</string>
+    <string name="settings.history_upload.key">Anahtar</string>
+    <string name="settings.history_upload.last_upload">Son yükleme %1$s</string>
+    <string name="settings.history_upload.off">Tüm geçmişi kendi sunucunda sakla</string>
+    <string name="settings.history_upload.server">Sunucu adresi</string>
+    <string name="settings.history_upload.title">Dinleme geçmişini yükle</string>
+    <string name="settings.history_upload.waiting">İlk yükleme bekleniyor</string>
     <string name="settings.library.audiobookshelf.summary">Kendi sunucunuzdaki kitapları akışla dinleyin</string>
     <string name="settings.library.folders.summary">Sesli kitaplar için taranan klasörleri yönetin</string>
     <string name="settings.library.layout.grid">Izgara</string>

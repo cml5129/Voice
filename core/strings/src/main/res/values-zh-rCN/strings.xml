@@ -358,6 +358,14 @@
     <string name="settings.auto_sleep_timer.start.label">设置开始时间</string>
     <string name="settings.auto_sleep_timer.summary">在 %1$s 到 %2$s 之间开始播放时，自动启动睡眠定时器</string>
     <string name="settings.auto_sleep_timer.title">自动睡眠定时器</string>
+    <string name="settings.history_upload.explanation">历史记录中显示的所有内容都会发送到你的服务器，因此在手机删除最早的记录后仍会保留。该密钥只允许 Voice 添加历史记录，不能读取。</string>
+    <string name="settings.history_upload.failed">未上传：%1$s</string>
+    <string name="settings.history_upload.key">密钥</string>
+    <string name="settings.history_upload.last_upload">上次上传 %1$s</string>
+    <string name="settings.history_upload.off">在你自己的服务器上保留完整历史记录</string>
+    <string name="settings.history_upload.server">服务器地址</string>
+    <string name="settings.history_upload.title">上传收听历史</string>
+    <string name="settings.history_upload.waiting">正在等待首次上传</string>
     <string name="settings.library.audiobookshelf.summary">在线收听您自己服务器上的书</string>
     <string name="settings.library.folders.summary">管理用于扫描有声书的文件夹</string>
     <string name="settings.library.layout.grid">网格</string>

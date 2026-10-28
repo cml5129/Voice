@@ -376,6 +376,14 @@
     <string name="settings.auto_sleep_timer.start.label">Vælg starttid</string>
     <string name="settings.auto_sleep_timer.summary">Start automatisk en sleep-timer, når afspilningen begynder mellem %1$s og %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatisk sleep-timer</string>
+    <string name="settings.history_upload.explanation">Alt, hvad historikken viser, sendes til din server, så det gemmes, efter at telefonen sletter det ældste. Nøglen lader kun Voice tilføje historik, ikke læse den.</string>
+    <string name="settings.history_upload.failed">Uploader ikke: %1$s</string>
+    <string name="settings.history_upload.key">Nøgle</string>
+    <string name="settings.history_upload.last_upload">Seneste upload %1$s</string>
+    <string name="settings.history_upload.off">Gem hele historikken på din egen server</string>
+    <string name="settings.history_upload.server">Serveradresse</string>
+    <string name="settings.history_upload.title">Upload lyttehistorik</string>
+    <string name="settings.history_upload.waiting">Venter på første upload</string>
     <string name="settings.library.audiobookshelf.summary">Stream bøgerne på din egen server</string>
     <string name="settings.library.folders.summary">Administrer mapper, der søges efter lydbøger i</string>
     <string name="settings.library.layout.grid">Gitter</string>

@@ -394,6 +394,14 @@
     <string name="settings.auto_sleep_timer.start.label">Definir hora de início</string>
     <string name="settings.auto_sleep_timer.summary">Inicia o temporizador automaticamente quando a reprodução começa entre %1$s e %2$s</string>
     <string name="settings.auto_sleep_timer.title">Temporizador automático</string>
+    <string name="settings.history_upload.explanation">Tudo o que o histórico mostra vai para o seu servidor, por isso fica guardado depois de o telemóvel apagar o mais antigo. A chave só permite ao Voice adicionar histórico, não lê-lo.</string>
+    <string name="settings.history_upload.failed">Não está a enviar: %1$s</string>
+    <string name="settings.history_upload.key">Chave</string>
+    <string name="settings.history_upload.last_upload">Último envio %1$s</string>
+    <string name="settings.history_upload.off">Guarde todo o histórico no seu próprio servidor</string>
+    <string name="settings.history_upload.server">Endereço do servidor</string>
+    <string name="settings.history_upload.title">Enviar histórico de audição</string>
+    <string name="settings.history_upload.waiting">A aguardar o primeiro envio</string>
     <string name="settings.library.audiobookshelf.summary">Ouça os livros do seu próprio servidor</string>
     <string name="settings.library.folders.summary">Gerir pastas analisadas para audiolivros</string>
     <string name="settings.library.layout.grid">Grelha</string>

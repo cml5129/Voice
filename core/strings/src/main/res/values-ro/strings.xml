@@ -394,6 +394,14 @@
     <string name="settings.auto_sleep_timer.start.label">Setează ora de început</string>
     <string name="settings.auto_sleep_timer.summary">Pornește automat oprirea temporizată când redarea începe între %1$s și %2$s</string>
     <string name="settings.auto_sleep_timer.title">Oprire temporizată automată</string>
+    <string name="settings.history_upload.explanation">Tot ce arată istoricul ajunge pe serverul tău, așa că rămâne păstrat după ce telefonul șterge ce e mai vechi. Cheia îi permite lui Voice doar să adauge istoric, nu să-l citească.</string>
+    <string name="settings.history_upload.failed">Nu se încarcă: %1$s</string>
+    <string name="settings.history_upload.key">Cheie</string>
+    <string name="settings.history_upload.last_upload">Ultima încărcare %1$s</string>
+    <string name="settings.history_upload.off">Păstrează tot istoricul pe propriul server</string>
+    <string name="settings.history_upload.server">Adresa serverului</string>
+    <string name="settings.history_upload.title">Încarcă istoricul de ascultare</string>
+    <string name="settings.history_upload.waiting">Se așteaptă prima încărcare</string>
     <string name="settings.library.audiobookshelf.summary">Ascultă cărțile de pe serverul tău</string>
     <string name="settings.library.folders.summary">Gestionează directoarele scanate pentru cărți audio</string>
     <string name="settings.library.layout.grid">Grilă</string>
