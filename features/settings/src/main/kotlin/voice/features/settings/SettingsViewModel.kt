@@ -29,7 +29,6 @@ import voice.core.kioskmode.KioskModeFeatureFlag
 import voice.core.playback.AutoRewindAmountStore
 import voice.core.playback.LockScreenSliderStore
 import voice.core.playback.SeekTimeStore
-import voice.core.server.VoiceServerDefaults
 import voice.core.server.VoiceServerStore
 import voice.core.sleeptimer.SleepTimerPreference
 import voice.core.sleeptimer.SleepTimerPreferenceStore
@@ -78,7 +77,6 @@ class SettingsViewModel(
   private val audiobookshelfFeatureFlag: AudiobookshelfFeatureFlag,
   private val historyUploadStore: HistoryUploadStore,
   private val voiceServerStore: VoiceServerStore,
-  private val voiceServerDefaults: VoiceServerDefaults,
 ) : SettingsListener {
 
   private val mainScope = MainScope(dispatcherProvider)
@@ -178,9 +176,9 @@ class SettingsViewModel(
       showAudiobookshelf = audiobookshelfEnabled || audiobookshelfServer.name != null,
       historyUpload = SettingsViewState.HistoryUploadViewState(
         enabled = voiceServer.enabled,
-        serverUrl = voiceServer.url.ifBlank { voiceServerDefaults.url },
-        key = voiceServer.key.ifBlank { voiceServerDefaults.key },
-        configured = voiceServer.server(voiceServerDefaults) != null,
+        serverUrl = voiceServer.url,
+        key = voiceServer.key,
+        configured = voiceServer.server() != null,
         lastUpload = historyUpload.lastUploadAtMillis?.let(Instant::ofEpochMilli),
         error = historyUpload.lastError,
       ),
@@ -323,7 +321,7 @@ class SettingsViewModel(
     key: String,
   ) {
     mainScope.launch {
-      voiceServerStore.updateData { it.withServer(url = serverUrl, key = key, defaults = voiceServerDefaults) }
+      voiceServerStore.updateData { it.withServer(url = serverUrl, key = key) }
       historyUploadStore.updateData { it.copy(lastError = null) }
     }
   }

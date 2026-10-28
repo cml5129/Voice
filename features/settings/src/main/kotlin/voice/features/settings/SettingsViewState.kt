@@ -84,7 +84,6 @@ data class SettingsViewState(
 
   data class HistoryUploadViewState(
     val enabled: Boolean,
-    /** The server set on the device, or else the one this build came with. */
     val serverUrl: String,
     val key: String,
     /** Whether there is a server and key to upload to. */

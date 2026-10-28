@@ -39,7 +39,6 @@ import voice.core.kioskmode.KioskModeFeatureFlag
 import voice.core.playback.AutoRewindAmountStore
 import voice.core.playback.LockScreenSliderStore
 import voice.core.playback.SeekTimeStore
-import voice.core.server.VoiceServerDefaults
 import voice.core.server.VoiceServerSettings
 import voice.core.server.VoiceServerStore
 import voice.core.sleeptimer.SleepTimerPreference
@@ -138,7 +137,6 @@ class SettingsViewModelTest {
     audiobookshelfFeatureFlag = AudiobookshelfFeatureFlag(audiobookshelfFeatureFlag),
     historyUploadStore = HistoryUploadStore(historyUploadStore),
     voiceServerStore = VoiceServerStore(MemoryDataStore(VoiceServerSettings())),
-    voiceServerDefaults = VoiceServerDefaults(url = "", key = ""),
   )
 
   @Test

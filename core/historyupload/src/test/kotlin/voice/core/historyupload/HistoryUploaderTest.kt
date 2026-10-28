@@ -16,7 +16,6 @@ import voice.core.data.ListeningEvent
 import voice.core.data.repo.BookRepository
 import voice.core.data.repo.ListeningHistoryRepo
 import voice.core.server.VoiceServerConfig
-import voice.core.server.VoiceServerDefaults
 import voice.core.server.VoiceServerSettings
 import voice.core.server.VoiceServerStore
 import java.time.Clock
@@ -34,14 +33,11 @@ class HistoryUploaderTest {
   private val book = book(chapters)
   private val history = MemoryHistoryRepo()
   private val store = MemoryDataStore(HistoryUploadSettings())
-  private val serverStore = MemoryDataStore(VoiceServerSettings())
+  private val serverStore = MemoryDataStore(VoiceServerSettings(url = "https://example.com", key = "key"))
   private val api = RecordingApi()
-  private val defaults = VoiceServerDefaults(url = "https://example.com", key = "key")
-  private val uploader = uploader(defaults)
-
-  private fun uploader(defaults: VoiceServerDefaults) = HistoryUploader(
+  private val uploader = HistoryUploader(
     store = HistoryUploadStore(store),
-    serverConfig = VoiceServerConfig(VoiceServerStore(serverStore), defaults),
+    serverConfig = VoiceServerConfig(VoiceServerStore(serverStore)),
     historyRepo = history,
     bookRepository = MemoryBookRepository(book),
     api = api,
@@ -50,9 +46,10 @@ class HistoryUploaderTest {
 
   @Test
   fun `nothing goes up without a server`() = runTest {
+    serverStore.updateData { VoiceServerSettings() }
     history.add(event(ListeningEvent.Type.Play))
 
-    assertTrue(uploader(VoiceServerDefaults(url = "", key = "")).upload())
+    assertTrue(uploader.upload())
     assertEquals(emptyList(), api.batches)
   }
 
@@ -70,14 +67,13 @@ class HistoryUploaderTest {
   }
 
   @Test
-  fun `a server set on the device replaces the one the build came with`() = runTest {
+  fun `the key from settings goes along`() = runTest {
     history.add(event(ListeningEvent.Type.Play))
-    serverStore.updateData { it.withServer("https://other.example.com", "other", defaults) }
 
     assertTrue(uploader.upload())
 
-    assertEquals(listOf("https://other.example.com"), api.servers)
-    assertEquals(listOf("other"), api.keys)
+    assertEquals(listOf("https://example.com"), api.servers)
+    assertEquals(listOf("key"), api.keys)
   }
 
   @Test
@@ -141,7 +137,7 @@ class HistoryUploaderTest {
     history.add(event(ListeningEvent.Type.Play))
     assertTrue(uploader.upload())
 
-    serverStore.updateData { it.withServer("https://other.example.com/", "other", defaults) }
+    serverStore.updateData { it.withServer("https://other.example.com/", "other") }
     assertTrue(uploader.upload())
 
     assertEquals(listOf("https://example.com", "https://other.example.com"), api.servers)

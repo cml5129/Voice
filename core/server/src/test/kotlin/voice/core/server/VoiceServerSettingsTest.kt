@@ -6,26 +6,19 @@ import kotlin.test.assertNull
 
 class VoiceServerSettingsTest {
 
-  private val defaults = VoiceServerDefaults(url = "https://example.com/", key = "key")
-
   @Test
-  fun `the build's server is used until another is set`() {
-    assertEquals(VoiceServer("https://example.com", "key"), VoiceServerSettings().server(defaults))
+  fun `a server needs an address and a key`() {
+    val settings = VoiceServerSettings().withServer(" https://example.com/ ", " key ")
 
-    val other = VoiceServerSettings().withServer("https://other.example.com/", "other", defaults)
-    assertEquals(VoiceServer("https://other.example.com", "other"), other.server(defaults))
+    assertEquals(VoiceServer("https://example.com", "key"), settings.server())
+    assertNull(VoiceServerSettings().withServer("https://example.com", "").server())
+    assertNull(VoiceServerSettings().server())
   }
 
   @Test
-  fun `setting the build's own server stores nothing`() {
-    val settings = VoiceServerSettings().withServer("https://example.com", " key ", defaults)
+  fun `there is no server while switched off`() {
+    val settings = VoiceServerSettings().withServer("https://example.com", "key")
 
-    assertEquals(VoiceServerSettings(), settings)
-  }
-
-  @Test
-  fun `there is no server while switched off or without a key`() {
-    assertNull(VoiceServerSettings(enabled = false).server(defaults))
-    assertNull(VoiceServerSettings().server(VoiceServerDefaults(url = "https://example.com", key = "")))
+    assertNull(settings.copy(enabled = false).server())
   }
 }
