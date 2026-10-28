@@ -4,7 +4,9 @@ import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import voice.core.data.BookId
@@ -42,6 +44,9 @@ class ListeningHistoryRecorder(
   val lastJump: StateFlow<Jump?>
     field = MutableStateFlow<Jump?>(null)
 
+  val events: SharedFlow<ListeningEvent>
+    field = MutableSharedFlow<ListeningEvent>(extraBufferCapacity = 16)
+
   fun record(
     type: ListeningEvent.Type,
     source: ListeningEvent.Source,
@@ -59,6 +64,7 @@ class ListeningHistoryRecorder(
       toTime = to?.time,
     )
     updateLastJump(event, position, to)
+    events.tryEmit(event)
     scope.launch {
       repo.add(event)
     }
