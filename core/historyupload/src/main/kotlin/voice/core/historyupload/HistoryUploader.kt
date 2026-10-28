@@ -22,7 +22,7 @@ import java.util.UUID
  */
 @SingleIn(AppScope::class)
 @Inject
-public class HistoryUploader internal constructor(
+public class HistoryUploader(
   private val store: HistoryUploadStore,
   private val historyRepo: ListeningHistoryRepo,
   private val bookRepository: BookRepository,

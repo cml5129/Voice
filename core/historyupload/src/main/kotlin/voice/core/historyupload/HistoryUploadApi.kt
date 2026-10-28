@@ -15,7 +15,7 @@ import java.io.IOException
 import java.util.concurrent.TimeUnit
 
 @Serializable
-internal data class UploadBatch(
+public data class UploadBatch(
   val device: String,
   /** The time zone of the phone, so the server can tell which night an event belongs to. */
   val zone: String,
@@ -27,7 +27,7 @@ internal data class UploadBatch(
  * the event happened, besides where in the file.
  */
 @Serializable
-internal data class UploadEvent(
+public data class UploadEvent(
   val id: Long,
   val bookId: String,
   val bookName: String?,
@@ -45,7 +45,7 @@ internal data class UploadEvent(
   val toBookTime: Long?,
 )
 
-internal interface HistoryUploadApi {
+public interface HistoryUploadApi {
 
   /**
    * Null when the server stored the batch, otherwise why not.
@@ -60,7 +60,7 @@ internal interface HistoryUploadApi {
 @SingleIn(AppScope::class)
 @ContributesBinding(AppScope::class)
 @Inject
-internal class OkHttpHistoryUploadApi : HistoryUploadApi {
+public class OkHttpHistoryUploadApi : HistoryUploadApi {
 
   private val client = OkHttpClient.Builder()
     .connectTimeout(15, TimeUnit.SECONDS)
