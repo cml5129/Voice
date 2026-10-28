@@ -29,6 +29,8 @@ import voice.core.kioskmode.KioskModeFeatureFlag
 import voice.core.playback.AutoRewindAmountStore
 import voice.core.playback.LockScreenSliderStore
 import voice.core.playback.SeekTimeStore
+import voice.core.server.VoiceServerDefaults
+import voice.core.server.VoiceServerStore
 import voice.core.sleeptimer.SleepTimerPreference
 import voice.core.sleeptimer.SleepTimerPreferenceStore
 import voice.core.ui.CoverColorsStore
@@ -75,6 +77,8 @@ class SettingsViewModel(
   private val serverLibrary: ServerLibrary,
   private val audiobookshelfFeatureFlag: AudiobookshelfFeatureFlag,
   private val historyUploadStore: HistoryUploadStore,
+  private val voiceServerStore: VoiceServerStore,
+  private val voiceServerDefaults: VoiceServerDefaults,
 ) : SettingsListener {
 
   private val mainScope = MainScope(dispatcherProvider)
@@ -110,6 +114,7 @@ class SettingsViewModel(
     val audiobookshelfEnabled = remember { audiobookshelfFeatureFlag.flow.map { it.value } }
       .collectAsState(initial = null).value
     val historyUpload = remember { historyUploadStore.data }.collectAsState(initial = null).value
+    val voiceServer = remember { voiceServerStore.data }.collectAsState(initial = null).value
     val dynamicColorAvailable = remember {
       dynamicColorAvailability.isSupported()
     }
@@ -131,7 +136,8 @@ class SettingsViewModel(
       supporterStatus == null ||
       audiobookshelfServer == null ||
       audiobookshelfEnabled == null ||
-      historyUpload == null
+      historyUpload == null ||
+      voiceServer == null
     ) {
       return null
     }
@@ -171,8 +177,10 @@ class SettingsViewModel(
       // a connected server stays reachable, so it can be signed out of
       showAudiobookshelf = audiobookshelfEnabled || audiobookshelfServer.name != null,
       historyUpload = SettingsViewState.HistoryUploadViewState(
-        serverUrl = historyUpload.serverUrl,
-        key = historyUpload.key,
+        enabled = voiceServer.enabled,
+        serverUrl = voiceServer.url.ifBlank { voiceServerDefaults.url },
+        key = voiceServer.key.ifBlank { voiceServerDefaults.key },
+        configured = voiceServer.server(voiceServerDefaults) != null,
         lastUpload = historyUpload.lastUploadAtMillis?.let(Instant::ofEpochMilli),
         error = historyUpload.lastError,
       ),
@@ -303,12 +311,20 @@ class SettingsViewModel(
     }
   }
 
+  override fun setHistoryUploadEnabled(enabled: Boolean) {
+    mainScope.launch {
+      voiceServerStore.updateData { it.copy(enabled = enabled) }
+      historyUploadStore.updateData { it.copy(lastError = null) }
+    }
+  }
+
   override fun setHistoryUpload(
     serverUrl: String,
     key: String,
   ) {
     mainScope.launch {
-      historyUploadStore.updateData { it.withServer(serverUrl = serverUrl, key = key) }
+      voiceServerStore.updateData { it.withServer(url = serverUrl, key = key, defaults = voiceServerDefaults) }
+      historyUploadStore.updateData { it.copy(lastError = null) }
     }
   }
 

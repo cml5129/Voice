@@ -380,9 +380,8 @@
     <string name="settings.history_upload.failed">Yüklenmiyor: %1$s</string>
     <string name="settings.history_upload.key">Anahtar</string>
     <string name="settings.history_upload.last_upload">Son yükleme %1$s</string>
-    <string name="settings.history_upload.off">Tüm geçmişi kendi sunucunda sakla</string>
+    <string name="settings.history_upload.no_server">Sunucu adresi ve anahtar gerekli</string>
     <string name="settings.history_upload.server">Sunucu adresi</string>
-    <string name="settings.history_upload.title">Dinleme geçmişini yükle</string>
     <string name="settings.history_upload.waiting">İlk yükleme bekleniyor</string>
     <string name="settings.library.audiobookshelf.summary">Kendi sunucunuzdaki kitapları akışla dinleyin</string>
     <string name="settings.library.folders.summary">Sesli kitaplar için taranan klasörleri yönetin</string>
@@ -397,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">Kilit ekranı kaydırıcısı</string>
     <string name="settings.playback.seek_time.summary">Geri ve ileri sarmanın ne kadar atlayacağı</string>
     <string name="settings.playback.seek_time.title">Atlama süresi</string>
+    <string name="settings.server.off">Voice\'u kendi sunucuna bağla</string>
+    <string name="settings.server.title">Sunucun</string>
     <string name="settings.subtitle">Voice\'u kendinize göre ayarlayın</string>
     <string name="settings.support.faq.title">SSS</string>
     <string name="settings.support.get_support.title">Yardım al</string>

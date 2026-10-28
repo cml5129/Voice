@@ -380,9 +380,8 @@
     <string name="settings.history_upload.failed">Kein Upload: %1$s</string>
     <string name="settings.history_upload.key">Schlüssel</string>
     <string name="settings.history_upload.last_upload">Letzter Upload %1$s</string>
-    <string name="settings.history_upload.off">Den ganzen Verlauf auf deinem eigenen Server behalten</string>
+    <string name="settings.history_upload.no_server">Braucht eine Serveradresse und einen Schlüssel</string>
     <string name="settings.history_upload.server">Serveradresse</string>
-    <string name="settings.history_upload.title">Hörverlauf hochladen</string>
     <string name="settings.history_upload.waiting">Warte auf den ersten Upload</string>
     <string name="settings.library.audiobookshelf.summary">Bücher von Deinem eigenen Server streamen</string>
     <string name="settings.library.folders.summary">Ordner verwalten, die nach Hörbüchern durchsucht werden sollen</string>
@@ -397,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">Regler auf dem Sperrbildschirm</string>
     <string name="settings.playback.seek_time.summary">Wie weit Zurück- und Vorspulen springen</string>
     <string name="settings.playback.seek_time.title">Vor- und zurückspulen</string>
+    <string name="settings.server.off">Verbinde Voice mit deinem eigenen Server</string>
+    <string name="settings.server.title">Dein Server</string>
     <string name="settings.subtitle">Mach Voice zu Deinem</string>
     <string name="settings.support.faq.title">Häufige Fragen</string>
     <string name="settings.support.get_support.title">Hilfe erhalten</string>

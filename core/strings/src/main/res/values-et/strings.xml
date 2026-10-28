@@ -380,9 +380,8 @@
     <string name="settings.history_upload.failed">Ei laadita üles: %1$s</string>
     <string name="settings.history_upload.key">Võti</string>
     <string name="settings.history_upload.last_upload">Viimane üleslaadimine %1$s</string>
-    <string name="settings.history_upload.off">Hoia kogu ajalugu oma serveris</string>
+    <string name="settings.history_upload.no_server">Vaja on serveri aadressi ja võtit</string>
     <string name="settings.history_upload.server">Serveri aadress</string>
-    <string name="settings.history_upload.title">Laadi kuulamisajalugu üles</string>
     <string name="settings.history_upload.waiting">Ootan esimest üleslaadimist</string>
     <string name="settings.library.audiobookshelf.summary">Voogedasta raamatuid oma serverist</string>
     <string name="settings.library.folders.summary">Halda kaustu, kust otsitakse heliraamatuid</string>
@@ -397,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">Liugur lukustuskuval</string>
     <string name="settings.playback.seek_time.summary">Kui kaugele tagasi- ja edasikerimine hüppavad</string>
     <string name="settings.playback.seek_time.title">Kerimise samm</string>
+    <string name="settings.server.off">Ühenda Voice oma serveriga</string>
+    <string name="settings.server.title">Sinu server</string>
     <string name="settings.subtitle">Tee Voice enda omaks</string>
     <string name="settings.support.faq.title">KKK</string>
     <string name="settings.support.get_support.title">Küsi abi</string>

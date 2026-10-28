@@ -380,9 +380,8 @@
     <string name="settings.history_upload.failed">Не се прикачува: %1$s</string>
     <string name="settings.history_upload.key">Клуч</string>
     <string name="settings.history_upload.last_upload">Последно прикачување %1$s</string>
-    <string name="settings.history_upload.off">Чувај ја целата историја на сопствен сервер</string>
+    <string name="settings.history_upload.no_server">Потребни се адреса на серверот и клуч</string>
     <string name="settings.history_upload.server">Адреса на серверот</string>
-    <string name="settings.history_upload.title">Прикачи историја на слушање</string>
     <string name="settings.history_upload.waiting">Се чека првото прикачување</string>
     <string name="settings.library.audiobookshelf.summary">Слушајте ги книгите директно од вашиот сервер</string>
     <string name="settings.library.folders.summary">Управувајте со фолдерите што се скенираат за аудио книги</string>
@@ -397,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">Лизгач на заклучениот екран</string>
     <string name="settings.playback.seek_time.summary">Колку далеку скокаат враќањето и брзото премотување</string>
     <string name="settings.playback.seek_time.title">Чекор на премотување</string>
+    <string name="settings.server.off">Поврзи го Voice со сопствен сервер</string>
+    <string name="settings.server.title">Твојот сервер</string>
     <string name="settings.subtitle">Направете го Voice свој</string>
     <string name="settings.support.faq.title">ЧПП</string>
     <string name="settings.support.get_support.title">Побарај поддршка</string>

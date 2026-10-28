@@ -380,9 +380,8 @@
     <string name="settings.history_upload.failed">பதிவேற்றவில்லை: %1$s</string>
     <string name="settings.history_upload.key">விசை</string>
     <string name="settings.history_upload.last_upload">கடைசி பதிவேற்றம் %1$s</string>
-    <string name="settings.history_upload.off">முழு வரலாற்றையும் உங்கள் சொந்த சேவையகத்தில் வைத்திருங்கள்</string>
+    <string name="settings.history_upload.no_server">சேவையக முகவரியும் விசையும் தேவை</string>
     <string name="settings.history_upload.server">சேவையக முகவரி</string>
-    <string name="settings.history_upload.title">கேட்ட வரலாற்றைப் பதிவேற்று</string>
     <string name="settings.history_upload.waiting">முதல் பதிவேற்றத்திற்காகக் காத்திருக்கிறது</string>
     <string name="settings.library.audiobookshelf.summary">உங்கள் சொந்த சர்வரில் உள்ள புத்தகங்களை ஸ்ட்ரீம் செய்யுங்கள்</string>
     <string name="settings.library.folders.summary">ஆடியோபுக்குகளுக்காக ஸ்கேன் செய்யப்படும் கோப்புறைகளை நிர்வகி</string>
@@ -397,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">பூட்டுத் திரை ஸ்லைடர்</string>
     <string name="settings.playback.seek_time.summary">பின்னோக்கியும் முன்னோக்கியும் எவ்வளவு தாவும்</string>
     <string name="settings.playback.seek_time.title">தாவும் நேரம்</string>
+    <string name="settings.server.off">Voice-ஐ உங்கள் சொந்த சேவையகத்துடன் இணைக்கவும்</string>
+    <string name="settings.server.title">உங்கள் சேவையகம்</string>
     <string name="settings.subtitle">Voice-ஐ உங்களுடையதாக்குங்கள்</string>
     <string name="settings.support.faq.title">கேள்விகள்</string>
     <string name="settings.support.get_support.title">ஆதரவை பெறு</string>

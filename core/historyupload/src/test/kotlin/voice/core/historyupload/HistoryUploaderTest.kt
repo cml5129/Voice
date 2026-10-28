@@ -15,6 +15,10 @@ import voice.core.data.ChapterId
 import voice.core.data.ListeningEvent
 import voice.core.data.repo.BookRepository
 import voice.core.data.repo.ListeningHistoryRepo
+import voice.core.server.VoiceServerConfig
+import voice.core.server.VoiceServerDefaults
+import voice.core.server.VoiceServerSettings
+import voice.core.server.VoiceServerStore
 import java.time.Clock
 import java.time.Instant
 import java.time.ZoneOffset
@@ -29,10 +33,15 @@ class HistoryUploaderTest {
   private val chapters = listOf(chapter("one", duration = 60_000), chapter("two", duration = 120_000))
   private val book = book(chapters)
   private val history = MemoryHistoryRepo()
-  private val store = MemoryDataStore(HistoryUploadSettings(serverUrl = "https://example.com", key = "key"))
+  private val store = MemoryDataStore(HistoryUploadSettings())
+  private val serverStore = MemoryDataStore(VoiceServerSettings())
   private val api = RecordingApi()
-  private val uploader = HistoryUploader(
+  private val defaults = VoiceServerDefaults(url = "https://example.com", key = "key")
+  private val uploader = uploader(defaults)
+
+  private fun uploader(defaults: VoiceServerDefaults) = HistoryUploader(
     store = HistoryUploadStore(store),
+    serverConfig = VoiceServerConfig(VoiceServerStore(serverStore), defaults),
     historyRepo = history,
     bookRepository = MemoryBookRepository(book),
     api = api,
@@ -41,11 +50,34 @@ class HistoryUploaderTest {
 
   @Test
   fun `nothing goes up without a server`() = runTest {
-    store.updateData { HistoryUploadSettings() }
+    history.add(event(ListeningEvent.Type.Play))
+
+    assertTrue(uploader(VoiceServerDefaults(url = "", key = "")).upload())
+    assertEquals(emptyList(), api.batches)
+  }
+
+  @Test
+  fun `nothing goes up while the server is switched off`() = runTest {
+    serverStore.updateData { it.copy(enabled = false) }
     history.add(event(ListeningEvent.Type.Play))
 
     assertTrue(uploader.upload())
     assertEquals(emptyList(), api.batches)
+
+    serverStore.updateData { it.copy(enabled = true) }
+    assertTrue(uploader.upload())
+    assertEquals(1, api.batches.size)
+  }
+
+  @Test
+  fun `a server set on the device replaces the one the build came with`() = runTest {
+    history.add(event(ListeningEvent.Type.Play))
+    serverStore.updateData { it.withServer("https://other.example.com", "other", defaults) }
+
+    assertTrue(uploader.upload())
+
+    assertEquals(listOf("https://other.example.com"), api.servers)
+    assertEquals(listOf("other"), api.keys)
   }
 
   @Test
@@ -109,7 +141,7 @@ class HistoryUploaderTest {
     history.add(event(ListeningEvent.Type.Play))
     assertTrue(uploader.upload())
 
-    store.updateData { it.withServer("https://other.example.com/", "other") }
+    serverStore.updateData { it.withServer("https://other.example.com/", "other", defaults) }
     assertTrue(uploader.upload())
 
     assertEquals(listOf("https://example.com", "https://other.example.com"), api.servers)
@@ -137,6 +169,7 @@ private class RecordingApi : HistoryUploadApi {
 
   val batches = mutableListOf<UploadBatch>()
   val servers = mutableListOf<String>()
+  val keys = mutableListOf<String>()
   var error: String? = null
 
   override suspend fun send(
@@ -147,6 +180,7 @@ private class RecordingApi : HistoryUploadApi {
     error?.let { return it }
     batches += batch
     servers += serverUrl
+    keys += key
     return null
   }
 }

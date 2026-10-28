@@ -380,9 +380,8 @@
     <string name="settings.history_upload.failed">Δεν γίνεται αποστολή: %1$s</string>
     <string name="settings.history_upload.key">Κλειδί</string>
     <string name="settings.history_upload.last_upload">Τελευταία αποστολή %1$s</string>
-    <string name="settings.history_upload.off">Κράτα όλο το ιστορικό στον δικό σου διακομιστή</string>
+    <string name="settings.history_upload.no_server">Χρειάζεται διεύθυνση διακομιστή και κλειδί</string>
     <string name="settings.history_upload.server">Διεύθυνση διακομιστή</string>
-    <string name="settings.history_upload.title">Αποστολή ιστορικού ακρόασης</string>
     <string name="settings.history_upload.waiting">Αναμονή για την πρώτη αποστολή</string>
     <string name="settings.library.audiobookshelf.summary">Ακούστε τα βιβλία από τον δικό σας διακομιστή</string>
     <string name="settings.library.folders.summary">Διαχείριση των φακέλων με τα ηχητικά σας βιβλία</string>
@@ -397,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">Ρυθμιστικό οθόνης κλειδώματος</string>
     <string name="settings.playback.seek_time.summary">Πόσο μακριά πηγαίνουν η επαναφορά και η γρήγορη προώθηση</string>
     <string name="settings.playback.seek_time.title">Χρονική μετακίνηση</string>
+    <string name="settings.server.off">Σύνδεσε το Voice με τον δικό σου διακομιστή</string>
+    <string name="settings.server.title">Ο διακομιστής σου</string>
     <string name="settings.subtitle">Κάντε το Voice δικό σας</string>
     <string name="settings.support.faq.title">Συχνές ερωτήσεις</string>
     <string name="settings.support.get_support.title">Βοήθεια</string>

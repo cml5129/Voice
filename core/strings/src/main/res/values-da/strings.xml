@@ -380,9 +380,8 @@
     <string name="settings.history_upload.failed">Uploader ikke: %1$s</string>
     <string name="settings.history_upload.key">Nøgle</string>
     <string name="settings.history_upload.last_upload">Seneste upload %1$s</string>
-    <string name="settings.history_upload.off">Gem hele historikken på din egen server</string>
+    <string name="settings.history_upload.no_server">Mangler serveradresse og nøgle</string>
     <string name="settings.history_upload.server">Serveradresse</string>
-    <string name="settings.history_upload.title">Upload lyttehistorik</string>
     <string name="settings.history_upload.waiting">Venter på første upload</string>
     <string name="settings.library.audiobookshelf.summary">Stream bøgerne på din egen server</string>
     <string name="settings.library.folders.summary">Administrer mapper, der søges efter lydbøger i</string>
@@ -397,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">Skyder på låseskærmen</string>
     <string name="settings.playback.seek_time.summary">Hvor langt der springes tilbage og frem</string>
     <string name="settings.playback.seek_time.title">Springinterval</string>
+    <string name="settings.server.off">Forbind Voice med din egen server</string>
+    <string name="settings.server.title">Din server</string>
     <string name="settings.subtitle">Gør Voice til din egen</string>
     <string name="settings.support.faq.title">Ofte stillede spørgsmål</string>
     <string name="settings.support.get_support.title">Få support</string>

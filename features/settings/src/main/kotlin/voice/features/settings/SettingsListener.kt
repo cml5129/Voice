@@ -29,6 +29,7 @@ interface SettingsListener {
   fun toggleAnalytics()
   fun openFolderPicker()
   fun openAudiobookshelf()
+  fun setHistoryUploadEnabled(enabled: Boolean)
   fun setHistoryUpload(
     serverUrl: String,
     key: String,
@@ -63,6 +64,7 @@ interface SettingsListener {
       override fun toggleAnalytics() {}
       override fun openFolderPicker() {}
       override fun openAudiobookshelf() {}
+      override fun setHistoryUploadEnabled(enabled: Boolean) {}
       override fun setHistoryUpload(
         serverUrl: String,
         key: String,

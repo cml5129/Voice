@@ -10,12 +10,14 @@ import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.serialization.json.Json
+import voice.app.BuildConfig
 import voice.app.misc.AppInfoProviderImpl
 import voice.app.misc.MainActivityIntentProviderImpl
 import voice.core.common.AppInfoProvider
 import voice.core.common.DispatcherProvider
 import voice.core.common.MainScope
 import voice.core.playback.notification.MainActivityIntentProvider
+import voice.core.server.VoiceServerDefaults
 import java.time.Clock
 
 @BindingContainer
@@ -54,4 +56,10 @@ object AndroidModule {
 
   @Provides
   fun clock(): Clock = Clock.systemDefaultZone()
+
+  @Provides
+  fun voiceServerDefaults(): VoiceServerDefaults = VoiceServerDefaults(
+    url = BuildConfig.VOICE_SERVER_URL,
+    key = BuildConfig.VOICE_SERVER_KEY,
+  )
 }

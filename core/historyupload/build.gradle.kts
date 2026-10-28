@@ -10,6 +10,7 @@ dependencies {
   implementation(projects.core.datastore)
   implementation(projects.core.initializer)
   implementation(projects.core.logging.api)
+  implementation(projects.core.server)
 
   implementation(libs.androidxCore)
   implementation(libs.datastore)

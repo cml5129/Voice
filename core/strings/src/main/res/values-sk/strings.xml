@@ -416,9 +416,8 @@
     <string name="settings.history_upload.failed">Nenahráva sa: %1$s</string>
     <string name="settings.history_upload.key">Kľúč</string>
     <string name="settings.history_upload.last_upload">Posledné nahranie %1$s</string>
-    <string name="settings.history_upload.off">Uchovaj celú históriu na vlastnom serveri</string>
+    <string name="settings.history_upload.no_server">Chýba adresa servera a kľúč</string>
     <string name="settings.history_upload.server">Adresa servera</string>
-    <string name="settings.history_upload.title">Nahrávať históriu počúvania</string>
     <string name="settings.history_upload.waiting">Čaká sa na prvé nahranie</string>
     <string name="settings.library.audiobookshelf.summary">Streamujte knihy z vlastného servera</string>
     <string name="settings.library.folders.summary">Spravovať priečinky určené na vyhľadávanie zvukových kníh</string>
@@ -433,6 +432,8 @@
     <string name="settings.playback.lock_screen_slider.title">Posúvač na uzamknutej obrazovke</string>
     <string name="settings.playback.seek_time.summary">Ako ďaleko skáče pretáčanie dozadu a dopredu</string>
     <string name="settings.playback.seek_time.title">Preskočiť o</string>
+    <string name="settings.server.off">Pripoj Voice k vlastnému serveru</string>
+    <string name="settings.server.title">Tvoj server</string>
     <string name="settings.subtitle">Prispôsobte si Voice</string>
     <string name="settings.support.faq.title">Často kladené otázky</string>
     <string name="settings.support.get_support.title">Podpora</string>

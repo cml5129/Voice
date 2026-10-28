@@ -398,9 +398,8 @@
     <string name="settings.history_upload.failed">Nu se încarcă: %1$s</string>
     <string name="settings.history_upload.key">Cheie</string>
     <string name="settings.history_upload.last_upload">Ultima încărcare %1$s</string>
-    <string name="settings.history_upload.off">Păstrează tot istoricul pe propriul server</string>
+    <string name="settings.history_upload.no_server">Necesită adresa serverului și cheia</string>
     <string name="settings.history_upload.server">Adresa serverului</string>
-    <string name="settings.history_upload.title">Încarcă istoricul de ascultare</string>
     <string name="settings.history_upload.waiting">Se așteaptă prima încărcare</string>
     <string name="settings.library.audiobookshelf.summary">Ascultă cărțile de pe serverul tău</string>
     <string name="settings.library.folders.summary">Gestionează directoarele scanate pentru cărți audio</string>
@@ -415,6 +414,8 @@
     <string name="settings.playback.lock_screen_slider.title">Bara de pe ecranul de blocare</string>
     <string name="settings.playback.seek_time.summary">Cât de mult sar derularea înapoi și înainte</string>
     <string name="settings.playback.seek_time.title">Pas derulare</string>
+    <string name="settings.server.off">Conectează Voice la propriul server</string>
+    <string name="settings.server.title">Serverul tău</string>
     <string name="settings.subtitle">Fă Voice al tău</string>
     <string name="settings.support.faq.title">Întrebări frecvente</string>
     <string name="settings.support.get_support.title">Obține ajutor</string>

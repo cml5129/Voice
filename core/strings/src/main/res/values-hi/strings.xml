@@ -380,9 +380,8 @@
     <string name="settings.history_upload.failed">अपलोड नहीं हो रहा: %1$s</string>
     <string name="settings.history_upload.key">कुंजी</string>
     <string name="settings.history_upload.last_upload">पिछला अपलोड %1$s</string>
-    <string name="settings.history_upload.off">पूरा इतिहास अपने सर्वर पर रखें</string>
+    <string name="settings.history_upload.no_server">सर्वर का पता और कुंजी चाहिए</string>
     <string name="settings.history_upload.server">सर्वर का पता</string>
-    <string name="settings.history_upload.title">सुनने का इतिहास अपलोड करें</string>
     <string name="settings.history_upload.waiting">पहले अपलोड की प्रतीक्षा</string>
     <string name="settings.library.audiobookshelf.summary">अपने खुद के सर्वर से पुस्तकें स्ट्रीम करें</string>
     <string name="settings.library.folders.summary">ऑडियोबुक के लिए स्कैन किए गए फ़ोल्डर मैनेज करें</string>
@@ -397,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">लॉक स्क्रीन स्लाइडर</string>
     <string name="settings.playback.seek_time.summary">रिवाइंड और फ़ास्ट फ़ॉरवर्ड कितनी दूर जाते हैं</string>
     <string name="settings.playback.seek_time.title">जंप की अवधि</string>
+    <string name="settings.server.off">Voice को अपने सर्वर से जोड़ें</string>
+    <string name="settings.server.title">आपका सर्वर</string>
     <string name="settings.subtitle">Voice को अपना बनाएँ</string>
     <string name="settings.support.faq.title">आम सवाल</string>
     <string name="settings.support.get_support.title">सहायता प्राप्त करें</string>

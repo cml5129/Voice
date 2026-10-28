@@ -662,12 +662,10 @@
     <string name="settings.history_upload.key">Key</string>
     <!-- Settings summary with the time of the last successful upload of the listening history. -->
     <string name="settings.history_upload.last_upload">Last upload %1$s</string>
-    <!-- Settings summary when the listening history isn't uploaded anywhere. -->
-    <string name="settings.history_upload.off">Keep the whole history on your own server</string>
+    <!-- Settings summary when uploading the listening history is on but there is no server address or key. -->
+    <string name="settings.history_upload.no_server">Needs a server address and key</string>
     <!-- Label of the field for the address of the listener's server, for example https://example.com. -->
     <string name="settings.history_upload.server">Server address</string>
-    <!-- Settings title for uploading the listening history to the listener's own server. -->
-    <string name="settings.history_upload.title">Upload listening history</string>
     <!-- Settings summary after the listening history upload was set up, before the first upload went through. -->
     <string name="settings.history_upload.waiting">Waiting for the first upload</string>
     <!-- Summary of the Audiobookshelf row in the library settings when no server is connected. -->
@@ -696,6 +694,10 @@
     <string name="settings.playback.seek_time.summary">How far rewind and fast forward jump</string>
     <!-- Title for the setting that controls skip-forward and rewind duration. -->
     <string name="settings.playback.seek_time.title">Skip amount</string>
+    <!-- Settings summary while Voice isn't connected to the listener's own server, which keeps the listening history. -->
+    <string name="settings.server.off">Connect Voice to your own server</string>
+    <!-- Settings title for the listener's own server, which keeps the listening history. Switches it on and off. -->
+    <string name="settings.server.title">Your server</string>
     <!-- Playful subtitle below the settings title. -->
     <string name="settings.subtitle">Make Voice yours</string>
     <!-- Settings support row for opening the FAQ. -->

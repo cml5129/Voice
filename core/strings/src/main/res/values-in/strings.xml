@@ -362,9 +362,8 @@
     <string name="settings.history_upload.failed">Tidak mengunggah: %1$s</string>
     <string name="settings.history_upload.key">Kunci</string>
     <string name="settings.history_upload.last_upload">Unggahan terakhir %1$s</string>
-    <string name="settings.history_upload.off">Simpan seluruh riwayat di servermu sendiri</string>
+    <string name="settings.history_upload.no_server">Perlu alamat server dan kunci</string>
     <string name="settings.history_upload.server">Alamat server</string>
-    <string name="settings.history_upload.title">Unggah riwayat mendengarkan</string>
     <string name="settings.history_upload.waiting">Menunggu unggahan pertama</string>
     <string name="settings.library.audiobookshelf.summary">Streaming buku dari server Anda sendiri</string>
     <string name="settings.library.folders.summary">Kelola folder yang dipindai untuk buku audio</string>
@@ -379,6 +378,8 @@
     <string name="settings.playback.lock_screen_slider.title">Penggeser di layar kunci</string>
     <string name="settings.playback.seek_time.summary">Seberapa jauh mundur dan maju cepat melompat</string>
     <string name="settings.playback.seek_time.title">Durasi lompatan</string>
+    <string name="settings.server.off">Hubungkan Voice ke servermu sendiri</string>
+    <string name="settings.server.title">Servermu</string>
     <string name="settings.subtitle">Jadikan Voice milik Anda</string>
     <string name="settings.support.faq.title">FAQ</string>
     <string name="settings.support.get_support.title">Dapatkan bantuan</string>

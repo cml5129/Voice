@@ -19,6 +19,9 @@ jobs:
       - uses: ./.github/actions/build_setup
       - name: Build
         run: ./gradlew :app:assembleFreeDebug
+        env:
+          VOICE_SERVER_URL: ${{ vars.VOICE_SERVER_URL }}
+          VOICE_API_KEY: ${{ secrets.VOICE_API_KEY }}
       - uses: actions/upload-artifact@v7
         with:
           name: voice-free-debug

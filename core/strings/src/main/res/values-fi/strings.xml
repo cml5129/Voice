@@ -380,9 +380,8 @@
     <string name="settings.history_upload.failed">Ei lähetetä: %1$s</string>
     <string name="settings.history_upload.key">Avain</string>
     <string name="settings.history_upload.last_upload">Viimeisin lähetys %1$s</string>
-    <string name="settings.history_upload.off">Säilytä koko historia omalla palvelimellasi</string>
+    <string name="settings.history_upload.no_server">Tarvitsee palvelimen osoitteen ja avaimen</string>
     <string name="settings.history_upload.server">Palvelimen osoite</string>
-    <string name="settings.history_upload.title">Lähetä kuunteluhistoria</string>
     <string name="settings.history_upload.waiting">Odotetaan ensimmäistä lähetystä</string>
     <string name="settings.library.audiobookshelf.summary">Suoratoista kirjoja omalta palvelimeltasi</string>
     <string name="settings.library.folders.summary">Hallitse kansioita, joista etsitään äänikirjoja</string>
@@ -397,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">Lukitusnäytön liukusäädin</string>
     <string name="settings.playback.seek_time.summary">Kuinka pitkälle taakse- ja eteenpäinkelaus hyppäävät</string>
     <string name="settings.playback.seek_time.title">Siirtymän pituus</string>
+    <string name="settings.server.off">Yhdistä Voice omaan palvelimeesi</string>
+    <string name="settings.server.title">Oma palvelin</string>
     <string name="settings.subtitle">Tee Voicesta omasi</string>
     <string name="settings.support.faq.title">UKK</string>
     <string name="settings.support.get_support.title">Hanki apua</string>

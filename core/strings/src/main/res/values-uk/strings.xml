@@ -416,9 +416,8 @@
     <string name="settings.history_upload.failed">Не завантажується: %1$s</string>
     <string name="settings.history_upload.key">Ключ</string>
     <string name="settings.history_upload.last_upload">Останнє завантаження %1$s</string>
-    <string name="settings.history_upload.off">Зберігати всю історію на власному сервері</string>
+    <string name="settings.history_upload.no_server">Потрібні адреса сервера і ключ</string>
     <string name="settings.history_upload.server">Адреса сервера</string>
-    <string name="settings.history_upload.title">Завантажувати історію прослуховування</string>
     <string name="settings.history_upload.waiting">Очікування першого завантаження</string>
     <string name="settings.library.audiobookshelf.summary">Слухайте книги просто зі свого сервера</string>
     <string name="settings.library.folders.summary">Налаштування папок, які скануються для пошуку аудіокниг</string>
@@ -433,6 +432,8 @@
     <string name="settings.playback.lock_screen_slider.title">Повзунок на екрані блокування</string>
     <string name="settings.playback.seek_time.summary">Наскільки далеко перемотують кнопки назад і вперед</string>
     <string name="settings.playback.seek_time.title">Інтервал перемотування</string>
+    <string name="settings.server.off">Під\'єднати Voice до власного сервера</string>
+    <string name="settings.server.title">Ваш сервер</string>
     <string name="settings.subtitle">Зробіть Voice своїм</string>
     <string name="settings.support.faq.title">ЧаПи</string>
     <string name="settings.support.get_support.title">Підтримка</string>

@@ -398,9 +398,8 @@
     <string name="settings.history_upload.failed">Pas d\'envoi : %1$s</string>
     <string name="settings.history_upload.key">Clé</string>
     <string name="settings.history_upload.last_upload">Dernier envoi %1$s</string>
-    <string name="settings.history_upload.off">Garder tout l\'historique sur votre propre serveur</string>
+    <string name="settings.history_upload.no_server">Il manque l\'adresse du serveur et la clé</string>
     <string name="settings.history_upload.server">Adresse du serveur</string>
-    <string name="settings.history_upload.title">Envoyer l\'historique d\'écoute</string>
     <string name="settings.history_upload.waiting">En attente du premier envoi</string>
     <string name="settings.library.audiobookshelf.summary">Écoutez les livres de votre propre serveur</string>
     <string name="settings.library.folders.summary">Gérer les dossiers analysés pour les livres audio</string>
@@ -415,6 +414,8 @@
     <string name="settings.playback.lock_screen_slider.title">Curseur sur l\'écran de verrouillage</string>
     <string name="settings.playback.seek_time.summary">De combien le retour et l\'avance rapide sautent</string>
     <string name="settings.playback.seek_time.title">Durée du saut</string>
+    <string name="settings.server.off">Connecter Voice à votre propre serveur</string>
+    <string name="settings.server.title">Votre serveur</string>
     <string name="settings.subtitle">Faites de Voice le vôtre</string>
     <string name="settings.support.faq.title">FAQ</string>
     <string name="settings.support.get_support.title">Obtenir de l\'aide</string>

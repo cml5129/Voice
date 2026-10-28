@@ -13,6 +13,7 @@ import voice.core.data.markForPosition
 import voice.core.data.repo.BookRepository
 import voice.core.data.repo.ListeningHistoryRepo
 import voice.core.logging.api.Logger
+import voice.core.server.VoiceServerConfig
 import java.time.Clock
 import java.time.ZoneId
 import java.util.UUID
@@ -24,6 +25,7 @@ import java.util.UUID
 @Inject
 public class HistoryUploader(
   private val store: HistoryUploadStore,
+  private val serverConfig: VoiceServerConfig,
   private val historyRepo: ListeningHistoryRepo,
   private val bookRepository: BookRepository,
   private val api: HistoryUploadApi,
@@ -38,10 +40,10 @@ public class HistoryUploader(
   public suspend fun upload(): Boolean = mutex.withLock { uploadLocked() }
 
   private suspend fun uploadLocked(): Boolean {
+    val server = serverConfig.current() ?: return true
     val settings = store.data.first()
-    if (!settings.enabled) return true
     val device = deviceId(settings)
-    var events = historyRepo.eventsAfter(settings.uploadedUpToId, BATCH_SIZE)
+    var events = historyRepo.eventsAfter(settings.uploadedUpToId(server), BATCH_SIZE)
     while (events.isNotEmpty()) {
       val books = events.map { it.bookId }.distinct().associateWith { bookRepository.get(it) }
       val batch = UploadBatch(
@@ -49,20 +51,22 @@ public class HistoryUploader(
         zone = ZoneId.systemDefault().id,
         events = events.map { it.toUpload(books[it.bookId]) },
       )
-      val error = api.send(settings.serverUrl, settings.key, batch)
+      val error = api.send(server.url, server.key, batch)
       if (error != null) {
         Logger.w("Listening history upload failed: $error")
         store.updateData { it.copy(lastError = error) }
         return false
       }
       val uploadedUpTo = events.last().id
-      store.updateData { current ->
-        // the server may have changed while this batch was on its way
-        if (current.serverUrl != settings.serverUrl) {
-          current
-        } else {
-          current.copy(uploadedUpToId = uploadedUpTo, lastUploadAtMillis = clock.millis(), lastError = null)
-        }
+      // the server may have changed while this batch was on its way
+      if (serverConfig.current() != server) return true
+      store.updateData {
+        it.copy(
+          uploadedUpToId = uploadedUpTo,
+          uploadedServer = server.url,
+          lastUploadAtMillis = clock.millis(),
+          lastError = null,
+        )
       }
       if (events.size < BATCH_SIZE) break
       events = historyRepo.eventsAfter(uploadedUpTo, BATCH_SIZE)

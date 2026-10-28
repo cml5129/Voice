@@ -398,9 +398,8 @@
     <string name="settings.history_upload.failed">לא מעלה: %1$s</string>
     <string name="settings.history_upload.key">מפתח</string>
     <string name="settings.history_upload.last_upload">העלאה אחרונה %1$s</string>
-    <string name="settings.history_upload.off">לשמור את כל ההיסטוריה בשרת שלך</string>
+    <string name="settings.history_upload.no_server">נדרשים כתובת שרת ומפתח</string>
     <string name="settings.history_upload.server">כתובת השרת</string>
-    <string name="settings.history_upload.title">העלאת היסטוריית האזנה</string>
     <string name="settings.history_upload.waiting">ממתין להעלאה הראשונה</string>
     <string name="settings.library.audiobookshelf.summary">הזרמת הספרים מהשרת שלכם</string>
     <string name="settings.library.folders.summary">ניהול תיקיות שנסרקות עבור קולספרים</string>
@@ -415,6 +414,8 @@
     <string name="settings.playback.lock_screen_slider.title">פס ההתקדמות במסך הנעילה</string>
     <string name="settings.playback.seek_time.summary">כמה רחוק מדלגים בהרצה אחורה וקדימה</string>
     <string name="settings.playback.seek_time.title">משך הדילוג</string>
+    <string name="settings.server.off">לחבר את Voice לשרת שלך</string>
+    <string name="settings.server.title">השרת שלך</string>
     <string name="settings.subtitle">הפכו את Voice לשלכם</string>
     <string name="settings.support.faq.title">שאלות נפוצות</string>
     <string name="settings.support.get_support.title">תמיכה</string>

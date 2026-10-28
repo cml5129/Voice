@@ -380,9 +380,8 @@
     <string name="settings.history_upload.failed">Uploadt niet: %1$s</string>
     <string name="settings.history_upload.key">Sleutel</string>
     <string name="settings.history_upload.last_upload">Laatste upload %1$s</string>
-    <string name="settings.history_upload.off">Bewaar de hele geschiedenis op je eigen server</string>
+    <string name="settings.history_upload.no_server">Serveradres en sleutel nodig</string>
     <string name="settings.history_upload.server">Serveradres</string>
-    <string name="settings.history_upload.title">Luistergeschiedenis uploaden</string>
     <string name="settings.history_upload.waiting">Wachten op de eerste upload</string>
     <string name="settings.library.audiobookshelf.summary">Stream de boeken op je eigen server</string>
     <string name="settings.library.folders.summary">Beheer mappen die op luisterboeken worden gescand</string>
@@ -397,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">Schuifbalk op het vergrendelscherm</string>
     <string name="settings.playback.seek_time.summary">Hoe ver terugspoelen en vooruitspoelen springen</string>
     <string name="settings.playback.seek_time.title">Spoelafstand</string>
+    <string name="settings.server.off">Verbind Voice met je eigen server</string>
+    <string name="settings.server.title">Je server</string>
     <string name="settings.subtitle">Maak Voice helemaal van jou</string>
     <string name="settings.support.faq.title">Veelgestelde vragen</string>
     <string name="settings.support.get_support.title">Ondersteuning vragen</string>

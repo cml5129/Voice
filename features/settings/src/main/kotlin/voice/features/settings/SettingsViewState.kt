@@ -83,17 +83,22 @@ data class SettingsViewState(
   }
 
   data class HistoryUploadViewState(
+    val enabled: Boolean,
+    /** The server set on the device, or else the one this build came with. */
     val serverUrl: String,
     val key: String,
+    /** Whether there is a server and key to upload to. */
+    val configured: Boolean,
     val lastUpload: Instant?,
     /** Why the last upload failed, until one works again. */
     val error: String?,
   ) {
-    val enabled: Boolean get() = serverUrl.isNotBlank() && key.isNotBlank()
 
     companion object {
       fun preview(): HistoryUploadViewState {
         return HistoryUploadViewState(
+          enabled = true,
+          configured = true,
           serverUrl = "https://example.com",
           key = "key",
           lastUpload = Instant.parse("2026-10-28T06:06:00Z"),

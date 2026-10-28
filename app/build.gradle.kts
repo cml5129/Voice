@@ -32,6 +32,13 @@ android {
     applicationId = "de.ph1b.audiobook"
     versionName = providers.gradleProperty("voice.versionName").orNull ?: "1.0.0"
     versionCode = providers.gradleProperty("voice.versionCode").orNull?.toInt() ?: Int.MAX_VALUE
+    // The listener's own server, for the listening history and transcripts. CI sets these; blank leaves it unset.
+    fun serverField(env: String): String {
+      val value = providers.environmentVariable(env).orNull?.trim().orEmpty()
+      return "\"" + value.replace("\\", "\\\\").replace("\"", "\\\"") + "\""
+    }
+    buildConfigField(type = "String", name = "VOICE_SERVER_URL", value = serverField("VOICE_SERVER_URL"))
+    buildConfigField(type = "String", name = "VOICE_SERVER_KEY", value = serverField("VOICE_API_KEY"))
   }
 
   val distributionFlavor = "distribution"
@@ -164,6 +171,7 @@ dependencies {
   implementation(projects.core.audiobookshelf)
   implementation(projects.core.foldersync)
   implementation(projects.core.historyupload)
+  implementation(projects.core.server)
   implementation(projects.features.audiobookshelf)
 
   implementation(libs.appCompat)

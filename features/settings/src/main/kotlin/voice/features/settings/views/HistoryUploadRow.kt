@@ -32,12 +32,14 @@ import voice.core.strings.R as StringsR
 @Composable
 internal fun HistoryUploadRow(
   viewState: SettingsViewState.HistoryUploadViewState,
+  onEnabledChange: (Boolean) -> Unit,
   onChange: (serverUrl: String, key: String) -> Unit,
 ) {
   var editing by rememberSaveable { mutableStateOf(false) }
-  IslandRow(
-    title = stringResource(StringsR.string.settings_history_upload_title),
-    onClick = { editing = true },
+  IslandSwitchRow(
+    title = stringResource(StringsR.string.settings_server_title),
+    checked = viewState.enabled,
+    onCheckedChange = onEnabledChange,
     leading = {
       ShapedIcon(
         icon = VoiceIcons.History,
@@ -54,6 +56,31 @@ internal fun HistoryUploadRow(
       )
     },
   )
+  if (viewState.enabled) {
+    IslandRow(
+      title = stringResource(StringsR.string.settings_history_upload_server),
+      onClick = { editing = true },
+      leading = {
+        ShapedIcon(
+          icon = VoiceIcons.Cloud,
+          shape = MaterialShapes.Circle,
+          containerColor = MaterialTheme.colorScheme.secondaryContainer,
+          contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
+        )
+      },
+      summary = if (viewState.serverUrl.isNotBlank()) {
+        {
+          Text(
+            text = viewState.serverUrl,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+          )
+        }
+      } else {
+        null
+      },
+    )
+  }
   if (editing) {
     HistoryUploadDialog(
       viewState = viewState,
@@ -70,7 +97,8 @@ internal fun HistoryUploadRow(
 private fun historyUploadSummary(viewState: SettingsViewState.HistoryUploadViewState): String {
   val lastUpload = viewState.lastUpload
   return when {
-    !viewState.enabled -> stringResource(StringsR.string.settings_history_upload_off)
+    !viewState.enabled -> stringResource(StringsR.string.settings_server_off)
+    !viewState.configured -> stringResource(StringsR.string.settings_history_upload_no_server)
     viewState.error != null -> stringResource(StringsR.string.settings_history_upload_failed, viewState.error)
     lastUpload == null -> stringResource(StringsR.string.settings_history_upload_waiting)
     else -> stringResource(
@@ -90,7 +118,7 @@ private fun HistoryUploadDialog(
   var key by rememberSaveable { mutableStateOf(viewState.key) }
   AlertDialog(
     onDismissRequest = onDismiss,
-    title = { Text(stringResource(StringsR.string.settings_history_upload_title)) },
+    title = { Text(stringResource(StringsR.string.settings_server_title)) },
     text = {
       Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Text(stringResource(StringsR.string.settings_history_upload_explanation))

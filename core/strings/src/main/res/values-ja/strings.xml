@@ -362,9 +362,8 @@
     <string name="settings.history_upload.failed">アップロードできません: %1$s</string>
     <string name="settings.history_upload.key">キー</string>
     <string name="settings.history_upload.last_upload">最終アップロード %1$s</string>
-    <string name="settings.history_upload.off">すべての履歴を自分のサーバーに保存</string>
+    <string name="settings.history_upload.no_server">サーバーのアドレスとキーが必要です</string>
     <string name="settings.history_upload.server">サーバーのアドレス</string>
-    <string name="settings.history_upload.title">再生履歴をアップロード</string>
     <string name="settings.history_upload.waiting">最初のアップロードを待っています</string>
     <string name="settings.library.audiobookshelf.summary">自分のサーバーの本をストリーミング再生</string>
     <string name="settings.library.folders.summary">オーディオブックをスキャンするフォルダーを管理</string>
@@ -379,6 +378,8 @@
     <string name="settings.playback.lock_screen_slider.title">ロック画面のシークバー</string>
     <string name="settings.playback.seek_time.summary">巻き戻しと早送りでスキップする長さ</string>
     <string name="settings.playback.seek_time.title">スキップ量</string>
+    <string name="settings.server.off">Voice を自分のサーバーに接続</string>
+    <string name="settings.server.title">自分のサーバー</string>
     <string name="settings.subtitle">Voice を自分好みに</string>
     <string name="settings.support.faq.title">よくある質問</string>
     <string name="settings.support.get_support.title">サポート</string>
