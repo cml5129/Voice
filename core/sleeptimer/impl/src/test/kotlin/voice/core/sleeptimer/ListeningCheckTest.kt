@@ -7,6 +7,7 @@ import io.mockk.just
 import io.mockk.mockk
 import io.mockk.verify
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.advanceTimeBy
@@ -17,6 +18,7 @@ import voice.core.data.ChapterId
 import voice.core.data.ListeningEvent
 import voice.core.playback.LivePlaybackState
 import voice.core.playback.PlayerController
+import voice.core.playback.history.ListeningHistoryRecorder
 import voice.core.playback.playstate.PlayStateManager
 import voice.core.sleeptimer.impl.MemoryDataStore
 import java.time.Clock
@@ -41,6 +43,10 @@ class ListeningCheckTest {
     }
   }
   private val sleepTimer = mockk<SleepTimer>(relaxUnitFun = true)
+  private val recordedEvents = MutableSharedFlow<ListeningEvent>(extraBufferCapacity = 16)
+  private val historyRecorder = mockk<ListeningHistoryRecorder> {
+    every { events } returns recordedEvents
+  }
   private val bookId = BookId("book")
   private val chapter = ChapterId("chapter")
   private var positionMs = 1_000L
@@ -62,6 +68,7 @@ class ListeningCheckTest {
     playerController = playerController,
     shakeDetector = shakeDetector,
     sleepTimer = sleepTimer,
+    historyRecorder = historyRecorder,
     clock = Clock.fixed(Instant.parse("2020-01-01T$time:00Z"), ZoneId.of("UTC")),
     scope = testScope.backgroundScope,
   )
@@ -107,6 +114,77 @@ class ListeningCheckTest {
       playerController.pause()
     }
   }
+
+  @Test
+  fun `a skip moves where it goes back to and waits a full interval`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(5.minutes)
+    positionMs = 2_100_000L
+    recordedEvents.emit(listenerEvent(ListeningEvent.Type.SkipForward))
+    runCurrent()
+
+    advanceTimeBy(9.minutes)
+    verify(exactly = 0) { playerController.setVolume(ListeningCheck.PROMPT_VOLUME) }
+
+    advanceTimeBy(2.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(2_100_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.pause()
+    }
+  }
+
+  @Test
+  fun `a skip during a check counts as an answer`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(10.minutes + 1.seconds)
+    positionMs = 2_100_000L
+    recordedEvents.emit(listenerEvent(ListeningEvent.Type.SkipForward))
+    runCurrent()
+    verify { playerController.setVolume(1F) }
+
+    advanceTimeBy(1.minutes)
+    verify(exactly = 0) { playerController.pause() }
+
+    advanceTimeBy(10.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(2_100_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  @Test
+  fun `a position synced from another device does not count as awake`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(5.minutes)
+    positionMs = 2_100_000L
+    recordedEvents.emit(listenerEvent(ListeningEvent.Type.Seek, ListeningEvent.Source.OtherDevice))
+    runCurrent()
+
+    advanceTimeBy(6.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(1_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  private fun listenerEvent(
+    type: ListeningEvent.Type,
+    source: ListeningEvent.Source = ListeningEvent.Source.App,
+  ) = ListeningEvent(
+    bookId = bookId,
+    type = type,
+    source = source,
+    atMillis = 0,
+    chapterId = chapter,
+    time = positionMs,
+  )
 
   @Test
   fun `does not check when turned off`() = testScope.runTest {
