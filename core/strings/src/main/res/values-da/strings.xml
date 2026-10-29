@@ -199,6 +199,8 @@
     <string name="history.event.fell_asleep">Faldt i søvn</string>
     <string name="history.event.interrupted">Afbrudt i %s</string>
     <string name="history.event.jump_back">Sprang tilbage</string>
+    <string name="history.event.morning_check_right">Du sagde, at du mistede tråden her</string>
+    <string name="history.event.morning_check_wrong">Du sagde, at du ikke mistede tråden her</string>
     <string name="history.event.moved">Spolede</string>
     <string name="history.event.paused">Satte på pause</string>
     <string name="history.event.played">Afspillede</string>
@@ -289,6 +291,11 @@
     <string name="library.survey.title">Vær med til at forme Voice</string>
     <string name="media_session.library.recent">Seneste</string>
     <string name="media_session.library.root">Alle lydbøger</string>
+    <string name="morning_check.channel">Morgenspørgsmål</string>
+    <string name="morning_check.right">Ja</string>
+    <string name="morning_check.title">Er det her, du mistede tråden?</string>
+    <string name="morning_check.wrong">Nej</string>
+    <string name="morning_check.wrong_answered">Tak! Åbn bogen og gå hen, hvor du mistede tråden.</string>
     <string name="onboarding.action.next">Næste</string>
     <string name="onboarding.analytics_consent.action.disable">Fortsæt uden analysedata</string>
     <string name="onboarding.analytics_consent.action.enable">Fortsæt med analysedata</string>
@@ -371,6 +378,8 @@
     <string name="settings.auto_sleep_timer.end.label">Vælg sluttid</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Hvert 10. minut bliver bogen lavere. Ryst telefonen inden for et minut for at lytte videre. Ellers går den tilbage til der, hvor du sidst rystede, og sætter på pause.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Tjek, at jeg stadig lytter</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Efter et ubesvaret tjek spørger en notifikation om morgenen, om bogen gik tilbage til, hvor du mistede tråden</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Spørg mig om morgenen</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Når du skruer op eller ned, springer eller trykker på afspil igen, starter nedtællingen forfra</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Genstart, når jeg er vågen</string>
     <string name="settings.auto_sleep_timer.start.label">Vælg starttid</string>

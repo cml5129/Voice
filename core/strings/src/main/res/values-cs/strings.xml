@@ -221,6 +221,8 @@
     <string name="history.event.fell_asleep">Usnuto</string>
     <string name="history.event.interrupted">Přerušeno na %s</string>
     <string name="history.event.jump_back">Návrat zpět</string>
+    <string name="history.event.morning_check_right">Řekli jste, že jste tady ztratili nit</string>
+    <string name="history.event.morning_check_wrong">Řekli jste, že jste tady neztratili nit</string>
     <string name="history.event.moved">Posun</string>
     <string name="history.event.paused">Pozastaveno</string>
     <string name="history.event.played">Spuštěno</string>
@@ -323,6 +325,11 @@
     <string name="library.survey.title">Pomozte utvářet Voice</string>
     <string name="media_session.library.recent">Nedávné</string>
     <string name="media_session.library.root">Všechny audioknihy</string>
+    <string name="morning_check.channel">Ranní otázka</string>
+    <string name="morning_check.right">Ano</string>
+    <string name="morning_check.title">Ztratili jste nit tady?</string>
+    <string name="morning_check.wrong">Ne</string>
+    <string name="morning_check.wrong_answered">Díky! Otevřete knihu a přejděte tam, kde jste ztratili nit.</string>
     <string name="onboarding.action.next">Další</string>
     <string name="onboarding.analytics_consent.action.disable">Pokračovat bez analytiky</string>
     <string name="onboarding.analytics_consent.action.enable">Pokračovat s analytikou</string>
@@ -407,6 +414,8 @@
     <string name="settings.auto_sleep_timer.end.label">Nastavit čas konce</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Každých 10 minut se kniha ztiší. Zatřeste telefonem do minuty a budete poslouchat dál. Jinak se vrátí tam, kde jste naposledy zatřásli, a pozastaví se.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Kontrolovat, že ještě poslouchám</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Po zmeškané kontrole se vás ráno oznámení zeptá, jestli se kniha vrátila tam, kde jste ztratili nit</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Zeptat se ráno</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Změna hlasitosti, přeskočení nebo opětovné spuštění přehrávání začne odpočet znovu</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Restartovat, když jsem vzhůru</string>
     <string name="settings.auto_sleep_timer.start.label">Nastavit čas startu</string>

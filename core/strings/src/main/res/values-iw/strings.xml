@@ -210,6 +210,8 @@
     <string name="history.event.fell_asleep">נרדמת</string>
     <string name="history.event.interrupted">הפרעה למשך %s</string>
     <string name="history.event.jump_back">חזרה למקום הקודם</string>
+    <string name="history.event.morning_check_right">אמרת שאיבדת כאן את החוט</string>
+    <string name="history.event.morning_check_wrong">אמרת שלא איבדת כאן את החוט</string>
     <string name="history.event.moved">הזזה</string>
     <string name="history.event.paused">השהיה</string>
     <string name="history.event.played">הפעלה</string>
@@ -306,6 +308,11 @@
     <string name="library.survey.title">עזרו לעצב את Voice</string>
     <string name="media_session.library.recent">אחרונים</string>
     <string name="media_session.library.root">כל הקולספרים</string>
+    <string name="morning_check.channel">שאלת בוקר</string>
+    <string name="morning_check.right">כן</string>
+    <string name="morning_check.title">כאן איבדת את החוט?</string>
+    <string name="morning_check.wrong">לא</string>
+    <string name="morning_check.wrong_answered">תודה! יש לפתוח את הספר ולעבור למקום שבו איבדת את החוט.</string>
     <string name="onboarding.action.next">הבא</string>
     <string name="onboarding.analytics_consent.action.disable">המשך ללא ניתוח נתונים</string>
     <string name="onboarding.analytics_consent.action.enable">המשך עם ניתוח נתונים</string>
@@ -389,6 +396,8 @@
     <string name="settings.auto_sleep_timer.end.label">בחירת זמן סיום</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">כל 10 דקות הספר נשמע חלש יותר. נערו את הטלפון תוך דקה כדי להמשיך להאזין. אחרת הוא חוזר למקום שבו ניערתם בפעם האחרונה ועובר להשהיה.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">בדיקה שההאזנה נמשכת</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">אחרי בדיקה שלא נענתה, התראה שואלת בבוקר אם הספר חזר למקום שבו איבדת את החוט</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">לשאול אותי בבוקר</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">שינוי עוצמת הקול, דילוג או לחיצה חוזרת על הפעלה מתחילים את הספירה לאחור מחדש</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">הפעלה מחדש כל עוד לא נרדמתי</string>
     <string name="settings.auto_sleep_timer.start.label">בחירת זמן התחלה</string>

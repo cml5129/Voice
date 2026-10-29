@@ -51,6 +51,12 @@ public data class ListeningEvent(
     SleepTimerExtended,
     StillListening,
     FellAsleep,
+
+    /** The listener said the morning check was right: they lost track of the book at this place. */
+    MorningCheckRight,
+
+    /** The listener said the morning check was wrong: they didn't lose track of the book at this place. */
+    MorningCheckWrong,
   }
 
   public enum class Source {

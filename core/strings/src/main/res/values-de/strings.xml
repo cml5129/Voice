@@ -199,6 +199,8 @@
     <string name="history.event.fell_asleep">Eingeschlafen</string>
     <string name="history.event.interrupted">%s unterbrochen</string>
     <string name="history.event.jump_back">Zurückgesprungen</string>
+    <string name="history.event.morning_check_right">Hier hast Du den Faden verloren</string>
+    <string name="history.event.morning_check_wrong">Hier hast Du den Faden nicht verloren</string>
     <string name="history.event.moved">Gespult</string>
     <string name="history.event.paused">Pausiert</string>
     <string name="history.event.played">Gestartet</string>
@@ -289,6 +291,11 @@
     <string name="library.survey.title">Gestalte Voice mit</string>
     <string name="media_session.library.recent">Kürzlich</string>
     <string name="media_session.library.root">Alle Hörbücher</string>
+    <string name="morning_check.channel">Morgenfrage</string>
+    <string name="morning_check.right">Ja</string>
+    <string name="morning_check.title">Hast Du hier den Faden verloren?</string>
+    <string name="morning_check.wrong">Nein</string>
+    <string name="morning_check.wrong_answered">Danke! Öffne das Buch und spring dorthin, wo Du den Faden verloren hast.</string>
     <string name="onboarding.action.next">Weiter</string>
     <string name="onboarding.analytics_consent.action.disable">Ohne Datenfreigabe fortfahren</string>
     <string name="onboarding.analytics_consent.action.enable">Mit Datenfreigabe fortfahren</string>
@@ -371,6 +378,8 @@
     <string name="settings.auto_sleep_timer.end.label">Endzeit</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Alle 10 Minuten wird das Buch leiser. Schüttle Dein Handy innerhalb einer Minute, um weiterzuhören. Sonst springt es dorthin zurück, wo Du zuletzt geschüttelt hast, und pausiert.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Prüfen, ob ich noch zuhöre</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Nach einer verpassten Prüfung fragt Dich morgens eine Benachrichtigung, ob das Buch an die Stelle zurückgesprungen ist, an der Du den Faden verloren hast</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Morgens nachfragen</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Lautstärke ändern, springen oder erneut Play drücken startet den Countdown neu</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Neu starten, solange ich wach bin</string>
     <string name="settings.auto_sleep_timer.start.label">Startzeit</string>

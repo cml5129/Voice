@@ -199,6 +199,8 @@
     <string name="history.event.fell_asleep">Nukahdit</string>
     <string name="history.event.interrupted">Keskeytetty %s ajaksi</string>
     <string name="history.event.jump_back">Palattiin aiempaan kohtaan</string>
+    <string name="history.event.morning_check_right">Sanoit, että putosit kärryiltä tässä</string>
+    <string name="history.event.morning_check_wrong">Sanoit, ettet pudonnut kärryiltä tässä</string>
     <string name="history.event.moved">Kohtaa siirretty</string>
     <string name="history.event.paused">Pysäytetty</string>
     <string name="history.event.played">Kuuntelu aloitettu</string>
@@ -289,6 +291,11 @@
     <string name="library.survey.title">Auta kehittämään Voicea</string>
     <string name="media_session.library.recent">Viimeksi kuunnellut</string>
     <string name="media_session.library.root">Kaikki äänikirjat</string>
+    <string name="morning_check.channel">Aamukysymys</string>
+    <string name="morning_check.right">Kyllä</string>
+    <string name="morning_check.title">Putositko kärryiltä tässä?</string>
+    <string name="morning_check.wrong">Ei</string>
+    <string name="morning_check.wrong_answered">Kiitos! Avaa kirja ja siirry kohtaan, jossa putosit kärryiltä.</string>
     <string name="onboarding.action.next">Seuraava</string>
     <string name="onboarding.analytics_consent.action.disable">Jatka ilman analytiikkaa</string>
     <string name="onboarding.analytics_consent.action.enable">Jatka analytiikan kanssa</string>
@@ -371,6 +378,8 @@
     <string name="settings.auto_sleep_timer.end.label">Päättymisaika</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">10 minuutin välein kirja hiljenee. Ravista puhelinta minuutin sisällä, niin kuuntelu jatkuu. Muuten kirja palaa kohtaan, jossa viimeksi ravistit, ja pysähtyy.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Tarkista, kuuntelenko vielä</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Vastaamattoman tarkistuksen jälkeen ilmoitus kysyy aamulla, palasiko kirja kohtaan, jossa putosit kärryiltä</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Kysy minulta aamulla</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Äänenvoimakkuuden muuttaminen, hyppääminen tai toiston jatkaminen aloittaa ajastuksen alusta</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Aloita alusta, kun olen hereillä</string>
     <string name="settings.auto_sleep_timer.start.label">Aloitusaika</string>

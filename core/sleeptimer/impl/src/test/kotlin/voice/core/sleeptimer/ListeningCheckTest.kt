@@ -2,6 +2,7 @@ package voice.core.sleeptimer
 
 import io.mockk.Runs
 import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.every
 import io.mockk.just
 import io.mockk.mockk
@@ -74,18 +75,23 @@ class ListeningCheckTest {
     }
   }
 
-  private fun listeningCheck(time: LocalTime = LocalTime.of(23, 0)) = ListeningCheck(
-    sleepTimerPreferenceStore = SleepTimerPreferenceStore(preferenceStore),
-    playStateManager = playStateManager,
-    playerController = playerController,
-    shakeDetector = shakeDetector,
-    sleepTimer = sleepTimer,
-    historyRecorder = historyRecorder,
-    historyRepo = historyRepo,
-    bookRepository = mockk<BookRepository>(relaxed = true),
-    clock = Clock.fixed(Instant.parse("2020-01-01T$time:00Z"), ZoneId.of("UTC")),
-    scope = testScope.backgroundScope,
-  )
+  private val morningCheck = mockk<MorningCheck>(relaxed = true)
+
+  private fun listeningCheck(time: LocalTime = LocalTime.of(23, 0)): ListeningCheck {
+    val clock = Clock.fixed(Instant.parse("2020-01-01T$time:00Z"), ZoneId.of("UTC"))
+    return ListeningCheck(
+      sleepTimerPreferenceStore = SleepTimerPreferenceStore(preferenceStore),
+      playStateManager = playStateManager,
+      playerController = playerController,
+      shakeDetector = shakeDetector,
+      sleepTimer = sleepTimer,
+      historyRecorder = historyRecorder,
+      lostTrack = LostTrack(historyRepo, mockk<BookRepository>(relaxed = true), clock),
+      morningCheck = morningCheck,
+      clock = clock,
+      scope = testScope.backgroundScope,
+    )
+  }
 
   @Test
   fun `a missed check goes back to where playback started and pauses`() = testScope.runTest {
@@ -103,6 +109,7 @@ class ListeningCheckTest {
       playerController.setPosition(1_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
       playerController.pause()
     }
+    coVerify { morningCheck.schedule(bookId) }
   }
 
   @Test

@@ -199,6 +199,8 @@
     <string name="history.event.fell_asleep">Uinus</string>
     <string name="history.event.interrupted">Katkestatud %s ajaks</string>
     <string name="history.event.jump_back">Tagasi hüpatud</string>
+    <string name="history.event.morning_check_right">Ütlesid, et kaotasid siin järje</string>
+    <string name="history.event.morning_check_wrong">Ütlesid, et sa ei kaotanud siin järge</string>
     <string name="history.event.moved">Liigutatud</string>
     <string name="history.event.paused">Peatatud</string>
     <string name="history.event.played">Esitatud</string>
@@ -289,6 +291,11 @@
     <string name="library.survey.title">Aita Voice\'i kujundada</string>
     <string name="media_session.library.recent">Viimati kuulatud</string>
     <string name="media_session.library.root">Kõik heliraamatud</string>
+    <string name="morning_check.channel">Hommikune küsimus</string>
+    <string name="morning_check.right">Jah</string>
+    <string name="morning_check.title">Kas kaotasid siin järje?</string>
+    <string name="morning_check.wrong">Ei</string>
+    <string name="morning_check.wrong_answered">Aitäh! Ava raamat ja mine sinna, kus järje kaotasid.</string>
     <string name="onboarding.action.next">Edasi</string>
     <string name="onboarding.analytics_consent.action.disable">Jätka ilma analüütikata</string>
     <string name="onboarding.analytics_consent.action.enable">Jätka analüütikaga</string>
@@ -371,6 +378,8 @@
     <string name="settings.auto_sleep_timer.end.label">Määra lõpuaeg</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Iga 10 minuti järel läheb raamat vaiksemaks. Raputa telefoni minuti jooksul, et edasi kuulata. Muidu läheb see tagasi kohta, kus viimati raputasid, ja peatub.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Kontrolli, kas ma veel kuulan</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Pärast vastamata kontrolli küsib teavitus hommikul, kas raamat läks tagasi sinna, kus järje kaotasid</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Küsi minult hommikul</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Helitugevuse muutmine, edasi-tagasi hüppamine või uuesti esitamine alustab loendust otsast</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Taaskäivita, kui olen ärkvel</string>
     <string name="settings.auto_sleep_timer.start.label">Määra algusaeg</string>

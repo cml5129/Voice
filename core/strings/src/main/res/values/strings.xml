@@ -334,6 +334,10 @@
     <!-- A row in the listening history: a phone call or a navigation prompt paused the book until it was over. %s is how long, like "3 min". -->
     <string name="history.event.interrupted">Interrupted for %s</string>
     <string name="history.event.jump_back">Jumped back</string>
+    <!-- A row in the listening history: in the morning, the listener confirmed in a notification that they lost track of the book at this place. -->
+    <string name="history.event.morning_check_right">You said you lost track here</string>
+    <!-- A row in the listening history: in the morning, the listener said in a notification that they did not lose track of the book at this place. -->
+    <string name="history.event.morning_check_wrong">You said you didn\'t lose track here</string>
     <string name="history.event.moved">Moved</string>
     <!-- A row in the listening history: the book was paused. -->
     <string name="history.event.paused">Paused</string>
@@ -484,6 +488,16 @@
     <string name="media_session.library.recent">Recent</string>
     <!-- Media browser root title for all audiobooks. -->
     <string name="media_session.library.root">All audiobooks</string>
+    <!-- Name of the notification channel for the morning question about where the listener fell asleep. -->
+    <string name="morning_check.channel">Morning check</string>
+    <!-- Button in the morning notification: yes, this is where I lost track of the book. -->
+    <string name="morning_check.right">Yes</string>
+    <!-- Title of the morning notification. Below it are the book and the place it went back to after the listener fell asleep. -->
+    <string name="morning_check.title">Is this where you lost track?</string>
+    <!-- Button in the morning notification: no, this is not where I lost track of the book. -->
+    <string name="morning_check.wrong">No</string>
+    <!-- Shown in the morning notification after the listener said the place was wrong. -->
+    <string name="morning_check.wrong_answered">Thanks! Open the book and go to where you lost track.</string>
     <!-- Button label for advancing to the next onboarding step. -->
     <string name="onboarding.action.next">Next</string>
     <!-- Button label for continuing with analytics disabled. -->
@@ -644,6 +658,10 @@
     <string name="settings.auto_sleep_timer.listening_check.summary">Every 10 minutes the book gets quieter. Shake your phone within a minute to keep listening. Otherwise it goes back to where you last shook and pauses.</string>
     <!-- Settings title for checking every few minutes whether the listener is still awake. -->
     <string name="settings.auto_sleep_timer.listening_check.title">Check that I\'m still listening</string>
+    <!-- Settings summary for the morning question, shown below the listening check. -->
+    <string name="settings.auto_sleep_timer.morning_check.summary">After a missed check, a notification asks in the morning whether the book went back to where you lost track</string>
+    <!-- Settings title for asking in the morning where the listener lost track of the book. -->
+    <string name="settings.auto_sleep_timer.morning_check.title">Ask me in the morning</string>
     <!-- Summary of the setting that restarts a running sleep timer when the listener shows they are awake. -->
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Changing the volume, skipping or pressing play again starts the countdown over</string>
     <!-- Title of the setting that restarts a running sleep timer when the listener shows they are awake. -->

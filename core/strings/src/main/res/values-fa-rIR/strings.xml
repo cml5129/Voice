@@ -199,6 +199,8 @@
     <string name="history.event.fell_asleep">خوابتان برد</string>
     <string name="history.event.interrupted">وقفه به مدت %s</string>
     <string name="history.event.jump_back">بازگشت به جای قبلی</string>
+    <string name="history.event.morning_check_right">گفتید اینجا رشته را گم کردید</string>
+    <string name="history.event.morning_check_wrong">گفتید اینجا رشته را گم نکردید</string>
     <string name="history.event.moved">جابه‌جایی</string>
     <string name="history.event.paused">توقف</string>
     <string name="history.event.played">پخش</string>
@@ -289,6 +291,11 @@
     <string name="library.survey.title">به ساختن آیندهٔ Voice کمک کنید</string>
     <string name="media_session.library.recent">اخیراً پخش‌شده</string>
     <string name="media_session.library.root">همه کتاب های صوتی</string>
+    <string name="morning_check.channel">پرسش صبح</string>
+    <string name="morning_check.right">بله</string>
+    <string name="morning_check.title">اینجا رشته را گم کردید؟</string>
+    <string name="morning_check.wrong">نه</string>
+    <string name="morning_check.wrong_answered">ممنون! کتاب را باز کنید و به جایی بروید که رشته را گم کردید.</string>
     <string name="onboarding.action.next">بعدی</string>
     <string name="onboarding.analytics_consent.action.disable">قبول نکردن تجزیه‌وتحلیل آماری</string>
     <string name="onboarding.analytics_consent.action.enable">قبول کردن تجزیه‌وتحلیل آماری</string>
@@ -371,6 +378,8 @@
     <string name="settings.auto_sleep_timer.end.label">زمان پایان</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">هر ۱۰ دقیقه صدای کتاب کم می‌شود. برای ادامهٔ گوش دادن، ظرف یک دقیقه گوشی را تکان دهید. در غیر این صورت، به جایی که آخرین بار تکان دادید برمی‌گردد و متوقف می‌شود.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">بررسی اینکه هنوز گوش می‌دهم</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">پس از یک بررسی بی‌پاسخ، یک اعلان صبح می‌پرسد آیا کتاب به جایی برگشت که رشته را گم کردید</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">صبح از من بپرس</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">تغییر صدا، رد کردن یا پخش دوباره، شمارش معکوس را از نو شروع می‌کند</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">شروع دوباره وقتی بیدارم</string>
     <string name="settings.auto_sleep_timer.start.label">زمان شروع</string>

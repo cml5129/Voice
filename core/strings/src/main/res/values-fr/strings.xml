@@ -210,6 +210,8 @@
     <string name="history.event.fell_asleep">Endormissement</string>
     <string name="history.event.interrupted">Interruption de %s</string>
     <string name="history.event.jump_back">Retour à la position précédente</string>
+    <string name="history.event.morning_check_right">Vous avez dit avoir perdu le fil ici</string>
+    <string name="history.event.morning_check_wrong">Vous avez dit ne pas avoir perdu le fil ici</string>
     <string name="history.event.moved">Position déplacée</string>
     <string name="history.event.paused">Pause</string>
     <string name="history.event.played">Lecture</string>
@@ -306,6 +308,11 @@
     <string name="library.survey.title">Aidez à façonner Voice</string>
     <string name="media_session.library.recent">Récents</string>
     <string name="media_session.library.root">Tous les livres audio</string>
+    <string name="morning_check.channel">Question du matin</string>
+    <string name="morning_check.right">Oui</string>
+    <string name="morning_check.title">Est-ce ici que vous avez perdu le fil ?</string>
+    <string name="morning_check.wrong">Non</string>
+    <string name="morning_check.wrong_answered">Merci ! Ouvrez le livre et allez là où vous avez perdu le fil.</string>
     <string name="onboarding.action.next">Suivant</string>
     <string name="onboarding.analytics_consent.action.disable">Continuer sans les analyses</string>
     <string name="onboarding.analytics_consent.action.enable">Continuer avec les analyses</string>
@@ -389,6 +396,8 @@
     <string name="settings.auto_sleep_timer.end.label">Heure de fin</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Toutes les 10 minutes, le livre baisse le volume. Secouez votre téléphone dans la minute pour continuer. Sinon, il revient là où vous l\'avez secoué la dernière fois et se met en pause.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Vérifier que j\'écoute encore</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Après une vérification sans réponse, une notification vous demande le matin si le livre est revenu là où vous avez perdu le fil</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Me demander le matin</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Changer le volume, sauter ou relancer la lecture redémarre le compte à rebours</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Relancer si je ne dors pas</string>
     <string name="settings.auto_sleep_timer.start.label">Heure de début</string>

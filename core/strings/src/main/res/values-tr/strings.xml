@@ -199,6 +199,8 @@
     <string name="history.event.fell_asleep">Uyuyakaldınız</string>
     <string name="history.event.interrupted">%s boyunca kesintiye uğradı</string>
     <string name="history.event.jump_back">Önceki yere dönüldü</string>
+    <string name="history.event.morning_check_right">Burada konuyu kaçırdığını söyledin</string>
+    <string name="history.event.morning_check_wrong">Burada konuyu kaçırmadığını söyledin</string>
     <string name="history.event.moved">Konum değiştirildi</string>
     <string name="history.event.paused">Duraklatıldı</string>
     <string name="history.event.played">Oynatıldı</string>
@@ -289,6 +291,11 @@
     <string name="library.survey.title">Voice\'u birlikte şekillendirelim</string>
     <string name="media_session.library.recent">Son açılanlar</string>
     <string name="media_session.library.root">Tüm sesli kitaplar</string>
+    <string name="morning_check.channel">Sabah sorusu</string>
+    <string name="morning_check.right">Evet</string>
+    <string name="morning_check.title">Konuyu burada mı kaçırdın?</string>
+    <string name="morning_check.wrong">Hayır</string>
+    <string name="morning_check.wrong_answered">Teşekkürler! Kitabı aç ve konuyu kaçırdığın yere git.</string>
     <string name="onboarding.action.next">Sonraki</string>
     <string name="onboarding.analytics_consent.action.disable">Analitiksiz devam et</string>
     <string name="onboarding.analytics_consent.action.enable">Analitiğe izin ver</string>
@@ -371,6 +378,8 @@
     <string name="settings.auto_sleep_timer.end.label">Bitiş zamanı</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Kitabın sesi her 10 dakikada bir azalır. Dinlemeye devam etmek için bir dakika içinde telefonunuzu sallayın. Aksi hâlde en son salladığınız yere döner ve duraklar.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Hâlâ dinlediğimi kontrol et</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Yanıtlanmayan bir kontrolden sonra sabah bir bildirim, kitabın konuyu kaçırdığın yere dönüp dönmediğini sorar</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Sabah bana sor</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Sesi değiştirmek, atlamak veya yeniden oynatmak geri sayımı baştan başlatır</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Uyanıkken yeniden başlat</string>
     <string name="settings.auto_sleep_timer.start.label">Başlama zamanı</string>

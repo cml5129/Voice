@@ -210,6 +210,8 @@
     <string name="history.event.fell_asleep">M\'he adormit</string>
     <string name="history.event.interrupted">Interrupció de %s</string>
     <string name="history.event.jump_back">Tornada enrere</string>
+    <string name="history.event.morning_check_right">Has dit que aquí vas perdre el fil</string>
+    <string name="history.event.morning_check_wrong">Has dit que aquí no vas perdre el fil</string>
     <string name="history.event.moved">Desplaçament</string>
     <string name="history.event.paused">Pausa</string>
     <string name="history.event.played">Reproducció</string>
@@ -306,6 +308,11 @@
     <string name="library.survey.title">Ajudeu a donar forma a Voice</string>
     <string name="media_session.library.recent">Recents</string>
     <string name="media_session.library.root">Tots els audiollibres</string>
+    <string name="morning_check.channel">Pregunta del matí</string>
+    <string name="morning_check.right">Sí</string>
+    <string name="morning_check.title">És aquí on vas perdre el fil?</string>
+    <string name="morning_check.wrong">No</string>
+    <string name="morning_check.wrong_answered">Gràcies! Obre el llibre i ves on vas perdre el fil.</string>
     <string name="onboarding.action.next">Següent</string>
     <string name="onboarding.analytics_consent.action.disable">Continua sense estadístiques</string>
     <string name="onboarding.analytics_consent.action.enable">Continua amb estadístiques</string>
@@ -389,6 +396,8 @@
     <string name="settings.auto_sleep_timer.end.label">Hora de final</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Cada 10 minuts el llibre baixa de volum. Sacsegeu el telèfon abans d\'un minut per seguir escoltant. Si no, torna on el vau sacsejar per última vegada i es posa en pausa.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Comprova que encara escolto</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Després d\'una comprovació sense resposta, una notificació et pregunta al matí si el llibre ha tornat on vas perdre el fil</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Pregunta-m\'ho al matí</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Si canvieu el volum, salteu o torneu a reproduir, el compte enrere torna a començar</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Reinicia\'l si no dormo</string>
     <string name="settings.auto_sleep_timer.start.label">Hora d\'inici</string>
