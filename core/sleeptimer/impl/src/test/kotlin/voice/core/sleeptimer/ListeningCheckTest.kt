@@ -8,6 +8,7 @@ import io.mockk.mockk
 import io.mockk.verify
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.advanceTimeBy
@@ -16,6 +17,8 @@ import kotlinx.coroutines.test.runTest
 import voice.core.data.BookId
 import voice.core.data.ChapterId
 import voice.core.data.ListeningEvent
+import voice.core.data.repo.BookRepository
+import voice.core.data.repo.ListeningHistoryRepo
 import voice.core.playback.LivePlaybackState
 import voice.core.playback.PlayerController
 import voice.core.playback.history.ListeningHistoryRecorder
@@ -26,6 +29,8 @@ import java.time.Instant
 import java.time.LocalTime
 import java.time.ZoneId
 import kotlin.test.Test
+import kotlin.time.Duration
+import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
 
@@ -48,6 +53,13 @@ class ListeningCheckTest {
     every { events } returns recordedEvents
   }
   private val bookId = BookId("book")
+
+  /** Newest first, like the repo. */
+  private var history = emptyList<ListeningEvent>()
+  private val historyRepo = mockk<ListeningHistoryRepo> {
+    every { events(any()) } returns flow { emit(history) }
+  }
+  private val now = Instant.parse("2020-01-01T23:00:00Z")
   private val chapter = ChapterId("chapter")
   private var positionMs = 1_000L
   private val playerController = mockk<PlayerController> {
@@ -69,6 +81,8 @@ class ListeningCheckTest {
     shakeDetector = shakeDetector,
     sleepTimer = sleepTimer,
     historyRecorder = historyRecorder,
+    historyRepo = historyRepo,
+    bookRepository = mockk<BookRepository>(relaxed = true),
     clock = Clock.fixed(Instant.parse("2020-01-01T$time:00Z"), ZoneId.of("UTC")),
     scope = testScope.backgroundScope,
   )
@@ -174,16 +188,123 @@ class ListeningCheckTest {
     }
   }
 
+  @Test
+  fun `playing again after a missed check goes back to where they lost track`() = testScope.runTest {
+    history = listOf(fellAsleep(ago = 30.minutes, from = 2_000_000L, to = 1_000_000L))
+    positionMs = 1_500_000L
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(11.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(1_000_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.pause()
+    }
+  }
+
+  @Test
+  fun `skipping ahead after a missed check does not count as awake`() = testScope.runTest {
+    history = listOf(fellAsleep(ago = 30.minutes, from = 2_000_000L, to = 1_000_000L))
+    positionMs = 1_500_000L
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(5.minutes)
+    positionMs = 2_500_000L
+    recordedEvents.emit(listenerEvent(ListeningEvent.Type.SkipForward))
+    runCurrent()
+
+    advanceTimeBy(11.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(1_000_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  @Test
+  fun `going back on their own after a missed check is kept for the rest of the night`() = testScope.runTest {
+    history = listOf(
+      fellAsleep(ago = 1.hours, from = 2_600_000L, to = 2_000_000L),
+      listenerEvent(ListeningEvent.Type.JumpBack, to = 2_600_000L, ago = 2.hours),
+      fellAsleep(ago = 2.hours, from = 2_600_000L, to = 2_000_000L),
+      listenerEvent(ListeningEvent.Type.Seek, to = 900_000L, ago = 3.hours),
+      fellAsleep(ago = 4.hours, from = 2_000_000L, to = 1_000_000L),
+    )
+    positionMs = 2_100_000L
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(11.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(900_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  @Test
+  fun `answering a check after a missed one counts as awake again`() = testScope.runTest {
+    history = listOf(fellAsleep(ago = 30.minutes, from = 2_000_000L, to = 1_000_000L))
+    positionMs = 1_500_000L
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(10.minutes + 1.seconds)
+    positionMs = 1_600_000L
+    shakes.trySend(Unit)
+    runCurrent()
+    verify(exactly = 0) { playerController.pause() }
+
+    advanceTimeBy(11.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(1_600_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  @Test
+  fun `a check missed the night before does not count`() = testScope.runTest {
+    history = listOf(fellAsleep(ago = 13.hours, from = 2_000_000L, to = 1_000_000L))
+    positionMs = 1_500_000L
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(11.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(1_500_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  private fun fellAsleep(
+    ago: Duration,
+    from: Long,
+    to: Long,
+  ) = ListeningEvent(
+    bookId = bookId,
+    type = ListeningEvent.Type.FellAsleep,
+    source = ListeningEvent.Source.SleepTimer,
+    atMillis = now.toEpochMilli() - ago.inWholeMilliseconds,
+    chapterId = chapter,
+    time = from,
+    toChapterId = chapter,
+    toTime = to,
+  )
+
   private fun listenerEvent(
     type: ListeningEvent.Type,
     source: ListeningEvent.Source = ListeningEvent.Source.App,
+    to: Long? = null,
+    ago: Duration = Duration.ZERO,
   ) = ListeningEvent(
     bookId = bookId,
     type = type,
     source = source,
-    atMillis = 0,
+    atMillis = now.toEpochMilli() - ago.inWholeMilliseconds,
     chapterId = chapter,
     time = positionMs,
+    toChapterId = to?.let { chapter },
+    toTime = to,
   )
 
   @Test
