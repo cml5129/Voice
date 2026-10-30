@@ -338,7 +338,7 @@ class SettingsViewModel(
 
   override fun checkTranscripts() {
     mainScope.launch {
-      transcriptDownloader.download()
+      val _ = transcriptDownloader.download()
     }
   }
 

@@ -71,13 +71,13 @@ class TranscriptDownloaderTest {
   @Test
   fun `an unchanged transcript is not downloaded again, a newer one is`() = runTest {
     api.listing = listOf(transcript("The Waste Lands [B002V0QK4C]"))
-    downloader.download()
-    downloader.download()
+    assertTrue(downloader.download())
+    assertTrue(downloader.download())
     assertEquals(1, api.downloads.size)
 
     api.text = "Newer."
     api.listing = listOf(transcript("The Waste Lands [B002V0QK4C]", updatedAt = "2026-10-30T09:00:00.000Z"))
-    downloader.download()
+    assertTrue(downloader.download())
 
     assertEquals(2, api.downloads.size)
     assertEquals("Newer.", repository.cues(wasteLands)?.single()?.text)
