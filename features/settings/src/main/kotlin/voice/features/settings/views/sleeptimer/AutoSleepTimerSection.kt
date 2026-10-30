@@ -312,7 +312,9 @@ private fun MorningCheckRow(
     onPauseOrDispose {}
   }
   fun askForNotifications() {
-    permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+    if (Build.VERSION.SDK_INT >= 33) {
+      permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+    }
   }
   IslandSwitchRow(
     title = stringResource(StringsR.string.settings_auto_sleep_timer_morning_check_title),
