@@ -407,6 +407,10 @@
     <string name="settings.support.suggest_idea.title">Foreslå en ide</string>
     <string name="settings.support.supporter.title">Tak fordi du støtter Voice</string>
     <string name="settings.support.title">Hjælp og feedback</string>
+    <string name="settings.transcripts.failed">Henter ikke: %1$s</string>
+    <string name="settings.transcripts.none">Ingen af dine bøger har en udskrift på serveren endnu</string>
+    <string name="settings.transcripts.summary">På denne telefon: %1$d. Tryk for at søge efter nye</string>
+    <string name="settings.transcripts.title">Udskrifter</string>
     <string name="support.action.manage_subscription">Administrer abonnement</string>
     <string name="support.action.subscribe">Støt med %1$s</string>
     <string name="support.action.switch">Skift til %1$s</string>

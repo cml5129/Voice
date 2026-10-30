@@ -407,6 +407,10 @@
     <string name="settings.support.suggest_idea.title">Предложи идеја</string>
     <string name="settings.support.supporter.title">Ви благодариме што го поддржувате Voice</string>
     <string name="settings.support.title">Помош и повратни информации</string>
+    <string name="settings.transcripts.failed">Не се презема: %1$s</string>
+    <string name="settings.transcripts.none">Ниту една од вашите книги сè уште нема транскрипт на серверот</string>
+    <string name="settings.transcripts.summary">На овој телефон: %1$d. Допрете за да проверите за нови</string>
+    <string name="settings.transcripts.title">Транскрипти</string>
     <string name="support.action.manage_subscription">Управувај со претплатата</string>
     <string name="support.action.subscribe">Поддржи за %1$s</string>
     <string name="support.action.switch">Префрли на %1$s</string>

@@ -425,6 +425,10 @@
     <string name="settings.support.suggest_idea.title">Propune o idee</string>
     <string name="settings.support.supporter.title">Mulțumim că susții Voice</string>
     <string name="settings.support.title">Ajutor și feedback</string>
+    <string name="settings.transcripts.failed">Nu se descarcă: %1$s</string>
+    <string name="settings.transcripts.none">Niciuna dintre cărțile tale nu are încă o transcriere pe server</string>
+    <string name="settings.transcripts.summary">Pe acest telefon: %1$d. Atinge pentru a căuta altele noi</string>
+    <string name="settings.transcripts.title">Transcrieri</string>
     <string name="support.action.manage_subscription">Gestionează abonamentul</string>
     <string name="support.action.subscribe">Susține cu %1$s</string>
     <string name="support.action.switch">Treci la %1$s</string>

@@ -425,6 +425,10 @@
     <string name="settings.support.support_voice.summary">Mantiene Voice gratis y sin anuncios</string>
     <string name="settings.support.support_voice.title">Apoyar el desarrollo</string>
     <string name="settings.support.title">Ayuda y comentarios</string>
+    <string name="settings.transcripts.failed">No se descarga: %1$s</string>
+    <string name="settings.transcripts.none">Ninguno de tus libros tiene todavía una transcripción en el servidor</string>
+    <string name="settings.transcripts.summary">En este teléfono: %1$d. Toca para buscar nuevas</string>
+    <string name="settings.transcripts.title">Transcripciones</string>
     <string name="support.action.manage_subscription">Gestionar suscripción</string>
     <string name="support.action.subscribe">Apoyar por %1$s</string>
     <string name="support.action.switch">Cambiar a %1$s</string>

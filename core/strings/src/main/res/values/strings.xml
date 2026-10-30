@@ -721,11 +721,8 @@
     <string name="settings.transcripts.failed">Not downloading: %1$s</string>
     <!-- Settings summary of the transcripts row before any transcript of a library book was found on the listener's server. -->
     <string name="settings.transcripts.none">None of your books has a transcript on the server yet</string>
-    <!-- Settings summary of the transcripts row: how many audio files of the library have a transcript downloaded from the listener's server. -->
-    <plurals name="settings.transcripts.summary">
-        <item quantity="one">Downloaded for %d audio file. Tap to look for new ones</item>
-        <item quantity="other">Downloaded for %d audio files. Tap to look for new ones</item>
-    </plurals>
+    <!-- Settings summary of the transcripts row. The argument is how many audio files of the library have a transcript downloaded from the listener's server. Tapping the row checks the server for new transcripts. -->
+    <string name="settings.transcripts.summary">On this phone: %1$d. Tap to check for new ones</string>
     <!-- Settings title of the row for book transcripts, which Voice downloads from the listener's own server. -->
     <string name="settings.transcripts.title">Transcripts</string>
     <!-- Support screen button that opens the Google Play subscription settings. -->

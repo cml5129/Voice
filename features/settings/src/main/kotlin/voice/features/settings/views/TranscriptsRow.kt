@@ -7,7 +7,6 @@ import androidx.compose.material3.MaterialShapes
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import voice.core.ui.ShapedIcon
@@ -39,11 +38,7 @@ internal fun TranscriptsRow(
         text = when {
           viewState.error != null -> stringResource(StringsR.string.settings_transcripts_failed, viewState.error)
           viewState.downloaded == 0 -> stringResource(StringsR.string.settings_transcripts_none)
-          else -> pluralStringResource(
-            StringsR.plurals.settings_transcripts_summary,
-            viewState.downloaded,
-            viewState.downloaded,
-          )
+          else -> stringResource(StringsR.string.settings_transcripts_summary, viewState.downloaded)
         },
         maxLines = 2,
         overflow = TextOverflow.Ellipsis,

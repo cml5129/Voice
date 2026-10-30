@@ -407,6 +407,10 @@
     <string name="settings.support.support_voice.summary">Pitää Voicen ilmaisena ja mainoksettomana</string>
     <string name="settings.support.support_voice.title">Tue kehitystä</string>
     <string name="settings.support.title">Ohjeet ja palaute</string>
+    <string name="settings.transcripts.failed">Ei ladata: %1$s</string>
+    <string name="settings.transcripts.none">Millekään kirjallesi ei ole vielä litterointia palvelimella</string>
+    <string name="settings.transcripts.summary">Tässä puhelimessa: %1$d. Etsi uusia napauttamalla</string>
+    <string name="settings.transcripts.title">Litteroinnit</string>
     <string name="support.action.manage_subscription">Hallinnoi tilausta</string>
     <string name="support.action.subscribe">Tue hintaan %1$s</string>
     <string name="support.action.switch">Vaihda hintaan %1$s</string>

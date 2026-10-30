@@ -425,6 +425,10 @@
     <string name="settings.support.support_voice.summary">שומר על Voice חינמית וללא פרסומות</string>
     <string name="settings.support.support_voice.title">תמיכה בפיתוח</string>
     <string name="settings.support.title">עזרה ומשוב</string>
+    <string name="settings.transcripts.failed">אין הורדה: %1$s</string>
+    <string name="settings.transcripts.none">לאף ספר עדיין אין תמלול בשרת</string>
+    <string name="settings.transcripts.summary">בטלפון הזה: %1$d. אפשר להקיש כדי לחפש חדשים</string>
+    <string name="settings.transcripts.title">תמלולים</string>
     <string name="support.action.manage_subscription">ניהול המינוי</string>
     <string name="support.action.subscribe">תמיכה ב-%1$s</string>
     <string name="support.action.switch">מעבר ל-%1$s</string>

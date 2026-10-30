@@ -407,6 +407,10 @@
     <string name="settings.support.support_voice.summary">Hält Voice kostenlos und werbefrei</string>
     <string name="settings.support.support_voice.title">Entwicklung unterstützen</string>
     <string name="settings.support.title">Hilfe und Feedback</string>
+    <string name="settings.transcripts.failed">Kein Download: %1$s</string>
+    <string name="settings.transcripts.none">Für Deine Bücher gibt es auf dem Server noch keine Transkripte</string>
+    <string name="settings.transcripts.summary">Auf diesem Handy: %1$d. Tippen, um nach neuen zu suchen</string>
+    <string name="settings.transcripts.title">Transkripte</string>
     <string name="support.action.manage_subscription">Abo verwalten</string>
     <string name="support.action.subscribe">Mit %1$s unterstützen</string>
     <string name="support.action.switch">Zu %1$s wechseln</string>

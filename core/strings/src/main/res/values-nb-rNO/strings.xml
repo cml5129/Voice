@@ -407,6 +407,10 @@
     <string name="settings.support.support_voice.summary">Holder Voice gratis og reklamefri</string>
     <string name="settings.support.support_voice.title">Støtt utviklingen</string>
     <string name="settings.support.title">Hjelp og tilbakemelding</string>
+    <string name="settings.transcripts.failed">Laster ikke ned: %1$s</string>
+    <string name="settings.transcripts.none">Ingen av bøkene dine har en transkripsjon på serveren ennå</string>
+    <string name="settings.transcripts.summary">På denne telefonen: %1$d. Trykk for å se etter nye</string>
+    <string name="settings.transcripts.title">Transkripsjoner</string>
     <string name="support.action.manage_subscription">Administrer abonnement</string>
     <string name="support.action.subscribe">Støtt med %1$s</string>
     <string name="support.action.switch">Bytt til %1$s</string>

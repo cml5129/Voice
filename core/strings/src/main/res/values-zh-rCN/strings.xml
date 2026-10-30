@@ -389,6 +389,10 @@
     <string name="settings.support.suggest_idea.title">提出建议</string>
     <string name="settings.support.supporter.title">感谢您支持 Voice</string>
     <string name="settings.support.title">帮助与反馈</string>
+    <string name="settings.transcripts.failed">未在下载：%1$s</string>
+    <string name="settings.transcripts.none">服务器上还没有您任何一本书的文字稿</string>
+    <string name="settings.transcripts.summary">此手机上：%1$d 份。点按以检查新的文字稿</string>
+    <string name="settings.transcripts.title">文字稿</string>
     <string name="support.action.manage_subscription">管理订阅</string>
     <string name="support.action.subscribe">以 %1$s 支持</string>
     <string name="support.action.switch">切换为 %1$s</string>

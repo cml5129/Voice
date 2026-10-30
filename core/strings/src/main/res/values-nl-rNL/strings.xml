@@ -407,6 +407,10 @@
     <string name="settings.support.support_voice.summary">Houdt Voice gratis en reclamevrij</string>
     <string name="settings.support.support_voice.title">Ontwikkeling steunen</string>
     <string name="settings.support.title">Hulp en feedback</string>
+    <string name="settings.transcripts.failed">Niet aan het downloaden: %1$s</string>
+    <string name="settings.transcripts.none">Nog geen van je boeken heeft een transcriptie op de server</string>
+    <string name="settings.transcripts.summary">Op deze telefoon: %1$d. Tik om naar nieuwe te zoeken</string>
+    <string name="settings.transcripts.title">Transcripties</string>
     <string name="support.action.manage_subscription">Abonnement beheren</string>
     <string name="support.action.subscribe">Steun met %1$s</string>
     <string name="support.action.switch">Overstappen naar %1$s</string>

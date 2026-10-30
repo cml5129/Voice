@@ -425,6 +425,10 @@
     <string name="settings.support.suggest_idea.title">Suggereix una idea</string>
     <string name="settings.support.supporter.title">Gràcies per donar suport a Voice</string>
     <string name="settings.support.title">Ajuda i comentaris</string>
+    <string name="settings.transcripts.failed">No s\'està baixant: %1$s</string>
+    <string name="settings.transcripts.none">Cap dels vostres llibres té encara una transcripció al servidor</string>
+    <string name="settings.transcripts.summary">En aquest telèfon: %1$d. Toqueu per buscar-ne de noves</string>
+    <string name="settings.transcripts.title">Transcripcions</string>
     <string name="support.action.manage_subscription">Gestiona la subscripció</string>
     <string name="support.action.subscribe">Dona suport per %1$s</string>
     <string name="support.action.switch">Canvia a %1$s</string>

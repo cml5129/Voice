@@ -443,6 +443,10 @@
     <string name="settings.support.support_voice.summary">Зберігає Voice безкоштовним і без реклами</string>
     <string name="settings.support.support_voice.title">Підтримати розробку</string>
     <string name="settings.support.title">Довідка та відгуки</string>
+    <string name="settings.transcripts.failed">Не завантажується: %1$s</string>
+    <string name="settings.transcripts.none">Жодна з ваших книг ще не має розшифровки на сервері</string>
+    <string name="settings.transcripts.summary">На цьому телефоні: %1$d. Торкніться, щоб перевірити нові</string>
+    <string name="settings.transcripts.title">Розшифровки</string>
     <string name="support.action.manage_subscription">Керувати підпискою</string>
     <string name="support.action.subscribe">Підтримати за %1$s</string>
     <string name="support.action.switch">Перейти на %1$s</string>

@@ -389,6 +389,10 @@
     <string name="settings.support.support_voice.summary">Menjaga Voice tetap gratis dan bebas iklan</string>
     <string name="settings.support.support_voice.title">Dukung pengembangan</string>
     <string name="settings.support.title">Bantuan dan masukan</string>
+    <string name="settings.transcripts.failed">Tidak mengunduh: %1$s</string>
+    <string name="settings.transcripts.none">Belum ada buku Anda yang memiliki transkrip di server</string>
+    <string name="settings.transcripts.summary">Di ponsel ini: %1$d. Ketuk untuk mencari yang baru</string>
+    <string name="settings.transcripts.title">Transkrip</string>
     <string name="support.action.manage_subscription">Kelola langganan</string>
     <string name="support.action.subscribe">Dukung dengan %1$s</string>
     <string name="support.action.switch">Beralih ke %1$s</string>

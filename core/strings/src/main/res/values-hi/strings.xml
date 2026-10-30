@@ -407,6 +407,10 @@
     <string name="settings.support.suggest_idea.title">विचार सुझाएँ</string>
     <string name="settings.support.supporter.title">Voice का समर्थन करने के लिए धन्यवाद</string>
     <string name="settings.support.title">सहायता और फ़ीडबैक</string>
+    <string name="settings.transcripts.failed">डाउनलोड नहीं हो रहा: %1$s</string>
+    <string name="settings.transcripts.none">सर्वर पर अभी आपकी किसी पुस्तक का ट्रांसक्रिप्ट नहीं है</string>
+    <string name="settings.transcripts.summary">इस फ़ोन पर: %1$d. नए देखने के लिए टैप करें</string>
+    <string name="settings.transcripts.title">ट्रांसक्रिप्ट</string>
     <string name="support.action.manage_subscription">सदस्यता मैनेज करें</string>
     <string name="support.action.subscribe">%1$s में समर्थन करें</string>
     <string name="support.action.switch">%1$s पर स्विच करें</string>

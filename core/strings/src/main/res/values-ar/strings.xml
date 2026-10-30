@@ -479,6 +479,10 @@
     <string name="settings.support.suggest_idea.title">اقتراح فكرة</string>
     <string name="settings.support.supporter.title">شكرًا لدعمك Voice</string>
     <string name="settings.support.title">المساعدة والملاحظات</string>
+    <string name="settings.transcripts.failed">لا يتم التنزيل: %1$s</string>
+    <string name="settings.transcripts.none">لا توجد بعد نصوص مفرغة لأي من كتبك على الخادم</string>
+    <string name="settings.transcripts.summary">على هذا الهاتف: %1$d. يمكنك النقر للبحث عن الجديد</string>
+    <string name="settings.transcripts.title">النصوص المفرغة</string>
     <string name="support.action.manage_subscription">إدارة الاشتراك</string>
     <string name="support.action.subscribe">الدعم مقابل %1$s</string>
     <string name="support.action.switch">التبديل إلى %1$s</string>

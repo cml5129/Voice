@@ -407,6 +407,10 @@
     <string name="settings.support.support_voice.summary">Hoiab Voice\'i tasuta ja reklaamivabana</string>
     <string name="settings.support.support_voice.title">Toeta arendust</string>
     <string name="settings.support.title">Abi ja tagasiside</string>
+    <string name="settings.transcripts.failed">Ei laadita alla: %1$s</string>
+    <string name="settings.transcripts.none">Ühelgi sinu raamatul pole serveris veel transkriptsiooni</string>
+    <string name="settings.transcripts.summary">Selles telefonis: %1$d. Puuduta, et uusi otsida</string>
+    <string name="settings.transcripts.title">Transkriptsioonid</string>
     <string name="support.action.manage_subscription">Halda tellimust</string>
     <string name="support.action.subscribe">Toeta hinnaga %1$s</string>
     <string name="support.action.switch">Mine üle: %1$s</string>

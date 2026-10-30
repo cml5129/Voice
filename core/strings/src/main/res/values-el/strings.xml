@@ -407,6 +407,10 @@
     <string name="settings.support.suggest_idea.title">Προτείνετε μια ιδέα</string>
     <string name="settings.support.supporter.title">Ευχαριστούμε που στηρίζετε το Voice</string>
     <string name="settings.support.title">Βοήθεια και σχόλια</string>
+    <string name="settings.transcripts.failed">Δεν γίνεται λήψη: %1$s</string>
+    <string name="settings.transcripts.none">Κανένα από τα βιβλία σας δεν έχει ακόμα απομαγνητοφώνηση στον διακομιστή</string>
+    <string name="settings.transcripts.summary">Σε αυτό το τηλέφωνο: %1$d. Πατήστε για έλεγχο για νέες</string>
+    <string name="settings.transcripts.title">Απομαγνητοφωνήσεις</string>
     <string name="support.action.manage_subscription">Διαχείριση συνδρομής</string>
     <string name="support.action.subscribe">Υποστήριξη με %1$s</string>
     <string name="support.action.switch">Αλλαγή σε %1$s</string>

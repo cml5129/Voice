@@ -443,6 +443,10 @@
     <string name="settings.support.support_voice.summary">Utrzymuje Voice za darmo i bez reklam</string>
     <string name="settings.support.support_voice.title">Wesprzyj rozwój</string>
     <string name="settings.support.title">Pomoc i opinie</string>
+    <string name="settings.transcripts.failed">Nie pobiera: %1$s</string>
+    <string name="settings.transcripts.none">Żadna z twoich książek nie ma jeszcze transkrypcji na serwerze</string>
+    <string name="settings.transcripts.summary">Na tym telefonie: %1$d. Stuknij, aby sprawdzić nowe</string>
+    <string name="settings.transcripts.title">Transkrypcje</string>
     <string name="support.action.manage_subscription">Zarządzaj subskrypcją</string>
     <string name="support.action.subscribe">Wesprzyj za %1$s</string>
     <string name="support.action.switch">Przejdź na %1$s</string>

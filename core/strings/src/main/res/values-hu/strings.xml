@@ -407,6 +407,10 @@
     <string name="settings.support.suggest_idea.title">Ötlet beküldése</string>
     <string name="settings.support.supporter.title">Köszönjük, hogy támogatja a Voice-t</string>
     <string name="settings.support.title">Súgó és visszajelzés</string>
+    <string name="settings.transcripts.failed">Nincs letöltés: %1$s</string>
+    <string name="settings.transcripts.none">A szerveren még egyik könyvéhez sincs átirat</string>
+    <string name="settings.transcripts.summary">Ezen a telefonon: %1$d. Koppintson az újak kereséséhez</string>
+    <string name="settings.transcripts.title">Átiratok</string>
     <string name="support.action.manage_subscription">Előfizetés kezelése</string>
     <string name="support.action.subscribe">Támogatás: %1$s</string>
     <string name="support.action.switch">Váltás erre: %1$s</string>

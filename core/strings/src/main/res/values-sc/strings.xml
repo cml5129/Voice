@@ -407,6 +407,10 @@
     <string name="settings.support.suggest_idea.title">Cussìgia un\'idea</string>
     <string name="settings.support.supporter.title">Gràtzias de suportare Voice</string>
     <string name="settings.support.title">Agiudu e cummentos</string>
+    <string name="settings.transcripts.failed">No ses iscarrighende: %1$s</string>
+    <string name="settings.transcripts.none">Perunu de sos libros tuos tenet galu una trascritzione in su serbidore</string>
+    <string name="settings.transcripts.summary">In custu telèfonu: %1$d. Toca pro chircare sas noas</string>
+    <string name="settings.transcripts.title">Trascritziones</string>
     <string name="support.action.manage_subscription">Manìgia s\'abbonamentu</string>
     <string name="support.action.subscribe">Suporta pro %1$s</string>
     <string name="support.action.switch">Cola a %1$s</string>
