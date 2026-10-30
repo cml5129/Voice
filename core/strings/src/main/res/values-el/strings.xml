@@ -376,7 +376,7 @@
     <string name="settings.appearance.theme.title">Θέμα</string>
     <string name="settings.appearance.title">Εμφάνιση</string>
     <string name="settings.auto_sleep_timer.end.label">Ορισμός ώρας λήξης</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Κάθε 10 λεπτά το βιβλίο χαμηλώνει. Κουνήστε το τηλέφωνό σας μέσα σε ένα λεπτό για να συνεχίσετε. Αλλιώς επιστρέφει εκεί που το κουνήσατε τελευταία φορά και κάνει παύση.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Κάθε 10 λεπτά το βιβλίο χαμηλώνει. Πάτησε ένα κουμπί έντασης, κάνε παράλειψη ή κούνησε το τηλέφωνο μέσα σε ένα λεπτό για να συνεχίσεις. Αλλιώς γυρίζει εκεί που έχασες τον ειρμό και κάνει παύση.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Έλεγχος ότι ακούω ακόμα</string>
     <string name="settings.auto_sleep_timer.morning_check.notifications_off">Οι ειδοποιήσεις είναι απενεργοποιημένες για το Voice, οπότε η ερώτηση δεν μπορεί να εμφανιστεί. Πάτησε για να τις επιτρέψεις.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Μετά από έναν έλεγχο χωρίς απάντηση, μια ειδοποίηση ρωτά το πρωί αν το βιβλίο γύρισε εκεί που έχασες τον ειρμό</string>

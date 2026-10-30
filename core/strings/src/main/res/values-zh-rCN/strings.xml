@@ -358,7 +358,7 @@
     <string name="settings.appearance.color_scheme.sunset">日落</string>
     <string name="settings.appearance.title">外观</string>
     <string name="settings.auto_sleep_timer.end.label">设置结束时间</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">每隔 10 分钟，书的音量会降低。请在 1 分钟内摇一摇手机以继续收听，否则会回到您上次摇动的位置并暂停。</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">每隔 10 分钟，书的音量会变小。一分钟内按一下音量键、跳转或摇一摇手机即可继续收听。否则会回到你走神的地方并暂停。</string>
     <string name="settings.auto_sleep_timer.listening_check.title">确认我是否还在听</string>
     <string name="settings.auto_sleep_timer.morning_check.notifications_off">Voice 的通知已关闭，所以无法显示这个问题。点按即可允许。</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">错过一次检查后，早上会有通知问你书是否回到了你走神的地方</string>

@@ -376,7 +376,7 @@
     <string name="settings.appearance.theme.title">Drakt</string>
     <string name="settings.appearance.title">Utseende</string>
     <string name="settings.auto_sleep_timer.end.label">Sett sluttid</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Hvert 10. minutt blir boken lavere. Rist telefonen innen ett minutt for å lytte videre. Ellers går den tilbake dit du sist ristet, og setter på pause.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Hvert 10. minutt blir boken lavere. Trykk på en volumknapp, hopp eller rist telefonen innen ett minutt for å lytte videre. Ellers går den tilbake dit du mistet tråden og settes på pause.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Sjekk at jeg fortsatt lytter</string>
     <string name="settings.auto_sleep_timer.morning_check.notifications_off">Varsler er slått av for Voice, så spørsmålet kan ikke vises. Trykk for å tillate dem.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Etter en ubesvart sjekk spør et varsel om morgenen om boken gikk tilbake dit du mistet tråden</string>

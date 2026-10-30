@@ -394,7 +394,7 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Apariencia</string>
     <string name="settings.auto_sleep_timer.end.label">Hora fin</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Cada 10 minutos el libro baja el volumen. Agita el teléfono antes de un minuto para seguir escuchando. Si no, vuelve a donde lo agitaste por última vez y se pausa.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Cada 10 minutos el libro baja de volumen. Pulsa un botón de volumen, salta o agita el teléfono en menos de un minuto para seguir escuchando. Si no, vuelve a donde perdiste el hilo y se pausa.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Comprobar que sigo escuchando</string>
     <string name="settings.auto_sleep_timer.morning_check.notifications_off">Las notificaciones de Voice están desactivadas, así que la pregunta no puede aparecer. Toca para permitirlas.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Tras una comprobación sin respuesta, una notificación te pregunta por la mañana si el libro volvió a donde perdiste el hilo</string>

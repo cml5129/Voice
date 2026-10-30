@@ -376,7 +376,7 @@
     <string name="settings.appearance.theme.title">Thema</string>
     <string name="settings.appearance.title">Uiterlijk</string>
     <string name="settings.auto_sleep_timer.end.label">Eindtijd instellen</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Elke 10 minuten wordt het boek zachter. Schud je telefoon binnen een minuut om verder te luisteren. Anders gaat het terug naar waar je het laatst schudde en pauzeert het.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Elke 10 minuten wordt het boek zachter. Druk binnen een minuut op een volumeknop, spring of schud je telefoon om verder te luisteren. Anders gaat het terug naar waar je de draad kwijtraakte en pauzeert het.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Controleren of ik nog luister</string>
     <string name="settings.auto_sleep_timer.morning_check.notifications_off">Meldingen staan uit voor Voice, dus de vraag kan niet verschijnen. Tik om ze toe te staan.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Na een gemiste controle vraagt een melding ’s ochtends of het boek terugging naar waar je de draad kwijtraakte</string>

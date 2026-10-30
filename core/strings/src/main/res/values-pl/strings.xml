@@ -412,7 +412,7 @@
     <string name="settings.appearance.theme.title">Motyw</string>
     <string name="settings.appearance.title">Wygląd</string>
     <string name="settings.auto_sleep_timer.end.label">Ustaw godzinę zakończenia</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Co 10 minut książka cichnie. Potrząśnij telefonem w ciągu minuty, by słuchać dalej. W przeciwnym razie wróci do miejsca ostatniego potrząśnięcia i się zatrzyma.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Co 10 minut książka cichnie. Aby słuchać dalej, w ciągu minuty naciśnij przycisk głośności, przewiń lub potrząśnij telefonem. W przeciwnym razie wróci tam, gdzie zgubiono wątek, i się zatrzyma.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Sprawdzaj, czy nadal słucham</string>
     <string name="settings.auto_sleep_timer.morning_check.notifications_off">Powiadomienia Voice są wyłączone, więc pytanie nie może się pojawić. Dotknij, aby je zezwolić.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Po pominiętym sprawdzeniu powiadomienie zapyta rano, czy książka wróciła tam, gdzie zgubiono wątek</string>

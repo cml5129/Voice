@@ -394,7 +394,7 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Aspetto</string>
     <string name="settings.auto_sleep_timer.end.label">Ora di fine</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Ogni 10 minuti il libro abbassa il volume. Scuoti il telefono entro un minuto per continuare ad ascoltare. Altrimenti torna dove l\'hai scosso l\'ultima volta e si mette in pausa.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Ogni 10 minuti il libro abbassa il volume. Premi un tasto del volume, salta o scuoti il telefono entro un minuto per continuare. Altrimenti torna dove hai perso il filo e si mette in pausa.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Controlla che stia ancora ascoltando</string>
     <string name="settings.auto_sleep_timer.morning_check.notifications_off">Le notifiche di Voice sono disattivate, quindi la domanda non può comparire. Tocca per consentirle.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Dopo un controllo senza risposta, una notifica ti chiede al mattino se il libro è tornato dove hai perso il filo</string>

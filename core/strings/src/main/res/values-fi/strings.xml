@@ -376,7 +376,7 @@
     <string name="settings.appearance.theme.title">Teema</string>
     <string name="settings.appearance.title">Ulkoasu</string>
     <string name="settings.auto_sleep_timer.end.label">Päättymisaika</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">10 minuutin välein kirja hiljenee. Ravista puhelinta minuutin sisällä, niin kuuntelu jatkuu. Muuten kirja palaa kohtaan, jossa viimeksi ravistit, ja pysähtyy.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Kirja hiljenee 10 minuutin välein. Paina äänenvoimakkuuspainiketta, hyppää tai ravista puhelinta minuutin sisällä jatkaaksesi. Muuten se palaa kohtaan, jossa putosit kärryiltä, ja pysähtyy.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Tarkista, kuuntelenko vielä</string>
     <string name="settings.auto_sleep_timer.morning_check.notifications_off">Voicen ilmoitukset ovat pois päältä, joten kysymys ei voi näkyä. Salli ne napauttamalla.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Vastaamattoman tarkistuksen jälkeen ilmoitus kysyy aamulla, palasiko kirja kohtaan, jossa putosit kärryiltä</string>

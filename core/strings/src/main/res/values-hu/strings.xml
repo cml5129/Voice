@@ -376,7 +376,7 @@
     <string name="settings.appearance.color_scheme.sunset">Naplemente</string>
     <string name="settings.appearance.title">Megjelenés</string>
     <string name="settings.auto_sleep_timer.end.label">Befejezési idő beállítása</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">A könyv 10 percenként halkabb lesz. Rázza meg a telefont egy percen belül, ha tovább hallgatná. Ellenkező esetben visszaugrik oda, ahol utoljára megrázta, és szünetel.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">A könyv 10 percenként halkabb lesz. Egy percen belül nyomj meg egy hangerőgombot, ugorj vagy rázd meg a telefont a folytatáshoz. Különben visszaugrik oda, ahol elveszítetted a fonalat, és szünetel.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Ellenőrzés, hogy hallgatom-e még</string>
     <string name="settings.auto_sleep_timer.morning_check.notifications_off">A Voice értesítései ki vannak kapcsolva, ezért a kérdés nem jelenhet meg. Koppints az engedélyezéshez.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Egy megválaszolatlan ellenőrzés után reggel egy értesítés megkérdezi, hogy a könyv oda ugrott-e vissza, ahol elveszítetted a fonalat</string>

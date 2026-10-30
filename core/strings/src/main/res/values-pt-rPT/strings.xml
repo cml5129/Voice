@@ -394,7 +394,7 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Aspeto</string>
     <string name="settings.auto_sleep_timer.end.label">Definir hora de fim</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">A cada 10 minutos o livro fica mais baixo. Agite o telemóvel no espaço de um minuto para continuar a ouvir. Caso contrário, volta ao ponto onde agitou pela última vez e fica em pausa.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">A cada 10 minutos o livro fica mais baixo. Prima um botão de volume, salte ou agite o telemóvel no espaço de um minuto para continuar a ouvir. Caso contrário, volta para onde perdeu o fio e pausa.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Verificar se ainda estou a ouvir</string>
     <string name="settings.auto_sleep_timer.morning_check.notifications_off">As notificações do Voice estão desativadas, por isso a pergunta não pode aparecer. Toque para as permitir.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Depois de uma verificação sem resposta, uma notificação pergunta de manhã se o livro voltou para onde perdeu o fio</string>

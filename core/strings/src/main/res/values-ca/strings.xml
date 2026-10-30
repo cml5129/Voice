@@ -394,7 +394,7 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Aparença</string>
     <string name="settings.auto_sleep_timer.end.label">Hora de final</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Cada 10 minuts el llibre baixa de volum. Sacsegeu el telèfon abans d\'un minut per seguir escoltant. Si no, torna on el vau sacsejar per última vegada i es posa en pausa.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Cada 10 minuts el llibre baixa de volum. Prem un botó de volum, salta o sacseja el telèfon en menys d\'un minut per continuar escoltant. Si no, torna on vas perdre el fil i s\'atura.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Comprova que encara escolto</string>
     <string name="settings.auto_sleep_timer.morning_check.notifications_off">Les notificacions de Voice estan desactivades, així que la pregunta no pot aparèixer. Toca per permetre-les.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Després d\'una comprovació sense resposta, una notificació et pregunta al matí si el llibre ha tornat on vas perdre el fil</string>

@@ -376,7 +376,7 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Udseende</string>
     <string name="settings.auto_sleep_timer.end.label">Vælg sluttid</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Hvert 10. minut bliver bogen lavere. Ryst telefonen inden for et minut for at lytte videre. Ellers går den tilbage til der, hvor du sidst rystede, og sætter på pause.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Hvert 10. minut bliver bogen lavere. Tryk på en lydstyrkeknap, spring eller ryst telefonen inden for et minut for at lytte videre. Ellers går den tilbage, hvor du mistede tråden, og sætter på pause.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Tjek, at jeg stadig lytter</string>
     <string name="settings.auto_sleep_timer.morning_check.notifications_off">Notifikationer er slået fra for Voice, så spørgsmålet kan ikke vises. Tryk for at tillade dem.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Efter et ubesvaret tjek spørger en notifikation om morgenen, om bogen gik tilbage til, hvor du mistede tråden</string>

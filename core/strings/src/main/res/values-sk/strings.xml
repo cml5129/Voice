@@ -412,7 +412,7 @@
     <string name="settings.appearance.theme.title">Téma</string>
     <string name="settings.appearance.title">Vzhľad</string>
     <string name="settings.auto_sleep_timer.end.label">Nastaviť konečný čas</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Každých 10 minút kniha stíši. Zatraste telefónom do minúty a budete počúvať ďalej. Inak sa vráti tam, kde ste naposledy zatriasli, a pozastaví sa.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Každých 10 minút kniha stíši. Do minúty stlačte tlačidlo hlasitosti, preskočte alebo zatraste telefónom, aby ste počúvali ďalej. Inak sa vráti tam, kde ste stratili niť, a pozastaví sa.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Kontrolovať, či ešte počúvam</string>
     <string name="settings.auto_sleep_timer.morning_check.notifications_off">Upozornenia sú pre Voice vypnuté, takže sa otázka nemôže zobraziť. Klepnutím ich povolíte.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Po zmeškanej kontrole sa vás ráno upozornenie opýta, či sa kniha vrátila tam, kde ste stratili niť</string>

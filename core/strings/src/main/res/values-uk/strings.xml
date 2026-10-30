@@ -412,7 +412,7 @@
     <string name="settings.appearance.theme.title">Тема</string>
     <string name="settings.appearance.title">Вигляд</string>
     <string name="settings.auto_sleep_timer.end.label">Час кінця</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Кожні 10 хвилин книга стає тихішою. Струсніть телефон протягом хвилини, щоб слухати далі. Інакше вона повернеться туди, де ви востаннє струснули телефон, і стане на паузу.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Кожні 10 хвилин книга стає тихішою. Щоб слухати далі, протягом хвилини натисніть кнопку гучності, перемотайте або струсніть телефон. Інакше вона повернеться туди, де ви втратили нитку, і стане на паузу.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Перевіряти, чи я ще слухаю</string>
     <string name="settings.auto_sleep_timer.morning_check.notifications_off">Сповіщення Voice вимкнено, тому питання не з’явиться. Торкніться, щоб дозволити їх.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Після пропущеної перевірки вранці сповіщення запитає, чи повернулася книга туди, де ви втратили нитку</string>
