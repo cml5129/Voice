@@ -48,6 +48,7 @@ import voice.core.sleeptimer.SleepTimerMode.TimedWithDuration
 import voice.core.sleeptimer.SleepTimerPreference
 import voice.core.sleeptimer.SleepTimerPreferenceStore
 import voice.core.sleeptimer.SleepTimerState
+import voice.core.transcript.TranscriptRepository
 import voice.core.ui.formatTime
 import voice.features.playbackScreen.batteryOptimization.BatteryOptimization
 import voice.navigation.Destination
@@ -78,6 +79,7 @@ class BookPlayViewModel(
   private val kioskModeFeatureFlag: KioskModeFeatureFlag,
   private val historyRecorder: ListeningHistoryRecorder,
   private val clock: Clock,
+  private val transcriptRepository: TranscriptRepository,
   private val serverLibrary: ServerLibrary,
   private val lastPlaybackSpeedStore: LastPlaybackSpeedStore,
   @Assisted
@@ -166,6 +168,7 @@ class BookPlayViewModel(
       skipSeconds = skipSeconds,
       jumpBack = lastJump?.let { jumpBackViewState(book, it, chapterNumber) },
       unavailable = book.id in unavailableBooks,
+      showSummaries = remember(book.chapters) { book.chapters.any { transcriptRepository.hasTranscript(it.id) } },
     )
   }
 
@@ -308,6 +311,10 @@ class BookPlayViewModel(
 
   fun onBookActionsClick() {
     navigator.goTo(Destination.BookActions(bookId))
+  }
+
+  fun onSummariesClick() {
+    navigator.goTo(Destination.Summaries(bookId))
   }
 
   fun onCurrentChapterClick() {

@@ -165,8 +165,10 @@ dependencies {
   implementation(projects.core.foldersync)
   implementation(projects.core.historyupload)
   implementation(projects.core.server)
+  implementation(projects.core.summaries)
   implementation(projects.core.transcript)
   implementation(projects.features.audiobookshelf)
+  implementation(projects.features.summaries)
 
   implementation(libs.appCompat)
   implementation(libs.lifecycle.compose)

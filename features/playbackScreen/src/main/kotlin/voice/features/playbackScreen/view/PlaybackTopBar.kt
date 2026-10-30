@@ -29,8 +29,10 @@ import voice.core.ui.icons.VoiceIcons
 @Composable
 internal fun PlaybackTopBar(
   showChapters: Boolean,
+  showSummaries: Boolean,
   onCloseClick: () -> Unit,
   onChaptersClick: () -> Unit,
+  onSummariesClick: () -> Unit,
   onBookActionsClick: () -> Unit,
   modifier: Modifier = Modifier,
 ) {
@@ -43,6 +45,9 @@ internal fun PlaybackTopBar(
   ) {
     CloseButton(onClick = onCloseClick)
     Spacer(Modifier.weight(1F))
+    if (showSummaries) {
+      SummariesButton(onClick = onSummariesClick)
+    }
     if (showChapters) {
       ChaptersButton(onClick = onChaptersClick)
     }
@@ -58,6 +63,19 @@ internal fun ChaptersButton(
   TopBarButton(
     icon = VoiceIcons.ViewList,
     contentDescription = stringResource(R.string.playback_chapters_title),
+    onClick = onClick,
+    modifier = modifier,
+  )
+}
+
+@Composable
+internal fun SummariesButton(
+  onClick: () -> Unit,
+  modifier: Modifier = Modifier,
+) {
+  TopBarButton(
+    icon = VoiceIcons.AutoAwesome,
+    contentDescription = stringResource(R.string.summaries_title),
     onClick = onClick,
     modifier = modifier,
   )
