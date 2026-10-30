@@ -221,6 +221,8 @@
     <string name="history.event.fell_asleep">Уснули</string>
     <string name="history.event.interrupted">Прервано на %s</string>
     <string name="history.event.jump_back">Возврат на прежнее место</string>
+    <string name="history.event.morning_check_right">Вы отметили, что здесь потеряли нить</string>
+    <string name="history.event.morning_check_wrong">Вы отметили, что здесь не теряли нить</string>
     <string name="history.event.moved">Сдвиг позиции</string>
     <string name="history.event.paused">Пауза</string>
     <string name="history.event.played">Воспроизведение</string>
@@ -323,6 +325,11 @@
     <string name="library.survey.title">Помогите развивать Voice</string>
     <string name="media_session.library.recent">Недавние</string>
     <string name="media_session.library.root">Все аудиокниги</string>
+    <string name="morning_check.channel">Утренний вопрос</string>
+    <string name="morning_check.right">Да</string>
+    <string name="morning_check.title">Здесь вы потеряли нить?</string>
+    <string name="morning_check.wrong">Нет</string>
+    <string name="morning_check.wrong_answered">Спасибо! Откройте книгу и перейдите туда, где вы потеряли нить.</string>
     <string name="onboarding.action.next">Далее</string>
     <string name="onboarding.analytics_consent.action.disable">Продолжить без отправки аналитики</string>
     <string name="onboarding.analytics_consent.action.enable">Продолжить с отправкой аналитики</string>
@@ -407,6 +414,8 @@
     <string name="settings.auto_sleep_timer.end.label">Время конца</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Каждые 10 минут книга становится тише. Встряхните телефон в течение минуты, чтобы слушать дальше. Иначе она вернётся туда, где вы встряхнули телефон в последний раз, и встанет на паузу.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Проверять, слушаю ли я</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">После пропущенной проверки утром уведомление спросит, вернулась ли книга туда, где вы потеряли нить</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Спросить утром</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Изменение громкости, перемотка или повторное воспроизведение запускают отсчёт заново</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Перезапускать, пока я не сплю</string>
     <string name="settings.auto_sleep_timer.start.label">Время начала</string>

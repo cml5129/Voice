@@ -274,6 +274,8 @@ private fun EventNode(type: Type) {
     Type.SleepTimerExtended,
     Type.StillListening,
     Type.FellAsleep,
+    Type.MorningCheckRight,
+    Type.MorningCheckWrong,
     -> colors.tertiaryContainer to colors.onTertiaryContainer
     Type.Seek, Type.SkipBack, Type.SkipForward, Type.ChapterChange, Type.BookmarkJump, Type.JumpBack ->
       colors.secondaryContainer to colors.onSecondaryContainer
@@ -363,6 +365,8 @@ private fun eventText(event: HistoryEvent): String {
       Type.SleepTimerExtended -> R.string.history_event_shook
       Type.StillListening -> R.string.history_event_still_listening
       Type.FellAsleep -> R.string.history_event_fell_asleep
+      Type.MorningCheckRight -> R.string.history_event_morning_check_right
+      Type.MorningCheckWrong -> R.string.history_event_morning_check_wrong
       Type.ChapterChange -> R.string.history_event_chapter_change
       Type.BookmarkJump -> R.string.history_event_bookmark_jump
       Type.JumpBack -> R.string.history_event_jump_back
@@ -408,6 +412,8 @@ private fun Type.icon(): ImageVector = when (this) {
   Type.SleepTimerEnded -> VoiceIcons.BedtimeOff
   Type.SleepTimerExtended, Type.StillListening -> VoiceIcons.Vibration
   Type.FellAsleep -> VoiceIcons.Bedtime
+  Type.MorningCheckRight -> VoiceIcons.Check
+  Type.MorningCheckWrong -> VoiceIcons.Close
   Type.ChapterChange -> VoiceIcons.SkipNext
   Type.BookmarkJump -> VoiceIcons.Bookmark
   Type.JumpBack -> VoiceIcons.Undo

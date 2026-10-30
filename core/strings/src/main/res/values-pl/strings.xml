@@ -221,6 +221,8 @@
     <string name="history.event.fell_asleep">Zaśnięto</string>
     <string name="history.event.interrupted">Przerwa na %s</string>
     <string name="history.event.jump_back">Powrót do poprzedniego miejsca</string>
+    <string name="history.event.morning_check_right">Według Ciebie tutaj zgubiono wątek</string>
+    <string name="history.event.morning_check_wrong">Według Ciebie tutaj nie zgubiono wątku</string>
     <string name="history.event.moved">Przesunięcie</string>
     <string name="history.event.paused">Pauza</string>
     <string name="history.event.played">Odtwarzanie</string>
@@ -323,6 +325,11 @@
     <string name="library.survey.title">Pomóż kształtować Voice</string>
     <string name="media_session.library.recent">Ostatnie</string>
     <string name="media_session.library.root">Wszystkie audiobooki</string>
+    <string name="morning_check.channel">Poranne pytanie</string>
+    <string name="morning_check.right">Tak</string>
+    <string name="morning_check.title">Czy tutaj zgubiono wątek?</string>
+    <string name="morning_check.wrong">Nie</string>
+    <string name="morning_check.wrong_answered">Dzięki! Otwórz książkę i przejdź tam, gdzie zgubiono wątek.</string>
     <string name="onboarding.action.next">Dalej</string>
     <string name="onboarding.analytics_consent.action.disable">Kontynuuj bez analityki</string>
     <string name="onboarding.analytics_consent.action.enable">Kontynuuj z analityką</string>
@@ -407,6 +414,8 @@
     <string name="settings.auto_sleep_timer.end.label">Ustaw godzinę zakończenia</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Co 10 minut książka cichnie. Potrząśnij telefonem w ciągu minuty, by słuchać dalej. W przeciwnym razie wróci do miejsca ostatniego potrząśnięcia i się zatrzyma.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Sprawdzaj, czy nadal słucham</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Po pominiętym sprawdzeniu powiadomienie zapyta rano, czy książka wróciła tam, gdzie zgubiono wątek</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Zapytaj mnie rano</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Zmiana głośności, przewinięcie lub ponowne odtworzenie zaczyna odliczanie od nowa</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Uruchom ponownie, gdy nie śpię</string>
     <string name="settings.auto_sleep_timer.start.label">Ustaw godzinę rozpoczęcia</string>

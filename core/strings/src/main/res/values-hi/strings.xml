@@ -199,6 +199,8 @@
     <string name="history.event.fell_asleep">नींद आ गई</string>
     <string name="history.event.interrupted">%s की रुकावट</string>
     <string name="history.event.jump_back">पिछली जगह पर वापसी</string>
+    <string name="history.event.morning_check_right">आपने कहा कि आपने यहाँ सिलसिला खोया</string>
+    <string name="history.event.morning_check_wrong">आपने कहा कि आपने यहाँ सिलसिला नहीं खोया</string>
     <string name="history.event.moved">स्थिति बदली</string>
     <string name="history.event.paused">रोका गया</string>
     <string name="history.event.played">चलाया गया</string>
@@ -289,6 +291,11 @@
     <string name="library.survey.title">Voice को आकार देने में मदद करें</string>
     <string name="media_session.library.recent">हालिया</string>
     <string name="media_session.library.root">सभी ऑडियोबुक</string>
+    <string name="morning_check.channel">सुबह का सवाल</string>
+    <string name="morning_check.right">हाँ</string>
+    <string name="morning_check.title">क्या आपने यहीं सिलसिला खोया?</string>
+    <string name="morning_check.wrong">नहीं</string>
+    <string name="morning_check.wrong_answered">धन्यवाद! किताब खोलें और वहाँ जाएँ जहाँ आपने सिलसिला खोया।</string>
     <string name="onboarding.action.next">अगला</string>
     <string name="onboarding.analytics_consent.action.disable">एनालिटिक्स के बिना जारी रखें</string>
     <string name="onboarding.analytics_consent.action.enable">एनालिटिक्स के साथ जारी रखें</string>
@@ -371,6 +378,8 @@
     <string name="settings.auto_sleep_timer.end.label">खत्म होने का समय सेट करें</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">हर 10 मिनट में पुस्तक की आवाज़ धीमी होती है। सुनना जारी रखने के लिए एक मिनट के भीतर फ़ोन हिलाएँ। नहीं तो पुस्तक वहीं लौट जाती है जहाँ आपने पिछली बार फ़ोन हिलाया था, और रुक जाती है।</string>
     <string name="settings.auto_sleep_timer.listening_check.title">जाँचें कि सुनना जारी है</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">छूटी हुई जाँच के बाद, सुबह एक सूचना पूछती है कि क्या किताब वहीं लौटी जहाँ आपने सिलसिला खोया</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">सुबह मुझसे पूछें</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">आवाज़ बदलने, आगे-पीछे करने या फिर से चलाने पर उलटी गिनती दोबारा शुरू होती है</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">जागते रहने पर फिर से शुरू करें</string>
     <string name="settings.auto_sleep_timer.start.label">शुरू होने का समय सेट करें</string>

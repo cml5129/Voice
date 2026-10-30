@@ -159,6 +159,7 @@ class SettingsViewModel(
         startTime = autoSleepTimer.autoSleepStartTime,
         endTime = autoSleepTimer.autoSleepEndTime,
         listeningCheck = autoSleepTimer.listeningCheckEnabled,
+        morningCheck = autoSleepTimer.morningCheckEnabled,
         restartWhenAwake = autoSleepTimer.restartWhenAwake,
       ),
       analyticsEnabled = analyticsEnabled,
@@ -354,6 +355,14 @@ class SettingsViewModel(
     mainScope.launch {
       sleepTimerPreferenceStore.updateData { currentPrefs ->
         currentPrefs.copy(listeningCheckEnabled = checked)
+      }
+    }
+  }
+
+  override fun setMorningCheck(checked: Boolean) {
+    mainScope.launch {
+      sleepTimerPreferenceStore.updateData { currentPrefs ->
+        currentPrefs.copy(morningCheckEnabled = checked)
       }
     }
   }

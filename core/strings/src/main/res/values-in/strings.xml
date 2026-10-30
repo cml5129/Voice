@@ -188,6 +188,8 @@
     <string name="history.event.fell_asleep">Tertidur</string>
     <string name="history.event.interrupted">Terinterupsi selama %s</string>
     <string name="history.event.jump_back">Kembali ke posisi sebelumnya</string>
+    <string name="history.event.morning_check_right">Kamu bilang kehilangan alur di sini</string>
+    <string name="history.event.morning_check_wrong">Kamu bilang tidak kehilangan alur di sini</string>
     <string name="history.event.moved">Posisi digeser</string>
     <string name="history.event.paused">Dijeda</string>
     <string name="history.event.played">Diputar</string>
@@ -272,6 +274,11 @@
     <string name="library.survey.title">Bantu kembangkan Voice</string>
     <string name="media_session.library.recent">Terbaru</string>
     <string name="media_session.library.root">Semua buku audio</string>
+    <string name="morning_check.channel">Pertanyaan pagi</string>
+    <string name="morning_check.right">Ya</string>
+    <string name="morning_check.title">Apakah di sini kamu kehilangan alur?</string>
+    <string name="morning_check.wrong">Tidak</string>
+    <string name="morning_check.wrong_answered">Terima kasih! Buka bukunya dan pergi ke tempat kamu kehilangan alur.</string>
     <string name="onboarding.action.next">Berikutnya</string>
     <string name="onboarding.analytics_consent.action.disable">Lanjutkan tanpa analitik</string>
     <string name="onboarding.analytics_consent.action.enable">Lanjutkan dengan analitik</string>
@@ -353,6 +360,8 @@
     <string name="settings.auto_sleep_timer.end.label">Atur waktu selesai</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Setiap 10 menit, suara buku dikecilkan. Goyangkan ponsel Anda dalam satu menit untuk lanjut mendengarkan. Jika tidak, buku kembali ke posisi terakhir Anda menggoyangkan ponsel lalu dijeda.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Periksa apakah saya masih mendengarkan</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Setelah pemeriksaan yang terlewat, notifikasi di pagi hari menanyakan apakah buku kembali ke tempat kamu kehilangan alur</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Tanyakan saya di pagi hari</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Mengubah volume, melompat, atau memutar lagi akan memulai ulang hitungan mundur</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Mulai ulang saat saya terjaga</string>
     <string name="settings.auto_sleep_timer.start.label">Atur waktu mulai</string>

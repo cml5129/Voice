@@ -243,6 +243,8 @@
     <string name="history.event.fell_asleep">غفوت</string>
     <string name="history.event.interrupted">مقاطعة لمدة %s</string>
     <string name="history.event.jump_back">عودة إلى الموضع السابق</string>
+    <string name="history.event.morning_check_right">قلت إنك فقدت المتابعة هنا</string>
+    <string name="history.event.morning_check_wrong">قلت إنك لم تفقد المتابعة هنا</string>
     <string name="history.event.moved">تغيير الموضع</string>
     <string name="history.event.paused">إيقاف مؤقت</string>
     <string name="history.event.played">تشغيل</string>
@@ -357,6 +359,11 @@
     <string name="library.survey.title">رأيك يصنع مستقبل Voice</string>
     <string name="media_session.library.recent">الحديثة</string>
     <string name="media_session.library.root">كل الكتب الصوتية</string>
+    <string name="morning_check.channel">سؤال الصباح</string>
+    <string name="morning_check.right">نعم</string>
+    <string name="morning_check.title">هل هنا فقدت المتابعة؟</string>
+    <string name="morning_check.wrong">لا</string>
+    <string name="morning_check.wrong_answered">شكرًا! افتح الكتاب وانتقل إلى حيث فقدت المتابعة.</string>
     <string name="onboarding.action.next">التالي</string>
     <string name="onboarding.analytics_consent.action.disable">المتابعة بدون تحليلات</string>
     <string name="onboarding.analytics_consent.action.enable">المتابعة مع التحليلات</string>
@@ -443,6 +450,8 @@
     <string name="settings.auto_sleep_timer.end.label">تعيين وقت الانتهاء</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">كل 10 دقائق ينخفض صوت الكتاب. يكفي هزّ هاتفك خلال دقيقة لمتابعة الاستماع، وإلا يعود الكتاب إلى آخر موضع هززت فيه الهاتف ويتوقف مؤقتًا.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">التحقق من أنني ما زلت أستمع</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">بعد فحص فائت، يسألك إشعار في الصباح إن كان الكتاب قد عاد إلى حيث فقدت المتابعة</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">اسألني في الصباح</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">يعيد تغيير مستوى الصوت أو التخطي أو الضغط على التشغيل مجددًا بدءَ العدّ التنازلي من جديد</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">إعادة التشغيل عند الاستيقاظ</string>
     <string name="settings.auto_sleep_timer.start.label">تعيين وقت البدء</string>

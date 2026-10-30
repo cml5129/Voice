@@ -19,6 +19,7 @@ import voice.core.logging.api.Logger
 import voice.core.playback.LivePlaybackState
 import voice.core.playback.PlayerController
 import voice.core.playback.history.ListeningHistoryRecorder
+import voice.core.playback.history.PlaybackPosition
 import voice.core.playback.playstate.PlayStateManager
 import voice.core.playback.playstate.PlayStateManager.PlayState.Playing
 import java.time.Clock
@@ -28,6 +29,8 @@ import kotlin.time.Duration.Companion.minutes
  * During the automatic sleep timer's hours, turns the volume down every few minutes. A shake, a skip or
  * a seek says the listener is still awake. Without one they most likely fell asleep, so the book goes
  * back to where they last showed they were awake and pauses.
+ *
+ * Once they missed a check, the book keeps going back to where they lost track, see [LostTrack].
  */
 @ContributesIntoSet(AppScope::class)
 class ListeningCheck(
@@ -37,6 +40,8 @@ class ListeningCheck(
   private val shakeDetector: ShakeDetector,
   private val sleepTimer: SleepTimer,
   private val historyRecorder: ListeningHistoryRecorder,
+  private val lostTrack: LostTrack,
+  private val morningCheck: MorningCheck,
   private val clock: Clock,
   private val scope: CoroutineScope,
 ) : AppInitializer {
@@ -52,18 +57,32 @@ class ListeningCheck(
   }
 
   private suspend fun checkWhilePlaying() {
-    var awake = playerController.livePlaybackState() ?: return
+    val playing = playerController.livePlaybackState()?.position() ?: return
+    var lostTrackAt = lostTrack.spot(playing.bookId)
+    var awake = lostTrackAt ?: playing
     while (true) {
       // skipping or seeking shows they're awake right there, so the next check waits for the full interval again
       val acted = withTimeoutOrNull(CHECK_INTERVAL) { listenerActions().first() } != null
-      if (acted || !shouldCheck()) {
-        awake = playerController.livePlaybackState() ?: return
+      if (acted) {
+        val now = playerController.livePlaybackState()?.position() ?: return
+        if (lostTrackAt == null) {
+          awake = now
+        } else if (lostTrack.isBefore(now, lostTrackAt)) {
+          lostTrackAt = now
+          awake = now
+        }
+        continue
+      }
+      if (!shouldCheck()) {
+        lostTrackAt = null
+        awake = playerController.livePlaybackState()?.position() ?: return
         continue
       }
       if (answered()) {
         playerController.record(ListeningEvent.Type.StillListening, ListeningEvent.Source.SleepTimer)
         sleepTimer.onListenerAwake()
-        awake = playerController.livePlaybackState() ?: return
+        lostTrackAt = null
+        awake = playerController.livePlaybackState()?.position() ?: return
       } else {
         Logger.i("Listening check missed")
         fellAsleep(awake)
@@ -83,21 +102,20 @@ class ListeningCheck(
     }
   }
 
-  private suspend fun fellAsleep(awake: LivePlaybackState) {
+  private suspend fun fellAsleep(awake: PlaybackPosition) {
     if (playerController.livePlaybackState()?.bookId == awake.bookId) {
       playerController.setPosition(
-        time = awake.positionMs,
+        time = awake.time,
         id = awake.chapterId,
         type = ListeningEvent.Type.FellAsleep,
         source = ListeningEvent.Source.SleepTimer,
       )
     }
     playerController.pause()
+    morningCheck.schedule(awake.bookId)
   }
 
-  private fun listenerActions(): Flow<ListeningEvent> = historyRecorder.events.filter {
-    it.source in LISTENER_SOURCES && it.type in LISTENER_ACTIONS
-  }
+  private fun listenerActions(): Flow<ListeningEvent> = historyRecorder.events.filter { it.isListenerAction() }
 
   private suspend fun shouldCheck(): Boolean {
     val preference = sleepTimerPreferenceStore.data.first()
@@ -110,27 +128,11 @@ class ListeningCheck(
       )
   }
 
+  private fun LivePlaybackState.position() = PlaybackPosition(bookId, chapterId, positionMs)
+
   internal companion object {
     val CHECK_INTERVAL = 10.minutes
     val ANSWER_TIME = 1.minutes
     const val PROMPT_VOLUME = 0.4F
-    private val LISTENER_SOURCES = setOf(
-      ListeningEvent.Source.App,
-      ListeningEvent.Source.Widget,
-      ListeningEvent.Source.Notification,
-      ListeningEvent.Source.Headset,
-      ListeningEvent.Source.Bluetooth,
-      ListeningEvent.Source.Car,
-      ListeningEvent.Source.Watch,
-    )
-    private val LISTENER_ACTIONS = setOf(
-      ListeningEvent.Type.Play,
-      ListeningEvent.Type.Seek,
-      ListeningEvent.Type.SkipBack,
-      ListeningEvent.Type.SkipForward,
-      ListeningEvent.Type.ChapterChange,
-      ListeningEvent.Type.BookmarkJump,
-      ListeningEvent.Type.JumpBack,
-    )
   }
 }

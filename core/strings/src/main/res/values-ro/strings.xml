@@ -210,6 +210,8 @@
     <string name="history.event.fell_asleep">Ai adormit</string>
     <string name="history.event.interrupted">Întrerupere de %s</string>
     <string name="history.event.jump_back">Revenire la poziția anterioară</string>
+    <string name="history.event.morning_check_right">Ai spus că ai pierdut firul aici</string>
+    <string name="history.event.morning_check_wrong">Ai spus că nu ai pierdut firul aici</string>
     <string name="history.event.moved">Poziție mutată</string>
     <string name="history.event.paused">Pauză</string>
     <string name="history.event.played">Redare</string>
@@ -306,6 +308,11 @@
     <string name="library.survey.title">Ajută-ne să îmbunătățim Voice</string>
     <string name="media_session.library.recent">Recente</string>
     <string name="media_session.library.root">Toate cărțile audio</string>
+    <string name="morning_check.channel">Întrebarea de dimineață</string>
+    <string name="morning_check.right">Da</string>
+    <string name="morning_check.title">Aici ai pierdut firul?</string>
+    <string name="morning_check.wrong">Nu</string>
+    <string name="morning_check.wrong_answered">Mulțumesc! Deschide cartea și mergi unde ai pierdut firul.</string>
     <string name="onboarding.action.next">Mai departe</string>
     <string name="onboarding.analytics_consent.action.disable">Continuă fără statistici</string>
     <string name="onboarding.analytics_consent.action.enable">Continuă cu statistici</string>
@@ -389,6 +396,8 @@
     <string name="settings.auto_sleep_timer.end.label">Setează ora de final</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">La fiecare 10 minute, cartea se aude mai încet. Scutură telefonul în cel mult un minut ca să asculți mai departe. Altfel, revine unde ai scuturat ultima dată și se oprește.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Verifică dacă încă ascult</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">După o verificare fără răspuns, o notificare te întreabă dimineața dacă cartea a revenit unde ai pierdut firul</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Întreabă-mă dimineața</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Schimbarea volumului, saltul sau reluarea redării pornesc numărătoarea inversă de la capăt</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Repornește cât nu dorm</string>
     <string name="settings.auto_sleep_timer.start.label">Setează ora de început</string>

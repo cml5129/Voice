@@ -188,6 +188,8 @@
     <string name="history.event.fell_asleep">已睡着</string>
     <string name="history.event.interrupted">中断 %s</string>
     <string name="history.event.jump_back">跳回原处</string>
+    <string name="history.event.morning_check_right">你说你在这里走神了</string>
+    <string name="history.event.morning_check_wrong">你说你没有在这里走神</string>
     <string name="history.event.moved">调整进度</string>
     <string name="history.event.paused">暂停播放</string>
     <string name="history.event.played">开始播放</string>
@@ -272,6 +274,11 @@
     <string name="library.survey.title">一起打造 Voice</string>
     <string name="media_session.library.recent">最近</string>
     <string name="media_session.library.root">所有有声书</string>
+    <string name="morning_check.channel">早晨确认</string>
+    <string name="morning_check.right">是</string>
+    <string name="morning_check.title">你是在这里走神的吗？</string>
+    <string name="morning_check.wrong">否</string>
+    <string name="morning_check.wrong_answered">谢谢！打开这本书，跳到你走神的地方。</string>
     <string name="onboarding.action.next">下一步</string>
     <string name="onboarding.analytics_consent.action.disable">继续，不启用分析</string>
     <string name="onboarding.analytics_consent.action.enable">继续并启用分析</string>
@@ -353,6 +360,8 @@
     <string name="settings.auto_sleep_timer.end.label">设置结束时间</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">每隔 10 分钟，书的音量会降低。请在 1 分钟内摇一摇手机以继续收听，否则会回到您上次摇动的位置并暂停。</string>
     <string name="settings.auto_sleep_timer.listening_check.title">确认我是否还在听</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">错过一次检查后，早上会有通知问你书是否回到了你走神的地方</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">早上问我</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">调节音量、快进快退或重新播放时，倒计时会重新开始</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">醒着时重新计时</string>
     <string name="settings.auto_sleep_timer.start.label">设置开始时间</string>

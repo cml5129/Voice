@@ -210,6 +210,8 @@
     <string name="history.event.fell_asleep">Te dormiste</string>
     <string name="history.event.interrupted">Interrupción de %s</string>
     <string name="history.event.jump_back">Vuelta atrás</string>
+    <string name="history.event.morning_check_right">Dijiste que aquí perdiste el hilo</string>
+    <string name="history.event.morning_check_wrong">Dijiste que aquí no perdiste el hilo</string>
     <string name="history.event.moved">Desplazamiento</string>
     <string name="history.event.paused">Pausa</string>
     <string name="history.event.played">Reproducción</string>
@@ -306,6 +308,11 @@
     <string name="library.survey.title">Ayuda a dar forma a Voice</string>
     <string name="media_session.library.recent">Recientes</string>
     <string name="media_session.library.root">Todos los audiolibros</string>
+    <string name="morning_check.channel">Pregunta de la mañana</string>
+    <string name="morning_check.right">Sí</string>
+    <string name="morning_check.title">¿Perdiste el hilo aquí?</string>
+    <string name="morning_check.wrong">No</string>
+    <string name="morning_check.wrong_answered">¡Gracias! Abre el libro y ve a donde perdiste el hilo.</string>
     <string name="onboarding.action.next">Siguiente</string>
     <string name="onboarding.analytics_consent.action.disable">Continuar sin compartir estadísticas</string>
     <string name="onboarding.analytics_consent.action.enable">Continuar compartiendo estadísticas</string>
@@ -389,6 +396,8 @@
     <string name="settings.auto_sleep_timer.end.label">Hora fin</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Cada 10 minutos el libro baja el volumen. Agita el teléfono antes de un minuto para seguir escuchando. Si no, vuelve a donde lo agitaste por última vez y se pausa.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Comprobar que sigo escuchando</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Tras una comprobación sin respuesta, una notificación te pregunta por la mañana si el libro volvió a donde perdiste el hilo</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Preguntarme por la mañana</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Cambiar el volumen, saltar o volver a reproducir reinicia la cuenta atrás</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Reiniciar si no me he dormido</string>
     <string name="settings.auto_sleep_timer.start.label">Hora inicio</string>

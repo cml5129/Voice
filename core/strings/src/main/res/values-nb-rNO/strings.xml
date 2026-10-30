@@ -199,6 +199,8 @@
     <string name="history.event.fell_asleep">Sovnet</string>
     <string name="history.event.interrupted">Avbrutt i %s</string>
     <string name="history.event.jump_back">Hoppet tilbake</string>
+    <string name="history.event.morning_check_right">Du sa at du mistet tråden her</string>
+    <string name="history.event.morning_check_wrong">Du sa at du ikke mistet tråden her</string>
     <string name="history.event.moved">Flyttet</string>
     <string name="history.event.paused">Satte på pause</string>
     <string name="history.event.played">Spilte av</string>
@@ -289,6 +291,11 @@
     <string name="library.survey.title">Vær med på å forme Voice</string>
     <string name="media_session.library.recent">Nylig</string>
     <string name="media_session.library.root">Alle lydbøker</string>
+    <string name="morning_check.channel">Morgenspørsmål</string>
+    <string name="morning_check.right">Ja</string>
+    <string name="morning_check.title">Er det her du mistet tråden?</string>
+    <string name="morning_check.wrong">Nei</string>
+    <string name="morning_check.wrong_answered">Takk! Åpne boken og gå dit du mistet tråden.</string>
     <string name="onboarding.action.next">Neste</string>
     <string name="onboarding.analytics_consent.action.disable">Fortsett uten analyse</string>
     <string name="onboarding.analytics_consent.action.enable">Fortsett med analyse</string>
@@ -371,6 +378,8 @@
     <string name="settings.auto_sleep_timer.end.label">Sett sluttid</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Hvert 10. minutt blir boken lavere. Rist telefonen innen ett minutt for å lytte videre. Ellers går den tilbake dit du sist ristet, og setter på pause.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Sjekk at jeg fortsatt lytter</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Etter en ubesvart sjekk spør et varsel om morgenen om boken gikk tilbake dit du mistet tråden</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Spør meg om morgenen</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Når du endrer volumet, hopper eller trykker på spill av igjen, starter nedtellingen på nytt</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Start på nytt når jeg er våken</string>
     <string name="settings.auto_sleep_timer.start.label">Sett starttid</string>

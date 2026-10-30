@@ -199,6 +199,8 @@
     <string name="history.event.fell_asleep">Elaludt</string>
     <string name="history.event.interrupted">Megszakítás: %s</string>
     <string name="history.event.jump_back">Visszaugrás</string>
+    <string name="history.event.morning_check_right">Azt mondtad, itt veszítetted el a fonalat</string>
+    <string name="history.event.morning_check_wrong">Azt mondtad, itt nem veszítetted el a fonalat</string>
     <string name="history.event.moved">Pozíció módosítva</string>
     <string name="history.event.paused">Szünet</string>
     <string name="history.event.played">Lejátszás</string>
@@ -289,6 +291,11 @@
     <string name="library.survey.title">Segítsen alakítani a Voice-t</string>
     <string name="media_session.library.recent">Legutóbbiak</string>
     <string name="media_session.library.root">Összes hangoskönyv</string>
+    <string name="morning_check.channel">Reggeli kérdés</string>
+    <string name="morning_check.right">Igen</string>
+    <string name="morning_check.title">Itt veszítetted el a fonalat?</string>
+    <string name="morning_check.wrong">Nem</string>
+    <string name="morning_check.wrong_answered">Köszönöm! Nyisd meg a könyvet, és ugorj oda, ahol elveszítetted a fonalat.</string>
     <string name="onboarding.action.next">Tovább</string>
     <string name="onboarding.analytics_consent.action.disable">Folytatás analitika nélkül</string>
     <string name="onboarding.analytics_consent.action.enable">Folytatás analitikával</string>
@@ -371,6 +378,8 @@
     <string name="settings.auto_sleep_timer.end.label">Befejezési idő beállítása</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">A könyv 10 percenként halkabb lesz. Rázza meg a telefont egy percen belül, ha tovább hallgatná. Ellenkező esetben visszaugrik oda, ahol utoljára megrázta, és szünetel.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Ellenőrzés, hogy hallgatom-e még</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Egy megválaszolatlan ellenőrzés után reggel egy értesítés megkérdezi, hogy a könyv oda ugrott-e vissza, ahol elveszítetted a fonalat</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Kérdezz meg reggel</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">A hangerő módosítása, a léptetés vagy az újbóli lejátszás újraindítja a visszaszámlálást</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Újraindítás, amíg ébren vagyok</string>
     <string name="settings.auto_sleep_timer.start.label">Kezdési idő beállítása</string>

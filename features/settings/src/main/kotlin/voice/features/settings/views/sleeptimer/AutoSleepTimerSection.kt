@@ -66,6 +66,7 @@ internal fun AutoSleepTimerSection(
   onStartChange: (LocalTime) -> Unit,
   onEndChange: (LocalTime) -> Unit,
   onListeningCheckChange: (Boolean) -> Unit,
+  onMorningCheckChange: (Boolean) -> Unit,
   onRestartWhenAwakeChange: (Boolean) -> Unit,
   modifier: Modifier = Modifier,
 ) {
@@ -168,6 +169,27 @@ internal fun AutoSleepTimerSection(
                   Text(stringResource(StringsR.string.settings_auto_sleep_timer_listening_check_summary))
                 },
               )
+              AnimatedVisibility(visible = viewState.listeningCheck) {
+                Column {
+                  Spacer(Modifier.height(8.dp))
+                  IslandSwitchRow(
+                    title = stringResource(StringsR.string.settings_auto_sleep_timer_morning_check_title),
+                    checked = viewState.morningCheck,
+                    onCheckedChange = onMorningCheckChange,
+                    leading = {
+                      ShapedIcon(
+                        icon = VoiceIcons.Notifications,
+                        shape = MaterialShapes.Circle,
+                        containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                        contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
+                      )
+                    },
+                    summary = {
+                      Text(stringResource(StringsR.string.settings_auto_sleep_timer_morning_check_summary))
+                    },
+                  )
+                }
+              }
             }
           }
           Spacer(Modifier.height(8.dp))
@@ -289,6 +311,7 @@ private fun AutoSleepTimerSectionPreview() {
       onStartChange = {},
       onEndChange = {},
       onListeningCheckChange = {},
+      onMorningCheckChange = {},
       onRestartWhenAwakeChange = {},
     )
   }

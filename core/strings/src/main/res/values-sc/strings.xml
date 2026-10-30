@@ -199,6 +199,8 @@
     <string name="history.event.fell_asleep">Dormende</string>
     <string name="history.event.interrupted">Interrùmpidu pro %s</string>
     <string name="history.event.jump_back">Brincu in segus</string>
+    <string name="history.event.morning_check_right">As naradu chi as pèrdidu su filu inoghe</string>
+    <string name="history.event.morning_check_wrong">As naradu chi no as pèrdidu su filu inoghe</string>
     <string name="history.event.moved">Positzione cambiada</string>
     <string name="history.event.paused">Pàusa</string>
     <string name="history.event.played">Riprodutzione aviada</string>
@@ -289,6 +291,11 @@
     <string name="library.survey.title">Agiuda a dare forma a Voice</string>
     <string name="media_session.library.recent">Reghentes</string>
     <string name="media_session.library.root">Totu sos audiolibros</string>
+    <string name="morning_check.channel">Pregunta de su mangianu</string>
+    <string name="morning_check.right">Eja</string>
+    <string name="morning_check.title">Est inoghe chi as pèrdidu su filu?</string>
+    <string name="morning_check.wrong">Nono</string>
+    <string name="morning_check.wrong_answered">Gràtzias! Aberi su libru e bae a ue as pèrdidu su filu.</string>
     <string name="onboarding.action.next">Sighi</string>
     <string name="onboarding.analytics_consent.action.disable">Sighi chene analìtica</string>
     <string name="onboarding.analytics_consent.action.enable">Sighi cun analìtica</string>
@@ -371,6 +378,8 @@
     <string name="settings.auto_sleep_timer.end.label">Ora de fine</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Cada 10 minutos su libru si faghet prus pianu. Iscùtzina su telèfonu in intro de unu minutu pro sighire a ascurtare. Si nono, torrat a ue l\'as iscutzinadu s\'ùrtima bia e si pàusat.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Controlla chi so ancora ascurtende</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">A pustis de unu controllu sena risposta, una notìfica ti pregontat su mangianu si su libru est torradu a ue as pèrdidu su filu</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Pregunta·mi·lu su mangianu</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Cambiare su volume, brincare o torrare a pònnere play faghet incumintzare torra su contu a s\'imbesse</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Torra a aviare si no so dormende</string>
     <string name="settings.auto_sleep_timer.start.label">Ora de cumintzu</string>

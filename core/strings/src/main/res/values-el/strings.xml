@@ -199,6 +199,8 @@
     <string name="history.event.fell_asleep">Αποκοίμηση</string>
     <string name="history.event.interrupted">Διακοπή για %s</string>
     <string name="history.event.jump_back">Επιστροφή στην προηγούμενη θέση</string>
+    <string name="history.event.morning_check_right">Είπες ότι έχασες τον ειρμό εδώ</string>
+    <string name="history.event.morning_check_wrong">Είπες ότι δεν έχασες τον ειρμό εδώ</string>
     <string name="history.event.moved">Αλλαγή θέσης</string>
     <string name="history.event.paused">Παύση</string>
     <string name="history.event.played">Αναπαραγωγή</string>
@@ -289,6 +291,11 @@
     <string name="library.survey.title">Βοηθήστε να διαμορφωθεί το Voice</string>
     <string name="media_session.library.recent">Πρόσφατα</string>
     <string name="media_session.library.root">Όλα τα ηχητικά βιβλία</string>
+    <string name="morning_check.channel">Πρωινή ερώτηση</string>
+    <string name="morning_check.right">Ναι</string>
+    <string name="morning_check.title">Εδώ έχασες τον ειρμό;</string>
+    <string name="morning_check.wrong">Όχι</string>
+    <string name="morning_check.wrong_answered">Ευχαριστώ! Άνοιξε το βιβλίο και πήγαινε εκεί που έχασες τον ειρμό.</string>
     <string name="onboarding.action.next">Επόμενο</string>
     <string name="onboarding.analytics_consent.action.disable">Συνέχεια χωρίς στατιστικά</string>
     <string name="onboarding.analytics_consent.action.enable">Συνέχεια με στατιστικά</string>
@@ -371,6 +378,8 @@
     <string name="settings.auto_sleep_timer.end.label">Ορισμός ώρας λήξης</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Κάθε 10 λεπτά το βιβλίο χαμηλώνει. Κουνήστε το τηλέφωνό σας μέσα σε ένα λεπτό για να συνεχίσετε. Αλλιώς επιστρέφει εκεί που το κουνήσατε τελευταία φορά και κάνει παύση.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Έλεγχος ότι ακούω ακόμα</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Μετά από έναν έλεγχο χωρίς απάντηση, μια ειδοποίηση ρωτά το πρωί αν το βιβλίο γύρισε εκεί που έχασες τον ειρμό</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Ρώτα με το πρωί</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Η αλλαγή έντασης, η παράλειψη ή το πάτημα της αναπαραγωγής ξανά ξεκινά την αντίστροφη μέτρηση από την αρχή</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Επανεκκίνηση όσο δεν κοιμάμαι</string>
     <string name="settings.auto_sleep_timer.start.label">Ορισμός ώρας έναρξης</string>

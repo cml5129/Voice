@@ -210,6 +210,8 @@
     <string name="history.event.fell_asleep">Adormeceu</string>
     <string name="history.event.interrupted">Interrompido durante %s</string>
     <string name="history.event.jump_back">Voltou ao ponto anterior</string>
+    <string name="history.event.morning_check_right">Disse que perdeu o fio aqui</string>
+    <string name="history.event.morning_check_wrong">Disse que não perdeu o fio aqui</string>
     <string name="history.event.moved">Posição alterada</string>
     <string name="history.event.paused">Pausado</string>
     <string name="history.event.played">Reproduzido</string>
@@ -306,6 +308,11 @@
     <string name="library.survey.title">Ajude a moldar o Voice</string>
     <string name="media_session.library.recent">Recentes</string>
     <string name="media_session.library.root">Todos os audiolivros</string>
+    <string name="morning_check.channel">Pergunta da manhã</string>
+    <string name="morning_check.right">Sim</string>
+    <string name="morning_check.title">Foi aqui que perdeu o fio?</string>
+    <string name="morning_check.wrong">Não</string>
+    <string name="morning_check.wrong_answered">Obrigado! Abra o livro e vá até onde perdeu o fio.</string>
     <string name="onboarding.action.next">Seguinte</string>
     <string name="onboarding.analytics_consent.action.disable">Continuar sem análises</string>
     <string name="onboarding.analytics_consent.action.enable">Continuar com análises</string>
@@ -389,6 +396,8 @@
     <string name="settings.auto_sleep_timer.end.label">Definir hora de fim</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">A cada 10 minutos o livro fica mais baixo. Agite o telemóvel no espaço de um minuto para continuar a ouvir. Caso contrário, volta ao ponto onde agitou pela última vez e fica em pausa.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Verificar se ainda estou a ouvir</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Depois de uma verificação sem resposta, uma notificação pergunta de manhã se o livro voltou para onde perdeu o fio</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Perguntar de manhã</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Alterar o volume, saltar ou retomar a reprodução reinicia a contagem decrescente</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Reiniciar se não estiver a dormir</string>
     <string name="settings.auto_sleep_timer.start.label">Definir hora de início</string>

@@ -199,6 +199,8 @@
     <string name="history.event.fell_asleep">Заспано</string>
     <string name="history.event.interrupted">Прекин од %s</string>
     <string name="history.event.jump_back">Враќање на претходното место</string>
+    <string name="history.event.morning_check_right">Рековте дека тука ја изгубивте нишката</string>
+    <string name="history.event.morning_check_wrong">Рековте дека тука не ја изгубивте нишката</string>
     <string name="history.event.moved">Поместено</string>
     <string name="history.event.paused">Паузирано</string>
     <string name="history.event.played">Пуштено</string>
@@ -289,6 +291,11 @@
     <string name="library.survey.title">Помогнете да се обликува Voice</string>
     <string name="media_session.library.recent">Скорешни</string>
     <string name="media_session.library.root">Сите аудио книги</string>
+    <string name="morning_check.channel">Утринско прашање</string>
+    <string name="morning_check.right">Да</string>
+    <string name="morning_check.title">Дали тука ја изгубивте нишката?</string>
+    <string name="morning_check.wrong">Не</string>
+    <string name="morning_check.wrong_answered">Благодарам! Отворете ја книгата и одете таму каде што ја изгубивте нишката.</string>
     <string name="onboarding.action.next">Следно</string>
     <string name="onboarding.analytics_consent.action.disable">Продолжи без аналитика</string>
     <string name="onboarding.analytics_consent.action.enable">Продолжи со аналитика</string>
@@ -371,6 +378,8 @@
     <string name="settings.auto_sleep_timer.end.label">Внеси време за крај</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">На секои 10 минути книгата се стишува. Протресете го телефонот во рок од една минута за да продолжите да слушате. Инаку се враќа таму каде што последен пат протресовте и паузира.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Провери дали сè уште слушам</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">По пропуштена проверка, известување наутро прашува дали книгата се врати таму каде што ја изгубивте нишката</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Прашај ме наутро</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Менувањето на гласноста, прескокнувањето или повторното пуштање го започнува одбројувањето одново</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Рестартирај додека не спијам</string>
     <string name="settings.auto_sleep_timer.start.label">Внеси време за старт</string>

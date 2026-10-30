@@ -199,6 +199,8 @@
     <string name="history.event.fell_asleep">Somnade</string>
     <string name="history.event.interrupted">Avbröts i %s</string>
     <string name="history.event.jump_back">Hoppade tillbaka</string>
+    <string name="history.event.morning_check_right">Du sa att du tappade tråden här</string>
+    <string name="history.event.morning_check_wrong">Du sa att du inte tappade tråden här</string>
     <string name="history.event.moved">Flyttade</string>
     <string name="history.event.paused">Pausade</string>
     <string name="history.event.played">Spelade</string>
@@ -289,6 +291,11 @@
     <string name="library.survey.title">Var med och forma Voice</string>
     <string name="media_session.library.recent">Senast spelade</string>
     <string name="media_session.library.root">Alla ljudböcker</string>
+    <string name="morning_check.channel">Morgonfråga</string>
+    <string name="morning_check.right">Ja</string>
+    <string name="morning_check.title">Är det här du tappade tråden?</string>
+    <string name="morning_check.wrong">Nej</string>
+    <string name="morning_check.wrong_answered">Tack! Öppna boken och gå dit du tappade tråden.</string>
     <string name="onboarding.action.next">Nästa</string>
     <string name="onboarding.analytics_consent.action.disable">Fortsätt utan användningsdata</string>
     <string name="onboarding.analytics_consent.action.enable">Fortsätt med användningsdata</string>
@@ -371,6 +378,8 @@
     <string name="settings.auto_sleep_timer.end.label">Ange sluttid</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Var 10:e minut blir boken tystare. Skaka telefonen inom en minut för att lyssna vidare. Annars går den tillbaka dit du senast skakade och pausar.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Kolla att jag fortfarande lyssnar</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Efter en missad kontroll frågar en avisering på morgonen om boken gick tillbaka dit du tappade tråden</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Fråga mig på morgonen</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Om du ändrar volymen, hoppar eller trycker på spela igen börjar nedräkningen om</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Starta om när jag är vaken</string>
     <string name="settings.auto_sleep_timer.start.label">Ange starttid</string>

@@ -199,6 +199,8 @@
     <string name="history.event.fell_asleep">In slaap gevallen</string>
     <string name="history.event.interrupted">%s onderbroken</string>
     <string name="history.event.jump_back">Teruggesprongen</string>
+    <string name="history.event.morning_check_right">Je zei dat je hier de draad kwijtraakte</string>
+    <string name="history.event.morning_check_wrong">Je zei dat je hier de draad niet kwijtraakte</string>
     <string name="history.event.moved">Verschoven</string>
     <string name="history.event.paused">Gepauzeerd</string>
     <string name="history.event.played">Afgespeeld</string>
@@ -289,6 +291,11 @@
     <string name="library.survey.title">Denk mee over Voice</string>
     <string name="media_session.library.recent">Recent</string>
     <string name="media_session.library.root">Alle luisterboeken</string>
+    <string name="morning_check.channel">Ochtendvraag</string>
+    <string name="morning_check.right">Ja</string>
+    <string name="morning_check.title">Raakte je hier de draad kwijt?</string>
+    <string name="morning_check.wrong">Nee</string>
+    <string name="morning_check.wrong_answered">Bedankt! Open het boek en ga naar waar je de draad kwijtraakte.</string>
     <string name="onboarding.action.next">Volgende</string>
     <string name="onboarding.analytics_consent.action.disable">Doorgaan zonder analysegegevens</string>
     <string name="onboarding.analytics_consent.action.enable">Doorgaan met analysegegevens</string>
@@ -371,6 +378,8 @@
     <string name="settings.auto_sleep_timer.end.label">Eindtijd instellen</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Elke 10 minuten wordt het boek zachter. Schud je telefoon binnen een minuut om verder te luisteren. Anders gaat het terug naar waar je het laatst schudde en pauzeert het.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Controleren of ik nog luister</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Na een gemiste controle vraagt een melding ’s ochtends of het boek terugging naar waar je de draad kwijtraakte</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Vraag het me ’s ochtends</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Het volume aanpassen, overslaan of opnieuw afspelen start het aftellen opnieuw</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Opnieuw starten als ik wakker ben</string>
     <string name="settings.auto_sleep_timer.start.label">Starttijd instellen</string>

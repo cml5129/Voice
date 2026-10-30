@@ -210,6 +210,8 @@
     <string name="history.event.fell_asleep">Colpo di sonno</string>
     <string name="history.event.interrupted">Interruzione di %s</string>
     <string name="history.event.jump_back">Ritorno alla posizione precedente</string>
+    <string name="history.event.morning_check_right">Hai detto di aver perso il filo qui</string>
+    <string name="history.event.morning_check_wrong">Hai detto di non aver perso il filo qui</string>
     <string name="history.event.moved">Posizione spostata</string>
     <string name="history.event.paused">Pausa</string>
     <string name="history.event.played">Riproduzione</string>
@@ -306,6 +308,11 @@
     <string name="library.survey.title">Aiuta a dare forma a Voice</string>
     <string name="media_session.library.recent">Recenti</string>
     <string name="media_session.library.root">Tutti gli audiolibri</string>
+    <string name="morning_check.channel">Domanda del mattino</string>
+    <string name="morning_check.right">Sì</string>
+    <string name="morning_check.title">È qui che hai perso il filo?</string>
+    <string name="morning_check.wrong">No</string>
+    <string name="morning_check.wrong_answered">Grazie! Apri il libro e vai dove hai perso il filo.</string>
     <string name="onboarding.action.next">Avanti</string>
     <string name="onboarding.analytics_consent.action.disable">Continua senza statistiche</string>
     <string name="onboarding.analytics_consent.action.enable">Continua con statistiche</string>
@@ -389,6 +396,8 @@
     <string name="settings.auto_sleep_timer.end.label">Ora di fine</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Ogni 10 minuti il libro abbassa il volume. Scuoti il telefono entro un minuto per continuare ad ascoltare. Altrimenti torna dove l\'hai scosso l\'ultima volta e si mette in pausa.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Controlla che stia ancora ascoltando</string>
+    <string name="settings.auto_sleep_timer.morning_check.summary">Dopo un controllo senza risposta, una notifica ti chiede al mattino se il libro è tornato dove hai perso il filo</string>
+    <string name="settings.auto_sleep_timer.morning_check.title">Chiedimelo al mattino</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Cambiare il volume, saltare o premere di nuovo play fa ripartire il conto alla rovescia</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.title">Riavvia se non dormo</string>
     <string name="settings.auto_sleep_timer.start.label">Ora di inizio</string>
