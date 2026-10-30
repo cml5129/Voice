@@ -378,6 +378,7 @@
     <string name="settings.auto_sleep_timer.end.label">இறுதி நேரத்தை அமை</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">ஒவ்வொரு 10 நிமிடத்துக்கும் புத்தகத்தின் ஒலி குறையும். தொடர்ந்து கேட்க ஒரு நிமிடத்துக்குள் உங்கள் போனை குலுக்கவும். இல்லையெனில் நீங்கள் கடைசியாக குலுக்கிய இடத்துக்குத் திரும்பி இடைநிறுத்தப்படும்.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">நான் இன்னும் கேட்கிறேனா என்று சரிபார்</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">Voice-க்கான அறிவிப்புகள் முடக்கப்பட்டுள்ளன, எனவே கேள்வி தோன்ற முடியாது. அனுமதிக்கத் தட்டவும்.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">பதிலளிக்காத சரிபார்ப்புக்குப் பிறகு, தொடர்பை இழந்த இடத்திற்குப் புத்தகம் திரும்பியதா என்று காலையில் ஒரு அறிவிப்பு கேட்கும்</string>
     <string name="settings.auto_sleep_timer.morning_check.title">காலையில் என்னிடம் கேள்</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">ஒலியளவை மாற்றினாலோ, தாவினாலோ, மீண்டும் இயக்கினாலோ கவுண்ட்டவுன் மீண்டும் தொடங்கும்</string>

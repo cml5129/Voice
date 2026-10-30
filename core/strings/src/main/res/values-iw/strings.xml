@@ -396,6 +396,7 @@
     <string name="settings.auto_sleep_timer.end.label">בחירת זמן סיום</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">כל 10 דקות הספר נשמע חלש יותר. נערו את הטלפון תוך דקה כדי להמשיך להאזין. אחרת הוא חוזר למקום שבו ניערתם בפעם האחרונה ועובר להשהיה.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">בדיקה שההאזנה נמשכת</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">ההתראות של Voice כבויות, ולכן השאלה לא יכולה להופיע. יש להקיש כדי לאפשר אותן.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">אחרי בדיקה שלא נענתה, התראה שואלת בבוקר אם הספר חזר למקום שבו איבדת את החוט</string>
     <string name="settings.auto_sleep_timer.morning_check.title">לשאול אותי בבוקר</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">שינוי עוצמת הקול, דילוג או לחיצה חוזרת על הפעלה מתחילים את הספירה לאחור מחדש</string>

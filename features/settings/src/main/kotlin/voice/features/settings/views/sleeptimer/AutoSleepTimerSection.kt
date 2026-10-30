@@ -2,6 +2,12 @@
 
 package voice.features.settings.views.sleeptimer
 
+import android.Manifest
+import android.content.Context
+import android.content.pm.PackageManager
+import android.os.Build
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -37,12 +43,15 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat
 import androidx.graphics.shapes.RoundedPolygon
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import voice.core.ui.AuroraBackground
 import voice.core.ui.NightTheme
 import voice.core.ui.ShapedIcon
@@ -172,22 +181,7 @@ internal fun AutoSleepTimerSection(
               AnimatedVisibility(visible = viewState.listeningCheck) {
                 Column {
                   Spacer(Modifier.height(8.dp))
-                  IslandSwitchRow(
-                    title = stringResource(StringsR.string.settings_auto_sleep_timer_morning_check_title),
-                    checked = viewState.morningCheck,
-                    onCheckedChange = onMorningCheckChange,
-                    leading = {
-                      ShapedIcon(
-                        icon = VoiceIcons.Notifications,
-                        shape = MaterialShapes.Circle,
-                        containerColor = MaterialTheme.colorScheme.secondaryContainer,
-                        contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
-                      )
-                    },
-                    summary = {
-                      Text(stringResource(StringsR.string.settings_auto_sleep_timer_morning_check_summary))
-                    },
-                  )
+                  MorningCheckRow(checked = viewState.morningCheck, onCheckedChange = onMorningCheckChange)
                 }
               }
             }
@@ -298,6 +292,63 @@ private fun ShakeHint() {
       color = LocalContentColor.current.copy(alpha = 0.8F),
     )
   }
+}
+
+/**
+ * The question comes as a notification, so turning it on asks for that, and while it's missing, the row says so.
+ */
+@Composable
+private fun MorningCheckRow(
+  checked: Boolean,
+  onCheckedChange: (Boolean) -> Unit,
+) {
+  val context = LocalContext.current
+  var canNotify by remember { mutableStateOf(context.canPostNotifications()) }
+  val permissionLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+    canNotify = granted
+  }
+  LifecycleResumeEffect(Unit) {
+    canNotify = context.canPostNotifications()
+    onPauseOrDispose {}
+  }
+  fun askForNotifications() {
+    permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+  }
+  IslandSwitchRow(
+    title = stringResource(StringsR.string.settings_auto_sleep_timer_morning_check_title),
+    checked = checked,
+    onCheckedChange = { on ->
+      onCheckedChange(on)
+      if (on && !canNotify) askForNotifications()
+    },
+    leading = {
+      ShapedIcon(
+        icon = VoiceIcons.Notifications,
+        shape = MaterialShapes.Circle,
+        containerColor = MaterialTheme.colorScheme.secondaryContainer,
+        contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
+      )
+    },
+    summary = {
+      Column {
+        Text(stringResource(StringsR.string.settings_auto_sleep_timer_morning_check_summary))
+        if (checked && !canNotify) {
+          Text(
+            text = stringResource(StringsR.string.settings_auto_sleep_timer_morning_check_notifications_off),
+            color = MaterialTheme.colorScheme.error,
+            modifier = Modifier
+              .padding(top = 4.dp)
+              .clickable(onClick = ::askForNotifications),
+          )
+        }
+      }
+    },
+  )
+}
+
+private fun Context.canPostNotifications(): Boolean {
+  return Build.VERSION.SDK_INT < 33 ||
+    ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED
 }
 
 @Composable

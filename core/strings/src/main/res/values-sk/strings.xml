@@ -414,6 +414,7 @@
     <string name="settings.auto_sleep_timer.end.label">Nastaviť konečný čas</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Každých 10 minút kniha stíši. Zatraste telefónom do minúty a budete počúvať ďalej. Inak sa vráti tam, kde ste naposledy zatriasli, a pozastaví sa.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Kontrolovať, či ešte počúvam</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">Upozornenia sú pre Voice vypnuté, takže sa otázka nemôže zobraziť. Klepnutím ich povolíte.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Po zmeškanej kontrole sa vás ráno upozornenie opýta, či sa kniha vrátila tam, kde ste stratili niť</string>
     <string name="settings.auto_sleep_timer.morning_check.title">Opýtať sa ráno</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Zmena hlasitosti, preskočenie alebo opätovné spustenie prehrávania začne odpočítavanie odznova</string>

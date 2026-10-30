@@ -378,6 +378,7 @@
     <string name="settings.auto_sleep_timer.end.label">زمان پایان</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">هر ۱۰ دقیقه صدای کتاب کم می‌شود. برای ادامهٔ گوش دادن، ظرف یک دقیقه گوشی را تکان دهید. در غیر این صورت، به جایی که آخرین بار تکان دادید برمی‌گردد و متوقف می‌شود.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">بررسی اینکه هنوز گوش می‌دهم</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">اعلان‌های Voice خاموش است، پس پرسش نمی‌تواند نمایش داده شود. برای اجازه دادن ضربه بزنید.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">پس از یک بررسی بی‌پاسخ، یک اعلان صبح می‌پرسد آیا کتاب به جایی برگشت که رشته را گم کردید</string>
     <string name="settings.auto_sleep_timer.morning_check.title">صبح از من بپرس</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">تغییر صدا، رد کردن یا پخش دوباره، شمارش معکوس را از نو شروع می‌کند</string>

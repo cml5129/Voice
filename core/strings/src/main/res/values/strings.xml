@@ -658,6 +658,8 @@
     <string name="settings.auto_sleep_timer.listening_check.summary">Every 10 minutes the book gets quieter. Shake your phone within a minute to keep listening. Otherwise it goes back to where you last shook and pauses.</string>
     <!-- Settings title for checking every few minutes whether the listener is still awake. -->
     <string name="settings.auto_sleep_timer.listening_check.title">Check that I\'m still listening</string>
+    <!-- Shown below the morning question setting when Voice may not post notifications. Tapping it asks for the permission. -->
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">Notifications are off for Voice, so the question can\'t show up. Tap to allow them.</string>
     <!-- Settings summary for the morning question, shown below the listening check. -->
     <string name="settings.auto_sleep_timer.morning_check.summary">After a missed check, a notification asks in the morning whether the book went back to where you lost track</string>
     <!-- Settings title for asking in the morning where the listener lost track of the book. -->

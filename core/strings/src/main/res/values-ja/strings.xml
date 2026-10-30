@@ -360,6 +360,7 @@
     <string name="settings.auto_sleep_timer.end.label">終了時刻を設定</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">10 分ごとに音量が下がります。1 分以内にスマートフォンを振ると、そのまま聴き続けられます。振らなかった場合は、最後に振った位置に戻って一時停止します。</string>
     <string name="settings.auto_sleep_timer.listening_check.title">まだ聴いているか確認</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">Voice の通知がオフのため、確認を表示できません。タップして許可してください。</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">確認に応答しなかった翌朝、話を見失った場所に本が戻ったかを通知で確認します</string>
     <string name="settings.auto_sleep_timer.morning_check.title">朝に確認する</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">音量の変更、スキップ、再生の再開でカウントダウンが最初からやり直しになります</string>

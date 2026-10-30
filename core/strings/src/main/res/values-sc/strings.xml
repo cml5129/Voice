@@ -378,6 +378,7 @@
     <string name="settings.auto_sleep_timer.end.label">Ora de fine</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Cada 10 minutos su libru si faghet prus pianu. Iscùtzina su telèfonu in intro de unu minutu pro sighire a ascurtare. Si nono, torrat a ue l\'as iscutzinadu s\'ùrtima bia e si pàusat.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Controlla chi so ancora ascurtende</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">Sas notìficas de Voice sunt istudadas, duncas sa pregunta non podet apàrrere. Toca pro las permìtere.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">A pustis de unu controllu sena risposta, una notìfica ti pregontat su mangianu si su libru est torradu a ue as pèrdidu su filu</string>
     <string name="settings.auto_sleep_timer.morning_check.title">Pregunta·mi·lu su mangianu</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Cambiare su volume, brincare o torrare a pònnere play faghet incumintzare torra su contu a s\'imbesse</string>

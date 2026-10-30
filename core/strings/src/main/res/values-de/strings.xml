@@ -378,6 +378,7 @@
     <string name="settings.auto_sleep_timer.end.label">Endzeit</string>
     <string name="settings.auto_sleep_timer.listening_check.summary">Alle 10 Minuten wird das Buch leiser. Schüttle Dein Handy innerhalb einer Minute, um weiterzuhören. Sonst springt es dorthin zurück, wo Du zuletzt geschüttelt hast, und pausiert.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Prüfen, ob ich noch zuhöre</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">Benachrichtigungen sind für Voice aus, deshalb kann die Frage nicht erscheinen. Tippe, um sie zu erlauben.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Nach einer verpassten Prüfung fragt Dich morgens eine Benachrichtigung, ob das Buch an die Stelle zurückgesprungen ist, an der Du den Faden verloren hast</string>
     <string name="settings.auto_sleep_timer.morning_check.title">Morgens nachfragen</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Lautstärke ändern, springen oder erneut Play drücken startet den Countdown neu</string>
