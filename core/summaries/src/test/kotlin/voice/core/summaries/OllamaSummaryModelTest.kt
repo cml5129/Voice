@@ -29,7 +29,8 @@ class OllamaSummaryModelTest {
 
   @Test
   fun `asks for one whole answer without thinking`() = runTest {
-    web.enqueue(MockResponse(body = """{"model":"qwen3:14b","message":{"role":"assistant","content":"<think>hm</think> Roland walks."},"done":true}"""))
+    val reply = """{"model":"qwen3:14b","message":{"role":"assistant","content":"<think>hm</think> Roland walks."},"done":true}"""
+    web.enqueue(MockResponse(body = reply))
 
     val answer = model().complete(system = "Summarize.", prompt = "Transcript")
 
