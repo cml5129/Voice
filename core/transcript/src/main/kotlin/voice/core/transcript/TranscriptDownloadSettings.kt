@@ -21,9 +21,7 @@ public data class TranscriptDownloadSettings(
 )
 
 @SingleIn(AppScope::class)
-public class TranscriptDownloadStore(
-  store: DataStore<TranscriptDownloadSettings>,
-) : DataStore<TranscriptDownloadSettings> by store {
+public class TranscriptDownloadStore(store: DataStore<TranscriptDownloadSettings>) : DataStore<TranscriptDownloadSettings> by store {
 
   @Inject
   public constructor(factory: VoiceDataStoreFactory) : this(
