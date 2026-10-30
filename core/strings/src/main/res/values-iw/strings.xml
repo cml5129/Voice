@@ -394,7 +394,7 @@
     <string name="settings.auto_sleep_timer.start.label">בחירת זמן התחלה</string>
     <string name="settings.auto_sleep_timer.summary">הפעלה אוטומטית של טיימר-השינה כשההשמעה מתחילה בין %1$s ל-%2$s</string>
     <string name="settings.auto_sleep_timer.title">טיימר-שינה אוטומטי</string>
-    <string name="settings.history_upload.explanation">כל מה שההיסטוריה מציגה נשלח לשרת שלך, כך שהוא נשמר גם אחרי שהטלפון מוחק את הישן ביותר. המפתח מאפשר ל-Voice רק להוסיף היסטוריה, לא לקרוא אותה.</string>
+    <string name="settings.history_upload.explanation">כל מה שההיסטוריה מציגה נשלח לשרת שלך, כך שהוא נשמר גם אחרי שהטלפון מוחק את הישן ביותר. המפתח מאפשר ל-Voice רק להוסיף היסטוריה ולהוריד תמלולים.</string>
     <string name="settings.history_upload.failed">לא מעלה: %1$s</string>
     <string name="settings.history_upload.key">מפתח</string>
     <string name="settings.history_upload.last_upload">העלאה אחרונה %1$s</string>

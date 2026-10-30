@@ -394,7 +394,7 @@
     <string name="settings.auto_sleep_timer.start.label">Heure de début</string>
     <string name="settings.auto_sleep_timer.summary">Démarrer automatiquement la minuterie de mise en veille lorsque la lecture commence entre %1$s et %2$s</string>
     <string name="settings.auto_sleep_timer.title">Minuterie de mise en veille automatique</string>
-    <string name="settings.history_upload.explanation">Tout ce que montre l\'historique est envoyé à votre serveur, il est donc conservé quand le téléphone supprime le plus ancien. La clé permet seulement à Voice d\'ajouter de l\'historique, pas de le lire.</string>
+    <string name="settings.history_upload.explanation">Tout ce que montre l\'historique est envoyé à votre serveur, il est donc conservé quand le téléphone supprime le plus ancien. La clé permet seulement à Voice d\'ajouter de l\'historique et de télécharger les transcriptions.</string>
     <string name="settings.history_upload.failed">Pas d\'envoi : %1$s</string>
     <string name="settings.history_upload.key">Clé</string>
     <string name="settings.history_upload.last_upload">Dernier envoi %1$s</string>

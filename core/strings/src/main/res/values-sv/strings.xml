@@ -376,7 +376,7 @@
     <string name="settings.auto_sleep_timer.start.label">Ange starttid</string>
     <string name="settings.auto_sleep_timer.summary">Starta en insomningstimer automatiskt när uppspelningen börjar mellan %1$s och %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatisk insomningstimer</string>
-    <string name="settings.history_upload.explanation">Allt som historiken visar skickas till din server, så det sparas efter att telefonen raderat det äldsta. Nyckeln låter bara Voice lägga till historik, inte läsa den.</string>
+    <string name="settings.history_upload.explanation">Allt som historiken visar skickas till din server, så det sparas efter att telefonen raderat det äldsta. Nyckeln låter bara Voice lägga till historik och hämta transkriptioner.</string>
     <string name="settings.history_upload.failed">Laddar inte upp: %1$s</string>
     <string name="settings.history_upload.key">Nyckel</string>
     <string name="settings.history_upload.last_upload">Senaste uppladdning %1$s</string>

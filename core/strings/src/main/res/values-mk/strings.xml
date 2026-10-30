@@ -376,7 +376,7 @@
     <string name="settings.auto_sleep_timer.start.label">Внеси време за старт</string>
     <string name="settings.auto_sleep_timer.summary">Тајмерот за спиење се вклучува сам кога ќе почнете да слушате меѓу %1$s и %2$s</string>
     <string name="settings.auto_sleep_timer.title">Автоматски тајмер за спиење</string>
-    <string name="settings.history_upload.explanation">Сè што покажува историјата се испраќа на твојот сервер, па останува зачувано откако телефонот ќе ги избрише најстарите. Клучот му дозволува на Voice само да додава историја, не и да ја чита.</string>
+    <string name="settings.history_upload.explanation">Сè што покажува историјата се испраќа на твојот сервер, па останува зачувано откако телефонот ќе ги избрише најстарите. Клучот му дозволува на Voice само да додава историја и да презема транскрипти.</string>
     <string name="settings.history_upload.failed">Не се прикачува: %1$s</string>
     <string name="settings.history_upload.key">Клуч</string>
     <string name="settings.history_upload.last_upload">Последно прикачување %1$s</string>

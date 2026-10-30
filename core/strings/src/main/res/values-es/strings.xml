@@ -394,7 +394,7 @@
     <string name="settings.auto_sleep_timer.start.label">Hora inicio</string>
     <string name="settings.auto_sleep_timer.summary">Activa automáticamente el temporizador al iniciar la reproducción entre las %1$s y %2$s</string>
     <string name="settings.auto_sleep_timer.title">Temporizador automático</string>
-    <string name="settings.history_upload.explanation">Todo lo que muestra el historial se envía a tu servidor, así se conserva cuando el teléfono borra lo más antiguo. La clave solo permite a Voice añadir historial, no leerlo.</string>
+    <string name="settings.history_upload.explanation">Todo lo que muestra el historial se envía a tu servidor, así se conserva cuando el teléfono borra lo más antiguo. La clave solo permite a Voice añadir historial y descargar transcripciones.</string>
     <string name="settings.history_upload.failed">No se sube: %1$s</string>
     <string name="settings.history_upload.key">Clave</string>
     <string name="settings.history_upload.last_upload">Última subida %1$s</string>

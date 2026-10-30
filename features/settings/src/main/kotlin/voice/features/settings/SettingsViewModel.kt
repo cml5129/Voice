@@ -32,6 +32,8 @@ import voice.core.playback.SeekTimeStore
 import voice.core.server.VoiceServerStore
 import voice.core.sleeptimer.SleepTimerPreference
 import voice.core.sleeptimer.SleepTimerPreferenceStore
+import voice.core.transcript.TranscriptDownloadStore
+import voice.core.transcript.TranscriptDownloader
 import voice.core.ui.CoverColorsStore
 import voice.core.ui.DynamicColorAvailability
 import voice.core.ui.GridCount
@@ -77,6 +79,8 @@ class SettingsViewModel(
   private val audiobookshelfFeatureFlag: AudiobookshelfFeatureFlag,
   private val historyUploadStore: HistoryUploadStore,
   private val voiceServerStore: VoiceServerStore,
+  private val transcriptDownloadStore: TranscriptDownloadStore,
+  private val transcriptDownloader: TranscriptDownloader,
 ) : SettingsListener {
 
   private val mainScope = MainScope(dispatcherProvider)
@@ -113,6 +117,7 @@ class SettingsViewModel(
       .collectAsState(initial = null).value
     val historyUpload = remember { historyUploadStore.data }.collectAsState(initial = null).value
     val voiceServer = remember { voiceServerStore.data }.collectAsState(initial = null).value
+    val transcripts = remember { transcriptDownloadStore.data }.collectAsState(initial = null).value
     val dynamicColorAvailable = remember {
       dynamicColorAvailability.isSupported()
     }
@@ -135,7 +140,8 @@ class SettingsViewModel(
       audiobookshelfServer == null ||
       audiobookshelfEnabled == null ||
       historyUpload == null ||
-      voiceServer == null
+      voiceServer == null ||
+      transcripts == null
     ) {
       return null
     }
@@ -181,6 +187,10 @@ class SettingsViewModel(
         configured = voiceServer.server() != null,
         lastUpload = historyUpload.lastUploadAtMillis?.let(Instant::ofEpochMilli),
         error = historyUpload.lastError,
+      ),
+      transcripts = SettingsViewState.TranscriptsViewState(
+        downloaded = transcripts.downloaded.size,
+        error = transcripts.lastError,
       ),
     )
   }
@@ -323,6 +333,12 @@ class SettingsViewModel(
     mainScope.launch {
       voiceServerStore.updateData { it.withServer(url = serverUrl, key = key) }
       historyUploadStore.updateData { it.copy(lastError = null) }
+    }
+  }
+
+  override fun checkTranscripts() {
+    mainScope.launch {
+      transcriptDownloader.download()
     }
   }
 

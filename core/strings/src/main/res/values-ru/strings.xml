@@ -412,7 +412,7 @@
     <string name="settings.auto_sleep_timer.start.label">Время начала</string>
     <string name="settings.auto_sleep_timer.summary">Запускать таймер сна автоматически, когда воспроизведение начинается между %1$s и %2$s</string>
     <string name="settings.auto_sleep_timer.title">Автоматический таймер сна</string>
-    <string name="settings.history_upload.explanation">Всё, что показывает история, отправляется на ваш сервер и сохраняется даже после того, как телефон удалит самые старые записи. Ключ позволяет Voice только добавлять историю, но не читать её.</string>
+    <string name="settings.history_upload.explanation">Всё, что показывает история, отправляется на ваш сервер и сохраняется даже после того, как телефон удалит самые старые записи. Ключ позволяет Voice только добавлять историю и скачивать расшифровки.</string>
     <string name="settings.history_upload.failed">Не загружается: %1$s</string>
     <string name="settings.history_upload.key">Ключ</string>
     <string name="settings.history_upload.last_upload">Последняя загрузка %1$s</string>

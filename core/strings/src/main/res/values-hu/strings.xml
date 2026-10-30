@@ -376,7 +376,7 @@
     <string name="settings.auto_sleep_timer.start.label">Kezdési idő beállítása</string>
     <string name="settings.auto_sleep_timer.summary">Automatikusan elindítja az alvásidőzítőt, ha a lejátszás %1$s és %2$s között kezdődik</string>
     <string name="settings.auto_sleep_timer.title">Automatikus alvásidőzítő</string>
-    <string name="settings.history_upload.explanation">Minden, amit az előzmények mutatnak, a szerveredre kerül, így megmarad akkor is, ha a telefon törli a legrégebbieket. A kulcs csak hozzáadást enged a Voice-nak, olvasást nem.</string>
+    <string name="settings.history_upload.explanation">Minden, amit az előzmények mutatnak, a szerveredre kerül, így megmarad akkor is, ha a telefon törli a legrégebbieket. A kulcs csak előzmények hozzáadását és átiratok letöltését engedi a Voice-nak.</string>
     <string name="settings.history_upload.failed">Nincs feltöltés: %1$s</string>
     <string name="settings.history_upload.key">Kulcs</string>
     <string name="settings.history_upload.last_upload">Utolsó feltöltés %1$s</string>

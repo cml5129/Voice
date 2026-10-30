@@ -412,7 +412,7 @@
     <string name="settings.auto_sleep_timer.start.label">Ustaw godzinę rozpoczęcia</string>
     <string name="settings.auto_sleep_timer.summary">Automatycznie uruchamia wyłącznik czasowy po rozpoczęciu odtwarzania pomiędzy %1$s a %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatyczny wyłącznik czasowy</string>
-    <string name="settings.history_upload.explanation">Wszystko, co pokazuje historia, trafia na twój serwer, więc zostaje zachowane, gdy telefon usunie najstarsze wpisy. Klucz pozwala Voice tylko dodawać historię, a nie ją czytać.</string>
+    <string name="settings.history_upload.explanation">Wszystko, co pokazuje historia, trafia na twój serwer, więc zostaje zachowane, gdy telefon usunie najstarsze wpisy. Klucz pozwala Voice tylko dodawać historię i pobierać transkrypcje.</string>
     <string name="settings.history_upload.failed">Brak wysyłania: %1$s</string>
     <string name="settings.history_upload.key">Klucz</string>
     <string name="settings.history_upload.last_upload">Ostatnie wysłanie %1$s</string>

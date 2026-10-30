@@ -376,7 +376,7 @@
     <string name="settings.auto_sleep_timer.start.label">Starttijd instellen</string>
     <string name="settings.auto_sleep_timer.summary">Start automatisch een slaaptimer wanneer het afspelen begint tussen %1$s en %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatische slaaptimer</string>
-    <string name="settings.history_upload.explanation">Alles wat de geschiedenis toont gaat naar je server, zodat het bewaard blijft nadat de telefoon het oudste wist. Met de sleutel kan Voice alleen geschiedenis toevoegen, niet lezen.</string>
+    <string name="settings.history_upload.explanation">Alles wat de geschiedenis toont gaat naar je server, zodat het bewaard blijft nadat de telefoon het oudste wist. Met de sleutel kan Voice alleen geschiedenis toevoegen en transcripties downloaden.</string>
     <string name="settings.history_upload.failed">Uploadt niet: %1$s</string>
     <string name="settings.history_upload.key">Sleutel</string>
     <string name="settings.history_upload.last_upload">Laatste upload %1$s</string>

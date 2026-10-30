@@ -376,7 +376,7 @@
     <string name="settings.auto_sleep_timer.start.label">زمان شروع</string>
     <string name="settings.auto_sleep_timer.summary">اگر پخش بین %1$s تا %2$s شروع شود، تایمر خواب خودکار روشن می‌شود</string>
     <string name="settings.auto_sleep_timer.title">تایمر خواب خودکار</string>
-    <string name="settings.history_upload.explanation">هر چه تاریخچه نشان می‌دهد به سرور شما فرستاده می‌شود تا پس از پاک شدن قدیمی‌ترین‌ها در گوشی، باقی بماند. کلید فقط اجازه می‌دهد Voice تاریخچه اضافه کند، نه آن را بخواند.</string>
+    <string name="settings.history_upload.explanation">هر چه تاریخچه نشان می‌دهد به سرور شما فرستاده می‌شود تا پس از پاک شدن قدیمی‌ترین‌ها در گوشی، باقی بماند. کلید فقط اجازه می‌دهد Voice تاریخچه اضافه کند و متن پیاده‌شده را دانلود کند.</string>
     <string name="settings.history_upload.failed">بارگذاری نمی‌شود: %1$s</string>
     <string name="settings.history_upload.key">کلید</string>
     <string name="settings.history_upload.last_upload">آخرین بارگذاری %1$s</string>

@@ -358,7 +358,7 @@
     <string name="settings.auto_sleep_timer.start.label">Atur waktu mulai</string>
     <string name="settings.auto_sleep_timer.summary">Mulai pengatur waktu tidur secara otomatis saat pemutaran dimulai antara %1$s dan %2$s</string>
     <string name="settings.auto_sleep_timer.title">Pengatur waktu tidur otomatis</string>
-    <string name="settings.history_upload.explanation">Semua yang ditampilkan riwayat dikirim ke servermu, jadi tetap tersimpan setelah ponsel menghapus yang paling lama. Kunci hanya mengizinkan Voice menambah riwayat, bukan membacanya.</string>
+    <string name="settings.history_upload.explanation">Semua yang ditampilkan riwayat dikirim ke servermu, jadi tetap tersimpan setelah ponsel menghapus yang paling lama. Kunci hanya mengizinkan Voice menambah riwayat dan mengunduh transkrip.</string>
     <string name="settings.history_upload.failed">Tidak mengunggah: %1$s</string>
     <string name="settings.history_upload.key">Kunci</string>
     <string name="settings.history_upload.last_upload">Unggahan terakhir %1$s</string>

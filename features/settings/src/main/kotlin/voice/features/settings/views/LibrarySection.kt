@@ -81,6 +81,8 @@ internal fun LibrarySection(
   historyUpload: SettingsViewState.HistoryUploadViewState,
   onHistoryUploadEnabledChange: (Boolean) -> Unit,
   onHistoryUploadChange: (serverUrl: String, key: String) -> Unit,
+  transcripts: SettingsViewState.TranscriptsViewState,
+  onTranscriptsClick: () -> Unit,
   onUseGridChange: (Boolean) -> Unit,
   modifier: Modifier = Modifier,
 ) {
@@ -118,6 +120,9 @@ internal fun LibrarySection(
       AudiobookshelfRow(audiobookshelfServer, onAudiobookshelfClick)
     }
     HistoryUploadRow(historyUpload, onHistoryUploadEnabledChange, onHistoryUploadChange)
+    if (historyUpload.enabled && historyUpload.configured) {
+      TranscriptsRow(transcripts, onTranscriptsClick)
+    }
     Spacer(Modifier.height(12.dp))
     Row(
       modifier = Modifier
@@ -415,6 +420,8 @@ private fun LibrarySectionFoldersWithoutAccessPreview() {
       historyUpload = SettingsViewState.HistoryUploadViewState.preview(),
       onHistoryUploadEnabledChange = {},
       onHistoryUploadChange = { _, _ -> },
+      transcripts = SettingsViewState.TranscriptsViewState(downloaded = 12, error = null),
+      onTranscriptsClick = {},
       onUseGridChange = {},
     )
   }

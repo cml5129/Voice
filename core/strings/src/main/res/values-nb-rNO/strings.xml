@@ -376,7 +376,7 @@
     <string name="settings.auto_sleep_timer.start.label">Sett starttid</string>
     <string name="settings.auto_sleep_timer.summary">Start innsovningstidsuret automatisk når avspillingen begynner mellom %1$s og %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatisk innsovningstidsur</string>
-    <string name="settings.history_upload.explanation">Alt historikken viser sendes til serveren din, så det tas vare på etter at telefonen sletter det eldste. Nøkkelen lar bare Voice legge til historikk, ikke lese den.</string>
+    <string name="settings.history_upload.explanation">Alt historikken viser sendes til serveren din, så det tas vare på etter at telefonen sletter det eldste. Nøkkelen lar bare Voice legge til historikk og laste ned transkripsjoner.</string>
     <string name="settings.history_upload.failed">Laster ikke opp: %1$s</string>
     <string name="settings.history_upload.key">Nøkkel</string>
     <string name="settings.history_upload.last_upload">Siste opplasting %1$s</string>

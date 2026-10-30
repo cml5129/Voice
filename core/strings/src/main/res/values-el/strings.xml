@@ -376,7 +376,7 @@
     <string name="settings.auto_sleep_timer.start.label">Ορισμός ώρας έναρξης</string>
     <string name="settings.auto_sleep_timer.summary">Ο χρονοδιακόπτης ύπνου ξεκινά αυτόματα όταν η αναπαραγωγή αρχίζει μεταξύ %1$s και %2$s</string>
     <string name="settings.auto_sleep_timer.title">Αυτόματος χρονοδιακόπτης ύπνου</string>
-    <string name="settings.history_upload.explanation">Ό,τι δείχνει το ιστορικό στέλνεται στον διακομιστή σου, ώστε να διατηρείται αφού το τηλέφωνο διαγράψει τα παλαιότερα. Το κλειδί επιτρέπει στο Voice μόνο να προσθέτει ιστορικό, όχι να το διαβάζει.</string>
+    <string name="settings.history_upload.explanation">Ό,τι δείχνει το ιστορικό στέλνεται στον διακομιστή σου, ώστε να διατηρείται αφού το τηλέφωνο διαγράψει τα παλαιότερα. Το κλειδί επιτρέπει στο Voice μόνο να προσθέτει ιστορικό και να κατεβάζει απομαγνητοφωνήσεις.</string>
     <string name="settings.history_upload.failed">Δεν γίνεται αποστολή: %1$s</string>
     <string name="settings.history_upload.key">Κλειδί</string>
     <string name="settings.history_upload.last_upload">Τελευταία αποστολή %1$s</string>
