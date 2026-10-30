@@ -448,6 +448,13 @@
     <string name="settings.auto_sleep_timer.start.label">تعيين وقت البدء</string>
     <string name="settings.auto_sleep_timer.summary">يبدأ مؤقت النوم تلقائيًا عند بدء التشغيل بين %1$s و%2$s</string>
     <string name="settings.auto_sleep_timer.title">مؤقت النوم التلقائي</string>
+    <string name="settings.history_upload.explanation">كل ما يعرضه السجل يُرسل إلى خادمك، فيبقى محفوظًا بعد أن يحذف الهاتف الأقدم. المفتاح يسمح لـ Voice بإضافة السجل فقط، لا بقراءته.</string>
+    <string name="settings.history_upload.failed">لا يتم الرفع: %1$s</string>
+    <string name="settings.history_upload.key">المفتاح</string>
+    <string name="settings.history_upload.last_upload">آخر رفع %1$s</string>
+    <string name="settings.history_upload.no_server">يحتاج إلى عنوان خادم ومفتاح</string>
+    <string name="settings.history_upload.server">عنوان الخادم</string>
+    <string name="settings.history_upload.waiting">بانتظار الرفع الأول</string>
     <string name="settings.library.audiobookshelf.summary">بث الكتب من خادمك الخاص</string>
     <string name="settings.library.folders.summary">إدارة المجلدات التي يُبحث فيها عن كتب صوتية</string>
     <string name="settings.library.layout.grid">شبكة</string>
@@ -461,6 +468,8 @@
     <string name="settings.playback.lock_screen_slider.title">شريط التقدم في شاشة القفل</string>
     <string name="settings.playback.seek_time.summary">مقدار القفز عند الإرجاع والتقديم السريع</string>
     <string name="settings.playback.seek_time.title">مقدار القفز</string>
+    <string name="settings.server.off">اربط Voice بخادمك الخاص</string>
+    <string name="settings.server.title">خادمك</string>
     <string name="settings.subtitle">تطبيق Voice على طريقتك</string>
     <string name="settings.support.faq.title">الأسئلة الشائعة</string>
     <string name="settings.support.get_support.title">الحصول على مساعدة</string>

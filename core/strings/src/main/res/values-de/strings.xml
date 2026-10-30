@@ -376,6 +376,13 @@
     <string name="settings.auto_sleep_timer.start.label">Startzeit</string>
     <string name="settings.auto_sleep_timer.summary">Den Einschlaf-Timer automatisch starten, wenn die Wiedergabe zwischen %1$s und %2$s Uhr beginnt</string>
     <string name="settings.auto_sleep_timer.title">Automatischer Einschlaf-Timer</string>
+    <string name="settings.history_upload.explanation">Alles, was der Verlauf zeigt, geht an deinen Server und bleibt dort erhalten, auch wenn das Handy die ältesten Einträge löscht. Der Schlüssel erlaubt Voice nur, Verlauf hinzuzufügen, nicht ihn zu lesen.</string>
+    <string name="settings.history_upload.failed">Kein Upload: %1$s</string>
+    <string name="settings.history_upload.key">Schlüssel</string>
+    <string name="settings.history_upload.last_upload">Letzter Upload %1$s</string>
+    <string name="settings.history_upload.no_server">Braucht eine Serveradresse und einen Schlüssel</string>
+    <string name="settings.history_upload.server">Serveradresse</string>
+    <string name="settings.history_upload.waiting">Warte auf den ersten Upload</string>
     <string name="settings.library.audiobookshelf.summary">Bücher von Deinem eigenen Server streamen</string>
     <string name="settings.library.folders.summary">Ordner verwalten, die nach Hörbüchern durchsucht werden sollen</string>
     <string name="settings.library.layout.grid">Raster</string>
@@ -389,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">Regler auf dem Sperrbildschirm</string>
     <string name="settings.playback.seek_time.summary">Wie weit Zurück- und Vorspulen springen</string>
     <string name="settings.playback.seek_time.title">Vor- und zurückspulen</string>
+    <string name="settings.server.off">Verbinde Voice mit deinem eigenen Server</string>
+    <string name="settings.server.title">Dein Server</string>
     <string name="settings.subtitle">Mach Voice zu Deinem</string>
     <string name="settings.support.faq.title">Häufige Fragen</string>
     <string name="settings.support.get_support.title">Hilfe erhalten</string>

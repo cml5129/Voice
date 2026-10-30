@@ -376,6 +376,13 @@
     <string name="settings.auto_sleep_timer.start.label">Ora de cumintzu</string>
     <string name="settings.auto_sleep_timer.summary">Allughe unu temporizadore de suspensione cando sa riprodutzione incumintzat intre sas %1$s e sas %2$s</string>
     <string name="settings.auto_sleep_timer.title">Temporizadore de suspensione automàticu</string>
+    <string name="settings.history_upload.explanation">Totu su chi ammustrat sa cronologia benit imbiadu a su serbidore tuo, gasi abarrat sarvadu cando su telèfonu cantzellat su prus betzu. Sa crae permitit a Voice isceti de agiùnghere cronologia, no de dda lèghere.</string>
+    <string name="settings.history_upload.failed">Non si carrigat: %1$s</string>
+    <string name="settings.history_upload.key">Crae</string>
+    <string name="settings.history_upload.last_upload">Ùrtimu carrigamentu %1$s</string>
+    <string name="settings.history_upload.no_server">Bisòngiat s\'indiritzu de su serbidore e sa crae</string>
+    <string name="settings.history_upload.server">Indiritzu de su serbidore</string>
+    <string name="settings.history_upload.waiting">Abetende su primu carrigamentu</string>
     <string name="settings.library.audiobookshelf.summary">Ascurta sos libros de su serbidore tuo</string>
     <string name="settings.library.folders.summary">Manìgia sas cartellas in ue Voice chircat audiolibros</string>
     <string name="settings.library.layout.grid">Grìllia</string>
@@ -389,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">Cursore in s\'ischermu de blocu</string>
     <string name="settings.playback.seek_time.summary">Cantu brincant su torrare in segus e s\'andare a in antis</string>
     <string name="settings.playback.seek_time.title">Tempus de brincare</string>
+    <string name="settings.server.off">Connete Voice a su serbidore tuo</string>
+    <string name="settings.server.title">Su serbidore tuo</string>
     <string name="settings.subtitle">Cunfigura Voice a gèniu tuo</string>
     <string name="settings.support.faq.title">Preguntas fitianas</string>
     <string name="settings.support.get_support.title">Pedi agiudu</string>

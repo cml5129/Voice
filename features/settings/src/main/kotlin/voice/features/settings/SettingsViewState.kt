@@ -3,6 +3,7 @@ package voice.features.settings
 import voice.core.data.supporter.SupporterBadge
 import voice.core.ui.ThemeColorScheme
 import voice.core.ui.ThemeMode
+import java.time.Instant
 import java.time.LocalTime
 import java.time.YearMonth
 
@@ -29,6 +30,7 @@ data class SettingsViewState(
   /** The connected Audiobookshelf server, or null without one. */
   val audiobookshelfServer: String?,
   val showAudiobookshelf: Boolean,
+  val historyUpload: HistoryUploadViewState,
 ) {
 
   companion object {
@@ -55,6 +57,7 @@ data class SettingsViewState(
         foldersWithoutAccess = false,
         audiobookshelfServer = "audiobooks.example.com",
         showAudiobookshelf = true,
+        historyUpload = HistoryUploadViewState.preview(),
       )
     }
   }
@@ -74,6 +77,31 @@ data class SettingsViewState(
           endTime = LocalTime.of(6, 0),
           listeningCheck = false,
           restartWhenAwake = true,
+        )
+      }
+    }
+  }
+
+  data class HistoryUploadViewState(
+    val enabled: Boolean,
+    val serverUrl: String,
+    val key: String,
+    /** Whether there is a server and key to upload to. */
+    val configured: Boolean,
+    val lastUpload: Instant?,
+    /** Why the last upload failed, until one works again. */
+    val error: String?,
+  ) {
+
+    companion object {
+      fun preview(): HistoryUploadViewState {
+        return HistoryUploadViewState(
+          enabled = true,
+          configured = true,
+          serverUrl = "https://example.com",
+          key = "key",
+          lastUpload = Instant.parse("2026-10-28T06:06:00Z"),
+          error = null,
         )
       }
     }

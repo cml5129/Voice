@@ -394,6 +394,13 @@
     <string name="settings.auto_sleep_timer.start.label">Hora d\'inici</string>
     <string name="settings.auto_sleep_timer.summary">Inicia automàticament el temporitzador de repòs quan la reproducció comença entre les %1$s i les %2$s</string>
     <string name="settings.auto_sleep_timer.title">Temporitzador de repòs automàtic</string>
+    <string name="settings.history_upload.explanation">Tot el que mostra l\'historial s\'envia al teu servidor, així es conserva quan el telèfon esborra el més antic. La clau només permet a Voice afegir historial, no llegir-lo.</string>
+    <string name="settings.history_upload.failed">No es puja: %1$s</string>
+    <string name="settings.history_upload.key">Clau</string>
+    <string name="settings.history_upload.last_upload">Última pujada %1$s</string>
+    <string name="settings.history_upload.no_server">Cal una adreça de servidor i una clau</string>
+    <string name="settings.history_upload.server">Adreça del servidor</string>
+    <string name="settings.history_upload.waiting">Esperant la primera pujada</string>
     <string name="settings.library.audiobookshelf.summary">Escolteu els llibres del vostre propi servidor</string>
     <string name="settings.library.folders.summary">Gestiona les carpetes on es cerquen audiollibres</string>
     <string name="settings.library.layout.grid">Quadrícula</string>
@@ -407,6 +414,8 @@
     <string name="settings.playback.lock_screen_slider.title">Barra a la pantalla de bloqueig</string>
     <string name="settings.playback.seek_time.summary">Quant salten el rebobinat i l\'avançament ràpid</string>
     <string name="settings.playback.seek_time.title">Durada del salt</string>
+    <string name="settings.server.off">Connecta Voice al teu propi servidor</string>
+    <string name="settings.server.title">El teu servidor</string>
     <string name="settings.subtitle">Deixeu Voice al vostre gust</string>
     <string name="settings.support.faq.title">Preguntes freqüents</string>
     <string name="settings.support.get_support.title">Obtén ajuda</string>

@@ -376,6 +376,13 @@
     <string name="settings.auto_sleep_timer.start.label">Kezdési idő beállítása</string>
     <string name="settings.auto_sleep_timer.summary">Automatikusan elindítja az alvásidőzítőt, ha a lejátszás %1$s és %2$s között kezdődik</string>
     <string name="settings.auto_sleep_timer.title">Automatikus alvásidőzítő</string>
+    <string name="settings.history_upload.explanation">Minden, amit az előzmények mutatnak, a szerveredre kerül, így megmarad akkor is, ha a telefon törli a legrégebbieket. A kulcs csak hozzáadást enged a Voice-nak, olvasást nem.</string>
+    <string name="settings.history_upload.failed">Nincs feltöltés: %1$s</string>
+    <string name="settings.history_upload.key">Kulcs</string>
+    <string name="settings.history_upload.last_upload">Utolsó feltöltés %1$s</string>
+    <string name="settings.history_upload.no_server">Szervercím és kulcs szükséges</string>
+    <string name="settings.history_upload.server">Szervercím</string>
+    <string name="settings.history_upload.waiting">Várakozás az első feltöltésre</string>
     <string name="settings.library.audiobookshelf.summary">Könyvek streamelése a saját szerveréről</string>
     <string name="settings.library.folders.summary">A hangoskönyvek keresésére használt mappák kezelése</string>
     <string name="settings.library.layout.grid">Rács</string>
@@ -389,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">Csúszka a lezárási képernyőn</string>
     <string name="settings.playback.seek_time.summary">Mennyit ugrik a visszatekerés és az előretekerés</string>
     <string name="settings.playback.seek_time.title">Kihagyás mértéke</string>
+    <string name="settings.server.off">Csatlakoztasd a Voice-t a saját szerveredhez</string>
+    <string name="settings.server.title">Saját szerver</string>
     <string name="settings.subtitle">Tegye a Voice-t a sajátjává</string>
     <string name="settings.support.faq.title">GYIK</string>
     <string name="settings.support.get_support.title">Segítségkérés</string>

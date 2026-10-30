@@ -376,6 +376,13 @@
     <string name="settings.auto_sleep_timer.start.label">زمان شروع</string>
     <string name="settings.auto_sleep_timer.summary">اگر پخش بین %1$s تا %2$s شروع شود، تایمر خواب خودکار روشن می‌شود</string>
     <string name="settings.auto_sleep_timer.title">تایمر خواب خودکار</string>
+    <string name="settings.history_upload.explanation">هر چه تاریخچه نشان می‌دهد به سرور شما فرستاده می‌شود تا پس از پاک شدن قدیمی‌ترین‌ها در گوشی، باقی بماند. کلید فقط اجازه می‌دهد Voice تاریخچه اضافه کند، نه آن را بخواند.</string>
+    <string name="settings.history_upload.failed">بارگذاری نمی‌شود: %1$s</string>
+    <string name="settings.history_upload.key">کلید</string>
+    <string name="settings.history_upload.last_upload">آخرین بارگذاری %1$s</string>
+    <string name="settings.history_upload.no_server">به نشانی سرور و کلید نیاز دارد</string>
+    <string name="settings.history_upload.server">نشانی سرور</string>
+    <string name="settings.history_upload.waiting">در انتظار نخستین بارگذاری</string>
     <string name="settings.library.audiobookshelf.summary">کتاب‌های سرور خودتان را آنلاین پخش کنید</string>
     <string name="settings.library.folders.summary">مدیریت پوشه‌هایی که برای کتاب‌های صوتی اسکن می‌شوند</string>
     <string name="settings.library.layout.grid">شبکه</string>
@@ -389,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">نوار پیشرفت در صفحه قفل</string>
     <string name="settings.playback.seek_time.summary">میزان پرش عقب و جلو بردن سریع</string>
     <string name="settings.playback.seek_time.title">میزان پرش</string>
+    <string name="settings.server.off">Voice را به سرور خودتان وصل کنید</string>
+    <string name="settings.server.title">سرور شما</string>
     <string name="settings.subtitle">Voice را مال خودتان کنید</string>
     <string name="settings.support.faq.title">سوالات متداول</string>
     <string name="settings.support.get_support.title">دریافت پشتیبانی</string>

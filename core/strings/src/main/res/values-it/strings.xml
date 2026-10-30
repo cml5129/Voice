@@ -394,6 +394,13 @@
     <string name="settings.auto_sleep_timer.start.label">Ora di inizio</string>
     <string name="settings.auto_sleep_timer.summary">Avvia automaticamente il timer sospensione quando la riproduzione inizia tra le %1$s e le %2$s</string>
     <string name="settings.auto_sleep_timer.title">Timer sospensione automatico</string>
+    <string name="settings.history_upload.explanation">Tutto ciò che mostra la cronologia viene inviato al tuo server, così resta salvato quando il telefono elimina i dati più vecchi. La chiave permette a Voice solo di aggiungere cronologia, non di leggerla.</string>
+    <string name="settings.history_upload.failed">Nessun caricamento: %1$s</string>
+    <string name="settings.history_upload.key">Chiave</string>
+    <string name="settings.history_upload.last_upload">Ultimo caricamento %1$s</string>
+    <string name="settings.history_upload.no_server">Servono l\'indirizzo del server e la chiave</string>
+    <string name="settings.history_upload.server">Indirizzo del server</string>
+    <string name="settings.history_upload.waiting">In attesa del primo caricamento</string>
     <string name="settings.library.audiobookshelf.summary">Ascolta i libri del tuo server</string>
     <string name="settings.library.folders.summary">Gestisci cartelle audiolibri</string>
     <string name="settings.library.layout.grid">Griglia</string>
@@ -407,6 +414,8 @@
     <string name="settings.playback.lock_screen_slider.title">Cursore nella schermata di blocco</string>
     <string name="settings.playback.seek_time.summary">Di quanto saltano il riavvolgimento e l\'avanzamento veloce</string>
     <string name="settings.playback.seek_time.title">Durata del salto</string>
+    <string name="settings.server.off">Collega Voice al tuo server</string>
+    <string name="settings.server.title">Il tuo server</string>
     <string name="settings.subtitle">Rendi Voice tuo</string>
     <string name="settings.support.faq.title">Domande frequenti</string>
     <string name="settings.support.get_support.title">Chiedi aiuto</string>

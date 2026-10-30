@@ -376,6 +376,13 @@
     <string name="settings.auto_sleep_timer.start.label">Ange starttid</string>
     <string name="settings.auto_sleep_timer.summary">Starta en insomningstimer automatiskt när uppspelningen börjar mellan %1$s och %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatisk insomningstimer</string>
+    <string name="settings.history_upload.explanation">Allt som historiken visar skickas till din server, så det sparas efter att telefonen raderat det äldsta. Nyckeln låter bara Voice lägga till historik, inte läsa den.</string>
+    <string name="settings.history_upload.failed">Laddar inte upp: %1$s</string>
+    <string name="settings.history_upload.key">Nyckel</string>
+    <string name="settings.history_upload.last_upload">Senaste uppladdning %1$s</string>
+    <string name="settings.history_upload.no_server">Behöver serveradress och nyckel</string>
+    <string name="settings.history_upload.server">Serveradress</string>
+    <string name="settings.history_upload.waiting">Väntar på första uppladdningen</string>
     <string name="settings.library.audiobookshelf.summary">Strömma böckerna från din egen server</string>
     <string name="settings.library.folders.summary">Hantera mappar som genomsöks efter ljudböcker</string>
     <string name="settings.library.layout.grid">Rutnät</string>
@@ -389,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">Reglage på låsskärmen</string>
     <string name="settings.playback.seek_time.summary">Hur långt bakåt- och framåtspolning hoppar</string>
     <string name="settings.playback.seek_time.title">Hopplängd</string>
+    <string name="settings.server.off">Anslut Voice till din egen server</string>
+    <string name="settings.server.title">Din server</string>
     <string name="settings.subtitle">Gör Voice till ditt eget</string>
     <string name="settings.support.faq.title">Vanliga frågor</string>
     <string name="settings.support.get_support.title">Få hjälp</string>

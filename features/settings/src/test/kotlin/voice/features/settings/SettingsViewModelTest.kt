@@ -32,11 +32,15 @@ import voice.core.data.supporter.SupporterStatus
 import voice.core.data.supporter.SupporterStatusStore
 import voice.core.documentfile.CachedDocumentFile
 import voice.core.featureflag.MemoryFeatureFlag
+import voice.core.historyupload.HistoryUploadSettings
+import voice.core.historyupload.HistoryUploadStore
 import voice.core.kioskmode.KioskModeDemoData
 import voice.core.kioskmode.KioskModeFeatureFlag
 import voice.core.playback.AutoRewindAmountStore
 import voice.core.playback.LockScreenSliderStore
 import voice.core.playback.SeekTimeStore
+import voice.core.server.VoiceServerSettings
+import voice.core.server.VoiceServerStore
 import voice.core.sleeptimer.SleepTimerPreference
 import voice.core.sleeptimer.SleepTimerPreferenceStore
 import voice.core.ui.CoverColorsStore
@@ -98,6 +102,7 @@ class SettingsViewModelTest {
     every { serverName } returns this@SettingsViewModelTest.serverName
   }
   private val supporterStatusStore = MemoryDataStore(SupporterStatus())
+  private val historyUploadStore = MemoryDataStore(HistoryUploadSettings())
   private val dynamicColorAvailability = mockk<DynamicColorAvailability> {
     every { isSupported() } returns true
   }
@@ -130,6 +135,8 @@ class SettingsViewModelTest {
     dispatcherProvider = DispatcherProvider(scope.coroutineContext, scope.coroutineContext, scope.coroutineContext),
     serverLibrary = serverLibrary,
     audiobookshelfFeatureFlag = AudiobookshelfFeatureFlag(audiobookshelfFeatureFlag),
+    historyUploadStore = HistoryUploadStore(historyUploadStore),
+    voiceServerStore = VoiceServerStore(MemoryDataStore(VoiceServerSettings())),
   )
 
   @Test

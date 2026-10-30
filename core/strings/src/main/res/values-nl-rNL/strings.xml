@@ -376,6 +376,13 @@
     <string name="settings.auto_sleep_timer.start.label">Starttijd instellen</string>
     <string name="settings.auto_sleep_timer.summary">Start automatisch een slaaptimer wanneer het afspelen begint tussen %1$s en %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatische slaaptimer</string>
+    <string name="settings.history_upload.explanation">Alles wat de geschiedenis toont gaat naar je server, zodat het bewaard blijft nadat de telefoon het oudste wist. Met de sleutel kan Voice alleen geschiedenis toevoegen, niet lezen.</string>
+    <string name="settings.history_upload.failed">Uploadt niet: %1$s</string>
+    <string name="settings.history_upload.key">Sleutel</string>
+    <string name="settings.history_upload.last_upload">Laatste upload %1$s</string>
+    <string name="settings.history_upload.no_server">Serveradres en sleutel nodig</string>
+    <string name="settings.history_upload.server">Serveradres</string>
+    <string name="settings.history_upload.waiting">Wachten op de eerste upload</string>
     <string name="settings.library.audiobookshelf.summary">Stream de boeken op je eigen server</string>
     <string name="settings.library.folders.summary">Beheer mappen die op luisterboeken worden gescand</string>
     <string name="settings.library.layout.grid">Raster</string>
@@ -389,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">Schuifbalk op het vergrendelscherm</string>
     <string name="settings.playback.seek_time.summary">Hoe ver terugspoelen en vooruitspoelen springen</string>
     <string name="settings.playback.seek_time.title">Spoelafstand</string>
+    <string name="settings.server.off">Verbind Voice met je eigen server</string>
+    <string name="settings.server.title">Je server</string>
     <string name="settings.subtitle">Maak Voice helemaal van jou</string>
     <string name="settings.support.faq.title">Veelgestelde vragen</string>
     <string name="settings.support.get_support.title">Ondersteuning vragen</string>

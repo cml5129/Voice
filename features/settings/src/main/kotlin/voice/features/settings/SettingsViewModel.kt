@@ -23,11 +23,13 @@ import voice.core.data.supporter.SupporterStatus
 import voice.core.data.supporter.SupporterStatusStore
 import voice.core.documentfile.nameWithoutExtension
 import voice.core.featureflag.FeatureFlag
+import voice.core.historyupload.HistoryUploadStore
 import voice.core.kioskmode.KioskModeDemoData
 import voice.core.kioskmode.KioskModeFeatureFlag
 import voice.core.playback.AutoRewindAmountStore
 import voice.core.playback.LockScreenSliderStore
 import voice.core.playback.SeekTimeStore
+import voice.core.server.VoiceServerStore
 import voice.core.sleeptimer.SleepTimerPreference
 import voice.core.sleeptimer.SleepTimerPreferenceStore
 import voice.core.ui.CoverColorsStore
@@ -73,6 +75,8 @@ class SettingsViewModel(
   private val dispatcherProvider: DispatcherProvider,
   private val serverLibrary: ServerLibrary,
   private val audiobookshelfFeatureFlag: AudiobookshelfFeatureFlag,
+  private val historyUploadStore: HistoryUploadStore,
+  private val voiceServerStore: VoiceServerStore,
 ) : SettingsListener {
 
   private val mainScope = MainScope(dispatcherProvider)
@@ -107,6 +111,8 @@ class SettingsViewModel(
     }.collectAsState(initial = null).value
     val audiobookshelfEnabled = remember { audiobookshelfFeatureFlag.flow.map { it.value } }
       .collectAsState(initial = null).value
+    val historyUpload = remember { historyUploadStore.data }.collectAsState(initial = null).value
+    val voiceServer = remember { voiceServerStore.data }.collectAsState(initial = null).value
     val dynamicColorAvailable = remember {
       dynamicColorAvailability.isSupported()
     }
@@ -127,7 +133,9 @@ class SettingsViewModel(
       showSupportDevelopment == null ||
       supporterStatus == null ||
       audiobookshelfServer == null ||
-      audiobookshelfEnabled == null
+      audiobookshelfEnabled == null ||
+      historyUpload == null ||
+      voiceServer == null
     ) {
       return null
     }
@@ -166,6 +174,14 @@ class SettingsViewModel(
       audiobookshelfServer = audiobookshelfServer.name,
       // a connected server stays reachable, so it can be signed out of
       showAudiobookshelf = audiobookshelfEnabled || audiobookshelfServer.name != null,
+      historyUpload = SettingsViewState.HistoryUploadViewState(
+        enabled = voiceServer.enabled,
+        serverUrl = voiceServer.url,
+        key = voiceServer.key,
+        configured = voiceServer.server() != null,
+        lastUpload = historyUpload.lastUploadAtMillis?.let(Instant::ofEpochMilli),
+        error = historyUpload.lastError,
+      ),
     )
   }
 
@@ -290,6 +306,23 @@ class SettingsViewModel(
           Destination.AudiobookshelfLogin(Origin.Default)
         },
       )
+    }
+  }
+
+  override fun setHistoryUploadEnabled(enabled: Boolean) {
+    mainScope.launch {
+      voiceServerStore.updateData { it.copy(enabled = enabled) }
+      historyUploadStore.updateData { it.copy(lastError = null) }
+    }
+  }
+
+  override fun setHistoryUpload(
+    serverUrl: String,
+    key: String,
+  ) {
+    mainScope.launch {
+      voiceServerStore.updateData { it.withServer(url = serverUrl, key = key) }
+      historyUploadStore.updateData { it.copy(lastError = null) }
     }
   }
 

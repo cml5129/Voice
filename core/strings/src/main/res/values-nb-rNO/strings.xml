@@ -376,6 +376,13 @@
     <string name="settings.auto_sleep_timer.start.label">Sett starttid</string>
     <string name="settings.auto_sleep_timer.summary">Start innsovningstidsuret automatisk når avspillingen begynner mellom %1$s og %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatisk innsovningstidsur</string>
+    <string name="settings.history_upload.explanation">Alt historikken viser sendes til serveren din, så det tas vare på etter at telefonen sletter det eldste. Nøkkelen lar bare Voice legge til historikk, ikke lese den.</string>
+    <string name="settings.history_upload.failed">Laster ikke opp: %1$s</string>
+    <string name="settings.history_upload.key">Nøkkel</string>
+    <string name="settings.history_upload.last_upload">Siste opplasting %1$s</string>
+    <string name="settings.history_upload.no_server">Trenger serveradresse og nøkkel</string>
+    <string name="settings.history_upload.server">Serveradresse</string>
+    <string name="settings.history_upload.waiting">Venter på første opplasting</string>
     <string name="settings.library.audiobookshelf.summary">Strøm bøkene fra din egen server</string>
     <string name="settings.library.folders.summary">Administrer mappene Voice ser etter lydbøker i</string>
     <string name="settings.library.layout.grid">Rutenett</string>
@@ -389,6 +396,8 @@
     <string name="settings.playback.lock_screen_slider.title">Spolelinje på låseskjermen</string>
     <string name="settings.playback.seek_time.summary">Hvor langt tilbake- og fremoverspoling hopper</string>
     <string name="settings.playback.seek_time.title">Hoppintervall</string>
+    <string name="settings.server.off">Koble Voice til din egen server</string>
+    <string name="settings.server.title">Din server</string>
     <string name="settings.subtitle">Gjør Voice til din egen</string>
     <string name="settings.support.faq.title">Ofte stilte spørsmål</string>
     <string name="settings.support.get_support.title">Få støtte</string>

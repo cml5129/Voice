@@ -66,6 +66,7 @@ import voice.core.ui.CheckBadge
 import voice.core.ui.ShapedIcon
 import voice.core.ui.VoiceTheme
 import voice.core.ui.icons.VoiceIcons
+import voice.features.settings.SettingsViewState
 import voice.core.strings.R as StringsR
 
 @Composable
@@ -77,6 +78,9 @@ internal fun LibrarySection(
   useGrid: Boolean,
   onFoldersClick: () -> Unit,
   onAudiobookshelfClick: () -> Unit,
+  historyUpload: SettingsViewState.HistoryUploadViewState,
+  onHistoryUploadEnabledChange: (Boolean) -> Unit,
+  onHistoryUploadChange: (serverUrl: String, key: String) -> Unit,
   onUseGridChange: (Boolean) -> Unit,
   modifier: Modifier = Modifier,
 ) {
@@ -113,6 +117,7 @@ internal fun LibrarySection(
     if (showAudiobookshelf) {
       AudiobookshelfRow(audiobookshelfServer, onAudiobookshelfClick)
     }
+    HistoryUploadRow(historyUpload, onHistoryUploadEnabledChange, onHistoryUploadChange)
     Spacer(Modifier.height(12.dp))
     Row(
       modifier = Modifier
@@ -407,6 +412,9 @@ private fun LibrarySectionFoldersWithoutAccessPreview() {
       useGrid = false,
       onFoldersClick = {},
       onAudiobookshelfClick = {},
+      historyUpload = SettingsViewState.HistoryUploadViewState.preview(),
+      onHistoryUploadEnabledChange = {},
+      onHistoryUploadChange = { _, _ -> },
       onUseGridChange = {},
     )
   }

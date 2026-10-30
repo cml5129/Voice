@@ -394,6 +394,13 @@
     <string name="settings.auto_sleep_timer.start.label">Definir hora de início</string>
     <string name="settings.auto_sleep_timer.summary">Inicia o temporizador automaticamente quando a reprodução começa entre %1$s e %2$s</string>
     <string name="settings.auto_sleep_timer.title">Temporizador automático</string>
+    <string name="settings.history_upload.explanation">Tudo o que o histórico mostra vai para o seu servidor, por isso fica guardado depois de o telemóvel apagar o mais antigo. A chave só permite ao Voice adicionar histórico, não lê-lo.</string>
+    <string name="settings.history_upload.failed">Não está a enviar: %1$s</string>
+    <string name="settings.history_upload.key">Chave</string>
+    <string name="settings.history_upload.last_upload">Último envio %1$s</string>
+    <string name="settings.history_upload.no_server">Precisa do endereço do servidor e da chave</string>
+    <string name="settings.history_upload.server">Endereço do servidor</string>
+    <string name="settings.history_upload.waiting">A aguardar o primeiro envio</string>
     <string name="settings.library.audiobookshelf.summary">Ouça os livros do seu próprio servidor</string>
     <string name="settings.library.folders.summary">Gerir pastas analisadas para audiolivros</string>
     <string name="settings.library.layout.grid">Grelha</string>
@@ -407,6 +414,8 @@
     <string name="settings.playback.lock_screen_slider.title">Barra no ecrã de bloqueio</string>
     <string name="settings.playback.seek_time.summary">Quanto tempo saltar ao recuar e avançar</string>
     <string name="settings.playback.seek_time.title">Duração do salto</string>
+    <string name="settings.server.off">Ligue o Voice ao seu próprio servidor</string>
+    <string name="settings.server.title">O seu servidor</string>
     <string name="settings.subtitle">Torne o Voice seu</string>
     <string name="settings.support.faq.title">Perguntas frequentes</string>
     <string name="settings.support.get_support.title">Obter ajuda</string>
