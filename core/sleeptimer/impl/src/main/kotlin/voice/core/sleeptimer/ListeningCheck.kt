@@ -4,6 +4,7 @@ import android.app.Application
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesIntoSet
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.filter
@@ -24,6 +25,7 @@ import voice.core.playback.playstate.PlayStateManager
 import voice.core.playback.playstate.PlayStateManager.PlayState.Playing
 import java.time.Clock
 import kotlin.time.Duration.Companion.minutes
+import kotlin.time.Duration.Companion.seconds
 
 /**
  * During the automatic sleep timer's hours, turns the volume down every few minutes. A shake, a volume
@@ -47,6 +49,9 @@ class ListeningCheck(
   private val scope: CoroutineScope,
 ) : AppInitializer {
 
+  /** Where the listener last showed they were awake, kept after playback stops. */
+  private var lastAwake: PlaybackPosition? = null
+
   override fun onAppStart(application: Application) {
     scope.launch {
       playStateManager.playStateFlow.collectLatest { playState ->
@@ -55,28 +60,40 @@ class ListeningCheck(
         }
       }
     }
+    scope.launch {
+      historyRecorder.events
+        .filter { it.type == ListeningEvent.Type.SleepTimerEnded }
+        .collect { onSleepTimerEnded() }
+    }
   }
 
   private suspend fun checkWhilePlaying() {
     val playing = playerController.livePlaybackState()?.position() ?: return
     var lostTrackAt = lostTrack.spot(playing.bookId)
     var awake = lostTrackAt ?: playing
+    lastAwake = awake
     while (true) {
-      // skipping or seeking shows they're awake right there, so the next check waits for the full interval again
-      val acted = withTimeoutOrNull(CHECK_INTERVAL) { listenerActions().first() } != null
-      if (acted) {
+      // skipping, seeking or a volume button shows they're awake right there, so the next check waits for the full
+      // interval again
+      val action = withTimeoutOrNull(CHECK_INTERVAL) {
+        merge(listenerActions().map { Action.Navigated }, volumeChanges.changes.map { Action.ChangedVolume }).first()
+      }
+      if (action != null) {
         val now = playerController.livePlaybackState()?.position() ?: return
-        if (lostTrackAt == null) {
+        if (lostTrackAt == null || action == Action.ChangedVolume) {
+          lostTrackAt = null
           awake = now
         } else if (lostTrack.isBefore(now, lostTrackAt)) {
           lostTrackAt = now
           awake = now
         }
+        lastAwake = awake
         continue
       }
       if (!shouldCheck()) {
         lostTrackAt = null
         awake = playerController.livePlaybackState()?.position() ?: return
+        lastAwake = awake
         continue
       }
       if (answered()) {
@@ -84,12 +101,27 @@ class ListeningCheck(
         sleepTimer.onListenerAwake()
         lostTrackAt = null
         awake = playerController.livePlaybackState()?.position() ?: return
+        lastAwake = awake
       } else {
         Logger.i("Listening check missed")
         fellAsleep(awake)
         return
       }
     }
+  }
+
+  /**
+   * The sleep timer ran out without a sign of the listener in its whole countdown, so they most likely fell asleep,
+   * and the book goes back to where they last were awake, as after a missed check.
+   */
+  private suspend fun onSleepTimerEnded() {
+    val awake = lastAwake ?: return
+    if (!shouldCheck()) return
+    // a shake right after the timer ran out plays on
+    delay(KEEP_LISTENING_TIME)
+    if (playStateManager.playState == Playing) return
+    Logger.i("Sleep timer ended, going back to where the listener was last awake")
+    fellAsleep(awake)
   }
 
   private suspend fun answered(): Boolean {
@@ -129,11 +161,19 @@ class ListeningCheck(
       )
   }
 
+  private enum class Action {
+    Navigated,
+    ChangedVolume,
+  }
+
   private fun LivePlaybackState.position() = PlaybackPosition(bookId, chapterId, positionMs)
 
   internal companion object {
     val CHECK_INTERVAL = 10.minutes
     val ANSWER_TIME = 1.minutes
     const val PROMPT_VOLUME = 0.4F
+
+    /** A bit longer than the sleep timer listens for a shake after it ran out. */
+    val KEEP_LISTENING_TIME = 45.seconds
   }
 }
