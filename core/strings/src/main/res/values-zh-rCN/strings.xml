@@ -367,7 +367,7 @@
     <string name="settings.auto_sleep_timer.start.label">设置开始时间</string>
     <string name="settings.auto_sleep_timer.summary">在 %1$s 到 %2$s 之间开始播放时，自动启动睡眠定时器</string>
     <string name="settings.auto_sleep_timer.title">自动睡眠定时器</string>
-    <string name="settings.history_upload.explanation">历史记录中显示的所有内容都会发送到你的服务器，因此在手机删除最早的记录后仍会保留。该密钥只允许 Voice 添加历史记录，不能读取。</string>
+    <string name="settings.history_upload.explanation">历史记录中显示的所有内容都会发送到你的服务器，因此在手机删除最早的记录后仍会保留。该密钥只允许 Voice 添加历史记录和下载文字稿。</string>
     <string name="settings.history_upload.failed">未上传：%1$s</string>
     <string name="settings.history_upload.key">密钥</string>
     <string name="settings.history_upload.last_upload">上次上传 %1$s</string>
@@ -398,6 +398,10 @@
     <string name="settings.support.suggest_idea.title">提出建议</string>
     <string name="settings.support.supporter.title">感谢您支持 Voice</string>
     <string name="settings.support.title">帮助与反馈</string>
+    <string name="settings.transcripts.failed">未在下载：%1$s</string>
+    <string name="settings.transcripts.none">服务器上还没有您任何一本书的文字稿</string>
+    <string name="settings.transcripts.summary">此手机上：%1$d 份。点按以检查新的文字稿</string>
+    <string name="settings.transcripts.title">文字稿</string>
     <string name="support.action.manage_subscription">管理订阅</string>
     <string name="support.action.subscribe">以 %1$s 支持</string>
     <string name="support.action.switch">切换为 %1$s</string>

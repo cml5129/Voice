@@ -673,7 +673,7 @@
     <!-- Settings title for automatically starting a sleep timer. -->
     <string name="settings.auto_sleep_timer.title">Automatic Sleep Timer</string>
     <!-- Explanation in the dialog for uploading the listening history to the listener's own server. -->
-    <string name="settings.history_upload.explanation">Everything the history shows goes to your server, so it is kept after the phone drops the oldest. The key only lets Voice add history, not read it.</string>
+    <string name="settings.history_upload.explanation">Everything the history shows goes to your server, so it is kept after the phone drops the oldest. The key only lets Voice add history and download your transcripts.</string>
     <!-- Settings summary when the last upload of the listening history failed. The argument is the reason. -->
     <string name="settings.history_upload.failed">Not uploading: %1$s</string>
     <!-- Label of the field for the key that the listener's server accepts for history uploads. -->
@@ -735,6 +735,14 @@
     <string name="settings.support.supporter.title">Thanks for supporting Voice</string>
     <!-- Title of the settings section with the FAQ, getting help, reporting problems, suggesting ideas and translating. -->
     <string name="settings.support.title">Help and feedback</string>
+    <!-- Settings summary of the transcripts row when the last look at the listener's server for transcripts failed. The argument is the reason. -->
+    <string name="settings.transcripts.failed">Not downloading: %1$s</string>
+    <!-- Settings summary of the transcripts row before any transcript of a library book was found on the listener's server. -->
+    <string name="settings.transcripts.none">None of your books has a transcript on the server yet</string>
+    <!-- Settings summary of the transcripts row. The argument is how many audio files of the library have a transcript downloaded from the listener's server. Tapping the row checks the server for new transcripts. -->
+    <string name="settings.transcripts.summary">On this phone: %1$d. Tap to check for new ones</string>
+    <!-- Settings title of the row for book transcripts, which Voice downloads from the listener's own server. -->
+    <string name="settings.transcripts.title">Transcripts</string>
     <!-- Support screen button that opens the Google Play subscription settings. -->
     <string name="support.action.manage_subscription">Manage subscription</string>
     <!-- Support screen button that starts a supporter subscription or a one-time tip. %1$s is the price with its period, for example "€2.99 a month" or "€4.99 once". -->

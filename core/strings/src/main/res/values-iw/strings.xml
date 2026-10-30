@@ -403,7 +403,7 @@
     <string name="settings.auto_sleep_timer.start.label">בחירת זמן התחלה</string>
     <string name="settings.auto_sleep_timer.summary">הפעלה אוטומטית של טיימר-השינה כשההשמעה מתחילה בין %1$s ל-%2$s</string>
     <string name="settings.auto_sleep_timer.title">טיימר-שינה אוטומטי</string>
-    <string name="settings.history_upload.explanation">כל מה שההיסטוריה מציגה נשלח לשרת שלך, כך שהוא נשמר גם אחרי שהטלפון מוחק את הישן ביותר. המפתח מאפשר ל-Voice רק להוסיף היסטוריה, לא לקרוא אותה.</string>
+    <string name="settings.history_upload.explanation">כל מה שההיסטוריה מציגה נשלח לשרת שלך, כך שהוא נשמר גם אחרי שהטלפון מוחק את הישן ביותר. המפתח מאפשר ל-Voice רק להוסיף היסטוריה ולהוריד תמלולים.</string>
     <string name="settings.history_upload.failed">לא מעלה: %1$s</string>
     <string name="settings.history_upload.key">מפתח</string>
     <string name="settings.history_upload.last_upload">העלאה אחרונה %1$s</string>
@@ -434,6 +434,10 @@
     <string name="settings.support.support_voice.summary">שומר על Voice חינמית וללא פרסומות</string>
     <string name="settings.support.support_voice.title">תמיכה בפיתוח</string>
     <string name="settings.support.title">עזרה ומשוב</string>
+    <string name="settings.transcripts.failed">אין הורדה: %1$s</string>
+    <string name="settings.transcripts.none">לאף ספר עדיין אין תמלול בשרת</string>
+    <string name="settings.transcripts.summary">בטלפון הזה: %1$d. אפשר להקיש כדי לחפש חדשים</string>
+    <string name="settings.transcripts.title">תמלולים</string>
     <string name="support.action.manage_subscription">ניהול המינוי</string>
     <string name="support.action.subscribe">תמיכה ב-%1$s</string>
     <string name="support.action.switch">מעבר ל-%1$s</string>

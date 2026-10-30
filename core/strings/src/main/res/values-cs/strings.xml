@@ -421,7 +421,7 @@
     <string name="settings.auto_sleep_timer.start.label">Nastavit čas startu</string>
     <string name="settings.auto_sleep_timer.summary">Automatické spuštění časovače spánku při zahájení přehrávání mezi %1$s a %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatický časovač spánku</string>
-    <string name="settings.history_upload.explanation">Vše, co historie ukazuje, se odešle na tvůj server, takže zůstane uloženo i poté, co telefon smaže nejstarší záznamy. Klíč umožňuje aplikaci Voice historii jen přidávat, ne číst.</string>
+    <string name="settings.history_upload.explanation">Vše, co historie ukazuje, se odešle na tvůj server, takže zůstane uloženo i poté, co telefon smaže nejstarší záznamy. Klíč umožňuje aplikaci Voice jen přidávat historii a stahovat přepisy.</string>
     <string name="settings.history_upload.failed">Nenahrává se: %1$s</string>
     <string name="settings.history_upload.key">Klíč</string>
     <string name="settings.history_upload.last_upload">Poslední nahrání %1$s</string>
@@ -452,6 +452,10 @@
     <string name="settings.support.support_voice.summary">Udržuje Voice zdarma a bez reklam</string>
     <string name="settings.support.support_voice.title">Podpořit vývoj</string>
     <string name="settings.support.title">Nápověda a zpětná vazba</string>
+    <string name="settings.transcripts.failed">Nestahuje se: %1$s</string>
+    <string name="settings.transcripts.none">Žádná z vašich knih zatím nemá na serveru přepis</string>
+    <string name="settings.transcripts.summary">V tomto telefonu: %1$d. Klepnutím zkontrolujete nové</string>
+    <string name="settings.transcripts.title">Přepisy</string>
     <string name="support.action.manage_subscription">Spravovat předplatné</string>
     <string name="support.action.subscribe">Podpořit za %1$s</string>
     <string name="support.action.switch">Přejít na %1$s</string>

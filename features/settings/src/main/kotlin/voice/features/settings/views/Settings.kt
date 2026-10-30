@@ -160,6 +160,8 @@ private fun LazyListScope.sections(
       historyUpload = viewState.historyUpload,
       onHistoryUploadEnabledChange = listener::setHistoryUploadEnabled,
       onHistoryUploadChange = listener::setHistoryUpload,
+      transcripts = viewState.transcripts,
+      onTranscriptsClick = listener::checkTranscripts,
       onUseGridChange = listener::setUseGrid,
     )
   }

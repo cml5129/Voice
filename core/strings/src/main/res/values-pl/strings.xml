@@ -421,7 +421,7 @@
     <string name="settings.auto_sleep_timer.start.label">Ustaw godzinę rozpoczęcia</string>
     <string name="settings.auto_sleep_timer.summary">Automatycznie uruchamia wyłącznik czasowy po rozpoczęciu odtwarzania pomiędzy %1$s a %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatyczny wyłącznik czasowy</string>
-    <string name="settings.history_upload.explanation">Wszystko, co pokazuje historia, trafia na twój serwer, więc zostaje zachowane, gdy telefon usunie najstarsze wpisy. Klucz pozwala Voice tylko dodawać historię, a nie ją czytać.</string>
+    <string name="settings.history_upload.explanation">Wszystko, co pokazuje historia, trafia na twój serwer, więc zostaje zachowane, gdy telefon usunie najstarsze wpisy. Klucz pozwala Voice tylko dodawać historię i pobierać transkrypcje.</string>
     <string name="settings.history_upload.failed">Brak wysyłania: %1$s</string>
     <string name="settings.history_upload.key">Klucz</string>
     <string name="settings.history_upload.last_upload">Ostatnie wysłanie %1$s</string>
@@ -452,6 +452,10 @@
     <string name="settings.support.support_voice.summary">Utrzymuje Voice za darmo i bez reklam</string>
     <string name="settings.support.support_voice.title">Wesprzyj rozwój</string>
     <string name="settings.support.title">Pomoc i opinie</string>
+    <string name="settings.transcripts.failed">Nie pobiera: %1$s</string>
+    <string name="settings.transcripts.none">Żadna z twoich książek nie ma jeszcze transkrypcji na serwerze</string>
+    <string name="settings.transcripts.summary">Na tym telefonie: %1$d. Stuknij, aby sprawdzić nowe</string>
+    <string name="settings.transcripts.title">Transkrypcje</string>
     <string name="support.action.manage_subscription">Zarządzaj subskrypcją</string>
     <string name="support.action.subscribe">Wesprzyj za %1$s</string>
     <string name="support.action.switch">Przejdź na %1$s</string>

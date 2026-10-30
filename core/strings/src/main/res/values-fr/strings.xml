@@ -403,7 +403,7 @@
     <string name="settings.auto_sleep_timer.start.label">Heure de début</string>
     <string name="settings.auto_sleep_timer.summary">Démarrer automatiquement la minuterie de mise en veille lorsque la lecture commence entre %1$s et %2$s</string>
     <string name="settings.auto_sleep_timer.title">Minuterie de mise en veille automatique</string>
-    <string name="settings.history_upload.explanation">Tout ce que montre l\'historique est envoyé à votre serveur, il est donc conservé quand le téléphone supprime le plus ancien. La clé permet seulement à Voice d\'ajouter de l\'historique, pas de le lire.</string>
+    <string name="settings.history_upload.explanation">Tout ce que montre l\'historique est envoyé à votre serveur, il est donc conservé quand le téléphone supprime le plus ancien. La clé permet seulement à Voice d\'ajouter de l\'historique et de télécharger les transcriptions.</string>
     <string name="settings.history_upload.failed">Pas d\'envoi : %1$s</string>
     <string name="settings.history_upload.key">Clé</string>
     <string name="settings.history_upload.last_upload">Dernier envoi %1$s</string>
@@ -434,6 +434,10 @@
     <string name="settings.support.support_voice.summary">Garde Voice gratuit et sans publicité</string>
     <string name="settings.support.support_voice.title">Soutenir le développement</string>
     <string name="settings.support.title">Aide et commentaires</string>
+    <string name="settings.transcripts.failed">Pas de téléchargement : %1$s</string>
+    <string name="settings.transcripts.none">Aucun de vos livres n\'a encore de transcription sur le serveur</string>
+    <string name="settings.transcripts.summary">Sur ce téléphone : %1$d. Touchez pour chercher les nouvelles</string>
+    <string name="settings.transcripts.title">Transcriptions</string>
     <string name="support.action.manage_subscription">Gérer l\'abonnement</string>
     <string name="support.action.subscribe">Soutenir pour %1$s</string>
     <string name="support.action.switch">Passer à %1$s</string>

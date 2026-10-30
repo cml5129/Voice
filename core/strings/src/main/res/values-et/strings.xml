@@ -385,7 +385,7 @@
     <string name="settings.auto_sleep_timer.start.label">Määra algusaeg</string>
     <string name="settings.auto_sleep_timer.summary">Käivita unetaimer automaatselt, kui taasesitus algab %1$s ja %2$s vahel</string>
     <string name="settings.auto_sleep_timer.title">Automaatne unetaimer</string>
-    <string name="settings.history_upload.explanation">Kõik, mida ajalugu näitab, saadetakse sinu serverisse, nii et see säilib ka pärast seda, kui telefon vanimad kirjed kustutab. Võti lubab Voice\'il ajalugu ainult lisada, mitte lugeda.</string>
+    <string name="settings.history_upload.explanation">Kõik, mida ajalugu näitab, saadetakse sinu serverisse, nii et see säilib ka pärast seda, kui telefon vanimad kirjed kustutab. Võti lubab Voice\'il ainult ajalugu lisada ja transkriptsioone alla laadida.</string>
     <string name="settings.history_upload.failed">Ei laadita üles: %1$s</string>
     <string name="settings.history_upload.key">Võti</string>
     <string name="settings.history_upload.last_upload">Viimane üleslaadimine %1$s</string>
@@ -416,6 +416,10 @@
     <string name="settings.support.support_voice.summary">Hoiab Voice\'i tasuta ja reklaamivabana</string>
     <string name="settings.support.support_voice.title">Toeta arendust</string>
     <string name="settings.support.title">Abi ja tagasiside</string>
+    <string name="settings.transcripts.failed">Ei laadita alla: %1$s</string>
+    <string name="settings.transcripts.none">Ühelgi sinu raamatul pole serveris veel transkriptsiooni</string>
+    <string name="settings.transcripts.summary">Selles telefonis: %1$d. Puuduta, et uusi otsida</string>
+    <string name="settings.transcripts.title">Transkriptsioonid</string>
     <string name="support.action.manage_subscription">Halda tellimust</string>
     <string name="support.action.subscribe">Toeta hinnaga %1$s</string>
     <string name="support.action.switch">Mine üle: %1$s</string>

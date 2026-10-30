@@ -385,7 +385,7 @@
     <string name="settings.auto_sleep_timer.start.label">Vælg starttid</string>
     <string name="settings.auto_sleep_timer.summary">Start automatisk en sleep-timer, når afspilningen begynder mellem %1$s og %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatisk sleep-timer</string>
-    <string name="settings.history_upload.explanation">Alt, hvad historikken viser, sendes til din server, så det gemmes, efter at telefonen sletter det ældste. Nøglen lader kun Voice tilføje historik, ikke læse den.</string>
+    <string name="settings.history_upload.explanation">Alt, hvad historikken viser, sendes til din server, så det gemmes, efter at telefonen sletter det ældste. Nøglen lader kun Voice tilføje historik og hente udskrifter.</string>
     <string name="settings.history_upload.failed">Uploader ikke: %1$s</string>
     <string name="settings.history_upload.key">Nøgle</string>
     <string name="settings.history_upload.last_upload">Seneste upload %1$s</string>
@@ -416,6 +416,10 @@
     <string name="settings.support.suggest_idea.title">Foreslå en ide</string>
     <string name="settings.support.supporter.title">Tak fordi du støtter Voice</string>
     <string name="settings.support.title">Hjælp og feedback</string>
+    <string name="settings.transcripts.failed">Henter ikke: %1$s</string>
+    <string name="settings.transcripts.none">Ingen af dine bøger har en udskrift på serveren endnu</string>
+    <string name="settings.transcripts.summary">På denne telefon: %1$d. Tryk for at søge efter nye</string>
+    <string name="settings.transcripts.title">Udskrifter</string>
     <string name="support.action.manage_subscription">Administrer abonnement</string>
     <string name="support.action.subscribe">Støt med %1$s</string>
     <string name="support.action.switch">Skift til %1$s</string>

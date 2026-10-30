@@ -35,6 +35,7 @@ interface SettingsListener {
     serverUrl: String,
     key: String,
   )
+  fun checkTranscripts()
   fun onAppVersionClick()
 
   fun openDeveloperMenu()
@@ -71,6 +72,7 @@ interface SettingsListener {
         serverUrl: String,
         key: String,
       ) {}
+      override fun checkTranscripts() {}
       override fun onAppVersionClick() {}
       override fun openDeveloperMenu() {}
     }

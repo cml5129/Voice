@@ -403,7 +403,7 @@
     <string name="settings.auto_sleep_timer.start.label">Setează ora de început</string>
     <string name="settings.auto_sleep_timer.summary">Pornește automat oprirea temporizată când redarea începe între %1$s și %2$s</string>
     <string name="settings.auto_sleep_timer.title">Oprire temporizată automată</string>
-    <string name="settings.history_upload.explanation">Tot ce arată istoricul ajunge pe serverul tău, așa că rămâne păstrat după ce telefonul șterge ce e mai vechi. Cheia îi permite lui Voice doar să adauge istoric, nu să-l citească.</string>
+    <string name="settings.history_upload.explanation">Tot ce arată istoricul ajunge pe serverul tău, așa că rămâne păstrat după ce telefonul șterge ce e mai vechi. Cheia îi permite lui Voice doar să adauge istoric și să descarce transcrieri.</string>
     <string name="settings.history_upload.failed">Nu se încarcă: %1$s</string>
     <string name="settings.history_upload.key">Cheie</string>
     <string name="settings.history_upload.last_upload">Ultima încărcare %1$s</string>
@@ -434,6 +434,10 @@
     <string name="settings.support.suggest_idea.title">Propune o idee</string>
     <string name="settings.support.supporter.title">Mulțumim că susții Voice</string>
     <string name="settings.support.title">Ajutor și feedback</string>
+    <string name="settings.transcripts.failed">Nu se descarcă: %1$s</string>
+    <string name="settings.transcripts.none">Niciuna dintre cărțile tale nu are încă o transcriere pe server</string>
+    <string name="settings.transcripts.summary">Pe acest telefon: %1$d. Atinge pentru a căuta altele noi</string>
+    <string name="settings.transcripts.title">Transcrieri</string>
     <string name="support.action.manage_subscription">Gestionează abonamentul</string>
     <string name="support.action.subscribe">Susține cu %1$s</string>
     <string name="support.action.switch">Treci la %1$s</string>

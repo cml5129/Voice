@@ -385,7 +385,7 @@
     <string name="settings.auto_sleep_timer.start.label">Starttijd instellen</string>
     <string name="settings.auto_sleep_timer.summary">Start automatisch een slaaptimer wanneer het afspelen begint tussen %1$s en %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatische slaaptimer</string>
-    <string name="settings.history_upload.explanation">Alles wat de geschiedenis toont gaat naar je server, zodat het bewaard blijft nadat de telefoon het oudste wist. Met de sleutel kan Voice alleen geschiedenis toevoegen, niet lezen.</string>
+    <string name="settings.history_upload.explanation">Alles wat de geschiedenis toont gaat naar je server, zodat het bewaard blijft nadat de telefoon het oudste wist. Met de sleutel kan Voice alleen geschiedenis toevoegen en transcripties downloaden.</string>
     <string name="settings.history_upload.failed">Uploadt niet: %1$s</string>
     <string name="settings.history_upload.key">Sleutel</string>
     <string name="settings.history_upload.last_upload">Laatste upload %1$s</string>
@@ -416,6 +416,10 @@
     <string name="settings.support.support_voice.summary">Houdt Voice gratis en reclamevrij</string>
     <string name="settings.support.support_voice.title">Ontwikkeling steunen</string>
     <string name="settings.support.title">Hulp en feedback</string>
+    <string name="settings.transcripts.failed">Niet aan het downloaden: %1$s</string>
+    <string name="settings.transcripts.none">Nog geen van je boeken heeft een transcriptie op de server</string>
+    <string name="settings.transcripts.summary">Op deze telefoon: %1$d. Tik om naar nieuwe te zoeken</string>
+    <string name="settings.transcripts.title">Transcripties</string>
     <string name="support.action.manage_subscription">Abonnement beheren</string>
     <string name="support.action.subscribe">Steun met %1$s</string>
     <string name="support.action.switch">Overstappen naar %1$s</string>

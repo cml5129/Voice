@@ -385,7 +385,7 @@
     <string name="settings.auto_sleep_timer.start.label">زمان شروع</string>
     <string name="settings.auto_sleep_timer.summary">اگر پخش بین %1$s تا %2$s شروع شود، تایمر خواب خودکار روشن می‌شود</string>
     <string name="settings.auto_sleep_timer.title">تایمر خواب خودکار</string>
-    <string name="settings.history_upload.explanation">هر چه تاریخچه نشان می‌دهد به سرور شما فرستاده می‌شود تا پس از پاک شدن قدیمی‌ترین‌ها در گوشی، باقی بماند. کلید فقط اجازه می‌دهد Voice تاریخچه اضافه کند، نه آن را بخواند.</string>
+    <string name="settings.history_upload.explanation">هر چه تاریخچه نشان می‌دهد به سرور شما فرستاده می‌شود تا پس از پاک شدن قدیمی‌ترین‌ها در گوشی، باقی بماند. کلید فقط اجازه می‌دهد Voice تاریخچه اضافه کند و متن پیاده‌شده را دانلود کند.</string>
     <string name="settings.history_upload.failed">بارگذاری نمی‌شود: %1$s</string>
     <string name="settings.history_upload.key">کلید</string>
     <string name="settings.history_upload.last_upload">آخرین بارگذاری %1$s</string>
@@ -416,6 +416,10 @@
     <string name="settings.support.support_voice.summary">Voice را رایگان و بدون تبلیغات نگه می‌دارد</string>
     <string name="settings.support.support_voice.title">حمایت از توسعه</string>
     <string name="settings.support.title">راهنما و بازخورد</string>
+    <string name="settings.transcripts.failed">دانلود نمی‌شود: %1$s</string>
+    <string name="settings.transcripts.none">هنوز برای هیچ‌کدام از کتاب‌هایتان متن پیاده‌شده‌ای روی سرور نیست</string>
+    <string name="settings.transcripts.summary">روی این گوشی: %1$d. برای یافتن موارد جدید ضربه بزنید</string>
+    <string name="settings.transcripts.title">متن‌های پیاده‌شده</string>
     <string name="support.action.manage_subscription">مدیریت اشتراک</string>
     <string name="support.action.subscribe">حمایت با %1$s</string>
     <string name="support.action.switch">تغییر به %1$s</string>

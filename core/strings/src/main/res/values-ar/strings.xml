@@ -457,7 +457,7 @@
     <string name="settings.auto_sleep_timer.start.label">تعيين وقت البدء</string>
     <string name="settings.auto_sleep_timer.summary">يبدأ مؤقت النوم تلقائيًا عند بدء التشغيل بين %1$s و%2$s</string>
     <string name="settings.auto_sleep_timer.title">مؤقت النوم التلقائي</string>
-    <string name="settings.history_upload.explanation">كل ما يعرضه السجل يُرسل إلى خادمك، فيبقى محفوظًا بعد أن يحذف الهاتف الأقدم. المفتاح يسمح لـ Voice بإضافة السجل فقط، لا بقراءته.</string>
+    <string name="settings.history_upload.explanation">كل ما يعرضه السجل يُرسل إلى خادمك، فيبقى محفوظًا بعد أن يحذف الهاتف الأقدم. المفتاح يسمح لـ Voice فقط بإضافة السجل وتنزيل النصوص المفرغة.</string>
     <string name="settings.history_upload.failed">لا يتم الرفع: %1$s</string>
     <string name="settings.history_upload.key">المفتاح</string>
     <string name="settings.history_upload.last_upload">آخر رفع %1$s</string>
@@ -488,6 +488,10 @@
     <string name="settings.support.suggest_idea.title">اقتراح فكرة</string>
     <string name="settings.support.supporter.title">شكرًا لدعمك Voice</string>
     <string name="settings.support.title">المساعدة والملاحظات</string>
+    <string name="settings.transcripts.failed">لا يتم التنزيل: %1$s</string>
+    <string name="settings.transcripts.none">لا توجد بعد نصوص مفرغة لأي من كتبك على الخادم</string>
+    <string name="settings.transcripts.summary">على هذا الهاتف: %1$d. يمكنك النقر للبحث عن الجديد</string>
+    <string name="settings.transcripts.title">النصوص المفرغة</string>
     <string name="support.action.manage_subscription">إدارة الاشتراك</string>
     <string name="support.action.subscribe">الدعم مقابل %1$s</string>
     <string name="support.action.switch">التبديل إلى %1$s</string>

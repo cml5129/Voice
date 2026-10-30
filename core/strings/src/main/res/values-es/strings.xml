@@ -403,7 +403,7 @@
     <string name="settings.auto_sleep_timer.start.label">Hora inicio</string>
     <string name="settings.auto_sleep_timer.summary">Activa automáticamente el temporizador al iniciar la reproducción entre las %1$s y %2$s</string>
     <string name="settings.auto_sleep_timer.title">Temporizador automático</string>
-    <string name="settings.history_upload.explanation">Todo lo que muestra el historial se envía a tu servidor, así se conserva cuando el teléfono borra lo más antiguo. La clave solo permite a Voice añadir historial, no leerlo.</string>
+    <string name="settings.history_upload.explanation">Todo lo que muestra el historial se envía a tu servidor, así se conserva cuando el teléfono borra lo más antiguo. La clave solo permite a Voice añadir historial y descargar transcripciones.</string>
     <string name="settings.history_upload.failed">No se sube: %1$s</string>
     <string name="settings.history_upload.key">Clave</string>
     <string name="settings.history_upload.last_upload">Última subida %1$s</string>
@@ -434,6 +434,10 @@
     <string name="settings.support.support_voice.summary">Mantiene Voice gratis y sin anuncios</string>
     <string name="settings.support.support_voice.title">Apoyar el desarrollo</string>
     <string name="settings.support.title">Ayuda y comentarios</string>
+    <string name="settings.transcripts.failed">No se descarga: %1$s</string>
+    <string name="settings.transcripts.none">Ninguno de tus libros tiene todavía una transcripción en el servidor</string>
+    <string name="settings.transcripts.summary">En este teléfono: %1$d. Toca para buscar nuevas</string>
+    <string name="settings.transcripts.title">Transcripciones</string>
     <string name="support.action.manage_subscription">Gestionar suscripción</string>
     <string name="support.action.subscribe">Apoyar por %1$s</string>
     <string name="support.action.switch">Cambiar a %1$s</string>

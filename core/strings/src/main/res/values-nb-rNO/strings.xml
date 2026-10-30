@@ -385,7 +385,7 @@
     <string name="settings.auto_sleep_timer.start.label">Sett starttid</string>
     <string name="settings.auto_sleep_timer.summary">Start innsovningstidsuret automatisk når avspillingen begynner mellom %1$s og %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatisk innsovningstidsur</string>
-    <string name="settings.history_upload.explanation">Alt historikken viser sendes til serveren din, så det tas vare på etter at telefonen sletter det eldste. Nøkkelen lar bare Voice legge til historikk, ikke lese den.</string>
+    <string name="settings.history_upload.explanation">Alt historikken viser sendes til serveren din, så det tas vare på etter at telefonen sletter det eldste. Nøkkelen lar bare Voice legge til historikk og laste ned transkripsjoner.</string>
     <string name="settings.history_upload.failed">Laster ikke opp: %1$s</string>
     <string name="settings.history_upload.key">Nøkkel</string>
     <string name="settings.history_upload.last_upload">Siste opplasting %1$s</string>
@@ -416,6 +416,10 @@
     <string name="settings.support.support_voice.summary">Holder Voice gratis og reklamefri</string>
     <string name="settings.support.support_voice.title">Støtt utviklingen</string>
     <string name="settings.support.title">Hjelp og tilbakemelding</string>
+    <string name="settings.transcripts.failed">Laster ikke ned: %1$s</string>
+    <string name="settings.transcripts.none">Ingen av bøkene dine har en transkripsjon på serveren ennå</string>
+    <string name="settings.transcripts.summary">På denne telefonen: %1$d. Trykk for å se etter nye</string>
+    <string name="settings.transcripts.title">Transkripsjoner</string>
     <string name="support.action.manage_subscription">Administrer abonnement</string>
     <string name="support.action.subscribe">Støtt med %1$s</string>
     <string name="support.action.switch">Bytt til %1$s</string>

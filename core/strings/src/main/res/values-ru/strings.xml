@@ -421,7 +421,7 @@
     <string name="settings.auto_sleep_timer.start.label">Время начала</string>
     <string name="settings.auto_sleep_timer.summary">Запускать таймер сна автоматически, когда воспроизведение начинается между %1$s и %2$s</string>
     <string name="settings.auto_sleep_timer.title">Автоматический таймер сна</string>
-    <string name="settings.history_upload.explanation">Всё, что показывает история, отправляется на ваш сервер и сохраняется даже после того, как телефон удалит самые старые записи. Ключ позволяет Voice только добавлять историю, но не читать её.</string>
+    <string name="settings.history_upload.explanation">Всё, что показывает история, отправляется на ваш сервер и сохраняется даже после того, как телефон удалит самые старые записи. Ключ позволяет Voice только добавлять историю и скачивать расшифровки.</string>
     <string name="settings.history_upload.failed">Не загружается: %1$s</string>
     <string name="settings.history_upload.key">Ключ</string>
     <string name="settings.history_upload.last_upload">Последняя загрузка %1$s</string>
@@ -452,6 +452,10 @@
     <string name="settings.support.support_voice.summary">Сохраняет Voice бесплатным и без рекламы</string>
     <string name="settings.support.support_voice.title">Поддержать разработку</string>
     <string name="settings.support.title">Помощь и отзывы</string>
+    <string name="settings.transcripts.failed">Не скачивается: %1$s</string>
+    <string name="settings.transcripts.none">Ни у одной из ваших книг пока нет расшифровки на сервере</string>
+    <string name="settings.transcripts.summary">На этом телефоне: %1$d. Нажмите, чтобы проверить новые</string>
+    <string name="settings.transcripts.title">Расшифровки</string>
     <string name="support.action.manage_subscription">Управлять подпиской</string>
     <string name="support.action.subscribe">Поддержать за %1$s</string>
     <string name="support.action.switch">Перейти на %1$s</string>

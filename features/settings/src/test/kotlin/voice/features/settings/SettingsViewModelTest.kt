@@ -43,6 +43,8 @@ import voice.core.server.VoiceServerSettings
 import voice.core.server.VoiceServerStore
 import voice.core.sleeptimer.SleepTimerPreference
 import voice.core.sleeptimer.SleepTimerPreferenceStore
+import voice.core.transcript.TranscriptDownloadSettings
+import voice.core.transcript.TranscriptDownloadStore
 import voice.core.ui.CoverColorsStore
 import voice.core.ui.DynamicColorAvailability
 import voice.core.ui.GridCount
@@ -137,6 +139,8 @@ class SettingsViewModelTest {
     audiobookshelfFeatureFlag = AudiobookshelfFeatureFlag(audiobookshelfFeatureFlag),
     historyUploadStore = HistoryUploadStore(historyUploadStore),
     voiceServerStore = VoiceServerStore(MemoryDataStore(VoiceServerSettings())),
+    transcriptDownloadStore = TranscriptDownloadStore(MemoryDataStore(TranscriptDownloadSettings())),
+    transcriptDownloader = mockk(relaxed = true),
   )
 
   @Test

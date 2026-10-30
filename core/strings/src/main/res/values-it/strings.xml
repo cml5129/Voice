@@ -403,7 +403,7 @@
     <string name="settings.auto_sleep_timer.start.label">Ora di inizio</string>
     <string name="settings.auto_sleep_timer.summary">Avvia automaticamente il timer sospensione quando la riproduzione inizia tra le %1$s e le %2$s</string>
     <string name="settings.auto_sleep_timer.title">Timer sospensione automatico</string>
-    <string name="settings.history_upload.explanation">Tutto ciò che mostra la cronologia viene inviato al tuo server, così resta salvato quando il telefono elimina i dati più vecchi. La chiave permette a Voice solo di aggiungere cronologia, non di leggerla.</string>
+    <string name="settings.history_upload.explanation">Tutto ciò che mostra la cronologia viene inviato al tuo server, così resta salvato quando il telefono elimina i dati più vecchi. La chiave permette a Voice solo di aggiungere cronologia e scaricare le trascrizioni.</string>
     <string name="settings.history_upload.failed">Nessun caricamento: %1$s</string>
     <string name="settings.history_upload.key">Chiave</string>
     <string name="settings.history_upload.last_upload">Ultimo caricamento %1$s</string>
@@ -434,6 +434,10 @@
     <string name="settings.support.support_voice.summary">Mantiene Voice gratis e senza pubblicità</string>
     <string name="settings.support.support_voice.title">Sostieni lo sviluppo</string>
     <string name="settings.support.title">Aiuto e feedback</string>
+    <string name="settings.transcripts.failed">Download non riuscito: %1$s</string>
+    <string name="settings.transcripts.none">Nessuno dei tuoi libri ha ancora una trascrizione sul server</string>
+    <string name="settings.transcripts.summary">Su questo telefono: %1$d. Tocca per cercarne di nuove</string>
+    <string name="settings.transcripts.title">Trascrizioni</string>
     <string name="support.action.manage_subscription">Gestisci abbonamento</string>
     <string name="support.action.subscribe">Sostieni per %1$s</string>
     <string name="support.action.switch">Passa a %1$s</string>

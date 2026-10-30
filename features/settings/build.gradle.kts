@@ -21,6 +21,7 @@ dependencies {
   implementation(projects.core.audiobookshelf)
   implementation(projects.core.historyupload)
   implementation(projects.core.server)
+  implementation(projects.core.transcript)
 
   implementation(libs.androidxCore)
 }

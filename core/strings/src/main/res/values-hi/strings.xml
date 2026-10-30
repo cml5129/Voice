@@ -385,7 +385,7 @@
     <string name="settings.auto_sleep_timer.start.label">शुरू होने का समय सेट करें</string>
     <string name="settings.auto_sleep_timer.summary">%1$s से %2$s के बीच प्लेबैक शुरू होने पर अपने-आप स्लीप-टाइमर शुरू करें</string>
     <string name="settings.auto_sleep_timer.title">ऑटो स्लीप-टाइमर</string>
-    <string name="settings.history_upload.explanation">इतिहास में दिखने वाली हर चीज़ आपके सर्वर पर भेजी जाती है, ताकि फ़ोन के सबसे पुराने हटाने के बाद भी वह बनी रहे। कुंजी Voice को केवल इतिहास जोड़ने देती है, पढ़ने नहीं।</string>
+    <string name="settings.history_upload.explanation">इतिहास में दिखने वाली हर चीज़ आपके सर्वर पर भेजी जाती है, ताकि फ़ोन के सबसे पुराने हटाने के बाद भी वह बनी रहे। कुंजी Voice को केवल इतिहास जोड़ने और ट्रांसक्रिप्ट डाउनलोड करने देती है।</string>
     <string name="settings.history_upload.failed">अपलोड नहीं हो रहा: %1$s</string>
     <string name="settings.history_upload.key">कुंजी</string>
     <string name="settings.history_upload.last_upload">पिछला अपलोड %1$s</string>
@@ -416,6 +416,10 @@
     <string name="settings.support.suggest_idea.title">विचार सुझाएँ</string>
     <string name="settings.support.supporter.title">Voice का समर्थन करने के लिए धन्यवाद</string>
     <string name="settings.support.title">सहायता और फ़ीडबैक</string>
+    <string name="settings.transcripts.failed">डाउनलोड नहीं हो रहा: %1$s</string>
+    <string name="settings.transcripts.none">सर्वर पर अभी आपकी किसी पुस्तक का ट्रांसक्रिप्ट नहीं है</string>
+    <string name="settings.transcripts.summary">इस फ़ोन पर: %1$d. नए देखने के लिए टैप करें</string>
+    <string name="settings.transcripts.title">ट्रांसक्रिप्ट</string>
     <string name="support.action.manage_subscription">सदस्यता मैनेज करें</string>
     <string name="support.action.subscribe">%1$s में समर्थन करें</string>
     <string name="support.action.switch">%1$s पर स्विच करें</string>

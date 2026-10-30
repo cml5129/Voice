@@ -403,7 +403,7 @@
     <string name="settings.auto_sleep_timer.start.label">Hora d\'inici</string>
     <string name="settings.auto_sleep_timer.summary">Inicia automàticament el temporitzador de repòs quan la reproducció comença entre les %1$s i les %2$s</string>
     <string name="settings.auto_sleep_timer.title">Temporitzador de repòs automàtic</string>
-    <string name="settings.history_upload.explanation">Tot el que mostra l\'historial s\'envia al teu servidor, així es conserva quan el telèfon esborra el més antic. La clau només permet a Voice afegir historial, no llegir-lo.</string>
+    <string name="settings.history_upload.explanation">Tot el que mostra l\'historial s\'envia al teu servidor, així es conserva quan el telèfon esborra el més antic. La clau només permet a Voice afegir historial i baixar les transcripcions.</string>
     <string name="settings.history_upload.failed">No es puja: %1$s</string>
     <string name="settings.history_upload.key">Clau</string>
     <string name="settings.history_upload.last_upload">Última pujada %1$s</string>
@@ -434,6 +434,10 @@
     <string name="settings.support.suggest_idea.title">Suggereix una idea</string>
     <string name="settings.support.supporter.title">Gràcies per donar suport a Voice</string>
     <string name="settings.support.title">Ajuda i comentaris</string>
+    <string name="settings.transcripts.failed">No s\'està baixant: %1$s</string>
+    <string name="settings.transcripts.none">Cap dels vostres llibres té encara una transcripció al servidor</string>
+    <string name="settings.transcripts.summary">En aquest telèfon: %1$d. Toqueu per buscar-ne de noves</string>
+    <string name="settings.transcripts.title">Transcripcions</string>
     <string name="support.action.manage_subscription">Gestiona la subscripció</string>
     <string name="support.action.subscribe">Dona suport per %1$s</string>
     <string name="support.action.switch">Canvia a %1$s</string>

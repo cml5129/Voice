@@ -385,7 +385,7 @@
     <string name="settings.auto_sleep_timer.start.label">Startzeit</string>
     <string name="settings.auto_sleep_timer.summary">Den Einschlaf-Timer automatisch starten, wenn die Wiedergabe zwischen %1$s und %2$s Uhr beginnt</string>
     <string name="settings.auto_sleep_timer.title">Automatischer Einschlaf-Timer</string>
-    <string name="settings.history_upload.explanation">Alles, was der Verlauf zeigt, geht an deinen Server und bleibt dort erhalten, auch wenn das Handy die ältesten Einträge löscht. Der Schlüssel erlaubt Voice nur, Verlauf hinzuzufügen, nicht ihn zu lesen.</string>
+    <string name="settings.history_upload.explanation">Alles, was der Verlauf zeigt, geht an deinen Server und bleibt dort erhalten, auch wenn das Handy die ältesten Einträge löscht. Der Schlüssel erlaubt Voice nur, Verlauf hinzuzufügen und Transkripte herunterzuladen.</string>
     <string name="settings.history_upload.failed">Kein Upload: %1$s</string>
     <string name="settings.history_upload.key">Schlüssel</string>
     <string name="settings.history_upload.last_upload">Letzter Upload %1$s</string>
@@ -416,6 +416,10 @@
     <string name="settings.support.support_voice.summary">Hält Voice kostenlos und werbefrei</string>
     <string name="settings.support.support_voice.title">Entwicklung unterstützen</string>
     <string name="settings.support.title">Hilfe und Feedback</string>
+    <string name="settings.transcripts.failed">Kein Download: %1$s</string>
+    <string name="settings.transcripts.none">Für Deine Bücher gibt es auf dem Server noch keine Transkripte</string>
+    <string name="settings.transcripts.summary">Auf diesem Handy: %1$d. Tippen, um nach neuen zu suchen</string>
+    <string name="settings.transcripts.title">Transkripte</string>
     <string name="support.action.manage_subscription">Abo verwalten</string>
     <string name="support.action.subscribe">Mit %1$s unterstützen</string>
     <string name="support.action.switch">Zu %1$s wechseln</string>

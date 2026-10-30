@@ -385,7 +385,7 @@
     <string name="settings.auto_sleep_timer.start.label">Ora de cumintzu</string>
     <string name="settings.auto_sleep_timer.summary">Allughe unu temporizadore de suspensione cando sa riprodutzione incumintzat intre sas %1$s e sas %2$s</string>
     <string name="settings.auto_sleep_timer.title">Temporizadore de suspensione automàticu</string>
-    <string name="settings.history_upload.explanation">Totu su chi ammustrat sa cronologia benit imbiadu a su serbidore tuo, gasi abarrat sarvadu cando su telèfonu cantzellat su prus betzu. Sa crae permitit a Voice isceti de agiùnghere cronologia, no de dda lèghere.</string>
+    <string name="settings.history_upload.explanation">Totu su chi ammustrat sa cronologia benit imbiadu a su serbidore tuo, gasi abarrat sarvadu cando su telèfonu cantzellat su prus betzu. Sa crae permitit a Voice isceti de agiùnghere cronologia e de iscarrigare sas trascritziones.</string>
     <string name="settings.history_upload.failed">Non si carrigat: %1$s</string>
     <string name="settings.history_upload.key">Crae</string>
     <string name="settings.history_upload.last_upload">Ùrtimu carrigamentu %1$s</string>
@@ -416,6 +416,10 @@
     <string name="settings.support.suggest_idea.title">Cussìgia un\'idea</string>
     <string name="settings.support.supporter.title">Gràtzias de suportare Voice</string>
     <string name="settings.support.title">Agiudu e cummentos</string>
+    <string name="settings.transcripts.failed">No ses iscarrighende: %1$s</string>
+    <string name="settings.transcripts.none">Perunu de sos libros tuos tenet galu una trascritzione in su serbidore</string>
+    <string name="settings.transcripts.summary">In custu telèfonu: %1$d. Toca pro chircare sas noas</string>
+    <string name="settings.transcripts.title">Trascritziones</string>
     <string name="support.action.manage_subscription">Manìgia s\'abbonamentu</string>
     <string name="support.action.subscribe">Suporta pro %1$s</string>
     <string name="support.action.switch">Cola a %1$s</string>

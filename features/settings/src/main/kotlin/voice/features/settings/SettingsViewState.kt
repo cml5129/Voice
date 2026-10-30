@@ -31,6 +31,7 @@ data class SettingsViewState(
   val audiobookshelfServer: String?,
   val showAudiobookshelf: Boolean,
   val historyUpload: HistoryUploadViewState,
+  val transcripts: TranscriptsViewState,
 ) {
 
   companion object {
@@ -58,6 +59,7 @@ data class SettingsViewState(
         audiobookshelfServer = "audiobooks.example.com",
         showAudiobookshelf = true,
         historyUpload = HistoryUploadViewState.preview(),
+        transcripts = TranscriptsViewState(downloaded = 12, error = null),
       )
     }
   }
@@ -108,4 +110,11 @@ data class SettingsViewState(
       }
     }
   }
+
+  data class TranscriptsViewState(
+    /** How many audio files have a transcript from the server. */
+    val downloaded: Int,
+    /** Why the last look at the server failed, until one works again. */
+    val error: String?,
+  )
 }

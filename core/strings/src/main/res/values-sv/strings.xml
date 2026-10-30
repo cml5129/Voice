@@ -385,7 +385,7 @@
     <string name="settings.auto_sleep_timer.start.label">Ange starttid</string>
     <string name="settings.auto_sleep_timer.summary">Starta en insomningstimer automatiskt när uppspelningen börjar mellan %1$s och %2$s</string>
     <string name="settings.auto_sleep_timer.title">Automatisk insomningstimer</string>
-    <string name="settings.history_upload.explanation">Allt som historiken visar skickas till din server, så det sparas efter att telefonen raderat det äldsta. Nyckeln låter bara Voice lägga till historik, inte läsa den.</string>
+    <string name="settings.history_upload.explanation">Allt som historiken visar skickas till din server, så det sparas efter att telefonen raderat det äldsta. Nyckeln låter bara Voice lägga till historik och hämta transkriptioner.</string>
     <string name="settings.history_upload.failed">Laddar inte upp: %1$s</string>
     <string name="settings.history_upload.key">Nyckel</string>
     <string name="settings.history_upload.last_upload">Senaste uppladdning %1$s</string>
@@ -416,6 +416,10 @@
     <string name="settings.support.support_voice.summary">Håller Voice gratis och reklamfritt</string>
     <string name="settings.support.support_voice.title">Stöd utvecklingen</string>
     <string name="settings.support.title">Hjälp och feedback</string>
+    <string name="settings.transcripts.failed">Hämtar inte: %1$s</string>
+    <string name="settings.transcripts.none">Ingen av dina böcker har en transkription på servern än</string>
+    <string name="settings.transcripts.summary">På den här telefonen: %1$d. Tryck för att leta efter nya</string>
+    <string name="settings.transcripts.title">Transkriptioner</string>
     <string name="support.action.manage_subscription">Hantera prenumeration</string>
     <string name="support.action.subscribe">Stötta med %1$s</string>
     <string name="support.action.switch">Byt till %1$s</string>

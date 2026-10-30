@@ -385,7 +385,7 @@
     <string name="settings.auto_sleep_timer.start.label">Başlama zamanı</string>
     <string name="settings.auto_sleep_timer.summary">Oynatma %1$s ile %2$s arasında başladığında uyku zamanlayıcısı otomatik olarak açılır</string>
     <string name="settings.auto_sleep_timer.title">Otomatik uyku zamanlayıcısı</string>
-    <string name="settings.history_upload.explanation">Geçmişte görünen her şey sunucuna gönderilir, böylece telefon en eskileri sildikten sonra da saklanır. Anahtar, Voice\'un yalnızca geçmiş eklemesine izin verir, okumasına değil.</string>
+    <string name="settings.history_upload.explanation">Geçmişte görünen her şey sunucuna gönderilir, böylece telefon en eskileri sildikten sonra da saklanır. Anahtar, Voice\'un yalnızca geçmiş eklemesine ve dökümleri indirmesine izin verir.</string>
     <string name="settings.history_upload.failed">Yüklenmiyor: %1$s</string>
     <string name="settings.history_upload.key">Anahtar</string>
     <string name="settings.history_upload.last_upload">Son yükleme %1$s</string>
@@ -416,6 +416,10 @@
     <string name="settings.support.support_voice.summary">Voice\'u ücretsiz ve reklamsız tutar</string>
     <string name="settings.support.support_voice.title">Geliştirmeyi destekle</string>
     <string name="settings.support.title">Yardım ve geri bildirim</string>
+    <string name="settings.transcripts.failed">İndirilmiyor: %1$s</string>
+    <string name="settings.transcripts.none">Sunucuda henüz kitaplarınızın hiçbirinin dökümü yok</string>
+    <string name="settings.transcripts.summary">Bu telefonda: %1$d. Yenilerini aramak için dokunun</string>
+    <string name="settings.transcripts.title">Dökümler</string>
     <string name="support.action.manage_subscription">Aboneliği yönet</string>
     <string name="support.action.subscribe">%1$s ile destekle</string>
     <string name="support.action.switch">%1$s planına geç</string>

@@ -403,7 +403,7 @@
     <string name="settings.auto_sleep_timer.start.label">Definir horário de início</string>
     <string name="settings.auto_sleep_timer.summary">Ativa o desligamento automático quando a reprodução começar entre %1$s e %2$s</string>
     <string name="settings.auto_sleep_timer.title">Desligamento automático programado</string>
-    <string name="settings.history_upload.explanation">Tudo o que o histórico mostra vai para o seu servidor, então fica guardado depois que o celular apaga o mais antigo. A chave só permite que o Voice adicione histórico, não que o leia.</string>
+    <string name="settings.history_upload.explanation">Tudo o que o histórico mostra vai para o seu servidor, então fica guardado depois que o celular apaga o mais antigo. A chave só permite que o Voice adicione histórico e baixe transcrições.</string>
     <string name="settings.history_upload.failed">Não está enviando: %1$s</string>
     <string name="settings.history_upload.key">Chave</string>
     <string name="settings.history_upload.last_upload">Último envio %1$s</string>
@@ -434,6 +434,10 @@
     <string name="settings.support.support_voice.summary">Mantém o Voice gratuito e sem anúncios</string>
     <string name="settings.support.support_voice.title">Apoiar o desenvolvimento</string>
     <string name="settings.support.title">Ajuda e feedback</string>
+    <string name="settings.transcripts.failed">Sem download: %1$s</string>
+    <string name="settings.transcripts.none">Nenhum dos seus livros tem transcrição no servidor ainda</string>
+    <string name="settings.transcripts.summary">Neste celular: %1$d. Toque para procurar novas</string>
+    <string name="settings.transcripts.title">Transcrições</string>
     <string name="support.action.manage_subscription">Gerenciar assinatura</string>
     <string name="support.action.subscribe">Apoiar com %1$s</string>
     <string name="support.action.switch">Mudar para %1$s</string>
