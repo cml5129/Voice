@@ -76,6 +76,7 @@ class ListeningCheckTest {
   }
 
   private val morningCheck = mockk<MorningCheck>(relaxed = true)
+  private val volumeChanges = VolumeChanges()
 
   private fun listeningCheck(time: LocalTime = LocalTime.of(23, 0)): ListeningCheck {
     val clock = Clock.fixed(Instant.parse("2020-01-01T$time:00Z"), ZoneId.of("UTC"))
@@ -86,6 +87,7 @@ class ListeningCheckTest {
       shakeDetector = shakeDetector,
       sleepTimer = sleepTimer,
       historyRecorder = historyRecorder,
+      volumeChanges = volumeChanges,
       lostTrack = LostTrack(historyRepo, mockk<BookRepository>(relaxed = true), clock),
       morningCheck = morningCheck,
       clock = clock,
@@ -134,6 +136,23 @@ class ListeningCheckTest {
       playerController.setPosition(600_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
       playerController.pause()
     }
+  }
+
+  @Test
+  fun `a volume button counts as an answer`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(10.minutes + 1.seconds)
+    positionMs = 600_000L
+    volumeChanges.onChanged()
+    runCurrent()
+    verify { playerController.record(ListeningEvent.Type.StillListening, ListeningEvent.Source.SleepTimer) }
+    verify { playerController.setVolume(1F) }
+
+    advanceTimeBy(1.minutes)
+    verify(exactly = 0) { playerController.pause() }
   }
 
   @Test

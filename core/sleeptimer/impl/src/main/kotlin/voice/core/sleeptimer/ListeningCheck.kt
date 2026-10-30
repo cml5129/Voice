@@ -26,8 +26,8 @@ import java.time.Clock
 import kotlin.time.Duration.Companion.minutes
 
 /**
- * During the automatic sleep timer's hours, turns the volume down every few minutes. A shake, a skip or
- * a seek says the listener is still awake. Without one they most likely fell asleep, so the book goes
+ * During the automatic sleep timer's hours, turns the volume down every few minutes. A shake, a volume
+ * button, a skip or a seek says the listener is still awake. Without one they most likely fell asleep, so the book goes
  * back to where they last showed they were awake and pauses.
  *
  * Once they missed a check, the book keeps going back to where they lost track, see [LostTrack].
@@ -40,6 +40,7 @@ class ListeningCheck(
   private val shakeDetector: ShakeDetector,
   private val sleepTimer: SleepTimer,
   private val historyRecorder: ListeningHistoryRecorder,
+  private val volumeChanges: VolumeChanges,
   private val lostTrack: LostTrack,
   private val morningCheck: MorningCheck,
   private val clock: Clock,
@@ -95,7 +96,7 @@ class ListeningCheck(
     playerController.setVolume(PROMPT_VOLUME)
     return try {
       withTimeoutOrNull(ANSWER_TIME) {
-        merge(flow { emit(shakeDetector.detect()) }, listenerActions().map {}).first()
+        merge(flow { emit(shakeDetector.detect()) }, listenerActions().map {}, volumeChanges.changes).first()
       } != null
     } finally {
       playerController.setVolume(1F)

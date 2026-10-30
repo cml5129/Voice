@@ -12,10 +12,14 @@ import dev.zacsweers.metro.ContributesIntoSet
 import voice.core.initializer.AppInitializer
 
 /**
- * Changing the media volume is a sign the listener is still awake, so it restarts a running countdown.
+ * Changing the media volume is a sign the listener is still awake, so it restarts a running countdown and
+ * answers the listening check.
  */
 @ContributesIntoSet(AppScope::class)
-class SleepTimerVolumeObserver(private val sleepTimer: SleepTimer) : AppInitializer {
+class SleepTimerVolumeObserver(
+  private val sleepTimer: SleepTimer,
+  private val volumeChanges: VolumeChanges,
+) : AppInitializer {
 
   override fun onAppStart(application: Application) {
     ContextCompat.registerReceiver(
@@ -27,6 +31,7 @@ class SleepTimerVolumeObserver(private val sleepTimer: SleepTimer) : AppInitiali
         ) {
           if (intent.getIntExtra(EXTRA_VOLUME_STREAM_TYPE, -1) == AudioManager.STREAM_MUSIC) {
             sleepTimer.onListenerAwake()
+            volumeChanges.onChanged()
           }
         }
       },
