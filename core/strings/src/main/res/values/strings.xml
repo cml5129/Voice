@@ -743,6 +743,38 @@
     <string name="settings.transcripts.summary">On this phone: %1$d. Tap to check for new ones</string>
     <!-- Settings title of the row for book transcripts, which Voice downloads from the listener's own server. -->
     <string name="settings.transcripts.title">Transcripts</string>
+    <!-- Button on a part of the book (a chapter, half hour or listening session) that has an AI write a short summary of it from its transcript. -->
+    <string name="summaries.action.summarize">Summarize</string>
+    <!-- Button on a part of the book whose summary was written before the listener heard all of it. Writes the summary again, including what was heard since. -->
+    <string name="summaries.action.update">Update</string>
+    <!-- Shown on a part of the book when writing its summary failed. The argument is the reason. -->
+    <string name="summaries.failed">Didn\'t work: %1$s</string>
+    <!-- Text field label for the listener's own Anthropic API key, used by the Claude models that write summaries. -->
+    <string name="summaries.model.claude_key">Anthropic API key</string>
+    <!-- Explanation at the top of the dialog where the listener picks the AI model that writes summaries. Claude Haiku, Claude Sonnet and Ollama are product names. -->
+    <string name="summaries.model.explanation">Summaries are written from the book\'s transcript and never go past where you are. Claude Haiku and Sonnet use your own Anthropic API key. Ollama runs on your own computer.</string>
+    <!-- Text field label for the name of the Ollama model that writes summaries, for example qwen3:14b. -->
+    <string name="summaries.model.ollama_model">Ollama model</string>
+    <!-- Text field label for the network address of the listener's Ollama server, for example http://192.168.1.20:11434. -->
+    <string name="summaries.model.ollama_url">Ollama address</string>
+    <!-- Title of the dialog, and of the button, where the listener picks the AI model that writes summaries. -->
+    <string name="summaries.model.title">Summary model</string>
+    <!-- Shown on the summaries screen of a book without a transcript. Transcripts come from the listener's own server, set up in Settings. -->
+    <string name="summaries.no_transcript">This book has no transcript yet. Voice gets transcripts from your server, which you can set up in Settings.</string>
+    <!-- Shown on a part of the book the listener hasn't reached yet, which can't be summarized without spoilers. -->
+    <string name="summaries.not_heard">Not heard yet</string>
+    <!-- Shown on the sessions tab of the summaries screen before the book was listened to. -->
+    <string name="summaries.sessions.none">No listening sessions yet</string>
+    <!-- Shown on the summaries screen before an AI model was picked, above a button that opens the model dialog. -->
+    <string name="summaries.setup">Pick a model to start summarizing</string>
+    <!-- Tab on the summaries screen with one summary for every 30 minutes of the book. -->
+    <string name="summaries.tab.half_hours">Half hours</string>
+    <!-- Tab on the summaries screen with one summary for every listening session, a stretch of listening without a long pause. -->
+    <string name="summaries.tab.sessions">Sessions</string>
+    <!-- Title of the screen with AI summaries of the parts of a book the listener has heard, and of the player button that opens it. -->
+    <string name="summaries.title">Summaries</string>
+    <!-- Shown on a part of the book while its summary is being written. -->
+    <string name="summaries.working">Writing the summary…</string>
     <!-- Support screen button that opens the Google Play subscription settings. -->
     <string name="support.action.manage_subscription">Manage subscription</string>
     <!-- Support screen button that starts a supporter subscription or a one-time tip. %1$s is the price with its period, for example "€2.99 a month" or "€4.99 once". -->

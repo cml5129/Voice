@@ -16,6 +16,7 @@ dependencies {
   implementation(projects.core.kioskmode)
   implementation(projects.core.ui)
   implementation(projects.core.sleeptimer.api)
+  implementation(projects.core.transcript)
 
   implementation(libs.coil)
   implementation(libs.androidxCore)

@@ -51,6 +51,9 @@ import voice.core.sleeptimer.SleepTimerMode.TimedWithDuration
 import voice.core.sleeptimer.SleepTimerPreference
 import voice.core.sleeptimer.SleepTimerPreferenceStore
 import voice.core.sleeptimer.SleepTimerState
+import voice.core.transcript.TranscriptFiles
+import voice.core.transcript.TranscriptRepository
+import java.nio.file.Files
 import java.time.Clock
 import java.time.Instant
 import java.time.ZoneId
@@ -136,6 +139,7 @@ class BookPlayViewModelTest {
     kioskModeFeatureFlag = KioskModeFeatureFlag(MemoryFeatureFlag(false)),
     historyRecorder = historyRecorder,
     clock = clock,
+    transcriptRepository = TranscriptRepository(TranscriptFiles(Files.createTempDirectory("transcripts").toFile())),
     serverLibrary = serverLibrary,
     lastPlaybackSpeedStore = LastPlaybackSpeedStore(MemoryDataStore(1F)),
   )
@@ -520,6 +524,7 @@ class BookPlayViewModelTest {
       kioskModeFeatureFlag = KioskModeFeatureFlag(MemoryFeatureFlag(kioskMode)),
       historyRecorder = historyRecorder,
       clock = clock,
+      transcriptRepository = TranscriptRepository(TranscriptFiles(Files.createTempDirectory("transcripts").toFile())),
       serverLibrary = serverLibrary,
       lastPlaybackSpeedStore = LastPlaybackSpeedStore(MemoryDataStore(lastPlaybackSpeed)),
     )

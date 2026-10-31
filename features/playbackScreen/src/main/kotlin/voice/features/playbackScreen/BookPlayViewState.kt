@@ -27,6 +27,8 @@ data class BookPlayViewState(
   val jumpBack: JumpBackViewState?,
   /** A server book that isn't downloaded while the server can't be reached. */
   val unavailable: Boolean = false,
+  /** The book has a transcript, so it can be summarized. */
+  val showSummaries: Boolean = false,
 ) {
 
   /**
