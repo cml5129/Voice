@@ -376,8 +376,9 @@
     <string name="settings.appearance.theme.title">थीम</string>
     <string name="settings.appearance.title">दिखावट</string>
     <string name="settings.auto_sleep_timer.end.label">खत्म होने का समय सेट करें</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">हर 10 मिनट में पुस्तक की आवाज़ धीमी होती है। सुनना जारी रखने के लिए एक मिनट के भीतर फ़ोन हिलाएँ। नहीं तो पुस्तक वहीं लौट जाती है जहाँ आपने पिछली बार फ़ोन हिलाया था, और रुक जाती है।</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">हर 10 मिनट में किताब की आवाज़ धीमी होती है। सुनते रहने के लिए एक मिनट के अंदर वॉल्यूम बटन दबाएँ, आगे बढ़ें या फ़ोन हिलाएँ। नहीं तो यह वहीं लौटकर रुक जाती है जहाँ आपने सिलसिला खोया।</string>
     <string name="settings.auto_sleep_timer.listening_check.title">जाँचें कि सुनना जारी है</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">Voice के लिए सूचनाएँ बंद हैं, इसलिए सवाल नहीं दिख सकता। अनुमति देने के लिए टैप करें।</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">छूटी हुई जाँच के बाद, सुबह एक सूचना पूछती है कि क्या किताब वहीं लौटी जहाँ आपने सिलसिला खोया</string>
     <string name="settings.auto_sleep_timer.morning_check.title">सुबह मुझसे पूछें</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">आवाज़ बदलने, आगे-पीछे करने या फिर से चलाने पर उलटी गिनती दोबारा शुरू होती है</string>

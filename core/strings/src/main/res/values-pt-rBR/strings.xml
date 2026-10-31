@@ -394,8 +394,9 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Aparência</string>
     <string name="settings.auto_sleep_timer.end.label">Definir horário de término</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">A cada 10 minutos o livro fica mais baixo. Agite o celular em até um minuto para continuar ouvindo. Se não, ele volta para onde você agitou pela última vez e pausa.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">A cada 10 minutos o livro fica mais baixo. Aperte um botão de volume, pule ou sacuda o celular em até um minuto para continuar ouvindo. Senão, ele volta para onde você perdeu o fio e pausa.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Verificar se ainda estou ouvindo</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">As notificações do Voice estão desativadas, então a pergunta não pode aparecer. Toque para permiti-las.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Depois de uma verificação sem resposta, uma notificação pergunta de manhã se o livro voltou para onde você perdeu o fio</string>
     <string name="settings.auto_sleep_timer.morning_check.title">Perguntar de manhã</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Mudar o volume, pular ou dar play de novo reinicia a contagem regressiva</string>

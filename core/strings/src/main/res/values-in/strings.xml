@@ -358,8 +358,9 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Tampilan</string>
     <string name="settings.auto_sleep_timer.end.label">Atur waktu selesai</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Setiap 10 menit, suara buku dikecilkan. Goyangkan ponsel Anda dalam satu menit untuk lanjut mendengarkan. Jika tidak, buku kembali ke posisi terakhir Anda menggoyangkan ponsel lalu dijeda.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Setiap 10 menit suara buku mengecil. Tekan tombol volume, lompati, atau goyangkan ponsel dalam satu menit untuk terus mendengarkan. Jika tidak, buku kembali ke tempat kamu kehilangan alur lalu dijeda.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Periksa apakah saya masih mendengarkan</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">Notifikasi untuk Voice mati, jadi pertanyaannya tidak bisa muncul. Ketuk untuk mengizinkannya.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Setelah pemeriksaan yang terlewat, notifikasi di pagi hari menanyakan apakah buku kembali ke tempat kamu kehilangan alur</string>
     <string name="settings.auto_sleep_timer.morning_check.title">Tanyakan saya di pagi hari</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Mengubah volume, melompat, atau memutar lagi akan memulai ulang hitungan mundur</string>

@@ -412,8 +412,9 @@
     <string name="settings.appearance.theme.title">Тема</string>
     <string name="settings.appearance.title">Оформление</string>
     <string name="settings.auto_sleep_timer.end.label">Время конца</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Каждые 10 минут книга становится тише. Встряхните телефон в течение минуты, чтобы слушать дальше. Иначе она вернётся туда, где вы встряхнули телефон в последний раз, и встанет на паузу.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Каждые 10 минут книга становится тише. Чтобы слушать дальше, в течение минуты нажмите кнопку громкости, перемотайте или встряхните телефон. Иначе она вернётся туда, где вы потеряли нить, и встанет на паузу.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Проверять, слушаю ли я</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">Уведомления Voice отключены, поэтому вопрос не появится. Нажмите, чтобы разрешить их.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">После пропущенной проверки утром уведомление спросит, вернулась ли книга туда, где вы потеряли нить</string>
     <string name="settings.auto_sleep_timer.morning_check.title">Спросить утром</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Изменение громкости, перемотка или повторное воспроизведение запускают отсчёт заново</string>

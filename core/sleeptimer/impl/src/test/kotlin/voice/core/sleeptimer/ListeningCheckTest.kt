@@ -76,6 +76,7 @@ class ListeningCheckTest {
   }
 
   private val morningCheck = mockk<MorningCheck>(relaxed = true)
+  private val volumeChanges = VolumeChanges()
 
   private fun listeningCheck(time: LocalTime = LocalTime.of(23, 0)): ListeningCheck {
     val clock = Clock.fixed(Instant.parse("2020-01-01T$time:00Z"), ZoneId.of("UTC"))
@@ -86,6 +87,7 @@ class ListeningCheckTest {
       shakeDetector = shakeDetector,
       sleepTimer = sleepTimer,
       historyRecorder = historyRecorder,
+      volumeChanges = volumeChanges,
       lostTrack = LostTrack(historyRepo, mockk<BookRepository>(relaxed = true), clock),
       morningCheck = morningCheck,
       clock = clock,
@@ -134,6 +136,86 @@ class ListeningCheckTest {
       playerController.setPosition(600_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
       playerController.pause()
     }
+  }
+
+  @Test
+  fun `a volume button counts as an answer`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(10.minutes + 1.seconds)
+    positionMs = 600_000L
+    volumeChanges.onChanged()
+    runCurrent()
+    verify { playerController.record(ListeningEvent.Type.StillListening, ListeningEvent.Source.SleepTimer) }
+    verify { playerController.setVolume(1F) }
+
+    advanceTimeBy(1.minutes)
+    verify(exactly = 0) { playerController.pause() }
+  }
+
+  @Test
+  fun `a volume button after a missed check counts as awake`() = testScope.runTest {
+    history = listOf(fellAsleep(ago = 30.minutes, from = 2_000_000L, to = 1_000_000L))
+    positionMs = 1_500_000L
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(5.minutes)
+    positionMs = 1_800_000L
+    volumeChanges.onChanged()
+    runCurrent()
+
+    advanceTimeBy(11.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(1_800_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  @Test
+  fun `the sleep timer running out goes back to where they were last awake`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(5.minutes)
+    positionMs = 300_000L
+    volumeChanges.onChanged()
+    runCurrent()
+
+    advanceTimeBy(3.minutes)
+    positionMs = 480_000L
+    recordedEvents.emit(listenerEvent(ListeningEvent.Type.SleepTimerEnded, ListeningEvent.Source.SleepTimer))
+    playStateManager.playState = PlayStateManager.PlayState.Paused
+    runCurrent()
+    verify(exactly = 0) { playerController.setPosition(any(), any(), any(), any()) }
+
+    advanceTimeBy(ListeningCheck.KEEP_LISTENING_TIME + 1.seconds)
+    verify {
+      playerController.setPosition(300_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+    coVerify { morningCheck.schedule(bookId) }
+  }
+
+  @Test
+  fun `a shake right after the sleep timer ran out keeps the place`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(8.minutes)
+    positionMs = 480_000L
+    recordedEvents.emit(listenerEvent(ListeningEvent.Type.SleepTimerEnded, ListeningEvent.Source.SleepTimer))
+    playStateManager.playState = PlayStateManager.PlayState.Paused
+    runCurrent()
+    advanceTimeBy(10.seconds)
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(ListeningCheck.KEEP_LISTENING_TIME)
+    verify(exactly = 0) { playerController.setPosition(any(), any(), any(), any()) }
   }
 
   @Test

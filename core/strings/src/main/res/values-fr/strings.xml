@@ -394,8 +394,9 @@
     <string name="settings.appearance.theme.title">Thème</string>
     <string name="settings.appearance.title">Apparence</string>
     <string name="settings.auto_sleep_timer.end.label">Heure de fin</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Toutes les 10 minutes, le livre baisse le volume. Secouez votre téléphone dans la minute pour continuer. Sinon, il revient là où vous l\'avez secoué la dernière fois et se met en pause.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Toutes les 10 minutes, le livre baisse de volume. Appuyez sur un bouton de volume, sautez ou secouez votre téléphone dans la minute pour continuer. Sinon, il revient là où vous avez perdu le fil et se met en pause.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Vérifier que j\'écoute encore</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">Les notifications de Voice sont désactivées, la question ne peut donc pas s’afficher. Appuyez pour les autoriser.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Après une vérification sans réponse, une notification vous demande le matin si le livre est revenu là où vous avez perdu le fil</string>
     <string name="settings.auto_sleep_timer.morning_check.title">Me demander le matin</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Changer le volume, sauter ou relancer la lecture redémarre le compte à rebours</string>

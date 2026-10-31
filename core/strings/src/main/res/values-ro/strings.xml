@@ -394,8 +394,9 @@
     <string name="settings.appearance.color_scheme.sunset">Apus</string>
     <string name="settings.appearance.title">Aspect</string>
     <string name="settings.auto_sleep_timer.end.label">Setează ora de final</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">La fiecare 10 minute, cartea se aude mai încet. Scutură telefonul în cel mult un minut ca să asculți mai departe. Altfel, revine unde ai scuturat ultima dată și se oprește.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">La fiecare 10 minute cartea devine mai încet. Apasă un buton de volum, sari sau scutură telefonul într-un minut ca să asculți mai departe. Altfel revine unde ai pierdut firul și se oprește.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Verifică dacă încă ascult</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">Notificările Voice sunt oprite, așa că întrebarea nu poate apărea. Atinge pentru a le permite.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">După o verificare fără răspuns, o notificare te întreabă dimineața dacă cartea a revenit unde ai pierdut firul</string>
     <string name="settings.auto_sleep_timer.morning_check.title">Întreabă-mă dimineața</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Schimbarea volumului, saltul sau reluarea redării pornesc numărătoarea inversă de la capăt</string>

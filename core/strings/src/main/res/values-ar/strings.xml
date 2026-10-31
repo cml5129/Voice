@@ -448,8 +448,9 @@
     <string name="settings.appearance.theme.title">الوضع</string>
     <string name="settings.appearance.title">المظهر</string>
     <string name="settings.auto_sleep_timer.end.label">تعيين وقت الانتهاء</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">كل 10 دقائق ينخفض صوت الكتاب. يكفي هزّ هاتفك خلال دقيقة لمتابعة الاستماع، وإلا يعود الكتاب إلى آخر موضع هززت فيه الهاتف ويتوقف مؤقتًا.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">كل 10 دقائق يصبح صوت الكتاب أخفض. اضغط زر الصوت أو تخطَّ أو هز هاتفك خلال دقيقة لمواصلة الاستماع. وإلا يعود إلى حيث فقدت المتابعة ويتوقف مؤقتًا.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">التحقق من أنني ما زلت أستمع</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">الإشعارات متوقفة لـ Voice، لذا لا يمكن أن يظهر السؤال. انقر للسماح بها.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">بعد فحص فائت، يسألك إشعار في الصباح إن كان الكتاب قد عاد إلى حيث فقدت المتابعة</string>
     <string name="settings.auto_sleep_timer.morning_check.title">اسألني في الصباح</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">يعيد تغيير مستوى الصوت أو التخطي أو الضغط على التشغيل مجددًا بدءَ العدّ التنازلي من جديد</string>

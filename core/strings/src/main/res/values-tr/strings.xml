@@ -376,8 +376,9 @@
     <string name="settings.appearance.theme.title">Tema</string>
     <string name="settings.appearance.title">Görünüm</string>
     <string name="settings.auto_sleep_timer.end.label">Bitiş zamanı</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Kitabın sesi her 10 dakikada bir azalır. Dinlemeye devam etmek için bir dakika içinde telefonunuzu sallayın. Aksi hâlde en son salladığınız yere döner ve duraklar.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Kitabın sesi her 10 dakikada bir azalır. Dinlemeye devam etmek için bir dakika içinde bir ses tuşuna bas, atla ya da telefonunu salla. Yoksa konuyu kaçırdığın yere döner ve duraklar.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Hâlâ dinlediğimi kontrol et</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">Voice için bildirimler kapalı, bu yüzden soru görünemez. İzin vermek için dokun.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Yanıtlanmayan bir kontrolden sonra sabah bir bildirim, kitabın konuyu kaçırdığın yere dönüp dönmediğini sorar</string>
     <string name="settings.auto_sleep_timer.morning_check.title">Sabah bana sor</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Sesi değiştirmek, atlamak veya yeniden oynatmak geri sayımı baştan başlatır</string>

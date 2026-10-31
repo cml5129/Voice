@@ -376,8 +376,9 @@
     <string name="settings.appearance.theme.title">Kujundus</string>
     <string name="settings.appearance.title">Välimus</string>
     <string name="settings.auto_sleep_timer.end.label">Määra lõpuaeg</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">Iga 10 minuti järel läheb raamat vaiksemaks. Raputa telefoni minuti jooksul, et edasi kuulata. Muidu läheb see tagasi kohta, kus viimati raputasid, ja peatub.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">Iga 10 minuti järel läheb raamat vaiksemaks. Vajuta minuti jooksul helitugevuse nuppu, keri edasi või raputa telefoni, et kuulamist jätkata. Muidu läheb see tagasi sinna, kus järje kaotasid, ja peatub.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Kontrolli, kas ma veel kuulan</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">Voice’i teavitused on välja lülitatud, seega küsimus ei saa ilmuda. Puuduta, et neid lubada.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">Pärast vastamata kontrolli küsib teavitus hommikul, kas raamat läks tagasi sinna, kus järje kaotasid</string>
     <string name="settings.auto_sleep_timer.morning_check.title">Küsi minult hommikul</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Helitugevuse muutmine, edasi-tagasi hüppamine või uuesti esitamine alustab loendust otsast</string>

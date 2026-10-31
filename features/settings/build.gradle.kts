@@ -24,4 +24,5 @@ dependencies {
   implementation(projects.core.transcript)
 
   implementation(libs.androidxCore)
+  implementation(libs.lifecycle.compose)
 }

@@ -376,8 +376,9 @@
     <string name="settings.appearance.theme.title">Тема</string>
     <string name="settings.appearance.title">Изглед</string>
     <string name="settings.auto_sleep_timer.end.label">Внеси време за крај</string>
-    <string name="settings.auto_sleep_timer.listening_check.summary">На секои 10 минути книгата се стишува. Протресете го телефонот во рок од една минута за да продолжите да слушате. Инаку се враќа таму каде што последен пат протресовте и паузира.</string>
+    <string name="settings.auto_sleep_timer.listening_check.summary">На секои 10 минути книгата се стишува. Притиснете копче за јачина, прескокнете или протресете го телефонот во рок од една минута за да продолжите. Инаку се враќа таму каде што ја изгубивте нишката и паузира.</string>
     <string name="settings.auto_sleep_timer.listening_check.title">Провери дали сè уште слушам</string>
+    <string name="settings.auto_sleep_timer.morning_check.notifications_off">Известувањата за Voice се исклучени, па прашањето не може да се појави. Допрете за да ги дозволите.</string>
     <string name="settings.auto_sleep_timer.morning_check.summary">По пропуштена проверка, известување наутро прашува дали книгата се врати таму каде што ја изгубивте нишката</string>
     <string name="settings.auto_sleep_timer.morning_check.title">Прашај ме наутро</string>
     <string name="settings.auto_sleep_timer.restart_when_awake.summary">Менувањето на гласноста, прескокнувањето или повторното пуштање го започнува одбројувањето одново</string>
