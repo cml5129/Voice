@@ -362,7 +362,9 @@ private fun ProviderRow(
 }
 
 // product names, the same in every language
+@Composable
 private fun providerName(provider: SummaryProvider): String = when (provider) {
+  SummaryProvider.Server -> stringResource(R.string.settings_server_title)
   SummaryProvider.Haiku -> "Claude Haiku"
   SummaryProvider.Sonnet -> "Claude Sonnet"
   SummaryProvider.Ollama -> "Ollama"

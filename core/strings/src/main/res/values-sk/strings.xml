@@ -461,7 +461,7 @@
     <string name="summaries.action.update">Aktualizovať</string>
     <string name="summaries.failed">Nepodarilo sa: %1$s</string>
     <string name="summaries.model.claude_key">API kľúč Anthropic</string>
-    <string name="summaries.model.explanation">Zhrnutia vznikajú z prepisu knihy a nikdy nejdú ďalej, než kde ste. Claude Haiku a Sonnet používajú váš vlastný API kľúč Anthropic. Ollama beží na vašom vlastnom počítači.</string>
+    <string name="summaries.model.explanation">Zhrnutia vznikajú z prepisu knihy a nikdy nejdú ďalej, než kde ste. Váš server ich píše vopred vlastným modelom. Claude Haiku a Sonnet používajú váš vlastný API kľúč Anthropic. Ollama beží na vašom vlastnom počítači.</string>
     <string name="summaries.model.ollama_model">Model Ollama</string>
     <string name="summaries.model.ollama_url">Adresa Ollama</string>
     <string name="summaries.model.title">Model pre zhrnutia</string>

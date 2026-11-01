@@ -443,7 +443,7 @@
     <string name="summaries.action.update">Actualitza</string>
     <string name="summaries.failed">No ha funcionat: %1$s</string>
     <string name="summaries.model.claude_key">Clau de l\'API d\'Anthropic</string>
-    <string name="summaries.model.explanation">Els resums s\'escriuen a partir de la transcripció del llibre i mai van més enllà d\'on sou. Claude Haiku i Sonnet fan servir la vostra pròpia clau de l\'API d\'Anthropic. Ollama funciona al vostre ordinador.</string>
+    <string name="summaries.model.explanation">Els resums s\'escriuen a partir de la transcripció del llibre i mai van més enllà d\'on sou. El vostre servidor els escriu per avançat amb el seu propi model. Claude Haiku i Sonnet fan servir la vostra pròpia clau de l\'API d\'Anthropic. Ollama funciona al vostre ordinador.</string>
     <string name="summaries.model.ollama_model">Model d\'Ollama</string>
     <string name="summaries.model.ollama_url">Adreça d\'Ollama</string>
     <string name="summaries.model.title">Model dels resums</string>

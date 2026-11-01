@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Assisted
@@ -19,6 +20,7 @@ import voice.core.data.repo.BookRepository
 import voice.core.data.repo.ListeningHistoryRepo
 import voice.core.logging.api.Logger
 import voice.core.summaries.SavedSummary
+import voice.core.summaries.ServerSummaries
 import voice.core.summaries.Summarizer
 import voice.core.summaries.SummaryKind
 import voice.core.summaries.SummaryPart
@@ -45,6 +47,7 @@ class SummariesViewModel(
   private val settingsStore: SummarySettingsStore,
   private val summaryStore: SummaryStore,
   private val summarizer: Summarizer,
+  private val serverSummaries: ServerSummaries,
   private val transcripts: TranscriptRepository,
   private val navigator: Navigator,
   private val clock: Clock,
@@ -67,6 +70,9 @@ class SummariesViewModel(
     val settings = remember { settingsStore.data }.collectAsState(initial = null).value ?: return null
     val saved = remember { summaryStore.summaries(bookId) }.collectAsState(initial = emptyMap()).value
     val events = remember { historyRepo.events(bookId) }.collectAsState(initial = emptyList()).value
+    val fromServer = produceState(initialValue = emptyMap<String, SavedSummary>(), book.chapters) {
+      value = serverSummaries.forBook(book)
+    }.value
     val hasTranscript = remember(book.chapters) { book.chapters.any { transcripts.hasTranscript(it.id) } }
     val parts = remember(tab, book.chapters, events) {
       when (tab) {
@@ -80,13 +86,27 @@ class SummariesViewModel(
       bookName = book.content.name,
       cover = book.content.coverUrl,
       tab = tab,
-      parts = parts.map { part -> part.viewState(position, saved[part.key]) },
+      parts = parts.map { part -> part.viewState(position, pick(part, position, saved[part.key], fromServer[part.key])) },
       currentIndex = parts.indexOfFirst { position >= it.startMs && position < it.endMs }
         .takeIf { it >= 0 && tab != SummaryKind.Session },
       hasTranscript = hasTranscript,
       settings = settings,
       editingModel = editingModel,
     )
+  }
+
+  /**
+   * The server's summary covers its whole part, so it only shows once all of the part was heard. One written on
+   * request is kept while it covers as much.
+   */
+  private fun pick(
+    part: SummaryPart,
+    position: Long,
+    saved: SavedSummary?,
+    fromServer: SavedSummary?,
+  ): SavedSummary? {
+    if (fromServer == null || part.endMs > position) return saved
+    return if (saved == null || saved.coveredUntilMs < fromServer.coveredUntilMs) fromServer else saved
   }
 
   private fun SummaryPart.viewState(

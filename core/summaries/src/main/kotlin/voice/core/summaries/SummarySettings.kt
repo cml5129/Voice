@@ -10,6 +10,8 @@ import voice.core.datastore.VoiceDataStoreFactory
 /** Who writes the summaries. */
 @Serializable
 public enum class SummaryProvider {
+  /** The listener's server, which writes the summaries of every chapter and half hour ahead of time. */
+  Server,
   Haiku,
   Sonnet,
   Ollama,
@@ -18,7 +20,7 @@ public enum class SummaryProvider {
 /** The model the listener picked for summaries, set on the summaries screen. */
 @Serializable
 public data class SummarySettings(
-  val provider: SummaryProvider = SummaryProvider.Haiku,
+  val provider: SummaryProvider = SummaryProvider.Server,
   /** The listener's own Anthropic API key, used for [SummaryProvider.Haiku] and [SummaryProvider.Sonnet]. */
   val claudeKey: String = "",
   /** Where Ollama listens, for example http://192.168.1.20:11434. */
@@ -29,6 +31,8 @@ public data class SummarySettings(
   /** Whether everything the [provider] needs is filled in. */
   public val configured: Boolean
     get() = when (provider) {
+      // the server is set up in Settings, and checked when it's asked
+      SummaryProvider.Server -> true
       SummaryProvider.Haiku, SummaryProvider.Sonnet -> claudeKey.isNotBlank()
       SummaryProvider.Ollama -> ollamaUrl.isNotBlank() && ollamaModel.isNotBlank()
     }
@@ -36,6 +40,7 @@ public data class SummarySettings(
   /** A short name of the model, stored with each summary. */
   public val modelName: String
     get() = when (provider) {
+      SummaryProvider.Server -> SERVER
       SummaryProvider.Haiku -> CLAUDE_HAIKU
       SummaryProvider.Sonnet -> CLAUDE_SONNET
       SummaryProvider.Ollama -> ollamaModel.trim()
@@ -45,6 +50,7 @@ public data class SummarySettings(
     public const val DEFAULT_OLLAMA_MODEL: String = "qwen3:14b"
     public const val CLAUDE_HAIKU: String = "claude-haiku-5-5"
     public const val CLAUDE_SONNET: String = "claude-sonnet-5-5"
+    public const val SERVER: String = "server"
   }
 }
 

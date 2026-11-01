@@ -20,6 +20,9 @@ public class TranscriptFiles(private val dir: File) {
 
   /** The transcript of the audio file [chapterId], in a format [TranscriptParser] reads. */
   public fun transcriptFile(chapterId: ChapterId): File = File(dir, "${stableKey(chapterId.value)}.json")
+
+  /** The server's chapter and half-hour summaries of the audio file [chapterId]. */
+  public fun summariesFile(chapterId: ChapterId): File = File(dir, "${stableKey(chapterId.value)}.summaries.json")
 }
 
 /** A short file-name-safe key for a URI: the first 16 hex digits of its SHA-1. */

@@ -461,7 +461,7 @@
     <string name="summaries.action.update">Обновить</string>
     <string name="summaries.failed">Не получилось: %1$s</string>
     <string name="summaries.model.claude_key">API-ключ Anthropic</string>
-    <string name="summaries.model.explanation">Пересказы пишутся по расшифровке книги и никогда не заходят дальше того места, где вы сейчас. Claude Haiku и Sonnet используют ваш собственный API-ключ Anthropic. Ollama работает на вашем компьютере.</string>
+    <string name="summaries.model.explanation">Пересказы пишутся по расшифровке книги и никогда не заходят дальше того места, где вы сейчас. Ваш сервер пишет их заранее своей моделью. Claude Haiku и Sonnet используют ваш собственный API-ключ Anthropic. Ollama работает на вашем компьютере.</string>
     <string name="summaries.model.ollama_model">Модель Ollama</string>
     <string name="summaries.model.ollama_url">Адрес Ollama</string>
     <string name="summaries.model.title">Модель для пересказов</string>

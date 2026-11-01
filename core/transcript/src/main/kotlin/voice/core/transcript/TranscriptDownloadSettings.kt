@@ -15,6 +15,10 @@ import voice.core.datastore.VoiceDataStoreFactory
 public data class TranscriptDownloadSettings(
   /** Chapter id to the server's `updatedAt` of the transcript that was downloaded for it. */
   val downloaded: Map<String, String> = emptyMap(),
+  /** Chapter id to the server's `summariesUpdatedAt` of the summaries that were downloaded for it. */
+  val downloadedSummaries: Map<String, String> = emptyMap(),
+  /** Chapter id to when the server was last asked to transcribe it. */
+  val requested: Map<String, Long> = emptyMap(),
   val lastCheckAtMillis: Long? = null,
   /** Why the last check failed, until one works again. */
   val lastError: String? = null,

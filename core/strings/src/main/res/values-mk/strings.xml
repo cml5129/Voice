@@ -425,7 +425,7 @@
     <string name="summaries.action.update">Ажурирај</string>
     <string name="summaries.failed">Не успеа: %1$s</string>
     <string name="summaries.model.claude_key">API-клуч за Anthropic</string>
-    <string name="summaries.model.explanation">Резимеата се пишуваат од транскриптот на книгата и никогаш не одат подалеку од местото каде што сте. Claude Haiku и Sonnet го користат вашиот API-клуч за Anthropic. Ollama работи на вашиот компјутер.</string>
+    <string name="summaries.model.explanation">Резимеата се пишуваат од транскриптот на книгата и никогаш не одат подалеку од местото каде што сте. Вашиот сервер ги пишува однапред со сопствен модел. Claude Haiku и Sonnet го користат вашиот API-клуч за Anthropic. Ollama работи на вашиот компјутер.</string>
     <string name="summaries.model.ollama_model">Ollama модел</string>
     <string name="summaries.model.ollama_url">Ollama адреса</string>
     <string name="summaries.model.title">Модел за резимеа</string>

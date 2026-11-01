@@ -407,7 +407,7 @@
     <string name="summaries.action.update">Perbarui</string>
     <string name="summaries.failed">Tidak berhasil: %1$s</string>
     <string name="summaries.model.claude_key">Kunci API Anthropic</string>
-    <string name="summaries.model.explanation">Ringkasan ditulis dari transkrip buku dan tidak pernah melewati posisi Anda. Claude Haiku dan Sonnet memakai kunci API Anthropic milik Anda sendiri. Ollama berjalan di komputer Anda sendiri.</string>
+    <string name="summaries.model.explanation">Ringkasan ditulis dari transkrip buku dan tidak pernah melewati posisi Anda. Server Anda menulisnya lebih dulu dengan modelnya sendiri. Claude Haiku dan Sonnet memakai kunci API Anthropic milik Anda sendiri. Ollama berjalan di komputer Anda sendiri.</string>
     <string name="summaries.model.ollama_model">Model Ollama</string>
     <string name="summaries.model.ollama_url">Alamat Ollama</string>
     <string name="summaries.model.title">Model ringkasan</string>

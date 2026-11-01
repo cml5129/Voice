@@ -2,8 +2,17 @@ package voice.core.summaries
 
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
+import voice.core.server.VoiceServer
+import voice.core.server.VoiceServerConfig
+import voice.core.server.VoiceServerSettings
+import voice.core.server.VoiceServerStore
+import voice.core.transcript.ServerResult
+import voice.core.transcript.ServerSummaryPart
+import voice.core.transcript.ServerTranscript
+import voice.core.transcript.ServerTranscriptsApi
 import voice.core.transcript.TranscriptFiles
 import voice.core.transcript.TranscriptRepository
+import java.io.File
 import java.nio.file.Files
 import java.time.Clock
 import java.time.Instant
@@ -19,12 +28,16 @@ class SummarizerTest {
   private val store = SummaryStore(Files.createTempDirectory("summaries").toFile())
   private val model = FakeModel()
   private val settings = MemoryDataStore(SummarySettings(provider = SummaryProvider.Haiku, claudeKey = "key"))
+  private val serverSettings = MemoryDataStore(VoiceServerSettings(url = "https://example.com", key = "voice-key"))
+  private val api = FakeApi()
   private val summarizer = Summarizer(
     settings = SummarySettingsStore(settings),
     models = FakeModels(model),
     transcripts = TranscriptRepository(transcriptFiles),
     store = store,
     clock = Clock.fixed(Instant.parse("2026-10-30T12:00:00Z"), ZoneOffset.UTC),
+    serverConfig = VoiceServerConfig(VoiceServerStore(serverSettings)),
+    api = api,
   )
 
   private val chapters = listOf(chapter(fileA, 60 * MINUTE), chapter(fileB, 60 * MINUTE))
@@ -89,6 +102,56 @@ class SummarizerTest {
     assertTrue("Stretch 2:\nA summary." in model.prompts[2], model.prompts[2])
   }
 
+  private suspend fun useServer() {
+    val _ = settings.updateData { it.copy(provider = SummaryProvider.Server) }
+  }
+
+  @Test
+  fun `the server writes the summary from the heard part of each file`() = runTest {
+    useServer()
+    val book = book(chapters, currentChapter = fileB, positionInChapter = 15 * MINUTE)
+    val part = SummaryPart(SummaryKind.Session, "session:1", startMs = 50 * MINUTE, endMs = 90 * MINUTE)
+
+    val summary = summarizer.summarize(book, part)
+
+    assertEquals("From the server.", summary.text)
+    assertEquals(SummarySettings.SERVER, summary.model)
+    assertEquals(75 * MINUTE, summary.coveredUntilMs)
+    val asked = api.asked.single()
+    assertEquals("The Waste Lands by Stephen King", asked.book)
+    assertTrue("0:50:00 to 1:15:00" in asked.label, asked.label)
+    assertEquals(
+      listOf(
+        ServerSummaryPart("a.m4b", startMs = 50 * MINUTE, endMs = 60 * MINUTE),
+        ServerSummaryPart("b.m4b", startMs = 0, endMs = 15 * MINUTE),
+      ),
+      asked.parts,
+    )
+    assertEquals(emptyList(), model.prompts)
+    assertEquals(mapOf(part.key to summary), store.summaries(book.id).first())
+  }
+
+  @Test
+  fun `the server's reason shows when it can't summarize`() = runTest {
+    useServer()
+    api.failure = "The model on the server didn't answer"
+    val book = book(chapters, currentChapter = fileB, positionInChapter = 15 * MINUTE)
+
+    val error = assertFailsWith<SummaryException> { summarizer.summarize(book, book.halfHourParts()[0]) }
+
+    assertEquals("The model on the server didn't answer", error.message)
+  }
+
+  @Test
+  fun `without a server it says to set one up`() = runTest {
+    useServer()
+    val _ = serverSettings.updateData { it.copy(enabled = false) }
+    val book = book(chapters, currentChapter = fileB, positionInChapter = 15 * MINUTE)
+
+    assertFailsWith<SummaryException> { summarizer.summarize(book, book.halfHourParts()[0]) }
+    assertEquals(emptyList(), api.asked)
+  }
+
   @Test
   fun `the text is split at spaces`() {
     assertEquals(listOf("one two", "three"), splitText("one two three", maxChars = 9))
@@ -116,6 +179,41 @@ private class FakeModel : SummaryModel {
   ): String {
     prompts += prompt
     return "A summary."
+  }
+}
+
+private data class Asked(
+  val book: String,
+  val label: String,
+  val parts: List<ServerSummaryPart>,
+)
+
+private class FakeApi : ServerTranscriptsApi {
+
+  val asked = mutableListOf<Asked>()
+  var failure: String? = null
+
+  override suspend fun list(server: VoiceServer): ServerResult<List<ServerTranscript>> = ServerResult.Success(emptyList())
+
+  override suspend fun download(
+    server: VoiceServer,
+    file: String,
+    to: File,
+  ): ServerResult<Unit> = ServerResult.Success(Unit)
+
+  override suspend fun request(
+    server: VoiceServer,
+    name: String,
+  ): ServerResult<Unit> = ServerResult.Success(Unit)
+
+  override suspend fun summarize(
+    server: VoiceServer,
+    book: String,
+    label: String,
+    parts: List<ServerSummaryPart>,
+  ): ServerResult<String> {
+    asked += Asked(book, label, parts)
+    return failure?.let { ServerResult.Failure(it) } ?: ServerResult.Success("From the server.")
   }
 }
 

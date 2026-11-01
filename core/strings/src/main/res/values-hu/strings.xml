@@ -425,7 +425,7 @@
     <string name="summaries.action.update">Frissítés</string>
     <string name="summaries.failed">Nem sikerült: %1$s</string>
     <string name="summaries.model.claude_key">Anthropic API-kulcs</string>
-    <string name="summaries.model.explanation">Az összefoglalók a könyv átiratából készülnek, és sosem mennek túl azon a ponton, ahol Ön tart. A Claude Haiku és a Sonnet az Ön saját Anthropic API-kulcsát használja. Az Ollama az Ön saját számítógépén fut.</string>
+    <string name="summaries.model.explanation">Az összefoglalók a könyv átiratából készülnek, és sosem mennek túl azon a ponton, ahol Ön tart. Az Ön szervere előre megírja őket a saját modelljével. A Claude Haiku és a Sonnet az Ön saját Anthropic API-kulcsát használja. Az Ollama az Ön saját számítógépén fut.</string>
     <string name="summaries.model.ollama_model">Ollama-modell</string>
     <string name="summaries.model.ollama_url">Ollama-cím</string>
     <string name="summaries.model.title">Összefoglalók modellje</string>

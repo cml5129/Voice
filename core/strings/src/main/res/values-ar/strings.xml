@@ -497,7 +497,7 @@
     <string name="summaries.action.update">تحديث</string>
     <string name="summaries.failed">لم ينجح ذلك: %1$s</string>
     <string name="summaries.model.claude_key">مفتاح API من Anthropic</string>
-    <string name="summaries.model.explanation">تُكتب الملخصات من النص المفرغ للكتاب ولا تتجاوز أبدًا الموضع الذي وصلت إليه. يستخدم Claude Haiku وSonnet مفتاح API الخاص بك من Anthropic. ويعمل Ollama على حاسوبك الخاص.</string>
+    <string name="summaries.model.explanation">تُكتب الملخصات من النص المفرغ للكتاب ولا تتجاوز أبدًا الموضع الذي وصلت إليه. ويكتبها خادمك مسبقًا بنموذجه الخاص. يستخدم Claude Haiku وSonnet مفتاح API الخاص بك من Anthropic. ويعمل Ollama على حاسوبك الخاص.</string>
     <string name="summaries.model.ollama_model">نموذج Ollama</string>
     <string name="summaries.model.ollama_url">عنوان Ollama</string>
     <string name="summaries.model.title">نموذج الملخصات</string>

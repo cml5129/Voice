@@ -425,7 +425,7 @@
     <string name="summaries.action.update">Aktualisieren</string>
     <string name="summaries.failed">Hat nicht geklappt: %1$s</string>
     <string name="summaries.model.claude_key">Anthropic-API-Schlüssel</string>
-    <string name="summaries.model.explanation">Zusammenfassungen entstehen aus dem Transkript des Buchs und gehen nie über die Stelle hinaus, an der Du bist. Claude Haiku und Sonnet nutzen Deinen eigenen Anthropic-API-Schlüssel. Ollama läuft auf Deinem eigenen Computer.</string>
+    <string name="summaries.model.explanation">Zusammenfassungen entstehen aus dem Transkript des Buchs und gehen nie über die Stelle hinaus, an der Du bist. Dein Server schreibt sie vorab mit seinem eigenen Modell. Claude Haiku und Sonnet nutzen Deinen eigenen Anthropic-API-Schlüssel. Ollama läuft auf Deinem eigenen Computer.</string>
     <string name="summaries.model.ollama_model">Ollama-Modell</string>
     <string name="summaries.model.ollama_url">Ollama-Adresse</string>
     <string name="summaries.model.title">Modell für Zusammenfassungen</string>

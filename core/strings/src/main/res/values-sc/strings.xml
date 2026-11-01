@@ -425,7 +425,7 @@
     <string name="summaries.action.update">Annoa</string>
     <string name="summaries.failed">Non est andadu: %1$s</string>
     <string name="summaries.model.claude_key">Crae API de Anthropic</string>
-    <string name="summaries.model.explanation">Sos resumos sunt iscritos dae sa trascritzione de su libru e no narant mai nudda de prus de su puntu in ue ses. Claude Haiku e Sonnet impreant sa crae API de Anthropic tua. Ollama funtzionat in s\'elaboradore tuo.</string>
+    <string name="summaries.model.explanation">Sos resumos sunt iscritos dae sa trascritzione de su libru e no narant mai nudda de prus de su puntu in ue ses. Su serbidore tuo los iscriet in antis cun su modellu suo. Claude Haiku e Sonnet impreant sa crae API de Anthropic tua. Ollama funtzionat in s\'elaboradore tuo.</string>
     <string name="summaries.model.ollama_model">Modellu de Ollama</string>
     <string name="summaries.model.ollama_url">Indiritzu de Ollama</string>
     <string name="summaries.model.title">Modellu pro sos resumos</string>
