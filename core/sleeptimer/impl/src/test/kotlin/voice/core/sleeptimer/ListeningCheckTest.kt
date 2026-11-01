@@ -63,9 +63,10 @@ class ListeningCheckTest {
   private val now = Instant.parse("2020-01-01T23:00:00Z")
   private val chapter = ChapterId("chapter")
   private var positionMs = 1_000L
+  private var playerReady = true
   private val playerController = mockk<PlayerController> {
     coEvery { livePlaybackState(any()) } answers {
-      LivePlaybackState(bookId, chapter, positionMs, isPlaying = true, playbackSpeed = 1F)
+      if (playerReady) LivePlaybackState(bookId, chapter, positionMs, isPlaying = true, playbackSpeed = 1F) else null
     }
     every { setVolume(any()) } just Runs
     every { record(any(), any()) } just Runs
@@ -197,6 +198,27 @@ class ListeningCheckTest {
       playerController.setPosition(300_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
     coVerify { morningCheck.schedule(bookId) }
+  }
+
+  @Test
+  fun `checks once the player knows its book after starting from a headset button`() = testScope.runTest {
+    playerReady = false
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(3.seconds)
+    playerReady = true
+    advanceTimeBy(2.seconds)
+    positionMs = 480_000L
+    recordedEvents.emit(listenerEvent(ListeningEvent.Type.SleepTimerEnded, ListeningEvent.Source.SleepTimer))
+    playStateManager.playState = PlayStateManager.PlayState.Paused
+    runCurrent()
+
+    advanceTimeBy(ListeningCheck.KEEP_LISTENING_TIME + 1.seconds)
+    verify {
+      playerController.setPosition(1_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
   }
 
   @Test

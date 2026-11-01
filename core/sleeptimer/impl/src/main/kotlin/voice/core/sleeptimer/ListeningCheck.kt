@@ -68,7 +68,7 @@ class ListeningCheck(
   }
 
   private suspend fun checkWhilePlaying() {
-    val playing = playerController.livePlaybackState()?.position() ?: return
+    val playing = playingPosition() ?: return
     var lostTrackAt = lostTrack.spot(playing.bookId)
     var awake = lostTrackAt ?: playing
     lastAwake = awake
@@ -148,6 +148,19 @@ class ListeningCheck(
     morningCheck.schedule(awake.bookId)
   }
 
+  /**
+   * When a headset button starts the app, playback can start before the player knows its book, and the whole
+   * session would go without checks.
+   */
+  private suspend fun playingPosition(): PlaybackPosition? = withTimeoutOrNull(PLAYER_READY_TIME) {
+    var position = playerController.livePlaybackState()?.position()
+    while (position == null) {
+      delay(1.seconds)
+      position = playerController.livePlaybackState()?.position()
+    }
+    position
+  }
+
   private fun listenerActions(): Flow<ListeningEvent> = historyRecorder.events.filter { it.isListenerAction() }
 
   private suspend fun shouldCheck(): Boolean {
@@ -175,5 +188,7 @@ class ListeningCheck(
 
     /** A bit longer than the sleep timer listens for a shake after it ran out. */
     val KEEP_LISTENING_TIME = 45.seconds
+
+    val PLAYER_READY_TIME = 30.seconds
   }
 }
