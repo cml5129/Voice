@@ -3,8 +3,9 @@
 
 Each pass handles, in order: the books the Voice app asked for (one JSON file per request
 in requests/, written by the site's POST /api/transcripts/requests), the paths listed in
-priority.txt (one per line), then every .m4b under the library that arrived after the
-worker was first started (newest first). The rest of the library is left alone unless
+priority.txt (one per line), then every .m4b under the library that wasn't there when the
+worker was first started (.known-books lists those). File dates can't tell: Libation keeps
+Audible's original dates, so a new download can look years old. The rest of the library is left alone unless
 --all is given. Every book is summarized right after its transcript (summarize.py), and
 books transcribed before summaries existed get theirs at the end of the pass. Files whose
 output is current are skipped. When a pass finds nothing to do, the worker sleeps, and
@@ -36,13 +37,18 @@ def read_priority(path: Path) -> list[Path]:
     return [Path(line) for line in lines if line and not line.startswith("#")]
 
 
-def new_since(out_dir: Path) -> float:
-    """When "new" starts: the first time the worker ran, kept in a marker file."""
-    marker = out_dir / ".new-since"
-    if not marker.exists():
+def known_books(out_dir: Path, library: Path) -> set[str]:
+    """The books that were in the library when the worker first ran, kept in a file; any
+    other book is new."""
+    path = out_dir / ".known-books"
+    if not path.exists():
         out_dir.mkdir(parents=True, exist_ok=True)
-        marker.write_text(f"{time.time()}\n", encoding="utf-8")
-    return float(marker.read_text(encoding="utf-8").strip())
+        books = sorted(str(p.resolve()) for p in library.rglob("*.m4b"))
+        tmp = path.with_name(path.name + ".tmp")
+        tmp.write_text("".join(f"{b}\n" for b in books), encoding="utf-8")
+        tmp.replace(path)
+        log.info("%d books already in the library; only books added after now count as new", len(books))
+    return {line for line in path.read_text(encoding="utf-8").splitlines() if line}
 
 
 def match_key(name: str) -> str:
@@ -90,9 +96,11 @@ def build_queue(library: Path, out_dir: Path, priority_file: Path, everything: b
     seen = {p.resolve() for p in requested}
     priority = [p for p in priority if p.resolve() not in seen]
     seen |= {p.resolve() for p in priority}
-    cutoff = 0.0 if everything else new_since(out_dir)
-    rest = [p for p in library.rglob("*.m4b") if p.resolve() not in seen and p.stat().st_mtime > cutoff]
-    rest.sort(key=lambda p: p.stat().st_mtime, reverse=True)
+    known = set() if everything else known_books(out_dir, library)
+    rest = sorted(
+        (p for p in library.rglob("*.m4b") if p.resolve() not in seen and str(p.resolve()) not in known),
+        key=lambda p: str(p),
+    )
     return requested + priority + rest
 
 
