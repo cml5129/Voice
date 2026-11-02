@@ -349,6 +349,9 @@
     <string name="playback.speed.increase">Mai repede</string>
     <string name="playback.speed.title">Viteză de redare</string>
     <string name="playback.volume_boost.off">Dezactivat</string>
+    <string name="read_along.follow">Înapoi la acum</string>
+    <string name="read_along.no_transcript">Această parte a cărții nu are încă transcriere. Voice preia transcrierile de pe serverul tău, pe care îl poți configura în Setări.</string>
+    <string name="read_along.title">Citește odată cu audio</string>
     <string name="review.prompt.action.feedback">Trimite feedback</string>
     <string name="review.prompt.action.later">Nu acum</string>
     <string name="review.prompt.action.rate">Evaluează pe Google Play</string>

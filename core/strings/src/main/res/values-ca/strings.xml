@@ -349,6 +349,9 @@
     <string name="playback.speed.increase">Més ràpid</string>
     <string name="playback.speed.title">Velocitat de reproducció</string>
     <string name="playback.volume_boost.off">Desactivat</string>
+    <string name="read_along.follow">Torna a ara</string>
+    <string name="read_along.no_transcript">Aquesta part del llibre encara no té transcripció. Voice obté les transcripcions del teu servidor, que pots configurar a la Configuració.</string>
+    <string name="read_along.title">Llegeix alhora</string>
     <string name="review.prompt.action.feedback">Envia comentaris</string>
     <string name="review.prompt.action.later">Ara no</string>
     <string name="review.prompt.action.rate">Valora a Google Play</string>

@@ -315,6 +315,9 @@
     <string name="playback.speed.increase">加速</string>
     <string name="playback.speed.title">播放速度</string>
     <string name="playback.volume_boost.off">关闭</string>
+    <string name="read_along.follow">回到当前位置</string>
+    <string name="read_along.no_transcript">本书的这一部分还没有文字稿。Voice 会从你的服务器获取文字稿，你可以在设置中设置服务器。</string>
+    <string name="read_along.title">跟读</string>
     <string name="review.prompt.action.feedback">分享反馈</string>
     <string name="review.prompt.action.later">以后再说</string>
     <string name="review.prompt.action.rate">在 Google Play 上评分</string>

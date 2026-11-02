@@ -332,6 +332,9 @@
     <string name="playback.speed.increase">Sneller</string>
     <string name="playback.speed.title">Afspeelsnelheid</string>
     <string name="playback.volume_boost.off">Uit</string>
+    <string name="read_along.follow">Terug naar nu</string>
+    <string name="read_along.no_transcript">Dit deel van het boek heeft nog geen transcript. Voice haalt transcripten op van je server, die je kunt instellen bij Instellingen.</string>
+    <string name="read_along.title">Meelezen</string>
     <string name="review.prompt.action.feedback">Feedback geven</string>
     <string name="review.prompt.action.later">Niet nu</string>
     <string name="review.prompt.action.rate">Beoordelen op Google Play</string>

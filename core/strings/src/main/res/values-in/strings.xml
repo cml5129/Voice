@@ -315,6 +315,9 @@
     <string name="playback.speed.increase">Lebih cepat</string>
     <string name="playback.speed.title">Kecepatan pemutaran</string>
     <string name="playback.volume_boost.off">Mati</string>
+    <string name="read_along.follow">Kembali ke sekarang</string>
+    <string name="read_along.no_transcript">Bagian buku ini belum punya transkrip. Voice mengambil transkrip dari server Anda, yang bisa diatur di Setelan.</string>
+    <string name="read_along.title">Baca bersama</string>
     <string name="review.prompt.action.feedback">Bagikan masukan</string>
     <string name="review.prompt.action.later">Nanti saja</string>
     <string name="review.prompt.action.rate">Beri rating di Google Play</string>

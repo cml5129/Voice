@@ -332,6 +332,9 @@
     <string name="playback.speed.increase">Побрзо</string>
     <string name="playback.speed.title">Брзина на репродукција</string>
     <string name="playback.volume_boost.off">Исклучено</string>
+    <string name="read_along.follow">Назад на сега</string>
+    <string name="read_along.no_transcript">Овој дел од книгата сè уште нема транскрипт. Voice ги зема транскриптите од вашиот сервер, кој можете да го поставите во Поставки.</string>
+    <string name="read_along.title">Читај заедно</string>
     <string name="review.prompt.action.feedback">Сподели повратни информации</string>
     <string name="review.prompt.action.later">Не сега</string>
     <string name="review.prompt.action.rate">Оцени на Google Play</string>

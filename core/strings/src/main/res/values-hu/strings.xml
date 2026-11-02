@@ -332,6 +332,9 @@
     <string name="playback.speed.increase">Gyorsabb</string>
     <string name="playback.speed.title">Lejátszási sebesség</string>
     <string name="playback.volume_boost.off">Ki</string>
+    <string name="read_along.follow">Vissza a jelenlegi részhez</string>
+    <string name="read_along.no_transcript">A könyv ezen részéhez még nincs átirat. A Voice a saját szerveredről tölti le az átiratokat, amelyet a Beállításokban állíthatsz be.</string>
+    <string name="read_along.title">Olvasás együtt</string>
     <string name="review.prompt.action.feedback">Visszajelzés küldése</string>
     <string name="review.prompt.action.later">Most nem</string>
     <string name="review.prompt.action.rate">Értékelés a Google Playen</string>

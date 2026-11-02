@@ -366,6 +366,9 @@
     <string name="playback.speed.increase">Швидше</string>
     <string name="playback.speed.title">Швидкість відтворення</string>
     <string name="playback.volume_boost.off">Вимкнено</string>
+    <string name="read_along.follow">Повернутися до поточного місця</string>
+    <string name="read_along.no_transcript">Ця частина книги ще не має розшифровки. Voice отримує розшифровки з вашого сервера, який можна налаштувати в налаштуваннях.</string>
+    <string name="read_along.title">Читати разом</string>
     <string name="review.prompt.action.feedback">Залишити відгук</string>
     <string name="review.prompt.action.later">Не зараз</string>
     <string name="review.prompt.action.rate">Оцінити в Google Play</string>

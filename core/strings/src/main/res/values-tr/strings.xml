@@ -332,6 +332,9 @@
     <string name="playback.speed.increase">Daha hızlı</string>
     <string name="playback.speed.title">Oynatma hızı</string>
     <string name="playback.volume_boost.off">Kapalı</string>
+    <string name="read_along.follow">Şu ana dön</string>
+    <string name="read_along.no_transcript">Kitabın bu bölümünün henüz dökümü yok. Voice dökümleri sunucundan alır; sunucunu Ayarlar\'dan kurabilirsin.</string>
+    <string name="read_along.title">Birlikte oku</string>
     <string name="review.prompt.action.feedback">Geri bildirim paylaş</string>
     <string name="review.prompt.action.later">Şimdi değil</string>
     <string name="review.prompt.action.rate">Google Play\'de puan ver</string>

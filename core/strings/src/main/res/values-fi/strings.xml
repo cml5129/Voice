@@ -332,6 +332,9 @@
     <string name="playback.speed.increase">Nopeammin</string>
     <string name="playback.speed.title">Toiston nopeus</string>
     <string name="playback.volume_boost.off">Pois</string>
+    <string name="read_along.follow">Takaisin nykyhetkeen</string>
+    <string name="read_along.no_transcript">Tällä kirjan osalla ei ole vielä litterointia. Voice hakee litteroinnit palvelimeltasi, jonka voit määrittää asetuksissa.</string>
+    <string name="read_along.title">Lue mukana</string>
     <string name="review.prompt.action.feedback">Anna palautetta</string>
     <string name="review.prompt.action.later">Ei nyt</string>
     <string name="review.prompt.action.rate">Arvioi Google Playssa</string>
