@@ -16,7 +16,7 @@ data class SleepTimerPreference(
   val autoSleepEndTime: LocalTime,
   val listeningCheckEnabled: Boolean = false,
   /** After a missed listening check, asks in the morning whether the book went back to the right place. */
-  val morningCheckEnabled: Boolean = true,
+  val morningCheckEnabled: Boolean = false,
   /**
    * Restarts a running countdown when the listener shows they are awake: changing the volume, skipping, or
    * resuming after a pause.

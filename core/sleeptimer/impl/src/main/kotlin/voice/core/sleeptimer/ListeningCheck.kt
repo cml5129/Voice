@@ -52,6 +52,9 @@ class ListeningCheck(
   /** Where the listener last showed they were awake, kept after playback stops. */
   private var lastAwake: PlaybackPosition? = null
 
+  /** Already backed up when the listener lost track there, so going back to it again doesn't back up further. */
+  private var lostTrackSpot: PlaybackPosition? = null
+
   override fun onAppStart(application: Application) {
     scope.launch {
       playStateManager.playStateFlow.collectLatest { playState ->
@@ -70,6 +73,7 @@ class ListeningCheck(
   private suspend fun checkWhilePlaying() {
     val playing = playingPosition() ?: return
     var lostTrackAt = lostTrack.spot(playing.bookId)
+    lostTrackSpot = lostTrackAt
     var awake = lostTrackAt ?: playing
     lastAwake = awake
     while (true) {
@@ -137,8 +141,10 @@ class ListeningCheck(
 
   private suspend fun fellAsleep(awake: PlaybackPosition) {
     if (playerController.livePlaybackState()?.bookId == awake.bookId) {
+      // the last thing they remember can be right before that, so going back a bit more catches it
+      val time = if (awake == lostTrackSpot) awake.time else (awake.time - BACK_UP.inWholeMilliseconds).coerceAtLeast(0)
       playerController.setPosition(
-        time = awake.time,
+        time = time,
         id = awake.chapterId,
         type = ListeningEvent.Type.FellAsleep,
         source = ListeningEvent.Source.SleepTimer,
@@ -188,6 +194,8 @@ class ListeningCheck(
 
     /** A bit longer than the sleep timer listens for a shake after it ran out. */
     val KEEP_LISTENING_TIME = 45.seconds
+
+    val BACK_UP = 5.seconds
 
     val PLAYER_READY_TIME = 30.seconds
   }

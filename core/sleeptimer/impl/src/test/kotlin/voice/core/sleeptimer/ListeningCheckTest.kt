@@ -109,7 +109,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(1.minutes)
     verify {
-      playerController.setPosition(1_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(0L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
       playerController.pause()
     }
     coVerify { morningCheck.schedule(bookId) }
@@ -134,7 +134,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(10.minutes + 1.seconds)
     verify {
-      playerController.setPosition(600_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(595_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
       playerController.pause()
     }
   }
@@ -171,7 +171,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(11.minutes + 1.seconds)
     verify {
-      playerController.setPosition(1_800_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(1_795_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
   }
 
@@ -195,7 +195,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(ListeningCheck.KEEP_LISTENING_TIME + 1.seconds)
     verify {
-      playerController.setPosition(300_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(295_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
     coVerify { morningCheck.schedule(bookId) }
   }
@@ -217,7 +217,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(ListeningCheck.KEEP_LISTENING_TIME + 1.seconds)
     verify {
-      playerController.setPosition(1_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(0L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
   }
 
@@ -256,7 +256,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(2.minutes + 1.seconds)
     verify {
-      playerController.setPosition(2_100_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(2_095_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
       playerController.pause()
     }
   }
@@ -278,7 +278,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(10.minutes + 1.seconds)
     verify {
-      playerController.setPosition(2_100_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(2_095_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
   }
 
@@ -295,12 +295,12 @@ class ListeningCheckTest {
 
     advanceTimeBy(6.minutes + 1.seconds)
     verify {
-      playerController.setPosition(1_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(0L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
   }
 
   @Test
-  fun `playing again after a missed check goes back to where they lost track`() = testScope.runTest {
+  fun `playing again after a missed check goes back to where they lost track, without backing up again`() = testScope.runTest {
     history = listOf(fellAsleep(ago = 30.minutes, from = 2_000_000L, to = 1_000_000L))
     positionMs = 1_500_000L
     listeningCheck().onAppStart(mockk())
@@ -369,7 +369,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(11.minutes + 1.seconds)
     verify {
-      playerController.setPosition(1_600_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(1_595_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
   }
 
@@ -383,7 +383,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(11.minutes + 1.seconds)
     verify {
-      playerController.setPosition(1_500_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(1_495_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
   }
 
