@@ -408,6 +408,10 @@
     <string name="settings.transcripts.title">文字起こし</string>
     <string name="summaries.action.summarize">要約する</string>
     <string name="summaries.action.update">更新</string>
+    <string name="summaries.combine.action">セッションをまとめる</string>
+    <string name="summaries.combine.pick_first">最初のセッションをタップ</string>
+    <string name="summaries.combine.pick_last">次に最後のセッションをタップしてください。間のものもすべて含まれます。</string>
+    <string name="summaries.combined.title">まとめたセッション</string>
     <string name="summaries.failed">うまくいきませんでした：%1$s</string>
     <string name="summaries.model.claude_key">Anthropic API キー</string>
     <string name="summaries.model.explanation">要約は本の文字起こしから作られ、今聴いているところより先の内容は含みません。ご自身のサーバーは自分のモデルで前もって要約を書いておきます。Claude Haiku と Sonnet はご自身の Anthropic API キーを使います。Ollama はご自身のコンピューターで動きます。</string>

@@ -42,14 +42,14 @@ public class Summarizer(
   public fun canSummarize(
     book: Book,
     part: SummaryPart,
-  ): Boolean = part.startMs < book.position
+  ): Boolean = heardUntil(book, part) > part.startMs
 
   public suspend fun summarize(
     book: Book,
     part: SummaryPart,
   ): SavedSummary = lock.withLock {
     val settings = settings.data.first()
-    val until = min(part.endMs, book.position)
+    val until = heardUntil(book, part)
     if (until <= part.startMs) throw SummaryException("You haven't listened to this part yet")
     val text = if (settings.provider == SummaryProvider.Server) {
       askServer(book, part, until)
@@ -74,7 +74,7 @@ public class Summarizer(
     until: Long,
     text: String,
   ): String {
-    val words = if (part.kind == SummaryKind.Session) SESSION_WORDS else PART_WORDS
+    val words = part.words()
     val about = "${book.about()}\n${part.describe(until)}"
     val pieces = splitText(text, model.maxInputChars)
     if (pieces.size == 1) {
@@ -91,27 +91,48 @@ public class Summarizer(
     return model.complete(combineSystem(words), "$about\n\n$joined")
   }
 
-  /** Has the listener's server write the summary from its own copy of the transcript, with its local model. */
+  /**
+   * Has the listener's server write the summary from its own copy of the transcript, with its local model. A long
+   * stretch goes in pieces the server can each do in one request, and the server then puts their notes together.
+   */
   private suspend fun askServer(
     book: Book,
     part: SummaryPart,
     until: Long,
   ): String {
     val server = serverConfig.current() ?: throw SummaryException("Set up your server in Settings first")
-    val starts = book.fileStarts()
-    val parts = book.chapters.mapNotNull { chapter ->
+    val label = part.describe(until)
+    val pieces = (part.startMs until until step SERVER_PIECE_MS)
+      .map { start -> start to min(start + SERVER_PIECE_MS, until) }
+      .map { (start, end) -> book.serverParts(start, end) }
+      .filter { it.isNotEmpty() }
+    if (pieces.isEmpty()) throw SummaryException("There's no transcript for this part yet")
+    if (pieces.size == 1) return api.summarize(server, book.title(), label, pieces.single()).orThrow()
+    val notes = pieces.mapIndexed { index, parts ->
+      api.summarize(server, book.title(), "$label\nStretch ${index + 1} of ${pieces.size}.", parts).orThrow()
+    }
+    return api.combine(server, book.title(), label, notes).orThrow()
+  }
+
+  /** The stretch between two positions in the whole book, as positions in each audio file. */
+  private fun Book.serverParts(
+    startMs: Long,
+    endMs: Long,
+  ): List<ServerSummaryPart> {
+    val starts = fileStarts()
+    return chapters.mapNotNull { chapter ->
       val fileStart = starts.getValue(chapter.id)
-      val from = max(part.startMs - fileStart, 0)
-      val to = min(until - fileStart, chapter.duration)
+      val from = max(startMs - fileStart, 0)
+      val to = min(endMs - fileStart, chapter.duration)
       if (from >= to) return@mapNotNull null
       val file = audioFileName(chapter.id) ?: return@mapNotNull null
       ServerSummaryPart(file = file, startMs = from, endMs = to)
     }
-    if (parts.isEmpty()) throw SummaryException("There's no transcript for this part yet")
-    return when (val result = api.summarize(server, book.title(), part.describe(until), parts)) {
-      is ServerResult.Success -> result.value
-      is ServerResult.Failure -> throw SummaryException(result.reason)
-    }
+  }
+
+  private fun ServerResult<String>.orThrow(): String = when (this) {
+    is ServerResult.Success -> value
+    is ServerResult.Failure -> throw SummaryException(reason)
   }
 
   /** The transcript between two positions in the whole book, or null where there is none. */
@@ -131,8 +152,30 @@ public class Summarizer(
   }
 }
 
+/**
+ * How far into the book the summary of [part] can go. Sessions were heard to their end even after going back, so
+ * only chapters and half hours stop where the listener is.
+ */
+public fun heardUntil(
+  book: Book,
+  part: SummaryPart,
+): Long = when (part.kind) {
+  SummaryKind.Session, SummaryKind.Combined -> part.endMs
+  SummaryKind.Chapter, SummaryKind.HalfHour -> min(part.endMs, book.position)
+}
+
+private fun SummaryPart.words(): Int = when (kind) {
+  SummaryKind.Chapter, SummaryKind.HalfHour -> PART_WORDS
+  SummaryKind.Session -> SESSION_WORDS
+  SummaryKind.Combined -> COMBINED_WORDS
+}
+
+/** Each fits one request to the server, well within the time the connection allows. */
+private const val SERVER_PIECE_MS = 90 * 60 * 1000L
+
 internal const val PART_WORDS = 120
 internal const val SESSION_WORDS = 150
+internal const val COMBINED_WORDS = 200
 internal const val NOTE_WORDS = 150
 
 internal fun summarySystem(words: Int): String = "You summarize part of an audiobook from a rough speech-to-text " +
@@ -160,6 +203,7 @@ private fun SummaryPart.describe(until: Long): String {
     SummaryKind.Chapter -> "Chapter \"$name\" ($stretch$partial)."
     SummaryKind.HalfHour -> "The half hour from $stretch$partial."
     SummaryKind.Session -> "One listening session, from $stretch."
+    SummaryKind.Combined -> "Several listening sessions in a row, from $stretch."
   }
 }
 

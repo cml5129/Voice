@@ -2,11 +2,13 @@
 
 package voice.features.summaries
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -95,6 +97,9 @@ fun SummariesScreen(bookId: BookId) {
       onTabChange = viewModel::onTabChange,
       onSummarize = viewModel::onSummarize,
       onModelClick = viewModel::onModelClick,
+      onCombineClick = viewModel::onCombineClick,
+      onCombineCancel = viewModel::onCombineCancel,
+      onSessionPick = viewModel::onSessionPick,
     )
     if (viewState.editingModel) {
       ModelDialog(
@@ -115,6 +120,9 @@ private fun SummariesScreen(
   onTabChange: (SummaryKind) -> Unit,
   onSummarize: (SummaryPart) -> Unit,
   onModelClick: () -> Unit,
+  onCombineClick: () -> Unit,
+  onCombineCancel: () -> Unit,
+  onSessionPick: (SummaryPart) -> Unit,
 ) {
   Scaffold(
     topBar = {
@@ -162,7 +170,14 @@ private fun SummariesScreen(
         action = stringResource(R.string.summaries_model_title) to onModelClick,
       )
       viewState.parts.isEmpty() -> Message(stringResource(R.string.summaries_sessions_none), contentPadding)
-      else -> PartList(viewState, contentPadding, onSummarize)
+      else -> PartList(
+        viewState = viewState,
+        contentPadding = contentPadding,
+        onSummarize = onSummarize,
+        onCombineClick = onCombineClick,
+        onCombineCancel = onCombineCancel,
+        onSessionPick = onSessionPick,
+      )
     }
   }
 }
@@ -172,6 +187,9 @@ private fun PartList(
   viewState: SummariesViewState,
   contentPadding: PaddingValues,
   onSummarize: (SummaryPart) -> Unit,
+  onCombineClick: () -> Unit,
+  onCombineCancel: () -> Unit,
+  onSessionPick: (SummaryPart) -> Unit,
 ) {
   val listState = rememberLazyListState()
   // opens at the part playing now, not at the start of a long book
@@ -189,8 +207,47 @@ private fun PartList(
     ),
     verticalArrangement = Arrangement.spacedBy(12.dp),
   ) {
+    if (viewState.canCombine) {
+      item(key = "combine") {
+        CombineRow(viewState, onCombineClick, onCombineCancel)
+      }
+    }
     items(viewState.parts, key = { it.part.key }) { part ->
-      PartCard(part, onSummarize = { onSummarize(part.part) })
+      PartCard(
+        part = part,
+        onSummarize = { onSummarize(part.part) },
+        onPick = { onSessionPick(part.part) },
+      )
+    }
+  }
+}
+
+@Composable
+private fun CombineRow(
+  viewState: SummariesViewState,
+  onCombineClick: () -> Unit,
+  onCombineCancel: () -> Unit,
+) {
+  Row(
+    modifier = Modifier.fillMaxWidth(),
+    verticalAlignment = Alignment.CenterVertically,
+  ) {
+    if (viewState.combining) {
+      Text(
+        text = stringResource(
+          if (viewState.combineFirstPicked) R.string.summaries_combine_pick_last else R.string.summaries_combine_pick_first,
+        ),
+        style = MaterialTheme.typography.bodyMedium,
+        modifier = Modifier.weight(1F),
+      )
+      TextButton(onClick = onCombineCancel) {
+        Text(stringResource(R.string.common_dialog_cancel))
+      }
+    } else {
+      Spacer(Modifier.weight(1F))
+      TextButton(onClick = onCombineClick) {
+        Text(stringResource(R.string.summaries_combine_action))
+      }
     }
   }
 }
@@ -199,22 +256,29 @@ private fun PartList(
 private fun PartCard(
   part: SummaryPartViewState,
   onSummarize: () -> Unit,
+  onPick: () -> Unit,
 ) {
+  val colors = CardDefaults.cardColors(
+    containerColor = if (part.picked) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceContainer,
+  )
   Card(
-    modifier = Modifier.fillMaxWidth(),
-    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainer),
+    modifier = Modifier
+      .fillMaxWidth()
+      .then(if (part.pickable) Modifier.clickable(onClick = onPick) else Modifier),
+    colors = colors,
   ) {
     Column(
       modifier = Modifier.padding(16.dp),
       verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
-      if (part.title != null) {
-        Text(part.title, style = MaterialTheme.typography.titleMedium)
+      val title = if (part.part.kind == SummaryKind.Combined) stringResource(R.string.summaries_combined_title) else part.title
+      if (title != null) {
+        Text(title, style = MaterialTheme.typography.titleMedium)
       }
       Text(
         text = part.range,
-        style = if (part.title == null) MaterialTheme.typography.titleMedium else MaterialTheme.typography.labelMedium,
-        color = if (part.title == null) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurfaceVariant,
+        style = if (title == null) MaterialTheme.typography.titleMedium else MaterialTheme.typography.labelMedium,
+        color = if (title == null) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurfaceVariant,
       )
       when {
         part.summary != null -> Text(part.summary, style = MaterialTheme.typography.bodyMedium)
@@ -373,5 +437,5 @@ private fun providerName(provider: SummaryProvider): String = when (provider) {
 private fun SummaryKind.label(): Int = when (this) {
   SummaryKind.Chapter -> R.string.playback_chapters_title
   SummaryKind.HalfHour -> R.string.summaries_tab_half_hours
-  SummaryKind.Session -> R.string.summaries_tab_sessions
+  SummaryKind.Session, SummaryKind.Combined -> R.string.summaries_tab_sessions
 }

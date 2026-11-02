@@ -426,6 +426,10 @@
     <string name="settings.transcripts.title">Litteroinnit</string>
     <string name="summaries.action.summarize">Tiivistä</string>
     <string name="summaries.action.update">Päivitä</string>
+    <string name="summaries.combine.action">Yhdistä kuuntelukerrat</string>
+    <string name="summaries.combine.pick_first">Napauta ensimmäistä kuuntelukertaa</string>
+    <string name="summaries.combine.pick_last">Napauta nyt viimeistä. Kaikki niiden väliltä tulee mukaan.</string>
+    <string name="summaries.combined.title">Kuuntelukerrat yhdessä</string>
     <string name="summaries.failed">Ei onnistunut: %1$s</string>
     <string name="summaries.model.claude_key">Anthropic-API-avain</string>
     <string name="summaries.model.explanation">Tiivistelmät kirjoitetaan kirjan litteroinnista, eivätkä ne koskaan mene pidemmälle kuin olet kuunnellut. Palvelimesi kirjoittaa ne etukäteen omalla mallillaan. Claude Haiku ja Sonnet käyttävät omaa Anthropic-API-avaintasi. Ollama toimii omalla tietokoneellasi.</string>

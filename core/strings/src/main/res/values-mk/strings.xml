@@ -426,6 +426,10 @@
     <string name="settings.transcripts.title">Транскрипти</string>
     <string name="summaries.action.summarize">Резимирај</string>
     <string name="summaries.action.update">Ажурирај</string>
+    <string name="summaries.combine.action">Спој сесии</string>
+    <string name="summaries.combine.pick_first">Допрете ја првата сесија</string>
+    <string name="summaries.combine.pick_last">Сега допрете ја последната. Сè што е помеѓу е вклучено.</string>
+    <string name="summaries.combined.title">Сесии заедно</string>
     <string name="summaries.failed">Не успеа: %1$s</string>
     <string name="summaries.model.claude_key">API-клуч за Anthropic</string>
     <string name="summaries.model.explanation">Резимеата се пишуваат од транскриптот на книгата и никогаш не одат подалеку од местото каде што сте. Вашиот сервер ги пишува однапред со сопствен модел. Claude Haiku и Sonnet го користат вашиот API-клуч за Anthropic. Ollama работи на вашиот компјутер.</string>

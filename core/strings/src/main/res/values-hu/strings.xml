@@ -426,6 +426,10 @@
     <string name="settings.transcripts.title">Átiratok</string>
     <string name="summaries.action.summarize">Összefoglalás</string>
     <string name="summaries.action.update">Frissítés</string>
+    <string name="summaries.combine.action">Alkalmak összevonása</string>
+    <string name="summaries.combine.pick_first">Koppintson az első alkalomra</string>
+    <string name="summaries.combine.pick_last">Most koppintson az utolsóra. A kettő között minden benne lesz.</string>
+    <string name="summaries.combined.title">Összevont alkalmak</string>
     <string name="summaries.failed">Nem sikerült: %1$s</string>
     <string name="summaries.model.claude_key">Anthropic API-kulcs</string>
     <string name="summaries.model.explanation">Az összefoglalók a könyv átiratából készülnek, és sosem mennek túl azon a ponton, ahol Ön tart. Az Ön szervere előre megírja őket a saját modelljével. A Claude Haiku és a Sonnet az Ön saját Anthropic API-kulcsát használja. Az Ollama az Ön saját számítógépén fut.</string>

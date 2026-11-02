@@ -76,6 +76,14 @@ public interface ServerTranscriptsApi {
     label: String,
     parts: List<ServerSummaryPart>,
   ): ServerResult<String>
+
+  /** Has the server put [notes] on consecutive stretches of a part, in order, together into one summary. */
+  public suspend fun combine(
+    server: VoiceServer,
+    book: String,
+    label: String,
+    notes: List<String>,
+  ): ServerResult<String>
 }
 
 @SingleIn(AppScope::class)
@@ -136,6 +144,18 @@ public class OkHttpServerTranscriptsApi : ServerTranscriptsApi {
     parts: List<ServerSummaryPart>,
   ): ServerResult<String> {
     val body = json.encodeToString(SummaryRequest.serializer(), SummaryRequest(book, label, parts))
+    return post(server, "summarize", body, slowClient) { text ->
+      json.decodeFromString(SummaryResponse.serializer(), text).summary
+    }
+  }
+
+  override suspend fun combine(
+    server: VoiceServer,
+    book: String,
+    label: String,
+    notes: List<String>,
+  ): ServerResult<String> {
+    val body = json.encodeToString(CombineRequest.serializer(), CombineRequest(book, label, notes))
     return post(server, "summarize", body, slowClient) { text ->
       json.decodeFromString(SummaryResponse.serializer(), text).summary
     }
@@ -216,6 +236,13 @@ private data class SummaryRequest(
   val book: String,
   val label: String,
   val parts: List<ServerSummaryPart>,
+)
+
+@Serializable
+private data class CombineRequest(
+  val book: String,
+  val label: String,
+  val notes: List<String>,
 )
 
 @Serializable

@@ -444,6 +444,10 @@
     <string name="settings.transcripts.title">Transcrieri</string>
     <string name="summaries.action.summarize">Rezumă</string>
     <string name="summaries.action.update">Actualizează</string>
+    <string name="summaries.combine.action">Combină sesiunile</string>
+    <string name="summaries.combine.pick_first">Atinge prima sesiune</string>
+    <string name="summaries.combine.pick_last">Acum atinge ultima. Tot ce e între ele este inclus.</string>
+    <string name="summaries.combined.title">Sesiuni împreună</string>
     <string name="summaries.failed">N-a mers: %1$s</string>
     <string name="summaries.model.claude_key">Cheia API Anthropic</string>
     <string name="summaries.model.explanation">Rezumatele sunt scrise din transcrierea cărții și nu trec niciodată de locul în care ești. Serverul tău le scrie dinainte cu propriul model. Claude Haiku și Sonnet folosesc propria ta cheie API Anthropic. Ollama rulează pe propriul tău computer.</string>

@@ -83,6 +83,21 @@ class OkHttpServerTranscriptsApiTest {
   }
 
   @Test
+  fun `notes are sent to be put together`() = runTest {
+    web.enqueue(MockResponse(body = """{"summary":"The whole night.","model":"qwen3:14b"}"""))
+
+    val result = api.combine(server(), "The Waste Lands", "Sessions together.", listOf("One.", "Two."))
+
+    assertEquals(ServerResult.Success("The whole night."), result)
+    val request = web.takeRequest()
+    assertEquals("/api/transcripts/summarize", request.url.encodedPath)
+    assertEquals(
+      """{"book":"The Waste Lands","label":"Sessions together.","notes":["One.","Two."]}""",
+      request.body?.utf8(),
+    )
+  }
+
+  @Test
   fun `a refused key says so`() = runTest {
     web.enqueue(MockResponse(code = 401))
 

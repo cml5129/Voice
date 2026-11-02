@@ -426,6 +426,10 @@
     <string name="settings.transcripts.title">Transkripsjoner</string>
     <string name="summaries.action.summarize">Oppsummer</string>
     <string name="summaries.action.update">Oppdater</string>
+    <string name="summaries.combine.action">Kombiner økter</string>
+    <string name="summaries.combine.pick_first">Trykk på den første økten</string>
+    <string name="summaries.combine.pick_last">Trykk nå på den siste. Alt imellom blir med.</string>
+    <string name="summaries.combined.title">Økter samlet</string>
     <string name="summaries.failed">Det fungerte ikke: %1$s</string>
     <string name="summaries.model.claude_key">Anthropic API-nøkkel</string>
     <string name="summaries.model.explanation">Oppsummeringene skrives ut fra bokens transkripsjon og går aldri lenger enn dit du er. Serveren din skriver dem på forhånd med sin egen modell. Claude Haiku og Sonnet bruker din egen Anthropic API-nøkkel. Ollama kjører på din egen datamaskin.</string>

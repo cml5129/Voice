@@ -462,6 +462,10 @@
     <string name="settings.transcripts.title">Розшифровки</string>
     <string name="summaries.action.summarize">Переказати</string>
     <string name="summaries.action.update">Оновити</string>
+    <string name="summaries.combine.action">Об’єднати сеанси</string>
+    <string name="summaries.combine.pick_first">Торкніться першого сеансу</string>
+    <string name="summaries.combine.pick_last">Тепер торкніться останнього. Усе, що між ними, теж увійде.</string>
+    <string name="summaries.combined.title">Сеанси разом</string>
     <string name="summaries.failed">Не вдалося: %1$s</string>
     <string name="summaries.model.claude_key">API-ключ Anthropic</string>
     <string name="summaries.model.explanation">Перекази пишуться за розшифровкою книги й ніколи не виходять за місце, де ви зараз. Ваш сервер пише їх заздалегідь власною моделлю. Claude Haiku і Sonnet використовують ваш власний API-ключ Anthropic. Ollama працює на вашому комп’ютері.</string>

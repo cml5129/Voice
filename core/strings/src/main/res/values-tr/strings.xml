@@ -426,6 +426,10 @@
     <string name="settings.transcripts.title">Dökümler</string>
     <string name="summaries.action.summarize">Özetle</string>
     <string name="summaries.action.update">Güncelle</string>
+    <string name="summaries.combine.action">Oturumları birleştir</string>
+    <string name="summaries.combine.pick_first">İlk oturuma dokunun</string>
+    <string name="summaries.combine.pick_last">Şimdi sonuncusuna dokunun. Aradaki her şey dahil edilir.</string>
+    <string name="summaries.combined.title">Birleşik oturumlar</string>
     <string name="summaries.failed">Olmadı: %1$s</string>
     <string name="summaries.model.claude_key">Anthropic API anahtarı</string>
     <string name="summaries.model.explanation">Özetler kitabın dökümünden yazılır ve asla bulunduğunuz yerin ötesine geçmez. Sunucunuz bunları kendi modeliyle önceden yazar. Claude Haiku ve Sonnet kendi Anthropic API anahtarınızı kullanır. Ollama kendi bilgisayarınızda çalışır.</string>
