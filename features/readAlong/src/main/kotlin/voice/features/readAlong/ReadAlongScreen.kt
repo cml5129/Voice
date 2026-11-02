@@ -35,6 +35,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.retain.retain
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -188,9 +189,10 @@ private fun Lines(
   onCueClick: (TranscriptCue) -> Unit,
 ) {
   val listState = rememberLazyListState(initialFirstVisibleItemIndex = currentIndex.coerceAtLeast(0))
+  val currentOnFollowingChange by rememberUpdatedState(onFollowingChange)
   LaunchedEffect(listState) {
     listState.interactionSource.interactions.collect { interaction ->
-      if (interaction is DragInteraction.Start) onFollowingChange(false)
+      if (interaction is DragInteraction.Start) currentOnFollowingChange(false)
     }
   }
   LaunchedEffect(currentIndex, following) {
