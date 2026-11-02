@@ -332,6 +332,9 @@
     <string name="playback.speed.increase">तेज़ करें</string>
     <string name="playback.speed.title">प्लेबैक की गति</string>
     <string name="playback.volume_boost.off">बंद</string>
+    <string name="read_along.follow">अभी पर वापस जाएँ</string>
+    <string name="read_along.no_transcript">किताब के इस हिस्से की अभी कोई ट्रांसक्रिप्ट नहीं है। Voice ट्रांसक्रिप्ट आपके सर्वर से लेता है, जिसे आप सेटिंग में सेट कर सकते हैं।</string>
+    <string name="read_along.title">साथ में पढ़ें</string>
     <string name="review.prompt.action.feedback">फ़ीडबैक साझा करें</string>
     <string name="review.prompt.action.later">अभी नहीं</string>
     <string name="review.prompt.action.rate">Google Play पर रेटिंग दें</string>

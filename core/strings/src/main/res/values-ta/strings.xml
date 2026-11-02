@@ -332,6 +332,9 @@
     <string name="playback.speed.increase">வேகமாக</string>
     <string name="playback.speed.title">இயக்க வேகம்</string>
     <string name="playback.volume_boost.off">முடக்கு</string>
+    <string name="read_along.follow">இப்போதைய இடத்திற்குத் திரும்பு</string>
+    <string name="read_along.no_transcript">புத்தகத்தின் இந்தப் பகுதிக்கு இன்னும் எழுத்துப்படி இல்லை. Voice உங்கள் சர்வரிலிருந்து எழுத்துப்படிகளைப் பெறுகிறது, அதை அமைப்புகளில் அமைக்கலாம்.</string>
+    <string name="read_along.title">சேர்ந்து படி</string>
     <string name="review.prompt.action.feedback">கருத்தைப் பகிர்</string>
     <string name="review.prompt.action.later">இப்போது வேண்டாம்</string>
     <string name="review.prompt.action.rate">Google Play-இல் மதிப்பிடு</string>

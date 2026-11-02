@@ -332,6 +332,9 @@
     <string name="playback.speed.increase">سریع‌تر</string>
     <string name="playback.speed.title">سرعت پخش</string>
     <string name="playback.volume_boost.off">خاموش</string>
+    <string name="read_along.follow">بازگشت به اکنون</string>
+    <string name="read_along.no_transcript">این بخش از کتاب هنوز متن پیاده‌شده ندارد. Voice متن‌ها را از سرور شما می‌گیرد که می‌توانید آن را در تنظیمات راه‌اندازی کنید.</string>
+    <string name="read_along.title">همراه‌خوانی</string>
     <string name="review.prompt.action.feedback">اشتراک بازخورد</string>
     <string name="review.prompt.action.later">الان نه</string>
     <string name="review.prompt.action.rate">امتیاز دادن در Google Play</string>

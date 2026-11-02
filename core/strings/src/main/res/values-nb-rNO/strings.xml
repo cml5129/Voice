@@ -332,6 +332,9 @@
     <string name="playback.speed.increase">Raskere</string>
     <string name="playback.speed.title">Avspillingshastighet</string>
     <string name="playback.volume_boost.off">Av</string>
+    <string name="read_along.follow">Tilbake til nå</string>
+    <string name="read_along.no_transcript">Denne delen av boken har ingen transkripsjon ennå. Voice henter transkripsjoner fra serveren din, som du kan sette opp i Innstillinger.</string>
+    <string name="read_along.title">Les med</string>
     <string name="review.prompt.action.feedback">Gi tilbakemelding</string>
     <string name="review.prompt.action.later">Ikke nå</string>
     <string name="review.prompt.action.rate">Vurder på Google Play</string>

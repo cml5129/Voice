@@ -44,6 +44,7 @@ internal fun BookPlayView(
   onCloseClick: () -> Unit,
   onBookActionsClick: () -> Unit,
   onSummariesClick: () -> Unit,
+  onReadAlongClick: () -> Unit,
   onCurrentChapterClick: () -> Unit,
   onJumpBack: (id: Long) -> Unit,
   onJumpBackExpire: (id: Long) -> Unit,
@@ -72,6 +73,7 @@ internal fun BookPlayView(
             onCloseClick = onCloseClick,
             onChaptersClick = onCurrentChapterClick,
             onSummariesClick = onSummariesClick,
+            onReadAlongClick = onReadAlongClick,
             onBookActionsClick = onBookActionsClick,
           )
         }
@@ -99,6 +101,7 @@ internal fun BookPlayView(
           onCloseClick = onCloseClick,
           onBookActionsClick = onBookActionsClick,
           onSummariesClick = onSummariesClick,
+          onReadAlongClick = onReadAlongClick,
           onJumpBack = onJumpBack,
           onJumpBackExpire = onJumpBackExpire,
         )
@@ -133,6 +136,7 @@ private fun BookPlayPreview(
         onCloseClick = {},
         onBookActionsClick = {},
         onSummariesClick = {},
+        onReadAlongClick = {},
         onCurrentChapterClick = {},
         onJumpBack = {},
         onJumpBackExpire = {},

@@ -317,6 +317,10 @@ class BookPlayViewModel(
     navigator.goTo(Destination.Summaries(bookId))
   }
 
+  fun onReadAlongClick() {
+    navigator.goTo(Destination.ReadAlong(bookId))
+  }
+
   fun onCurrentChapterClick() {
     scope.launch {
       val book = currentBook() ?: return@launch

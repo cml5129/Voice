@@ -349,6 +349,9 @@
     <string name="playback.speed.increase">מהר יותר</string>
     <string name="playback.speed.title">מהירות השמעה</string>
     <string name="playback.volume_boost.off">כבוי</string>
+    <string name="read_along.follow">חזרה לעכשיו</string>
+    <string name="read_along.no_transcript">לחלק הזה של הספר עדיין אין תמלול. Voice מקבל תמלולים מהשרת שלך, שאפשר להגדיר בהגדרות.</string>
+    <string name="read_along.title">קריאה יחד</string>
     <string name="review.prompt.action.feedback">שיתוף משוב</string>
     <string name="review.prompt.action.later">לא עכשיו</string>
     <string name="review.prompt.action.rate">דירוג ב-Google Play</string>

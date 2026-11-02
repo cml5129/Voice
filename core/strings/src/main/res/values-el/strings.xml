@@ -332,6 +332,9 @@
     <string name="playback.speed.increase">Πιο γρήγορα</string>
     <string name="playback.speed.title">Ταχύτητα αναπαραγωγής</string>
     <string name="playback.volume_boost.off">Απενεργοποίηση</string>
+    <string name="read_along.follow">Πίσω στο τώρα</string>
+    <string name="read_along.no_transcript">Αυτό το μέρος του βιβλίου δεν έχει ακόμη απομαγνητοφώνηση. Το Voice παίρνει τις απομαγνητοφωνήσεις από τον διακομιστή σας, που ρυθμίζεται στις Ρυθμίσεις.</string>
+    <string name="read_along.title">Ανάγνωση μαζί</string>
     <string name="review.prompt.action.feedback">Κοινοποίηση σχολίων</string>
     <string name="review.prompt.action.later">Όχι τώρα</string>
     <string name="review.prompt.action.rate">Αξιολόγηση στο Google Play</string>

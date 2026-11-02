@@ -366,6 +366,9 @@
     <string name="playback.speed.increase">Rýchlejšie</string>
     <string name="playback.speed.title">Rýchlosť prehrávania</string>
     <string name="playback.volume_boost.off">Vypnuté</string>
+    <string name="read_along.follow">Späť na aktuálne miesto</string>
+    <string name="read_along.no_transcript">Táto časť knihy zatiaľ nemá prepis. Voice získava prepisy z vášho servera, ktorý môžete nastaviť v Nastaveniach.</string>
+    <string name="read_along.title">Čítať súčasne</string>
     <string name="review.prompt.action.feedback">Zdieľať spätnú väzbu</string>
     <string name="review.prompt.action.later">Teraz nie</string>
     <string name="review.prompt.action.rate">Ohodnotiť na Google Play</string>

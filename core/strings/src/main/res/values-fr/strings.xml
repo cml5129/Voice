@@ -349,6 +349,9 @@
     <string name="playback.speed.increase">Plus rapide</string>
     <string name="playback.speed.title">Vitesse de lecture</string>
     <string name="playback.volume_boost.off">Désactivé</string>
+    <string name="read_along.follow">Revenir au passage actuel</string>
+    <string name="read_along.no_transcript">Cette partie du livre n\'a pas encore de transcription. Voice récupère les transcriptions depuis votre serveur, à configurer dans les Paramètres.</string>
+    <string name="read_along.title">Lire en même temps</string>
     <string name="review.prompt.action.feedback">Donner mon avis</string>
     <string name="review.prompt.action.later">Pas maintenant</string>
     <string name="review.prompt.action.rate">Noter sur Google Play</string>

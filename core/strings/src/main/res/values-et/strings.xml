@@ -332,6 +332,9 @@
     <string name="playback.speed.increase">Kiiremini</string>
     <string name="playback.speed.title">Taasesituse kiirus</string>
     <string name="playback.volume_boost.off">Väljas</string>
+    <string name="read_along.follow">Tagasi praegusesse kohta</string>
+    <string name="read_along.no_transcript">Sellel raamatu osal pole veel transkriptsiooni. Voice saab transkriptsioonid sinu serverist, mille saad seadistada seadetes.</string>
+    <string name="read_along.title">Loe kaasa</string>
     <string name="review.prompt.action.feedback">Jaga tagasisidet</string>
     <string name="review.prompt.action.later">Mitte praegu</string>
     <string name="review.prompt.action.rate">Hinda Google Plays</string>

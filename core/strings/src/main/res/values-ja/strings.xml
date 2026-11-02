@@ -315,6 +315,9 @@
     <string name="playback.speed.increase">速く</string>
     <string name="playback.speed.title">再生速度</string>
     <string name="playback.volume_boost.off">オフ</string>
+    <string name="read_along.follow">現在の位置に戻る</string>
+    <string name="read_along.no_transcript">この部分にはまだ文字起こしがありません。Voice は文字起こしをあなたのサーバーから取得します。サーバーは設定で登録できます。</string>
+    <string name="read_along.title">一緒に読む</string>
     <string name="review.prompt.action.feedback">フィードバックを送る</string>
     <string name="review.prompt.action.later">今はしない</string>
     <string name="review.prompt.action.rate">Google Play で評価</string>

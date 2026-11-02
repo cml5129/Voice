@@ -400,6 +400,9 @@
     <string name="playback.speed.increase">أسرع</string>
     <string name="playback.speed.title">سرعة التشغيل</string>
     <string name="playback.volume_boost.off">إيقاف</string>
+    <string name="read_along.follow">العودة إلى الآن</string>
+    <string name="read_along.no_transcript">لا يوجد نص مكتوب لهذا الجزء من الكتاب بعد. يحصل Voice على النصوص من خادمك، ويمكنك إعداده في الإعدادات.</string>
+    <string name="read_along.title">القراءة مع الصوت</string>
     <string name="review.prompt.action.feedback">مشاركة ملاحظات</string>
     <string name="review.prompt.action.later">ليس الآن</string>
     <string name="review.prompt.action.rate">التقييم على Google Play</string>

@@ -332,6 +332,9 @@
     <string name="playback.speed.increase">Prus lestru</string>
     <string name="playback.speed.title">Lestresa de riprodutzione</string>
     <string name="playback.volume_boost.off">Disativadu</string>
+    <string name="read_along.follow">Torra a como</string>
+    <string name="read_along.no_transcript">Custa parte de su libru no tenet ancora una trascritzione. Voice pigat sas trascritziones dae su serbidore tuo, chi podes cunfigurare in sas Impostatziones.</string>
+    <string name="read_along.title">Leghe in paris</string>
     <string name="review.prompt.action.feedback">Cumpartzi unu parre</string>
     <string name="review.prompt.action.later">Como nono</string>
     <string name="review.prompt.action.rate">Vota in Google Play</string>
