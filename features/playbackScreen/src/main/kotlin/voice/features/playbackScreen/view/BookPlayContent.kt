@@ -74,6 +74,7 @@ internal fun BookPlayContent(
   onCloseClick: () -> Unit,
   onBookActionsClick: () -> Unit,
   onSummariesClick: () -> Unit,
+  onReadAlongClick: () -> Unit,
   onJumpBack: (id: Long) -> Unit,
   onJumpBackExpire: (id: Long) -> Unit,
 ) {
@@ -199,6 +200,7 @@ internal fun BookPlayContent(
           CloseButton(onClick = onCloseClick)
           Spacer(Modifier.weight(1F))
           if (viewState.showSummaries) {
+            ReadAlongButton(onClick = onReadAlongClick)
             SummariesButton(onClick = onSummariesClick)
           }
           // the chapter switcher is the first to go when the window gets short

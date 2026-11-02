@@ -33,6 +33,7 @@ internal fun PlaybackTopBar(
   onCloseClick: () -> Unit,
   onChaptersClick: () -> Unit,
   onSummariesClick: () -> Unit,
+  onReadAlongClick: () -> Unit,
   onBookActionsClick: () -> Unit,
   modifier: Modifier = Modifier,
 ) {
@@ -46,6 +47,7 @@ internal fun PlaybackTopBar(
     CloseButton(onClick = onCloseClick)
     Spacer(Modifier.weight(1F))
     if (showSummaries) {
+      ReadAlongButton(onClick = onReadAlongClick)
       SummariesButton(onClick = onSummariesClick)
     }
     if (showChapters) {
@@ -76,6 +78,19 @@ internal fun SummariesButton(
   TopBarButton(
     icon = VoiceIcons.AutoAwesome,
     contentDescription = stringResource(R.string.summaries_title),
+    onClick = onClick,
+    modifier = modifier,
+  )
+}
+
+@Composable
+internal fun ReadAlongButton(
+  onClick: () -> Unit,
+  modifier: Modifier = Modifier,
+) {
+  TopBarButton(
+    icon = VoiceIcons.FormatQuote,
+    contentDescription = stringResource(R.string.read_along_title),
     onClick = onClick,
     modifier = modifier,
   )

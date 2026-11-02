@@ -568,6 +568,12 @@
     <string name="playback.speed.title">Playback speed</string>
     <!-- Button that turns volume boost off. -->
     <string name="playback.volume_boost.off">Off</string>
+    <!-- Button on the read-along screen, shown after the listener scrolled away, that scrolls back to the line being read and follows it again. -->
+    <string name="read_along.follow">Back to now</string>
+    <!-- Shown on the read-along screen when the audio file playing now has no transcript. Transcripts come from the listener's own server, set up in Settings. -->
+    <string name="read_along.no_transcript">This part of the book has no transcript yet. Voice gets transcripts from your server, which you can set up in Settings.</string>
+    <!-- Title of the screen that shows the book's transcript in time with the audio, highlighting the line being read, and of the player button that opens it. -->
+    <string name="read_along.title">Read along</string>
     <!-- Button in the rating prompt that opens the ways to share feedback. -->
     <string name="review.prompt.action.feedback" tools:ignore="UnusedResources">Share feedback</string>
     <!-- Button that closes the rating prompt without rating. -->

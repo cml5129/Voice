@@ -169,6 +169,7 @@ dependencies {
   implementation(projects.core.transcript)
   implementation(projects.features.audiobookshelf)
   implementation(projects.features.summaries)
+  implementation(projects.features.readAlong)
 
   implementation(libs.appCompat)
   implementation(libs.lifecycle.compose)
