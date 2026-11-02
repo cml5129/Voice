@@ -35,6 +35,8 @@ import voice.app.navigation.StartDestinationProvider
 import voice.core.analytics.api.Analytics
 import voice.core.common.rootGraphAs
 import voice.core.logging.api.Logger
+import voice.core.sleeptimer.MorningCheck
+import voice.core.sleeptimer.SleepTimerPreferenceStore
 import voice.core.ui.CoverColorsStore
 import voice.core.ui.CoverSeedColors
 import voice.core.ui.LocalCoverSeedColors
@@ -86,6 +88,12 @@ class MainActivity : AppCompatActivity() {
 
   @Inject
   private lateinit var coverSeedColors: CoverSeedColors
+
+  @Inject
+  private lateinit var sleepTimerPreferenceStore: SleepTimerPreferenceStore
+
+  @Inject
+  private lateinit var morningCheck: MorningCheck
 
   private val splashScreenHolds = SplashScreenHolds()
   private var contentComposed = false
@@ -225,6 +233,8 @@ class MainActivity : AppCompatActivity() {
 
         ReviewFeature(canShow = backStack.lastOrNull() is Destination.BookOverview)
         SleepTimerRewindPrompt()
+        MorningCheckNotificationPrompt(sleepTimerPreferenceStore)
+        MorningCheckPrompt(morningCheck)
       }
     }
 
