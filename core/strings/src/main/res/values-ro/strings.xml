@@ -443,7 +443,7 @@
     <string name="summaries.action.update">Actualizează</string>
     <string name="summaries.failed">N-a mers: %1$s</string>
     <string name="summaries.model.claude_key">Cheia API Anthropic</string>
-    <string name="summaries.model.explanation">Rezumatele sunt scrise din transcrierea cărții și nu trec niciodată de locul în care ești. Claude Haiku și Sonnet folosesc propria ta cheie API Anthropic. Ollama rulează pe propriul tău computer.</string>
+    <string name="summaries.model.explanation">Rezumatele sunt scrise din transcrierea cărții și nu trec niciodată de locul în care ești. Serverul tău le scrie dinainte cu propriul model. Claude Haiku și Sonnet folosesc propria ta cheie API Anthropic. Ollama rulează pe propriul tău computer.</string>
     <string name="summaries.model.ollama_model">Modelul Ollama</string>
     <string name="summaries.model.ollama_url">Adresa Ollama</string>
     <string name="summaries.model.title">Modelul pentru rezumate</string>

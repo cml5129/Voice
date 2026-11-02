@@ -754,7 +754,7 @@
     <!-- Text field label for the listener's own Anthropic API key, used by the Claude models that write summaries. -->
     <string name="summaries.model.claude_key">Anthropic API key</string>
     <!-- Explanation at the top of the dialog where the listener picks the AI model that writes summaries. Claude Haiku, Claude Sonnet and Ollama are product names. -->
-    <string name="summaries.model.explanation">Summaries are written from the book\'s transcript and never go past where you are. Claude Haiku and Sonnet use your own Anthropic API key. Ollama runs on your own computer.</string>
+    <string name="summaries.model.explanation">Summaries are written from the book\'s transcript and never go past where you are. Your server writes them ahead of time with its own model. Claude Haiku and Sonnet use your own Anthropic API key. Ollama runs on your own computer.</string>
     <!-- Text field label for the name of the Ollama model that writes summaries, for example qwen3:14b. -->
     <string name="summaries.model.ollama_model">Ollama model</string>
     <!-- Text field label for the network address of the listener's Ollama server, for example http://192.168.1.20:11434. -->

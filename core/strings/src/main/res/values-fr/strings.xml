@@ -443,7 +443,7 @@
     <string name="summaries.action.update">Mettre à jour</string>
     <string name="summaries.failed">Échec : %1$s</string>
     <string name="summaries.model.claude_key">Clé API Anthropic</string>
-    <string name="summaries.model.explanation">Les résumés sont écrits à partir de la transcription du livre et ne vont jamais au-delà de l\'endroit où vous en êtes. Claude Haiku et Sonnet utilisent votre propre clé API Anthropic. Ollama fonctionne sur votre propre ordinateur.</string>
+    <string name="summaries.model.explanation">Les résumés sont écrits à partir de la transcription du livre et ne vont jamais au-delà de l\'endroit où vous en êtes. Votre serveur les écrit à l\'avance avec son propre modèle. Claude Haiku et Sonnet utilisent votre propre clé API Anthropic. Ollama fonctionne sur votre propre ordinateur.</string>
     <string name="summaries.model.ollama_model">Modèle Ollama</string>
     <string name="summaries.model.ollama_url">Adresse d\'Ollama</string>
     <string name="summaries.model.title">Modèle des résumés</string>

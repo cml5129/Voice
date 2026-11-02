@@ -8,6 +8,7 @@ dependencies {
   implementation(projects.core.data.api)
   implementation(projects.core.datastore)
   implementation(projects.core.logging.api)
+  implementation(projects.core.server)
   implementation(projects.core.transcript)
 
   implementation(libs.anthropic)

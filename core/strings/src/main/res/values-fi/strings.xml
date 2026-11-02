@@ -425,7 +425,7 @@
     <string name="summaries.action.update">Päivitä</string>
     <string name="summaries.failed">Ei onnistunut: %1$s</string>
     <string name="summaries.model.claude_key">Anthropic-API-avain</string>
-    <string name="summaries.model.explanation">Tiivistelmät kirjoitetaan kirjan litteroinnista, eivätkä ne koskaan mene pidemmälle kuin olet kuunnellut. Claude Haiku ja Sonnet käyttävät omaa Anthropic-API-avaintasi. Ollama toimii omalla tietokoneellasi.</string>
+    <string name="summaries.model.explanation">Tiivistelmät kirjoitetaan kirjan litteroinnista, eivätkä ne koskaan mene pidemmälle kuin olet kuunnellut. Palvelimesi kirjoittaa ne etukäteen omalla mallillaan. Claude Haiku ja Sonnet käyttävät omaa Anthropic-API-avaintasi. Ollama toimii omalla tietokoneellasi.</string>
     <string name="summaries.model.ollama_model">Ollama-malli</string>
     <string name="summaries.model.ollama_url">Ollaman osoite</string>
     <string name="summaries.model.title">Tiivistelmien malli</string>

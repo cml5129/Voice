@@ -425,7 +425,7 @@
     <string name="summaries.action.update">به‌روزرسانی</string>
     <string name="summaries.failed">نشد: %1$s</string>
     <string name="summaries.model.claude_key">کلید API آنتروپیک</string>
-    <string name="summaries.model.explanation">خلاصه‌ها از متن پیاده‌شدهٔ کتاب نوشته می‌شوند و هیچ‌وقت از جایی که هستید جلوتر نمی‌روند. Claude Haiku و Sonnet از کلید API آنتروپیک خودتان استفاده می‌کنند. Ollama روی رایانهٔ خودتان اجرا می‌شود.</string>
+    <string name="summaries.model.explanation">خلاصه‌ها از متن پیاده‌شدهٔ کتاب نوشته می‌شوند و هیچ‌وقت از جایی که هستید جلوتر نمی‌روند. سرور شما آن‌ها را از قبل با مدل خودش می‌نویسد. Claude Haiku و Sonnet از کلید API آنتروپیک خودتان استفاده می‌کنند. Ollama روی رایانهٔ خودتان اجرا می‌شود.</string>
     <string name="summaries.model.ollama_model">مدل Ollama</string>
     <string name="summaries.model.ollama_url">نشانی Ollama</string>
     <string name="summaries.model.title">مدل خلاصه‌ها</string>

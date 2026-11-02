@@ -425,7 +425,7 @@
     <string name="summaries.action.update">Opdatér</string>
     <string name="summaries.failed">Det virkede ikke: %1$s</string>
     <string name="summaries.model.claude_key">Anthropic API-nøgle</string>
-    <string name="summaries.model.explanation">Opsummeringerne skrives ud fra bogens udskrift og går aldrig længere end dertil, hvor du er. Claude Haiku og Sonnet bruger din egen Anthropic API-nøgle. Ollama kører på din egen computer.</string>
+    <string name="summaries.model.explanation">Opsummeringerne skrives ud fra bogens udskrift og går aldrig længere end dertil, hvor du er. Din server skriver dem på forhånd med sin egen model. Claude Haiku og Sonnet bruger din egen Anthropic API-nøgle. Ollama kører på din egen computer.</string>
     <string name="summaries.model.ollama_model">Ollama-model</string>
     <string name="summaries.model.ollama_url">Ollama-adresse</string>
     <string name="summaries.model.title">Model til opsummeringer</string>

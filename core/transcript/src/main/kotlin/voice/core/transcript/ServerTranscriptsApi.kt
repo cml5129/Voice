@@ -10,8 +10,10 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.coroutines.executeAsync
 import voice.core.server.VoiceServer
 import java.io.File
@@ -29,6 +31,18 @@ public data class ServerTranscript(
   val lrc: String? = null,
   val bytes: Long = 0,
   val updatedAt: String? = null,
+  /** The book's chapter and half-hour summaries, once the server wrote some. */
+  val summaries: String? = null,
+  val summariesUpdatedAt: String? = null,
+)
+
+/** A stretch of one audio file, for [ServerTranscriptsApi.summarize]. */
+@Serializable
+public data class ServerSummaryPart(
+  /** The audio file's name, like a transcript is matched by. */
+  val file: String,
+  val startMs: Long,
+  val endMs: Long,
 )
 
 public sealed interface ServerResult<out T> {
@@ -48,6 +62,20 @@ public interface ServerTranscriptsApi {
     file: String,
     to: File,
   ): ServerResult<Unit>
+
+  /** Asks the server to transcribe the audio file [name] (without its extension). */
+  public suspend fun request(
+    server: VoiceServer,
+    name: String,
+  ): ServerResult<Unit>
+
+  /** Has the server summarize [parts] of its transcripts. [label] says what the parts are, like a chapter's name. */
+  public suspend fun summarize(
+    server: VoiceServer,
+    book: String,
+    label: String,
+    parts: List<ServerSummaryPart>,
+  ): ServerResult<String>
 }
 
 @SingleIn(AppScope::class)
@@ -60,7 +88,16 @@ public class OkHttpServerTranscriptsApi : ServerTranscriptsApi {
     .readTimeout(60, TimeUnit.SECONDS)
     .build()
 
-  private val json = Json { ignoreUnknownKeys = true }
+  private val json = Json {
+    ignoreUnknownKeys = true
+    // the server needs every field
+    encodeDefaults = true
+  }
+
+  // the server writes a summary with its local model, which takes a while
+  private val slowClient = client.newBuilder()
+    .readTimeout(2, TimeUnit.MINUTES)
+    .build()
 
   override suspend fun list(server: VoiceServer): ServerResult<List<ServerTranscript>> {
     return get(server, emptyList()) { body ->
@@ -82,6 +119,65 @@ public class OkHttpServerTranscriptsApi : ServerTranscriptsApi {
         throw IOException("Could not save $to")
       }
     }
+  }
+
+  override suspend fun request(
+    server: VoiceServer,
+    name: String,
+  ): ServerResult<Unit> {
+    val body = json.encodeToString(TranscriptRequest.serializer(), TranscriptRequest(name))
+    return post(server, "requests", body, client) { }
+  }
+
+  override suspend fun summarize(
+    server: VoiceServer,
+    book: String,
+    label: String,
+    parts: List<ServerSummaryPart>,
+  ): ServerResult<String> {
+    val body = json.encodeToString(SummaryRequest.serializer(), SummaryRequest(book, label, parts))
+    return post(server, "summarize", body, slowClient) { text ->
+      json.decodeFromString(SummaryResponse.serializer(), text).summary
+    }
+  }
+
+  private suspend fun <T> post(
+    server: VoiceServer,
+    path: String,
+    body: String,
+    client: OkHttpClient,
+    read: (String) -> T,
+  ): ServerResult<T> {
+    val url = "${server.url}/api/transcripts".toHttpUrlOrNull()
+      ?.newBuilder()
+      ?.addPathSegment(path)
+      ?.build()
+      ?: return ServerResult.Failure("Not a server address: ${server.url}")
+    val request = Request.Builder()
+      .url(url)
+      .header("X-API-Key", server.key)
+      .post(body.toRequestBody("application/json".toMediaType()))
+      .build()
+    return try {
+      client.newCall(request).executeAsync().use { response ->
+        val text = withContext(Dispatchers.IO) { response.body.string() }
+        when {
+          response.isSuccessful -> ServerResult.Success(read(text))
+          response.code == 401 -> ServerResult.Failure("The server didn't accept the key")
+          else -> ServerResult.Failure(errorMessage(text) ?: "The server answered ${response.code}")
+        }
+      }
+    } catch (e: IOException) {
+      ServerResult.Failure(e.message ?: e.javaClass.simpleName)
+    } catch (e: IllegalArgumentException) {
+      ServerResult.Failure("The server sent an answer the app doesn't understand")
+    }
+  }
+
+  private fun errorMessage(body: String): String? = try {
+    json.decodeFromString(ErrorResponse.serializer(), body).error
+  } catch (e: IllegalArgumentException) {
+    null
   }
 
   private suspend fun <T> get(
@@ -111,3 +207,19 @@ public class OkHttpServerTranscriptsApi : ServerTranscriptsApi {
     }
   }
 }
+
+@Serializable
+private data class TranscriptRequest(val name: String)
+
+@Serializable
+private data class SummaryRequest(
+  val book: String,
+  val label: String,
+  val parts: List<ServerSummaryPart>,
+)
+
+@Serializable
+private data class SummaryResponse(val summary: String)
+
+@Serializable
+private data class ErrorResponse(val error: String? = null)

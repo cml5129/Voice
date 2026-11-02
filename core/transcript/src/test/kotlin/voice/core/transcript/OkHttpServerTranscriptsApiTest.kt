@@ -9,6 +9,7 @@ import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 class OkHttpServerTranscriptsApiTest {
 
@@ -49,6 +50,36 @@ class OkHttpServerTranscriptsApiTest {
     assertEquals(ServerResult.Success(Unit), result)
     assertEquals("[]", to.readText())
     assertEquals(listOf("api", "transcripts", "The Waste Lands [B002V0QK4C].json"), web.takeRequest().url.pathSegments)
+  }
+
+  @Test
+  fun `asks for a book with the key`() = runTest {
+    web.enqueue(MockResponse(code = 202, body = """{"status":"requested"}"""))
+
+    assertEquals(ServerResult.Success(Unit), api.request(server(), "Christine [B00AAA]"))
+
+    val request = web.takeRequest()
+    assertEquals("/api/transcripts/requests", request.url.encodedPath)
+    assertEquals("POST", request.method)
+    assertEquals("key", request.headers["X-API-Key"])
+    assertEquals("""{"name":"Christine [B00AAA]"}""", request.body?.utf8())
+  }
+
+  @Test
+  fun `a server summary comes back as text, a failure with the server's reason`() = runTest {
+    web.enqueue(MockResponse(body = """{"summary":"Roland walks.","model":"qwen3:14b"}"""))
+    web.enqueue(MockResponse(code = 502, body = """{"error":"The summary model didn't answer"}"""))
+    val parts = listOf(ServerSummaryPart(file = "The Waste Lands [B002V0QK4C]", startMs = 0, endMs = 60_000))
+
+    assertEquals(ServerResult.Success("Roland walks."), api.summarize(server(), "The Waste Lands", "One session.", parts))
+    assertEquals(
+      ServerResult.Failure("The summary model didn't answer"),
+      api.summarize(server(), "The Waste Lands", "One session.", parts),
+    )
+
+    val body = web.takeRequest().body?.utf8().orEmpty()
+    assertTrue("\"startMs\":0" in body, body)
+    assertTrue("\"label\":\"One session.\"" in body, body)
   }
 
   @Test

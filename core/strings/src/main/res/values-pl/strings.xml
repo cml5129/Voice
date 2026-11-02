@@ -461,7 +461,7 @@
     <string name="summaries.action.update">Odśwież</string>
     <string name="summaries.failed">Nie udało się: %1$s</string>
     <string name="summaries.model.claude_key">Klucz API Anthropic</string>
-    <string name="summaries.model.explanation">Podsumowania powstają z transkrypcji książki i nigdy nie wychodzą poza miejsce, w którym jesteś. Claude Haiku i Sonnet używają twojego własnego klucza API Anthropic. Ollama działa na twoim własnym komputerze.</string>
+    <string name="summaries.model.explanation">Podsumowania powstają z transkrypcji książki i nigdy nie wychodzą poza miejsce, w którym jesteś. Twój serwer pisze je z wyprzedzeniem własnym modelem. Claude Haiku i Sonnet używają twojego własnego klucza API Anthropic. Ollama działa na twoim własnym komputerze.</string>
     <string name="summaries.model.ollama_model">Model Ollama</string>
     <string name="summaries.model.ollama_url">Adres Ollama</string>
     <string name="summaries.model.title">Model do podsumowań</string>

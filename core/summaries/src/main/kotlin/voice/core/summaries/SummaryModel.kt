@@ -71,6 +71,7 @@ public class DefaultSummaryModels : SummaryModels {
   override suspend fun model(settings: SummarySettings): SummaryModel {
     if (!settings.configured) throw SummaryException("Pick a model for summaries first")
     return when (settings.provider) {
+      SummaryProvider.Server -> throw SummaryException("The server writes its summaries itself")
       SummaryProvider.Haiku, SummaryProvider.Sonnet -> ClaudeSummaryModel(claudeClient(settings.claudeKey.trim()), settings.modelName)
       SummaryProvider.Ollama -> OllamaSummaryModel(http, settings.ollamaUrl.trim().trimEnd('/'), settings.modelName)
     }

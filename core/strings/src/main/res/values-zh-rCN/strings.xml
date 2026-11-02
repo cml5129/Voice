@@ -407,7 +407,7 @@
     <string name="summaries.action.update">更新</string>
     <string name="summaries.failed">没有成功：%1$s</string>
     <string name="summaries.model.claude_key">Anthropic API 密钥</string>
-    <string name="summaries.model.explanation">摘要根据本书的文字稿写成，绝不会超出您听到的位置。Claude Haiku 和 Sonnet 使用您自己的 Anthropic API 密钥。Ollama 在您自己的电脑上运行。</string>
+    <string name="summaries.model.explanation">摘要根据本书的文字稿写成，绝不会超出您听到的位置。您的服务器会用它自己的模型提前写好。Claude Haiku 和 Sonnet 使用您自己的 Anthropic API 密钥。Ollama 在您自己的电脑上运行。</string>
     <string name="summaries.model.ollama_model">Ollama 模型</string>
     <string name="summaries.model.ollama_url">Ollama 地址</string>
     <string name="summaries.model.title">摘要模型</string>

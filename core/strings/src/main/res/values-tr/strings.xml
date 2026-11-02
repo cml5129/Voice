@@ -425,7 +425,7 @@
     <string name="summaries.action.update">Güncelle</string>
     <string name="summaries.failed">Olmadı: %1$s</string>
     <string name="summaries.model.claude_key">Anthropic API anahtarı</string>
-    <string name="summaries.model.explanation">Özetler kitabın dökümünden yazılır ve asla bulunduğunuz yerin ötesine geçmez. Claude Haiku ve Sonnet kendi Anthropic API anahtarınızı kullanır. Ollama kendi bilgisayarınızda çalışır.</string>
+    <string name="summaries.model.explanation">Özetler kitabın dökümünden yazılır ve asla bulunduğunuz yerin ötesine geçmez. Sunucunuz bunları kendi modeliyle önceden yazar. Claude Haiku ve Sonnet kendi Anthropic API anahtarınızı kullanır. Ollama kendi bilgisayarınızda çalışır.</string>
     <string name="summaries.model.ollama_model">Ollama modeli</string>
     <string name="summaries.model.ollama_url">Ollama adresi</string>
     <string name="summaries.model.title">Özet modeli</string>

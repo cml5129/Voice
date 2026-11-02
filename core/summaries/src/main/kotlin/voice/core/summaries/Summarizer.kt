@@ -7,7 +7,12 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import voice.core.data.Book
+import voice.core.server.VoiceServerConfig
+import voice.core.transcript.ServerResult
+import voice.core.transcript.ServerSummaryPart
+import voice.core.transcript.ServerTranscriptsApi
 import voice.core.transcript.TranscriptRepository
+import voice.core.transcript.audioFileName
 import voice.core.transcript.textBetween
 import java.time.Clock
 import java.util.Locale
@@ -26,6 +31,8 @@ public class Summarizer(
   private val transcripts: TranscriptRepository,
   private val store: SummaryStore,
   private val clock: Clock,
+  private val serverConfig: VoiceServerConfig,
+  private val api: ServerTranscriptsApi,
 ) {
 
   // one at a time, a local model can't do more anyway
@@ -42,12 +49,16 @@ public class Summarizer(
     part: SummaryPart,
   ): SavedSummary = lock.withLock {
     val settings = settings.data.first()
-    val model = models.model(settings)
     val until = min(part.endMs, book.position)
     if (until <= part.startMs) throw SummaryException("You haven't listened to this part yet")
-    val text = book.text(part.startMs, until) ?: throw SummaryException("There's no transcript for this part yet")
+    val text = if (settings.provider == SummaryProvider.Server) {
+      askServer(book, part, until)
+    } else {
+      val transcript = book.text(part.startMs, until) ?: throw SummaryException("There's no transcript for this part yet")
+      write(models.model(settings), book, part, until, transcript)
+    }
     val summary = SavedSummary(
-      text = write(model, book, part, until, text),
+      text = text,
       coveredUntilMs = until,
       model = settings.modelName,
       writtenAtMillis = clock.millis(),
@@ -78,6 +89,29 @@ public class Summarizer(
     }
     val joined = notes.mapIndexed { index, note -> "Stretch ${index + 1}:\n$note" }.joinToString("\n\n")
     return model.complete(combineSystem(words), "$about\n\n$joined")
+  }
+
+  /** Has the listener's server write the summary from its own copy of the transcript, with its local model. */
+  private suspend fun askServer(
+    book: Book,
+    part: SummaryPart,
+    until: Long,
+  ): String {
+    val server = serverConfig.current() ?: throw SummaryException("Set up your server in Settings first")
+    val starts = book.fileStarts()
+    val parts = book.chapters.mapNotNull { chapter ->
+      val fileStart = starts.getValue(chapter.id)
+      val from = max(part.startMs - fileStart, 0)
+      val to = min(until - fileStart, chapter.duration)
+      if (from >= to) return@mapNotNull null
+      val file = audioFileName(chapter.id) ?: return@mapNotNull null
+      ServerSummaryPart(file = file, startMs = from, endMs = to)
+    }
+    if (parts.isEmpty()) throw SummaryException("There's no transcript for this part yet")
+    return when (val result = api.summarize(server, book.title(), part.describe(until), parts)) {
+      is ServerResult.Success -> result.value
+      is ServerResult.Failure -> throw SummaryException(result.reason)
+    }
   }
 
   /** The transcript between two positions in the whole book, or null where there is none. */
@@ -112,10 +146,12 @@ internal fun combineSystem(words: Int): String = "You get notes on consecutive s
   "heard this part and wants to remember it. Use only the notes. Never mention or hint at anything from later in " +
   "the book, even if you know it. No headings, no lists."
 
-private fun Book.about(): String {
+private fun Book.title(): String {
   val author = content.metadata.author?.takeIf { it.isNotBlank() }
-  return if (author == null) "Book: ${content.name}" else "Book: ${content.name} by $author"
+  return if (author == null) content.name else "${content.name} by $author"
 }
+
+private fun Book.about(): String = "Book: ${title()}"
 
 private fun SummaryPart.describe(until: Long): String {
   val stretch = "${formatPosition(startMs)} to ${formatPosition(until)} of the book"

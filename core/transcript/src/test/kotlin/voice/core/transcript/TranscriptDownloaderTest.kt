@@ -95,6 +95,47 @@ class TranscriptDownloaderTest {
     assertNull(store.data.first().lastError)
   }
 
+  @Test
+  fun `the summaries of a transcribed file are downloaded too`() = runTest {
+    api.listing = listOf(
+      transcript("The Waste Lands [B002V0QK4C]").copy(
+        summaries = "The Waste Lands [B002V0QK4C].summaries.json",
+        summariesUpdatedAt = "x",
+      ),
+    )
+
+    assertTrue(downloader.download())
+    assertTrue(downloader.download())
+
+    assertEquals(listOf("The Waste Lands [B002V0QK4C].json", "The Waste Lands [B002V0QK4C].summaries.json"), api.downloads)
+    assertTrue(files.summariesFile(wasteLands).isFile)
+  }
+
+  @Test
+  fun `a whole-book file without a transcript is asked for once`() = runTest {
+    val single = TranscriptDownloader(
+      store = TranscriptDownloadStore(store),
+      serverConfig = VoiceServerConfig(VoiceServerStore(serverStore)),
+      bookRepository = MemoryBookRepository(book(listOf(chapter(untranscribed)))),
+      api = api,
+      files = files,
+      repository = repository,
+      clock = Clock.fixed(Instant.parse("2026-10-30T12:00:00Z"), ZoneOffset.UTC),
+    )
+
+    assertTrue(single.download())
+    assertTrue(single.download())
+
+    assertEquals(listOf("Christine [B00AAA]"), api.requests)
+  }
+
+  @Test
+  fun `files of a book in many files are not asked for`() = runTest {
+    assertTrue(downloader.download())
+
+    assertEquals(emptyList(), api.requests)
+  }
+
   private fun transcript(
     name: String,
     updatedAt: String = "2026-10-29T09:00:00.000Z",
@@ -113,6 +154,8 @@ class TranscriptDownloaderTest {
       return ServerResult.Success(listing)
     }
 
+    val requests = mutableListOf<String>()
+
     override suspend fun download(
       server: VoiceServer,
       file: String,
@@ -124,6 +167,21 @@ class TranscriptDownloaderTest {
       to.writeText("""[{"timestamp_start":0,"timestamp_end":1000,"text":"$text"}]""")
       return ServerResult.Success(Unit)
     }
+
+    override suspend fun request(
+      server: VoiceServer,
+      name: String,
+    ): ServerResult<Unit> {
+      requests += name
+      return ServerResult.Success(Unit)
+    }
+
+    override suspend fun summarize(
+      server: VoiceServer,
+      book: String,
+      label: String,
+      parts: List<ServerSummaryPart>,
+    ): ServerResult<String> = ServerResult.Success("A summary.")
   }
 }
 

@@ -443,7 +443,7 @@
     <string name="summaries.action.update">עדכון</string>
     <string name="summaries.failed">זה לא הצליח: %1$s</string>
     <string name="summaries.model.claude_key">מפתח API של Anthropic</string>
-    <string name="summaries.model.explanation">הסיכומים נכתבים מתוך התמלול של הספר ולעולם לא עוברים את המקום שאליו הגעתם. Claude Haiku ו־Sonnet משתמשים במפתח ה־API של Anthropic שלכם. Ollama פועל על המחשב שלכם.</string>
+    <string name="summaries.model.explanation">הסיכומים נכתבים מתוך התמלול של הספר ולעולם לא עוברים את המקום שאליו הגעתם. השרת שלכם כותב אותם מראש עם המודל שלו. Claude Haiku ו־Sonnet משתמשים במפתח ה־API של Anthropic שלכם. Ollama פועל על המחשב שלכם.</string>
     <string name="summaries.model.ollama_model">מודל Ollama</string>
     <string name="summaries.model.ollama_url">כתובת Ollama</string>
     <string name="summaries.model.title">מודל לסיכומים</string>

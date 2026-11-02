@@ -425,7 +425,7 @@
     <string name="summaries.action.update">Uuenda</string>
     <string name="summaries.failed">Ei õnnestunud: %1$s</string>
     <string name="summaries.model.claude_key">Anthropicu API-võti</string>
-    <string name="summaries.model.explanation">Kokkuvõtted kirjutatakse raamatu transkriptsiooni põhjal ega lähe kunagi kaugemale kohast, kus sa oled. Claude Haiku ja Sonnet kasutavad sinu enda Anthropicu API-võtit. Ollama töötab sinu enda arvutis.</string>
+    <string name="summaries.model.explanation">Kokkuvõtted kirjutatakse raamatu transkriptsiooni põhjal ega lähe kunagi kaugemale kohast, kus sa oled. Sinu server kirjutab need ette valmis oma mudeliga. Claude Haiku ja Sonnet kasutavad sinu enda Anthropicu API-võtit. Ollama töötab sinu enda arvutis.</string>
     <string name="summaries.model.ollama_model">Ollama mudel</string>
     <string name="summaries.model.ollama_url">Ollama aadress</string>
     <string name="summaries.model.title">Kokkuvõtete mudel</string>
