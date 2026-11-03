@@ -182,6 +182,13 @@ class TranscriptDownloaderTest {
       label: String,
       parts: List<ServerSummaryPart>,
     ): ServerResult<String> = ServerResult.Success("A summary.")
+
+    override suspend fun combine(
+      server: VoiceServer,
+      book: String,
+      label: String,
+      notes: List<String>,
+    ): ServerResult<String> = ServerResult.Success("")
   }
 }
 

@@ -498,6 +498,10 @@
     <string name="settings.transcripts.title">النصوص المفرغة</string>
     <string name="summaries.action.summarize">تلخيص</string>
     <string name="summaries.action.update">تحديث</string>
+    <string name="summaries.combine.action">دمج الجلسات</string>
+    <string name="summaries.combine.pick_first">اضغط على الجلسة الأولى</string>
+    <string name="summaries.combine.pick_last">اضغط الآن على الجلسة الأخيرة. كل ما بينهما مشمول.</string>
+    <string name="summaries.combined.title">جلسات معًا</string>
     <string name="summaries.failed">لم ينجح ذلك: %1$s</string>
     <string name="summaries.model.claude_key">مفتاح API من Anthropic</string>
     <string name="summaries.model.explanation">تُكتب الملخصات من النص المفرغ للكتاب ولا تتجاوز أبدًا الموضع الذي وصلت إليه. ويكتبها خادمك مسبقًا بنموذجه الخاص. يستخدم Claude Haiku وSonnet مفتاح API الخاص بك من Anthropic. ويعمل Ollama على حاسوبك الخاص.</string>

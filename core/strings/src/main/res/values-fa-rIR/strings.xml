@@ -426,6 +426,10 @@
     <string name="settings.transcripts.title">متن‌های پیاده‌شده</string>
     <string name="summaries.action.summarize">خلاصه کن</string>
     <string name="summaries.action.update">به‌روزرسانی</string>
+    <string name="summaries.combine.action">ترکیب جلسه‌ها</string>
+    <string name="summaries.combine.pick_first">روی جلسهٔ اول بزنید</string>
+    <string name="summaries.combine.pick_last">حالا روی جلسهٔ آخر بزنید. همهٔ جلسه‌های بین آن‌ها هم شامل می‌شوند.</string>
+    <string name="summaries.combined.title">جلسه‌ها با هم</string>
     <string name="summaries.failed">نشد: %1$s</string>
     <string name="summaries.model.claude_key">کلید API آنتروپیک</string>
     <string name="summaries.model.explanation">خلاصه‌ها از متن پیاده‌شدهٔ کتاب نوشته می‌شوند و هیچ‌وقت از جایی که هستید جلوتر نمی‌روند. سرور شما آن‌ها را از قبل با مدل خودش می‌نویسد. Claude Haiku و Sonnet از کلید API آنتروپیک خودتان استفاده می‌کنند. Ollama روی رایانهٔ خودتان اجرا می‌شود.</string>

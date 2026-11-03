@@ -444,6 +444,10 @@
     <string name="settings.transcripts.title">Trascrizioni</string>
     <string name="summaries.action.summarize">Riassumi</string>
     <string name="summaries.action.update">Aggiorna</string>
+    <string name="summaries.combine.action">Unisci sessioni</string>
+    <string name="summaries.combine.pick_first">Tocca la prima sessione</string>
+    <string name="summaries.combine.pick_last">Ora tocca l\'ultima. È incluso tutto quello che c\'è in mezzo.</string>
+    <string name="summaries.combined.title">Sessioni insieme</string>
     <string name="summaries.failed">Non è andata: %1$s</string>
     <string name="summaries.model.claude_key">Chiave API di Anthropic</string>
     <string name="summaries.model.explanation">I riassunti vengono scritti dalla trascrizione del libro e non vanno mai oltre il punto in cui sei. Il tuo server li scrive in anticipo con il suo modello. Claude Haiku e Sonnet usano la tua chiave API di Anthropic. Ollama funziona sul tuo computer.</string>

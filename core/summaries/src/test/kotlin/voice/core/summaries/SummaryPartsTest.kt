@@ -85,4 +85,33 @@ class SummaryPartsTest {
 
     assertEquals(emptyList(), book.sessionParts(events, nowMillis = MINUTE))
   }
+
+  @Test
+  fun `two sessions combine from the start of the earlier to the end of the later, in either order`() {
+    val early = SummaryPart(SummaryKind.Session, "session:1", startMs = 10 * MINUTE, endMs = 40 * MINUTE)
+    val late = SummaryPart(SummaryKind.Session, "session:2", startMs = 35 * MINUTE, endMs = 90 * MINUTE)
+
+    val part = combinedPart(late, early)
+
+    assertEquals(SummaryKind.Combined, part.kind)
+    assertEquals(10 * MINUTE, part.startMs)
+    assertEquals(90 * MINUTE, part.endMs)
+    assertEquals(part, combinedPart(early, late))
+  }
+
+  @Test
+  fun `combined parts come back from their saved keys, latest first`() {
+    val a = combinedPart(
+      SummaryPart(SummaryKind.Session, "session:1", startMs = 0, endMs = 10 * MINUTE),
+      SummaryPart(SummaryKind.Session, "session:2", startMs = 20 * MINUTE, endMs = 30 * MINUTE),
+    )
+    val b = combinedPart(
+      SummaryPart(SummaryKind.Session, "session:3", startMs = 40 * MINUTE, endMs = 50 * MINUTE),
+      SummaryPart(SummaryKind.Session, "session:4", startMs = 60 * MINUTE, endMs = 70 * MINUTE),
+    )
+
+    val parts = combinedParts(setOf(a.key, "half:2", b.key, "combined:x-y", "combined:9-3"))
+
+    assertEquals(listOf(b, a), parts)
+  }
 }

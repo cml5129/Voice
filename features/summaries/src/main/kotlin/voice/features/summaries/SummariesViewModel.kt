@@ -28,8 +28,11 @@ import voice.core.summaries.SummarySettings
 import voice.core.summaries.SummarySettingsStore
 import voice.core.summaries.SummaryStore
 import voice.core.summaries.chapterParts
+import voice.core.summaries.combinedPart
+import voice.core.summaries.combinedParts
 import voice.core.summaries.formatPosition
 import voice.core.summaries.halfHourParts
+import voice.core.summaries.heardUntil
 import voice.core.summaries.sessionParts
 import voice.core.transcript.TranscriptRepository
 import voice.navigation.Navigator
@@ -37,7 +40,6 @@ import java.time.Clock
 import java.time.Instant
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
-import kotlin.math.min
 import kotlin.time.Duration.Companion.minutes
 
 @AssistedInject
@@ -64,6 +66,10 @@ class SummariesViewModel(
   private var errors by mutableStateOf(emptyMap<String, String>())
   private var editingModel by mutableStateOf(false)
 
+  // picking the first and the last session to summarize together
+  private var combining by mutableStateOf(false)
+  private var combineFirst by mutableStateOf<SummaryPart?>(null)
+
   @Composable
   internal fun viewState(): SummariesViewState? {
     val book = remember { bookRepository.flow(bookId) }.collectAsState(initial = null).value ?: return null
@@ -74,24 +80,30 @@ class SummariesViewModel(
       value = serverSummaries.forBook(book)
     }.value
     val hasTranscript = remember(book.chapters) { book.chapters.any { transcripts.hasTranscript(it.id) } }
-    val parts = remember(tab, book.chapters, events) {
+    val sessions = remember(tab, book.chapters, events) {
       when (tab) {
         SummaryKind.Chapter -> book.chapterParts()
         SummaryKind.HalfHour -> book.halfHourParts()
-        SummaryKind.Session -> book.sessionParts(events, clock.millis())
+        SummaryKind.Session, SummaryKind.Combined -> book.sessionParts(events, clock.millis())
       }
     }
+    // sessions summarized together go on top, also while their summary is still being written
+    val combined = if (tab == SummaryKind.Session) combinedParts(saved.keys + working + errors.keys) else emptyList()
+    val parts = combined + sessions
     val position = book.position
     return SummariesViewState(
       bookName = book.content.name,
       cover = book.content.coverUrl,
       tab = tab,
-      parts = parts.map { part -> part.viewState(position, pick(part, position, saved[part.key], fromServer[part.key])) },
+      parts = parts.map { part -> part.viewState(book, pick(part, position, saved[part.key], fromServer[part.key])) },
       currentIndex = parts.indexOfFirst { position >= it.startMs && position < it.endMs }
         .takeIf { it >= 0 && tab != SummaryKind.Session },
       hasTranscript = hasTranscript,
       settings = settings,
       editingModel = editingModel,
+      canCombine = tab == SummaryKind.Session && sessions.size >= 2,
+      combining = combining,
+      combineFirstPicked = combineFirst != null,
     )
   }
 
@@ -110,23 +122,26 @@ class SummariesViewModel(
   }
 
   private fun SummaryPart.viewState(
-    position: Long,
+    book: Book,
     saved: SavedSummary?,
   ): SummaryPartViewState {
-    val heardUntil = min(endMs, position)
+    val heardUntil = heardUntil(book, this)
     return SummaryPartViewState(
       part = this,
       title = when (kind) {
         SummaryKind.Chapter -> name
         SummaryKind.HalfHour -> null
         SummaryKind.Session -> startedAt?.let(::formatStart)
+        SummaryKind.Combined -> null
       },
       range = "${formatPosition(startMs)} – ${formatPosition(endMs)}",
       summary = saved?.text,
-      heard = startMs < position,
+      heard = heardUntil > startMs,
       working = key in working,
       error = errors[key],
       outdated = saved != null && heardUntil - saved.coveredUntilMs >= OUTDATED_MS,
+      pickable = combining && kind == SummaryKind.Session,
+      picked = combineFirst?.key == key,
     )
   }
 
@@ -135,6 +150,33 @@ class SummariesViewModel(
 
   internal fun onTabChange(kind: SummaryKind) {
     tab = kind
+    onCombineCancel()
+  }
+
+  internal fun onCombineClick() {
+    combining = true
+    combineFirst = null
+  }
+
+  internal fun onCombineCancel() {
+    combining = false
+    combineFirst = null
+  }
+
+  /** The first tap picks where to begin, the second where to end; everything in between is included. */
+  internal fun onSessionPick(part: SummaryPart) {
+    if (!combining || part.kind != SummaryKind.Session) return
+    val first = combineFirst
+    if (first == null) {
+      combineFirst = part
+      return
+    }
+    if (first.key == part.key) {
+      combineFirst = null
+      return
+    }
+    onCombineCancel()
+    onSummarize(combinedPart(first, part))
   }
 
   internal fun onSummarize(part: SummaryPart) {

@@ -426,6 +426,10 @@
     <string name="settings.transcripts.title">Transcripties</string>
     <string name="summaries.action.summarize">Samenvatten</string>
     <string name="summaries.action.update">Bijwerken</string>
+    <string name="summaries.combine.action">Sessies combineren</string>
+    <string name="summaries.combine.pick_first">Tik op de eerste sessie</string>
+    <string name="summaries.combine.pick_last">Tik nu op de laatste. Alles daartussen telt mee.</string>
+    <string name="summaries.combined.title">Sessies samen</string>
     <string name="summaries.failed">Dat lukte niet: %1$s</string>
     <string name="summaries.model.claude_key">Anthropic-API-sleutel</string>
     <string name="summaries.model.explanation">Samenvattingen worden geschreven op basis van de transcriptie van het boek en gaan nooit verder dan waar je bent. Je server schrijft ze van tevoren met zijn eigen model. Claude Haiku en Sonnet gebruiken je eigen Anthropic-API-sleutel. Ollama draait op je eigen computer.</string>

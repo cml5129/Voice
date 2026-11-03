@@ -426,6 +426,10 @@
     <string name="settings.transcripts.title">ट्रांसक्रिप्ट</string>
     <string name="summaries.action.summarize">सारांश बनाएँ</string>
     <string name="summaries.action.update">अपडेट करें</string>
+    <string name="summaries.combine.action">सत्र जोड़ें</string>
+    <string name="summaries.combine.pick_first">पहले सत्र पर टैप करें</string>
+    <string name="summaries.combine.pick_last">अब आख़िरी सत्र पर टैप करें। बीच का सब कुछ शामिल होगा।</string>
+    <string name="summaries.combined.title">एक साथ सत्र</string>
     <string name="summaries.failed">नहीं हो पाया: %1$s</string>
     <string name="summaries.model.claude_key">Anthropic API कुंजी</string>
     <string name="summaries.model.explanation">सारांश पुस्तक के ट्रांसक्रिप्ट से लिखे जाते हैं और कभी भी उस जगह से आगे नहीं जाते जहाँ तक आपने सुना है। आपका सर्वर उन्हें अपने मॉडल से पहले ही लिख देता है। Claude Haiku और Sonnet आपकी अपनी Anthropic API कुंजी का उपयोग करते हैं। Ollama आपके अपने कंप्यूटर पर चलता है।</string>

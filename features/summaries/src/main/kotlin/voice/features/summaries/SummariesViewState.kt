@@ -16,6 +16,11 @@ internal data class SummariesViewState(
   val hasTranscript: Boolean,
   val settings: SummarySettings,
   val editingModel: Boolean,
+  /** Whether there are sessions enough to summarize several together. */
+  val canCombine: Boolean,
+  /** Picking the first and the last of the sessions to summarize together. */
+  val combining: Boolean,
+  val combineFirstPicked: Boolean,
 )
 
 @Immutable
@@ -32,6 +37,10 @@ internal data class SummaryPartViewState(
   val error: String?,
   /** More of the part was heard since its summary was written. */
   val outdated: Boolean,
+  /** Can be tapped to pick it as the first or last session to combine. */
+  val pickable: Boolean,
+  /** Picked as the first session to combine. */
+  val picked: Boolean,
 ) {
 
   val canSummarize: Boolean get() = heard && !working && (summary == null || outdated)

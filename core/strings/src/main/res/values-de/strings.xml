@@ -426,6 +426,10 @@
     <string name="settings.transcripts.title">Transkripte</string>
     <string name="summaries.action.summarize">Zusammenfassen</string>
     <string name="summaries.action.update">Aktualisieren</string>
+    <string name="summaries.combine.action">Sitzungen zusammenfassen</string>
+    <string name="summaries.combine.pick_first">Tippe auf die erste Sitzung</string>
+    <string name="summaries.combine.pick_last">Tippe jetzt auf die letzte. Alles dazwischen ist dabei.</string>
+    <string name="summaries.combined.title">Sitzungen zusammen</string>
     <string name="summaries.failed">Hat nicht geklappt: %1$s</string>
     <string name="summaries.model.claude_key">Anthropic-API-Schlüssel</string>
     <string name="summaries.model.explanation">Zusammenfassungen entstehen aus dem Transkript des Buchs und gehen nie über die Stelle hinaus, an der Du bist. Dein Server schreibt sie vorab mit seinem eigenen Modell. Claude Haiku und Sonnet nutzen Deinen eigenen Anthropic-API-Schlüssel. Ollama läuft auf Deinem eigenen Computer.</string>

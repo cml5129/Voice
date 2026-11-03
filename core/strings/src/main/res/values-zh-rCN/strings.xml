@@ -408,6 +408,10 @@
     <string name="settings.transcripts.title">文字稿</string>
     <string name="summaries.action.summarize">生成摘要</string>
     <string name="summaries.action.update">更新</string>
+    <string name="summaries.combine.action">合并收听记录</string>
+    <string name="summaries.combine.pick_first">点按第一段收听</string>
+    <string name="summaries.combine.pick_last">现在点按最后一段。中间的内容也会全部包括在内。</string>
+    <string name="summaries.combined.title">合并的收听</string>
     <string name="summaries.failed">没有成功：%1$s</string>
     <string name="summaries.model.claude_key">Anthropic API 密钥</string>
     <string name="summaries.model.explanation">摘要根据本书的文字稿写成，绝不会超出您听到的位置。您的服务器会用它自己的模型提前写好。Claude Haiku 和 Sonnet 使用您自己的 Anthropic API 密钥。Ollama 在您自己的电脑上运行。</string>

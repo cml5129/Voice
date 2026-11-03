@@ -462,6 +462,10 @@
     <string name="settings.transcripts.title">Prepisy</string>
     <string name="summaries.action.summarize">Zhrnúť</string>
     <string name="summaries.action.update">Aktualizovať</string>
+    <string name="summaries.combine.action">Spojiť relácie</string>
+    <string name="summaries.combine.pick_first">Ťuknite na prvú reláciu</string>
+    <string name="summaries.combine.pick_last">Teraz ťuknite na poslednú. Všetko medzi nimi bude zahrnuté.</string>
+    <string name="summaries.combined.title">Relácie spolu</string>
     <string name="summaries.failed">Nepodarilo sa: %1$s</string>
     <string name="summaries.model.claude_key">API kľúč Anthropic</string>
     <string name="summaries.model.explanation">Zhrnutia vznikajú z prepisu knihy a nikdy nejdú ďalej, než kde ste. Váš server ich píše vopred vlastným modelom. Claude Haiku a Sonnet používajú váš vlastný API kľúč Anthropic. Ollama beží na vašom vlastnom počítači.</string>

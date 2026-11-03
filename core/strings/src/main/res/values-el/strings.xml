@@ -426,6 +426,10 @@
     <string name="settings.transcripts.title">Απομαγνητοφωνήσεις</string>
     <string name="summaries.action.summarize">Σύνοψη</string>
     <string name="summaries.action.update">Ενημέρωση</string>
+    <string name="summaries.combine.action">Συνδυασμός συνεδριών</string>
+    <string name="summaries.combine.pick_first">Πατήστε την πρώτη συνεδρία</string>
+    <string name="summaries.combine.pick_last">Τώρα πατήστε την τελευταία. Περιλαμβάνονται όλες όσες είναι ενδιάμεσα.</string>
+    <string name="summaries.combined.title">Συνεδρίες μαζί</string>
     <string name="summaries.failed">Δεν έγινε: %1$s</string>
     <string name="summaries.model.claude_key">Κλειδί API της Anthropic</string>
     <string name="summaries.model.explanation">Οι συνόψεις γράφονται από την απομαγνητοφώνηση του βιβλίου και δεν πηγαίνουν ποτέ πέρα από το σημείο όπου βρίσκεστε. Ο διακομιστής σας τις γράφει εκ των προτέρων με το δικό του μοντέλο. Τα Claude Haiku και Sonnet χρησιμοποιούν το δικό σας κλειδί API της Anthropic. Το Ollama τρέχει στον δικό σας υπολογιστή.</string>

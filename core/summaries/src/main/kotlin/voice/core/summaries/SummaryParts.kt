@@ -13,6 +13,9 @@ public enum class SummaryKind {
   Chapter,
   HalfHour,
   Session,
+
+  /** Several listening sessions as one, from the start of the first to the end of the last. */
+  Combined,
 }
 
 /** A stretch of a book to summarize. [startMs] and [endMs] are positions in the whole book. */
@@ -127,3 +130,35 @@ public fun Book.sessionParts(
     )
   }.asReversed().take(MAX_SESSIONS)
 }
+
+private const val COMBINED_PREFIX = "combined:"
+
+/**
+ * One part from the start of the earlier of two sessions to the end of the later, with everything in between: the
+ * listener picks only the first and the last.
+ */
+public fun combinedPart(
+  first: SummaryPart,
+  last: SummaryPart,
+): SummaryPart = combinedPart(min(first.startMs, last.startMs), max(first.endMs, last.endMs))
+
+private fun combinedPart(
+  startMs: Long,
+  endMs: Long,
+) = SummaryPart(
+  kind = SummaryKind.Combined,
+  key = "$COMBINED_PREFIX$startMs-$endMs",
+  startMs = startMs,
+  endMs = endMs,
+)
+
+/** The combined parts among saved summary [keys], latest in the book first. */
+public fun combinedParts(keys: Collection<String>): List<SummaryPart> = keys
+  .filter { it.startsWith(COMBINED_PREFIX) }
+  .mapNotNull { key ->
+    val (start, end) = key.removePrefix(COMBINED_PREFIX).split('-').takeIf { it.size == 2 } ?: return@mapNotNull null
+    val startMs = start.toLongOrNull() ?: return@mapNotNull null
+    val endMs = end.toLongOrNull()?.takeIf { it > startMs } ?: return@mapNotNull null
+    combinedPart(startMs, endMs)
+  }
+  .sortedWith(compareByDescending<SummaryPart> { it.endMs }.thenByDescending { it.startMs })

@@ -107,7 +107,7 @@ class SummarizerTest {
   }
 
   @Test
-  fun `the server writes the summary from the heard part of each file`() = runTest {
+  fun `the server writes the summary from the part of each file`() = runTest {
     useServer()
     val book = book(chapters, currentChapter = fileB, positionInChapter = 15 * MINUTE)
     val part = SummaryPart(SummaryKind.Session, "session:1", startMs = 50 * MINUTE, endMs = 90 * MINUTE)
@@ -116,14 +116,14 @@ class SummarizerTest {
 
     assertEquals("From the server.", summary.text)
     assertEquals(SummarySettings.SERVER, summary.model)
-    assertEquals(75 * MINUTE, summary.coveredUntilMs)
+    assertEquals(90 * MINUTE, summary.coveredUntilMs)
     val asked = api.asked.single()
     assertEquals("The Waste Lands by Stephen King", asked.book)
-    assertTrue("0:50:00 to 1:15:00" in asked.label, asked.label)
+    assertTrue("0:50:00 to 1:30:00" in asked.label, asked.label)
     assertEquals(
       listOf(
         ServerSummaryPart("a.m4b", startMs = 50 * MINUTE, endMs = 60 * MINUTE),
-        ServerSummaryPart("b.m4b", startMs = 0, endMs = 15 * MINUTE),
+        ServerSummaryPart("b.m4b", startMs = 0, endMs = 30 * MINUTE),
       ),
       asked.parts,
     )
@@ -150,6 +150,45 @@ class SummarizerTest {
 
     assertFailsWith<SummaryException> { summarizer.summarize(book, book.halfHourParts()[0]) }
     assertEquals(emptyList(), api.asked)
+  }
+
+  @Test
+  fun `a long stretch goes to the server in pieces, then their notes are put together`() = runTest {
+    useServer()
+    val book = book(chapters, currentChapter = fileA, positionInChapter = 0)
+    val part = combinedPart(
+      SummaryPart(SummaryKind.Session, "session:1", startMs = 0, endMs = 30 * MINUTE),
+      SummaryPart(SummaryKind.Session, "session:2", startMs = 100 * MINUTE, endMs = 120 * MINUTE),
+    )
+
+    val summary = summarizer.summarize(book, part)
+
+    assertEquals("All together.", summary.text)
+    assertEquals(120 * MINUTE, summary.coveredUntilMs)
+    assertEquals(2, api.asked.size)
+    assertTrue("Stretch 1 of 2." in api.asked[0].label, api.asked[0].label)
+    assertEquals(
+      listOf(
+        ServerSummaryPart("a.m4b", startMs = 0, endMs = 60 * MINUTE),
+        ServerSummaryPart("b.m4b", startMs = 0, endMs = 30 * MINUTE),
+      ),
+      api.asked[0].parts,
+    )
+    assertEquals(listOf(ServerSummaryPart("b.m4b", startMs = 30 * MINUTE, endMs = 60 * MINUTE)), api.asked[1].parts)
+    assertEquals(listOf(listOf("From the server.", "From the server.")), api.combined)
+    assertEquals(mapOf(part.key to summary), store.summaries(book.id).first())
+  }
+
+  @Test
+  fun `a session is summarized to its end even after going back`() = runTest {
+    val book = book(chapters, currentChapter = fileA, positionInChapter = 5 * MINUTE)
+    val part = SummaryPart(SummaryKind.Session, "session:1", startMs = 30 * MINUTE, endMs = 45 * MINUTE)
+
+    assertTrue(summarizer.canSummarize(book, part))
+    val summary = summarizer.summarize(book, part)
+
+    assertEquals(45 * MINUTE, summary.coveredUntilMs)
+    assertTrue("Eddie carves a key." in model.prompts.single(), model.prompts.single())
   }
 
   @Test
@@ -191,6 +230,7 @@ private data class Asked(
 private class FakeApi : ServerTranscriptsApi {
 
   val asked = mutableListOf<Asked>()
+  val combined = mutableListOf<List<String>>()
   var failure: String? = null
 
   override suspend fun list(server: VoiceServer): ServerResult<List<ServerTranscript>> = ServerResult.Success(emptyList())
@@ -214,6 +254,16 @@ private class FakeApi : ServerTranscriptsApi {
   ): ServerResult<String> {
     asked += Asked(book, label, parts)
     return failure?.let { ServerResult.Failure(it) } ?: ServerResult.Success("From the server.")
+  }
+
+  override suspend fun combine(
+    server: VoiceServer,
+    book: String,
+    label: String,
+    notes: List<String>,
+  ): ServerResult<String> {
+    combined += notes
+    return ServerResult.Success("All together.")
   }
 }
 

@@ -755,6 +755,14 @@
     <string name="summaries.action.summarize">Summarize</string>
     <!-- Button on a part of the book whose summary was written before the listener heard all of it. Writes the summary again, including what was heard since. -->
     <string name="summaries.action.update">Update</string>
+    <!-- Button above the listening sessions on the summaries screen. Starts picking a first and a last session, to have one summary written of everything from the start of the first to the end of the last. -->
+    <string name="summaries.combine.action">Combine sessions</string>
+    <!-- Shown above the listening sessions after tapping the combine button, asking the listener to tap the session the combined summary starts with. -->
+    <string name="summaries.combine.pick_first">Tap the first session</string>
+    <!-- Shown above the listening sessions once the first one is picked, asking the listener to tap the session the combined summary ends with. Every session in between is included too. -->
+    <string name="summaries.combine.pick_last">Now tap the last one. Everything in between is included.</string>
+    <!-- Title of a summary of several listening sessions in a row, picked by their first and last session. -->
+    <string name="summaries.combined.title">Sessions together</string>
     <!-- Shown on a part of the book when writing its summary failed. The argument is the reason. -->
     <string name="summaries.failed">Didn\'t work: %1$s</string>
     <!-- Text field label for the listener's own Anthropic API key, used by the Claude models that write summaries. -->
