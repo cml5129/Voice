@@ -38,7 +38,8 @@ class LostTrack(
       spot = when {
         event.type == ListeningEvent.Type.StillListening -> null
         event.type == ListeningEvent.Type.FellAsleep -> spot?.takeUnless { isBefore(to, it) } ?: to
-        spot != null && event.isListenerAction() && isBefore(to, spot) -> to
+        // playing again starts a little before where it paused, which isn't going back
+        spot != null && event.isListenerAction() && event.type != ListeningEvent.Type.Play && isBefore(to, spot) -> to
         else -> spot
       }
     }
