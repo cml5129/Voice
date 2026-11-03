@@ -176,6 +176,37 @@ class ListeningCheckTest {
   }
 
   @Test
+  fun `a volume button after a missed check is remembered for the next play`() = testScope.runTest {
+    history = listOf(fellAsleep(ago = 30.minutes, from = 2_000_000L, to = 1_000_000L))
+    positionMs = 1_500_000L
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(5.minutes)
+    volumeChanges.onChanged()
+    runCurrent()
+    verify { playerController.record(ListeningEvent.Type.StillListening, ListeningEvent.Source.SleepTimer) }
+  }
+
+  @Test
+  fun `playing again after a missed check does not creep back by the rewind on pause`() = testScope.runTest {
+    history = listOf(
+      listenerEvent(ListeningEvent.Type.Play, ListeningEvent.Source.Bluetooth, ago = 20.minutes).copy(time = 998_000L),
+      fellAsleep(ago = 30.minutes, from = 2_000_000L, to = 1_000_000L),
+    )
+    positionMs = 1_500_000L
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(11.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(1_000_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  @Test
   fun `the sleep timer running out goes back to where they were last awake`() = testScope.runTest {
     listeningCheck().onAppStart(mockk())
     playStateManager.playState = PlayStateManager.PlayState.Playing

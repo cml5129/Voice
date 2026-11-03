@@ -85,6 +85,11 @@ class ListeningCheck(
       if (action != null) {
         val now = playerController.livePlaybackState()?.position() ?: return
         if (lostTrackAt == null || action == Action.ChangedVolume) {
+          if (lostTrackAt != null) {
+            // volume presses aren't in the history, so without this the next play would go back to where they lost
+            // track before
+            playerController.record(ListeningEvent.Type.StillListening, ListeningEvent.Source.SleepTimer)
+          }
           lostTrackAt = null
           awake = now
         } else if (lostTrack.isBefore(now, lostTrackAt)) {
