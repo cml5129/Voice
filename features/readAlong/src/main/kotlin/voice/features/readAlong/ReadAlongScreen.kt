@@ -31,6 +31,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -42,6 +43,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -84,6 +86,7 @@ fun ReadAlongScreen(bookId: BookId) {
     rootGraphAs<Graph>().readAlongViewModelFactory.create(bookId)
   }
   val viewState = viewModel.viewState() ?: return
+  KeepScreenOn(viewState.playing)
   CoverTheme(cover = viewState.cover) {
     ReadAlongScreen(
       viewState = viewState,
@@ -93,6 +96,19 @@ fun ReadAlongScreen(bookId: BookId) {
       onRewind = viewModel::rewind,
       onFastForward = viewModel::fastForward,
     )
+  }
+}
+
+/**
+ * Keeps the screen awake while the book plays, so the lines can be read without touching the phone. Once playback
+ * stops, by a pause, the sleep timer or a missed listening check, the screen may turn off again as usual.
+ */
+@Composable
+private fun KeepScreenOn(playing: Boolean) {
+  val view = LocalView.current
+  DisposableEffect(view, playing) {
+    view.keepScreenOn = playing
+    onDispose { view.keepScreenOn = false }
   }
 }
 
