@@ -9,6 +9,8 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.merge
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeoutOrNull
 import voice.core.common.DispatcherProvider
@@ -35,6 +37,7 @@ class SleepTimerImpl internal constructor(
   dispatcherProvider: DispatcherProvider,
   private val tracker: SleepTimerTracker,
   private val rewindRecorder: SleepTimerRewindRecorder,
+  private val volumeChanges: VolumeChanges,
 ) : SleepTimer {
 
   private val scope = MainScope(dispatcherProvider)
@@ -134,19 +137,23 @@ class SleepTimerImpl internal constructor(
     playerController.pauseWithRewind(fadeOutDuration)
     rewindRecorder.onCountdownFinished(timerDuration = duration)
 
-    val shakeDetected = detectShakeWithTimeout()
+    val keepListening = detectKeepListeningWithTimeout()
     playerController.setVolume(1F)
-    if (shakeDetected) {
-      Logger.i("Shake detected, resetting timer")
+    if (keepListening) {
+      Logger.i("Shake or volume button, resetting timer")
       playerController.record(ListeningEvent.Type.SleepTimerExtended, ListeningEvent.Source.SleepTimer)
       playerController.play(source = null)
       startCountdown(duration)
     }
   }
 
-  private suspend fun detectShakeWithTimeout(): Boolean {
+  /**
+   * The fade out makes it quiet, so turning the volume up right after it stopped, like with a sleep mask's button, keeps
+   * listening as well as a shake does.
+   */
+  private suspend fun detectKeepListeningWithTimeout(): Boolean {
     return withTimeoutOrNull(SHAKE_TO_RESET_TIME) {
-      shakeDetector.detect()
+      merge(flow { emit(shakeDetector.detect()) }, volumeChanges.changes).first()
       true
     } ?: false
   }

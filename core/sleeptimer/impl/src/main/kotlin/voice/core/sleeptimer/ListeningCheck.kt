@@ -200,7 +200,7 @@ class ListeningCheck(
     /** A bit longer than the sleep timer listens for a shake after it ran out. */
     val KEEP_LISTENING_TIME = 45.seconds
 
-    val BACK_UP = 5.seconds
+    val BACK_UP = 30.seconds
 
     val PLAYER_READY_TIME = 30.seconds
   }
