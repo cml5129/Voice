@@ -26,6 +26,7 @@ import voice.core.sleeptimer.SleepTimerPreference
 import voice.core.sleeptimer.SleepTimerPreferenceStore
 import voice.core.sleeptimer.SleepTimerRewindRecorder
 import voice.core.sleeptimer.SleepTimerState
+import voice.core.sleeptimer.VolumeChanges
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertIs
@@ -72,6 +73,7 @@ class SleepTimerImplTest {
   private val testScope = TestScope(testDispatcher)
 
   private val rewindRecorder = mockk<SleepTimerRewindRecorder>(relaxed = true)
+  private val volumeChanges = VolumeChanges()
 
   private val sleepTimer: SleepTimer
 
@@ -86,6 +88,7 @@ class SleepTimerImplTest {
       dispatcherProvider,
       tracker = mockk(relaxed = true),
       rewindRecorder = rewindRecorder,
+      volumeChanges = volumeChanges,
     )
   }
 
@@ -177,6 +180,19 @@ class SleepTimerImplTest {
 
     coVerify(exactly = 2) { playerController.pauseWithRewind(any()) }
     assertEquals(expected = SleepTimerState.Disabled, actual = sleepTimer.state.value)
+  }
+
+  @Test
+  fun `a volume button right after the timer ran out keeps listening`() = testScope.runTest {
+    sleepTimer.enable(SleepTimerMode.TimedWithDuration(10.seconds))
+    advanceTimeBy(11.seconds)
+    runCurrent()
+    assertEquals(expected = SleepTimerState.Disabled, actual = sleepTimer.state.value)
+
+    volumeChanges.onChanged()
+    runCurrent()
+    verify(exactly = 1) { playerController.play(source = null) }
+    assertEquals(expected = SleepTimerState.Enabled.WithDuration(10.seconds), actual = sleepTimer.state.value)
   }
 
   @Test
