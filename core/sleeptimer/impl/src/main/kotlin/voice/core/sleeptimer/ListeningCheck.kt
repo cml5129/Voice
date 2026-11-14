@@ -52,7 +52,7 @@ class ListeningCheck(
   /** Where the listener last showed they were awake, kept after playback stops. */
   private var lastAwake: PlaybackPosition? = null
 
-  /** Already backed up when the listener lost track there, so going back to it again doesn't back up further. */
+  /** Already backed up when the listener lost track there, so backing up never goes before it. */
   private var lostTrackSpot: PlaybackPosition? = null
 
   override fun onAppStart(application: Application) {
@@ -68,19 +68,24 @@ class ListeningCheck(
         .filter { it.type == ListeningEvent.Type.SleepTimerEnded }
         .collect { onSleepTimerEnded() }
     }
+    scope.launch {
+      historyRecorder.events
+        .filter { it.type == ListeningEvent.Type.Pause && it.source == ListeningEvent.Source.Unplugged }
+        .collect { onUnplugged(PlaybackPosition(it.bookId, it.chapterId, it.time)) }
+    }
   }
 
   private suspend fun checkWhilePlaying() {
     val playing = playingPosition() ?: return
-    var lostTrackAt = lostTrack.spot(playing.bookId)
-    lostTrackSpot = lostTrackAt
-    var awake = lostTrackAt ?: playing
+    var lostTrackAt = lostTrack.tonight(playing.bookId)
+    lostTrackSpot = lostTrackAt?.position
+    var awake = lostTrackAt?.position ?: playing
     lastAwake = awake
     while (true) {
       // skipping, seeking or a volume button shows they're awake right there, so the next check waits for the full
       // interval again
       val action = withTimeoutOrNull(CHECK_INTERVAL) {
-        merge(listenerActions().map { Action.Navigated }, volumeChanges.changes.map { Action.ChangedVolume }).first()
+        merge(listenerActions().map { Action.Navigated(it.atMillis) }, volumeChanges.changes.map { Action.ChangedVolume }).first()
       }
       if (action != null) {
         val now = playerController.livePlaybackState()?.position() ?: return
@@ -92,9 +97,9 @@ class ListeningCheck(
           }
           lostTrackAt = null
           awake = now
-        } else if (lostTrack.isBefore(now, lostTrackAt)) {
-          lostTrackAt = now
-          awake = now
+        } else if (action is Action.Navigated) {
+          lostTrackAt = lostTrack.moved(lostTrackAt, now, action.atMillis)
+          awake = lostTrackAt.position
         }
         lastAwake = awake
         continue
@@ -133,6 +138,18 @@ class ListeningCheck(
     fellAsleep(awake)
   }
 
+  /**
+   * Earbuds coming out or running flat while asleep pause the book where nobody heard it, and playing again would go
+   * on from there. When it played on a while since they last were awake, it goes back as after a missed check.
+   */
+  private suspend fun onUnplugged(at: PlaybackPosition) {
+    val awake = lastAwake ?: return
+    if (awake.bookId != at.bookId || !shouldCheck()) return
+    if (!lostTrack.isBefore(awake.copy(time = awake.time + UNPLUGGED_ASLEEP_AFTER.inWholeMilliseconds), at)) return
+    Logger.i("Unplugged a while after the listener was last awake, going back to there")
+    fellAsleep(awake)
+  }
+
   private suspend fun answered(): Boolean {
     playerController.setVolume(PROMPT_VOLUME)
     return try {
@@ -146,11 +163,14 @@ class ListeningCheck(
 
   private suspend fun fellAsleep(awake: PlaybackPosition) {
     if (playerController.livePlaybackState()?.bookId == awake.bookId) {
-      // the last thing they remember can be right before that, so going back a bit more catches it
-      val time = if (awake == lostTrackSpot) awake.time else (awake.time - BACK_UP.inWholeMilliseconds).coerceAtLeast(0)
+      // the last thing they remember can be right before that, so going back a bit more catches it, but not before
+      // where they lost track, which already was backed up
+      val backedUp = awake.copy(time = (awake.time - BACK_UP.inWholeMilliseconds).coerceAtLeast(0))
+      val floor = lostTrackSpot
+      val to = if (floor != null && lostTrack.isBefore(backedUp, floor) && !lostTrack.isBefore(awake, floor)) floor else backedUp
       playerController.setPosition(
-        time = time,
-        id = awake.chapterId,
+        time = to.time,
+        id = to.chapterId,
         type = ListeningEvent.Type.FellAsleep,
         source = ListeningEvent.Source.SleepTimer,
       )
@@ -185,9 +205,9 @@ class ListeningCheck(
       )
   }
 
-  private enum class Action {
-    Navigated,
-    ChangedVolume,
+  private sealed interface Action {
+    data class Navigated(val atMillis: Long) : Action
+    data object ChangedVolume : Action
   }
 
   private fun LivePlaybackState.position() = PlaybackPosition(bookId, chapterId, positionMs)
@@ -201,6 +221,9 @@ class ListeningCheck(
     val KEEP_LISTENING_TIME = 45.seconds
 
     val BACK_UP = 30.seconds
+
+    /** How far the book played past where they were last awake before earbuds coming out counts as asleep. */
+    val UNPLUGGED_ASLEEP_AFTER = 5.minutes
 
     val PLAYER_READY_TIME = 30.seconds
   }
