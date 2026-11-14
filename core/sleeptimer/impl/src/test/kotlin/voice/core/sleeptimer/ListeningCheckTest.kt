@@ -447,6 +447,56 @@ class ListeningCheckTest {
   }
 
   @Test
+  fun `answering right after playing again does not back up before where they lost track`() = testScope.runTest {
+    history = listOf(fellAsleep(ago = 30.minutes, from = 2_000_000L, to = 1_000_000L))
+    positionMs = 1_000_000L
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    positionMs = 1_010_000L
+    volumeChanges.onChanged()
+    runCurrent()
+
+    advanceTimeBy(11.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(1_000_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  @Test
+  fun `earbuds coming out a while after the last sign of being awake go back`() = testScope.runTest {
+    positionMs = 100_000L
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(7.minutes)
+    positionMs = 520_000L
+    playStateManager.playState = PlayStateManager.PlayState.Paused
+    recordedEvents.emit(listenerEvent(ListeningEvent.Type.Pause, ListeningEvent.Source.Unplugged))
+    runCurrent()
+    verify {
+      playerController.setPosition(70_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  @Test
+  fun `earbuds coming out soon after the last sign of being awake keep the place`() = testScope.runTest {
+    positionMs = 100_000L
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(2.minutes)
+    positionMs = 220_000L
+    playStateManager.playState = PlayStateManager.PlayState.Paused
+    recordedEvents.emit(listenerEvent(ListeningEvent.Type.Pause, ListeningEvent.Source.Unplugged))
+    runCurrent()
+    verify(exactly = 0) { playerController.setPosition(any(), any(), any(), any()) }
+  }
+
+  @Test
   fun `answering a check after a missed one counts as awake again`() = testScope.runTest {
     history = listOf(fellAsleep(ago = 30.minutes, from = 2_000_000L, to = 1_000_000L))
     positionMs = 1_500_000L
