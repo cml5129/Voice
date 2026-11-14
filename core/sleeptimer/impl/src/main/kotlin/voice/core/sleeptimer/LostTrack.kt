@@ -10,12 +10,16 @@ import voice.core.playback.history.PlaybackPosition
 import java.time.Clock
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.hours
+import kotlin.time.Duration.Companion.minutes
 
 /**
  * Where the listener lost track of a book. A missed listening check makes the book go back to where they
  * were last awake, and they lost track from there on. Pressing play again in the night, or skipping
  * ahead, can happen half asleep, so until they answer a check, it stays the earliest spot the book went
  * back to, or where they went back to on their own.
+ *
+ * Going forward again right after going back is fixing a slip, like tapping the wrong chapter, so it undoes
+ * that going back, but never goes past where they lost track before it.
  */
 @Inject
 class LostTrack(
@@ -27,23 +31,47 @@ class LostTrack(
   suspend fun spot(
     bookId: BookId,
     within: Duration = TONIGHT,
-  ): PlaybackPosition? {
+  ): PlaybackPosition? = tonight(bookId, within)?.position
+
+  /** Like [spot], with what's needed to follow it further. */
+  suspend fun tonight(
+    bookId: BookId,
+    within: Duration = TONIGHT,
+  ): Spot? {
     val since = clock.millis() - within.inWholeMilliseconds
     val events = historyRepo.events(bookId).first()
       .takeWhile { it.atMillis >= since }
       .asReversed()
-    var spot: PlaybackPosition? = null
+    var spot: Spot? = null
     for (event in events) {
       val to = PlaybackPosition(bookId, event.toChapterId ?: event.chapterId, event.toTime ?: event.time)
       spot = when {
         event.type == ListeningEvent.Type.StillListening -> null
-        event.type == ListeningEvent.Type.FellAsleep -> spot?.takeUnless { isBefore(to, it) } ?: to
+        event.type == ListeningEvent.Type.FellAsleep -> spot?.takeUnless { isBefore(to, it.position) } ?: Spot(to)
         // playing again starts a little before where it paused, which isn't going back
-        spot != null && event.isListenerAction() && event.type != ListeningEvent.Type.Play && isBefore(to, spot) -> to
+        spot != null && event.isListenerAction() && event.type != ListeningEvent.Type.Play -> moved(spot, to, event.atMillis)
         else -> spot
       }
     }
     return spot
+  }
+
+  /**
+   * Where they lost track after they moved to [to] on their own at [atMillis]: going back lowers it, going
+   * forward only undoes a going back from just before.
+   */
+  suspend fun moved(
+    spot: Spot,
+    to: PlaybackPosition,
+    atMillis: Long,
+  ): Spot {
+    val undoTo = spot.beforeGoingBack?.takeIf { atMillis - spot.wentBackAtMillis <= SLIP_TIME.inWholeMilliseconds }
+    return when {
+      isBefore(to, spot.position) -> Spot(to, beforeGoingBack = undoTo ?: spot.position, wentBackAtMillis = atMillis)
+      undoTo == null -> spot.copy(beforeGoingBack = null)
+      isBefore(to, undoTo) -> spot.copy(position = to)
+      else -> Spot(undoTo)
+    }
   }
 
   suspend fun isBefore(
@@ -57,8 +85,21 @@ class LostTrack(
     return indexA >= 0 && indexB >= 0 && indexA < indexB
   }
 
+  /**
+   * [position] is where they lost track. While they can still take back going there, [beforeGoingBack] is where
+   * it was before.
+   */
+  data class Spot(
+    val position: PlaybackPosition,
+    val beforeGoingBack: PlaybackPosition? = null,
+    val wentBackAtMillis: Long = 0,
+  )
+
   companion object {
     val TONIGHT = 12.hours
+
+    /** How soon going forward after going back counts as fixing a slip. */
+    val SLIP_TIME = 2.minutes
   }
 }
 

@@ -72,15 +72,15 @@ class ListeningCheck(
 
   private suspend fun checkWhilePlaying() {
     val playing = playingPosition() ?: return
-    var lostTrackAt = lostTrack.spot(playing.bookId)
-    lostTrackSpot = lostTrackAt
-    var awake = lostTrackAt ?: playing
+    var lostTrackAt = lostTrack.tonight(playing.bookId)
+    lostTrackSpot = lostTrackAt?.position
+    var awake = lostTrackAt?.position ?: playing
     lastAwake = awake
     while (true) {
       // skipping, seeking or a volume button shows they're awake right there, so the next check waits for the full
       // interval again
       val action = withTimeoutOrNull(CHECK_INTERVAL) {
-        merge(listenerActions().map { Action.Navigated }, volumeChanges.changes.map { Action.ChangedVolume }).first()
+        merge(listenerActions().map { Action.Navigated(it.atMillis) }, volumeChanges.changes.map { Action.ChangedVolume }).first()
       }
       if (action != null) {
         val now = playerController.livePlaybackState()?.position() ?: return
@@ -92,9 +92,9 @@ class ListeningCheck(
           }
           lostTrackAt = null
           awake = now
-        } else if (lostTrack.isBefore(now, lostTrackAt)) {
-          lostTrackAt = now
-          awake = now
+        } else if (action is Action.Navigated) {
+          lostTrackAt = lostTrack.moved(lostTrackAt, now, action.atMillis)
+          awake = lostTrackAt.position
         }
         lastAwake = awake
         continue
@@ -185,9 +185,9 @@ class ListeningCheck(
       )
   }
 
-  private enum class Action {
-    Navigated,
-    ChangedVolume,
+  private sealed interface Action {
+    data class Navigated(val atMillis: Long) : Action
+    data object ChangedVolume : Action
   }
 
   private fun LivePlaybackState.position() = PlaybackPosition(bookId, chapterId, positionMs)

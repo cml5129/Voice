@@ -385,6 +385,68 @@ class ListeningCheckTest {
   }
 
   @Test
+  fun `going forward right after going back by mistake undoes it`() = testScope.runTest {
+    history = listOf(fellAsleep(ago = 30.minutes, from = 2_000_000L, to = 1_000_000L))
+    positionMs = 1_000_000L
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(1.minutes)
+    positionMs = 200_000L
+    recordedEvents.emit(listenerEvent(ListeningEvent.Type.BookmarkJump, to = 200_000L, ago = 30.seconds))
+    runCurrent()
+    positionMs = 1_000_000L
+    recordedEvents.emit(listenerEvent(ListeningEvent.Type.Seek, to = 1_000_000L))
+    runCurrent()
+
+    advanceTimeBy(11.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(1_000_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  @Test
+  fun `going forward long after going back does not undo it`() = testScope.runTest {
+    history = listOf(fellAsleep(ago = 30.minutes, from = 2_000_000L, to = 1_000_000L))
+    positionMs = 1_000_000L
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(1.minutes)
+    positionMs = 200_000L
+    recordedEvents.emit(listenerEvent(ListeningEvent.Type.SkipBack, to = 200_000L, ago = 5.minutes))
+    runCurrent()
+    positionMs = 1_000_000L
+    recordedEvents.emit(listenerEvent(ListeningEvent.Type.Seek, to = 1_000_000L))
+    runCurrent()
+
+    advanceTimeBy(11.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(170_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  @Test
+  fun `going forward right after going back by mistake is remembered for the next play`() = testScope.runTest {
+    history = listOf(
+      listenerEvent(ListeningEvent.Type.Seek, to = 1_000_000L, ago = 19.minutes),
+      listenerEvent(ListeningEvent.Type.BookmarkJump, to = 200_000L, ago = 20.minutes),
+      fellAsleep(ago = 30.minutes, from = 2_000_000L, to = 1_000_000L),
+    )
+    positionMs = 1_000_000L
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(11.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(1_000_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  @Test
   fun `answering a check after a missed one counts as awake again`() = testScope.runTest {
     history = listOf(fellAsleep(ago = 30.minutes, from = 2_000_000L, to = 1_000_000L))
     positionMs = 1_500_000L
