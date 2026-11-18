@@ -4,6 +4,7 @@ import android.app.Application
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesIntoSet
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
@@ -33,6 +34,9 @@ import kotlin.time.Duration.Companion.seconds
  * back to where they last showed they were awake and pauses.
  *
  * Once they missed a check, the book keeps going back to where they lost track, see [LostTrack].
+ *
+ * Being awake when it goes off happens too, so turning the volume up soon after, or pressing play right away, takes
+ * back the going back: the book goes on from where it went off, as if they had answered.
  */
 @ContributesIntoSet(AppScope::class)
 class ListeningCheck(
@@ -55,6 +59,10 @@ class ListeningCheck(
   /** Already backed up when the listener lost track there, so backing up never goes before it. */
   private var lostTrackSpot: PlaybackPosition? = null
 
+  /** Where the book last went off, while the listener can still take back the going back, see [WentOff]. */
+  private var wentOff: WentOff? = null
+  private var wentOffJob: Job? = null
+
   override fun onAppStart(application: Application) {
     scope.launch {
       playStateManager.playStateFlow.collectLatest { playState ->
@@ -73,6 +81,21 @@ class ListeningCheck(
         .filter { it.type == ListeningEvent.Type.Pause && it.source == ListeningEvent.Source.Unplugged }
         .collect { onUnplugged(PlaybackPosition(it.bookId, it.chapterId, it.time)) }
     }
+    scope.launch {
+      volumeChanges.changes.collect { onVolumeChangedWhilePaused() }
+    }
+  }
+
+  /**
+   * Turning the volume up while it's paused right after it went off, like with a sleep mask's button, says they're
+   * awake, so it plays on from where it went off. Playing starts [checkWhilePlaying], which goes there.
+   */
+  private fun onVolumeChangedWhilePaused() {
+    if (playStateManager.playState == Playing) return
+    val went = wentOff ?: return
+    Logger.i("Volume changed right after going off, playing on from there")
+    wentOff = went.copy(confirmed = true)
+    playerController.play(source = ListeningEvent.Source.SleepTimer)
   }
 
   private suspend fun checkWhilePlaying() {
@@ -80,6 +103,13 @@ class ListeningCheck(
     var lostTrackAt = lostTrack.tonight(playing.bookId)
     lostTrackSpot = lostTrackAt?.position
     var awake = lostTrackAt?.position ?: playing
+    val undo = wentOff?.takeIf { it.position.bookId == playing.bookId && (it.confirmed || it.playTakesBack) }
+    if (undo != null) {
+      takeBackGoingBack(undo)
+      lostTrackAt = null
+      lostTrackSpot = null
+      awake = undo.position
+    }
     lastAwake = awake
     while (true) {
       // skipping, seeking or a volume button shows they're awake right there, so the next check waits for the full
@@ -89,7 +119,14 @@ class ListeningCheck(
       }
       if (action != null) {
         val now = playerController.livePlaybackState()?.position() ?: return
-        if (lostTrackAt == null || action == Action.ChangedVolume) {
+        val undoByVolume = wentOff?.takeIf { action == Action.ChangedVolume && it.position.bookId == now.bookId }
+        if (undoByVolume != null) {
+          // played again a while after it went off, and only now noticed it went back
+          takeBackGoingBack(undoByVolume)
+          lostTrackAt = null
+          lostTrackSpot = null
+          awake = undoByVolume.position
+        } else if (lostTrackAt == null || action == Action.ChangedVolume) {
           if (lostTrackAt != null) {
             // volume presses aren't in the history, so without this the next play would go back to where they lost
             // track before
@@ -118,7 +155,7 @@ class ListeningCheck(
         lastAwake = awake
       } else {
         Logger.i("Listening check missed")
-        fellAsleep(awake)
+        fellAsleep(awake, canTakeBack = true)
         return
       }
     }
@@ -135,7 +172,7 @@ class ListeningCheck(
     delay(KEEP_LISTENING_TIME)
     if (playStateManager.playState == Playing) return
     Logger.i("Sleep timer ended, going back to where the listener was last awake")
-    fellAsleep(awake)
+    fellAsleep(awake, canTakeBack = true)
   }
 
   /**
@@ -161,8 +198,17 @@ class ListeningCheck(
     }
   }
 
-  private suspend fun fellAsleep(awake: PlaybackPosition) {
-    if (playerController.livePlaybackState()?.bookId == awake.bookId) {
+  /**
+   * @param canTakeBack whether the listener can take back the going back for a little while, see [WentOff]. Not after
+   * earbuds came out, where turning the volume up would play on the phone's speaker.
+   */
+  private suspend fun fellAsleep(
+    awake: PlaybackPosition,
+    canTakeBack: Boolean = false,
+  ) {
+    val live = playerController.livePlaybackState()?.position()
+    rememberWentOff(live?.takeIf { canTakeBack && it.bookId == awake.bookId })
+    if (live?.bookId == awake.bookId) {
       // the last thing they remember can be right before that, so going back a bit more catches it, but not before
       // where they lost track, which already was backed up
       val backedUp = awake.copy(time = (awake.time - BACK_UP.inWholeMilliseconds).coerceAtLeast(0))
@@ -178,6 +224,48 @@ class ListeningCheck(
     playerController.pause()
     morningCheck.schedule(awake.bookId)
   }
+
+  private fun rememberWentOff(at: PlaybackPosition?) {
+    wentOffJob?.cancel()
+    wentOff = at?.let { WentOff(it) }
+    wentOffJob = at?.let {
+      scope.launch {
+        delay(PLAY_TAKES_BACK_TIME)
+        wentOff = wentOff?.copy(playTakesBack = false)
+        delay(VOLUME_TAKES_BACK_TIME - PLAY_TAKES_BACK_TIME)
+        wentOff = null
+      }
+    }
+  }
+
+  /**
+   * Goes on from where the book went off instead of where it went back to, and counts as an answer, so the next
+   * check, or the sleep timer, starts over from there.
+   */
+  private fun takeBackGoingBack(went: WentOff) {
+    Logger.i("Awake right after going off, going on from there")
+    rememberWentOff(null)
+    playerController.record(ListeningEvent.Type.StillListening, ListeningEvent.Source.SleepTimer)
+    playerController.setPosition(
+      time = went.position.time,
+      id = went.position.chapterId,
+      source = ListeningEvent.Source.SleepTimer,
+    )
+    sleepTimer.onListenerAwake()
+  }
+
+  /**
+   * Where the book was when it went off, before it went back. Turning the volume up within [VOLUME_TAKES_BACK_TIME],
+   * or pressing play within [PLAY_TAKES_BACK_TIME], goes on from there. Pressing play later can be half asleep, so
+   * then it stays where it went back to.
+   *
+   * @param confirmed the volume was turned up while paused, and the play that follows takes it back
+   */
+  private data class WentOff(
+    val position: PlaybackPosition,
+    val playTakesBack: Boolean = true,
+    val confirmed: Boolean = false,
+  )
 
   /**
    * When a headset button starts the app, playback can start before the player knows its book, and the whole
@@ -221,6 +309,12 @@ class ListeningCheck(
     val KEEP_LISTENING_TIME = 45.seconds
 
     val BACK_UP = 30.seconds
+
+    /** How long after going off pressing play goes on from where it went off. */
+    val PLAY_TAKES_BACK_TIME = 30.seconds
+
+    /** How long after going off turning the volume up goes on from where it went off. */
+    val VOLUME_TAKES_BACK_TIME = 2.minutes
 
     /** How far the book played past where they were last awake before earbuds coming out counts as asleep. */
     val UNPLUGGED_ASLEEP_AFTER = 5.minutes

@@ -74,6 +74,9 @@ class ListeningCheckTest {
     every { pause() } answers {
       playStateManager.playState = PlayStateManager.PlayState.Paused
     }
+    every { play(any()) } answers {
+      playStateManager.playState = PlayStateManager.PlayState.Playing
+    }
   }
 
   private val morningCheck = mockk<MorningCheck>(relaxed = true)
@@ -113,6 +116,96 @@ class ListeningCheckTest {
       playerController.pause()
     }
     coVerify { morningCheck.schedule(bookId) }
+  }
+
+  /** Plays until a check is missed at [wentOffMs], which goes back to 0 and pauses. */
+  private fun TestScope.missCheck(wentOffMs: Long = 700_000L) {
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+    positionMs = wentOffMs
+    advanceTimeBy(11.minutes + 1.seconds)
+    verify { playerController.setPosition(0L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer) }
+    positionMs = 0L
+  }
+
+  private fun verifyWentOnFrom(positionMs: Long, times: Int = 1) {
+    verify(exactly = times) {
+      playerController.setPosition(positionMs, chapter, ListeningEvent.Type.Seek, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  @Test
+  fun `turning the volume up right after going off plays on from where it went off`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    missCheck()
+
+    advanceTimeBy(1.minutes)
+    volumeChanges.onChanged()
+    runCurrent()
+
+    verify { playerController.play(ListeningEvent.Source.SleepTimer) }
+    verifyWentOnFrom(700_000L)
+    verify { playerController.record(ListeningEvent.Type.StillListening, ListeningEvent.Source.SleepTimer) }
+    verify { sleepTimer.onListenerAwake() }
+
+    // the next check starts over from there
+    positionMs = 1_300_000L
+    advanceTimeBy(11.minutes + 1.seconds)
+    verify {
+      playerController.setPosition(670_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+    }
+  }
+
+  @Test
+  fun `pressing play right after going off plays on from where it went off`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    missCheck()
+
+    advanceTimeBy(20.seconds)
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    verifyWentOnFrom(700_000L)
+  }
+
+  @Test
+  fun `pressing play a while after going off stays where it went back to`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    missCheck()
+
+    advanceTimeBy(1.minutes)
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    verifyWentOnFrom(700_000L, times = 0)
+  }
+
+  @Test
+  fun `turning the volume up soon after pressing play goes on from where it went off`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    missCheck()
+
+    advanceTimeBy(1.minutes)
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+    advanceTimeBy(20.seconds)
+    volumeChanges.onChanged()
+    runCurrent()
+
+    verifyWentOnFrom(700_000L)
+  }
+
+  @Test
+  fun `turning the volume up long after going off does nothing`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    missCheck()
+
+    advanceTimeBy(3.minutes)
+    volumeChanges.onChanged()
+    runCurrent()
+
+    verify(exactly = 0) { playerController.play(any()) }
+    verifyWentOnFrom(700_000L, times = 0)
   }
 
   @Test
