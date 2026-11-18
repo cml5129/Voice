@@ -128,7 +128,10 @@ class ListeningCheckTest {
     positionMs = 0L
   }
 
-  private fun verifyWentOnFrom(positionMs: Long, times: Int = 1) {
+  private fun verifyWentOnFrom(
+    positionMs: Long,
+    times: Int = 1,
+  ) {
     verify(exactly = times) {
       playerController.setPosition(positionMs, chapter, ListeningEvent.Type.Seek, ListeningEvent.Source.SleepTimer)
     }
