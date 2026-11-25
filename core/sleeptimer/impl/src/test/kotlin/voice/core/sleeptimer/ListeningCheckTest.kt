@@ -1,6 +1,7 @@
 package voice.core.sleeptimer
 
 import io.mockk.Runs
+import io.mockk.clearMocks
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every
@@ -118,6 +119,26 @@ class ListeningCheckTest {
     coVerify { morningCheck.schedule(bookId) }
   }
 
+  @Test
+  fun `the check keeps swelling the volume back up until it is answered`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    advanceTimeBy(10.minutes + 1.seconds)
+    advanceTimeBy(10.seconds)
+    verify(atLeast = 3) { playerController.setVolume(ListeningCheck.PROMPT_VOLUME) }
+    verify(atLeast = 2) { playerController.setVolume(ListeningCheck.PROMPT_SWELL_VOLUME) }
+
+    shakes.trySend(Unit)
+    runCurrent()
+    verify { playerController.setVolume(1F) }
+    clearMocks(playerController, answers = false, recordedCalls = true, childMocks = false, verificationMarks = false)
+    advanceTimeBy(5.seconds)
+    verify(exactly = 0) { playerController.setVolume(ListeningCheck.PROMPT_VOLUME) }
+    verify(exactly = 0) { playerController.setVolume(ListeningCheck.PROMPT_SWELL_VOLUME) }
+  }
+
   /** Plays until a check is missed at [wentOffMs], which goes back to 0 and pauses. */
   private fun TestScope.missCheck(wentOffMs: Long = 700_000L) {
     playStateManager.playState = PlayStateManager.PlayState.Playing
@@ -155,7 +176,7 @@ class ListeningCheckTest {
     positionMs = 1_300_000L
     advanceTimeBy(11.minutes + 1.seconds)
     verify {
-      playerController.setPosition(670_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(610_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
   }
 
@@ -164,7 +185,19 @@ class ListeningCheckTest {
     listeningCheck().onAppStart(mockk())
     missCheck()
 
-    advanceTimeBy(20.seconds)
+    advanceTimeBy(10.seconds)
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    verifyWentOnFrom(700_000L)
+  }
+
+  @Test
+  fun `pressing play a few minutes after going off plays on from where it went off`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    missCheck()
+
+    advanceTimeBy(ListeningCheck.TAKE_BACK_TIME - 30.seconds)
     playStateManager.playState = PlayStateManager.PlayState.Playing
     runCurrent()
 
@@ -176,7 +209,7 @@ class ListeningCheckTest {
     listeningCheck().onAppStart(mockk())
     missCheck()
 
-    advanceTimeBy(1.minutes)
+    advanceTimeBy(ListeningCheck.TAKE_BACK_TIME + 1.seconds)
     playStateManager.playState = PlayStateManager.PlayState.Playing
     runCurrent()
 
@@ -184,26 +217,11 @@ class ListeningCheckTest {
   }
 
   @Test
-  fun `turning the volume up soon after pressing play goes on from where it went off`() = testScope.runTest {
-    listeningCheck().onAppStart(mockk())
-    missCheck()
-
-    advanceTimeBy(1.minutes)
-    playStateManager.playState = PlayStateManager.PlayState.Playing
-    runCurrent()
-    advanceTimeBy(20.seconds)
-    volumeChanges.onChanged()
-    runCurrent()
-
-    verifyWentOnFrom(700_000L)
-  }
-
-  @Test
   fun `turning the volume up long after going off does nothing`() = testScope.runTest {
     listeningCheck().onAppStart(mockk())
     missCheck()
 
-    advanceTimeBy(3.minutes)
+    advanceTimeBy(ListeningCheck.TAKE_BACK_TIME + 1.seconds)
     volumeChanges.onChanged()
     runCurrent()
 
@@ -230,7 +248,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(10.minutes + 1.seconds)
     verify {
-      playerController.setPosition(570_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(510_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
       playerController.pause()
     }
   }
@@ -267,7 +285,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(11.minutes + 1.seconds)
     verify {
-      playerController.setPosition(1_770_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(1_710_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
   }
 
@@ -322,7 +340,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(ListeningCheck.KEEP_LISTENING_TIME + 1.seconds)
     verify {
-      playerController.setPosition(270_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(210_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
     coVerify { morningCheck.schedule(bookId) }
   }
@@ -383,7 +401,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(2.minutes + 1.seconds)
     verify {
-      playerController.setPosition(2_070_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(2_010_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
       playerController.pause()
     }
   }
@@ -405,7 +423,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(10.minutes + 1.seconds)
     verify {
-      playerController.setPosition(2_070_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(2_010_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
   }
 
@@ -520,7 +538,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(11.minutes + 1.seconds)
     verify {
-      playerController.setPosition(170_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(110_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
   }
 
@@ -573,7 +591,7 @@ class ListeningCheckTest {
     recordedEvents.emit(listenerEvent(ListeningEvent.Type.Pause, ListeningEvent.Source.Unplugged))
     runCurrent()
     verify {
-      playerController.setPosition(70_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(10_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
   }
 
@@ -608,7 +626,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(11.minutes + 1.seconds)
     verify {
-      playerController.setPosition(1_570_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(1_510_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
   }
 
@@ -622,7 +640,7 @@ class ListeningCheckTest {
 
     advanceTimeBy(11.minutes + 1.seconds)
     verify {
-      playerController.setPosition(1_470_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
+      playerController.setPosition(1_410_000L, chapter, ListeningEvent.Type.FellAsleep, ListeningEvent.Source.SleepTimer)
     }
   }
 
