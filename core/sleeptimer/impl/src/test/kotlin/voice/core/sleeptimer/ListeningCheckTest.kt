@@ -257,19 +257,18 @@ class ListeningCheckTest {
   }
 
   @Test
-  fun `turning the volume up a while after going off does nothing even when the phone slept through it`() =
-    testScope.runTest {
-      listeningCheck().onAppStart(mockk())
-      missCheck()
+  fun `turning the volume up a while after going off does nothing even when the phone slept through it`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    missCheck()
 
-      advanceTimeBy(1.minutes)
-      sleptMs = 11.minutes.inWholeMilliseconds
-      volumeChanges.onChanged()
-      runCurrent()
+    advanceTimeBy(1.minutes)
+    sleptMs = 11.minutes.inWholeMilliseconds
+    volumeChanges.onChanged()
+    runCurrent()
 
-      verify(exactly = 0) { playerController.play(any()) }
-      verifyWentOnFrom(700_000L, times = 0)
-    }
+    verify(exactly = 0) { playerController.play(any()) }
+    verifyWentOnFrom(700_000L, times = 0)
+  }
 
   @Test
   fun `a shake keeps playing and moves where it goes back to`() = testScope.runTest {
