@@ -409,6 +409,8 @@
     <string name="settings.playback.lock_screen_slider.title">Liugur lukustuskuval</string>
     <string name="settings.playback.seek_time.summary">Kui kaugele tagasi- ja edasikerimine hüppavad</string>
     <string name="settings.playback.seek_time.title">Kerimise samm</string>
+    <string name="settings.playback.volume_skip.summary">Vajuta kaks korda vaiksemaks, et minna tagasi, või kaks korda valjemaks, et minna edasi. Kuulamiskontrolli tundidel läheb see sinna, kus sa viimati ärkvel olid, muidu minuti võrra. Helitugevus jääb endiseks.</string>
+    <string name="settings.playback.volume_skip.title">Hüppa helitugevuse nuppudega</string>
     <string name="settings.server.off">Ühenda Voice oma serveriga</string>
     <string name="settings.server.title">Sinu server</string>
     <string name="settings.subtitle">Tee Voice enda omaks</string>

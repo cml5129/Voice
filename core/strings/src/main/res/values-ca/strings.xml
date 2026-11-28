@@ -427,6 +427,8 @@
     <string name="settings.playback.lock_screen_slider.title">Barra a la pantalla de bloqueig</string>
     <string name="settings.playback.seek_time.summary">Quant salten el rebobinat i l\'avançament ràpid</string>
     <string name="settings.playback.seek_time.title">Durada del salt</string>
+    <string name="settings.playback.volume_skip.summary">Premeu dues vegades el botó de baixar el volum per tornar enrere, o el de pujar-lo per avançar. A les hores de la comprovació d\'escolta va a l\'últim punt on encara escoltàveu; si no, un minut. El volum torna a com estava.</string>
+    <string name="settings.playback.volume_skip.title">Salta amb els botons de volum</string>
     <string name="settings.server.off">Connecta Voice al teu propi servidor</string>
     <string name="settings.server.title">El teu servidor</string>
     <string name="settings.subtitle">Deixeu Voice al vostre gust</string>

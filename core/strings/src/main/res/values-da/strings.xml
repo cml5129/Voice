@@ -409,6 +409,8 @@
     <string name="settings.playback.lock_screen_slider.title">Skyder på låseskærmen</string>
     <string name="settings.playback.seek_time.summary">Hvor langt der springes tilbage og frem</string>
     <string name="settings.playback.seek_time.title">Springinterval</string>
+    <string name="settings.playback.volume_skip.summary">Tryk to gange på skru ned for at gå tilbage, eller to gange på skru op for at gå frem. I lyttetjekkets timer går den til der, hvor du sidst var vågen, ellers et minut. Lydstyrken bliver som før.</string>
+    <string name="settings.playback.volume_skip.title">Spring med lydstyrkeknapperne</string>
     <string name="settings.server.off">Forbind Voice med din egen server</string>
     <string name="settings.server.title">Din server</string>
     <string name="settings.subtitle">Gør Voice til din egen</string>

@@ -110,6 +110,7 @@ class ListeningCheckTest {
       morningCheck = morningCheck,
       clock = clock,
       scope = testScope.backgroundScope,
+      awakeSpots = AwakeSpots(clock),
     )
   }
 

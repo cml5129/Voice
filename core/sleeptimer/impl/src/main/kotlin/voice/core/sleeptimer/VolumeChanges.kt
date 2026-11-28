@@ -16,7 +16,18 @@ class VolumeChanges {
   val changes: SharedFlow<Unit>
     field = MutableSharedFlow<Unit>(extraBufferCapacity = 1)
 
-  fun onChanged() {
+  val steps: SharedFlow<VolumeStep>
+    field = MutableSharedFlow<VolumeStep>(extraBufferCapacity = 8)
+
+  fun onChanged(step: VolumeStep? = null) {
     changes.tryEmit(Unit)
+    if (step != null) steps.tryEmit(step)
   }
 }
+
+/** The media volume going from [from] to [to], at [atMillis] of the clock. */
+data class VolumeStep(
+  val from: Int,
+  val to: Int,
+  val atMillis: Long,
+)

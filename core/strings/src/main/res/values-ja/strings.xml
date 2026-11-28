@@ -391,6 +391,8 @@
     <string name="settings.playback.lock_screen_slider.title">ロック画面のシークバー</string>
     <string name="settings.playback.seek_time.summary">巻き戻しと早送りでスキップする長さ</string>
     <string name="settings.playback.seek_time.title">スキップ量</string>
+    <string name="settings.playback.volume_skip.summary">音量を下げるボタンを2回押すと戻り、上げるボタンを2回押すと進みます。聴いているかの確認の時間帯は最後に起きていた位置へ、それ以外は1分移動します。音量は元に戻ります。</string>
+    <string name="settings.playback.volume_skip.title">音量ボタンでスキップ</string>
     <string name="settings.server.off">Voice を自分のサーバーに接続</string>
     <string name="settings.server.title">自分のサーバー</string>
     <string name="settings.subtitle">Voice を自分好みに</string>

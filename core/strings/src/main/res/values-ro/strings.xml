@@ -427,6 +427,8 @@
     <string name="settings.playback.lock_screen_slider.title">Bara de pe ecranul de blocare</string>
     <string name="settings.playback.seek_time.summary">Cât de mult sar derularea înapoi și înainte</string>
     <string name="settings.playback.seek_time.title">Pas derulare</string>
+    <string name="settings.playback.volume_skip.summary">Apasă de două ori pe volum jos ca să te întorci, sau de două ori pe volum sus ca să mergi înainte. În orele verificării ascultării sare la ultimul loc în care încă ascultai, altfel un minut. Volumul revine cum era.</string>
+    <string name="settings.playback.volume_skip.title">Sari cu butoanele de volum</string>
     <string name="settings.server.off">Conectează Voice la propriul server</string>
     <string name="settings.server.title">Serverul tău</string>
     <string name="settings.subtitle">Fă Voice al tău</string>

@@ -445,6 +445,8 @@
     <string name="settings.playback.lock_screen_slider.title">Ползунок на экране блокировки</string>
     <string name="settings.playback.seek_time.summary">Насколько далеко перематывают кнопки назад и вперёд</string>
     <string name="settings.playback.seek_time.title">Интервал перемотки</string>
+    <string name="settings.playback.volume_skip.summary">Нажмите дважды «тише», чтобы вернуться, или дважды «громче», чтобы перейти вперёд. В часы проверки прослушивания книга перейдёт туда, где вы последний раз не спали, иначе на минуту. Громкость вернётся прежней.</string>
+    <string name="settings.playback.volume_skip.title">Перемотка кнопками громкости</string>
     <string name="settings.server.off">Подключить Voice к своему серверу</string>
     <string name="settings.server.title">Ваш сервер</string>
     <string name="settings.subtitle">Сделайте Voice своим</string>

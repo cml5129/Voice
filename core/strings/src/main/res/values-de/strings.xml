@@ -409,6 +409,8 @@
     <string name="settings.playback.lock_screen_slider.title">Regler auf dem Sperrbildschirm</string>
     <string name="settings.playback.seek_time.summary">Wie weit Zurück- und Vorspulen springen</string>
     <string name="settings.playback.seek_time.title">Vor- und zurückspulen</string>
+    <string name="settings.playback.volume_skip.summary">Drück zweimal leiser, um zurückzuspringen, oder zweimal lauter für vorwärts. In den Stunden der Zuhörprüfung geht es dorthin, wo Du zuletzt wach warst, sonst eine Minute. Die Lautstärke bleibt, wie sie war.</string>
+    <string name="settings.playback.volume_skip.title">Mit Lautstärketasten springen</string>
     <string name="settings.server.off">Verbinde Voice mit deinem eigenen Server</string>
     <string name="settings.server.title">Dein Server</string>
     <string name="settings.subtitle">Mach Voice zu Deinem</string>

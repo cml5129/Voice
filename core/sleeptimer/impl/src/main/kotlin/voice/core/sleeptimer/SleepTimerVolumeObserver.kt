@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesIntoSet
 import voice.core.initializer.AppInitializer
+import java.time.Clock
 
 /**
  * Changing the media volume is a sign the listener is still awake, so it restarts a running countdown and
@@ -19,6 +20,7 @@ import voice.core.initializer.AppInitializer
 class SleepTimerVolumeObserver(
   private val sleepTimer: SleepTimer,
   private val volumeChanges: VolumeChanges,
+  private val clock: Clock,
 ) : AppInitializer {
 
   override fun onAppStart(application: Application) {
@@ -31,7 +33,13 @@ class SleepTimerVolumeObserver(
         ) {
           if (intent.getIntExtra(EXTRA_VOLUME_STREAM_TYPE, -1) == AudioManager.STREAM_MUSIC) {
             sleepTimer.onListenerAwake()
-            volumeChanges.onChanged()
+            volumeChanges.onChanged(
+              VolumeStep(
+                from = intent.getIntExtra(EXTRA_PREV_VOLUME_STREAM_VALUE, -1),
+                to = intent.getIntExtra(EXTRA_VOLUME_STREAM_VALUE, -1),
+                atMillis = clock.millis(),
+              ),
+            )
           }
         }
       },
@@ -45,5 +53,7 @@ class SleepTimerVolumeObserver(
     // not part of the public SDK, but sent by every Android version
     const val VOLUME_CHANGED_ACTION = "android.media.VOLUME_CHANGED_ACTION"
     const val EXTRA_VOLUME_STREAM_TYPE = "android.media.EXTRA_VOLUME_STREAM_TYPE"
+    const val EXTRA_VOLUME_STREAM_VALUE = "android.media.EXTRA_VOLUME_STREAM_VALUE"
+    const val EXTRA_PREV_VOLUME_STREAM_VALUE = "android.media.EXTRA_PREV_VOLUME_STREAM_VALUE"
   }
 }

@@ -409,6 +409,8 @@
     <string name="settings.playback.lock_screen_slider.title">Kilit ekranı kaydırıcısı</string>
     <string name="settings.playback.seek_time.summary">Geri ve ileri sarmanın ne kadar atlayacağı</string>
     <string name="settings.playback.seek_time.title">Atlama süresi</string>
+    <string name="settings.playback.volume_skip.summary">Geri gitmek için ses kısma tuşuna, ileri gitmek için ses açma tuşuna iki kez basın. Dinleme kontrolü saatlerinde en son uyanık olduğunuz yere, diğer zamanlarda bir dakika gider. Ses eski düzeyine döner.</string>
+    <string name="settings.playback.volume_skip.title">Ses tuşlarıyla atla</string>
     <string name="settings.server.off">Voice\'u kendi sunucuna bağla</string>
     <string name="settings.server.title">Sunucun</string>
     <string name="settings.subtitle">Voice\'u kendinize göre ayarlayın</string>

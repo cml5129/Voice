@@ -409,6 +409,8 @@
     <string name="settings.playback.lock_screen_slider.title">Ρυθμιστικό οθόνης κλειδώματος</string>
     <string name="settings.playback.seek_time.summary">Πόσο μακριά πηγαίνουν η επαναφορά και η γρήγορη προώθηση</string>
     <string name="settings.playback.seek_time.title">Χρονική μετακίνηση</string>
+    <string name="settings.playback.volume_skip.summary">Πατήστε δύο φορές το κουμπί μείωσης έντασης για να γυρίσετε πίσω, ή δύο φορές το κουμπί αύξησης για να πάτε μπροστά. Στις ώρες του ελέγχου ακρόασης πηγαίνει εκεί που ήσασταν τελευταία φορά ξύπνιοι, αλλιώς ένα λεπτό. Η ένταση επανέρχεται.</string>
+    <string name="settings.playback.volume_skip.title">Μετάβαση με τα κουμπιά έντασης</string>
     <string name="settings.server.off">Σύνδεσε το Voice με τον δικό σου διακομιστή</string>
     <string name="settings.server.title">Ο διακομιστής σου</string>
     <string name="settings.subtitle">Κάντε το Voice δικό σας</string>
