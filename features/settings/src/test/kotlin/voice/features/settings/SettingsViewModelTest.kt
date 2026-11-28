@@ -38,6 +38,7 @@ import voice.core.kioskmode.KioskModeDemoData
 import voice.core.kioskmode.KioskModeFeatureFlag
 import voice.core.playback.AutoRewindAmountStore
 import voice.core.playback.LockScreenSliderStore
+import voice.core.playback.VolumeSkipStore
 import voice.core.playback.SeekTimeStore
 import voice.core.server.VoiceServerSettings
 import voice.core.server.VoiceServerStore
@@ -121,6 +122,7 @@ class SettingsViewModelTest {
     autoRewindAmountStore = AutoRewindAmountStore(autoRewindAmountStore),
     seekTimeStore = SeekTimeStore(seekTimeStore),
     lockScreenSliderStore = LockScreenSliderStore(lockScreenSliderStore),
+    volumeSkipStore = VolumeSkipStore(MemoryDataStore(false)),
     navigator = navigator,
     appInfoProvider = appInfoProvider,
     gridModeStore = GridModeStore(gridModeStore),

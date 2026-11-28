@@ -10,6 +10,7 @@ dependencies {
   implementation(projects.core.common)
   implementation(projects.core.strings)
   implementation(projects.core.playback)
+  implementation(projects.core.transcript)
   implementation(projects.core.initializer)
   implementation(projects.core.logging.api)
   implementation(projects.core.analytics.api)

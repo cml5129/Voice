@@ -720,6 +720,10 @@
     <string name="settings.playback.seek_time.summary">How far rewind and fast forward jump</string>
     <!-- Title for the setting that controls skip-forward and rewind duration. -->
     <string name="settings.playback.seek_time.title">Skip amount</string>
+    <!-- Explains the setting where pressing a volume button twice in a row skips about a minute back or forward, to where a sentence starts when the book has a transcript. -->
+    <string name="settings.playback.volume_skip.summary">Press volume down twice to go back about a minute, or up twice to go forward. It lands where a sentence starts, and the volume goes back to where it was.</string>
+    <!-- Title for the setting where pressing a volume button twice in a row skips back or forward. -->
+    <string name="settings.playback.volume_skip.title">Skip with volume buttons</string>
     <!-- Settings summary while Voice isn't connected to the listener's own server, which keeps the listening history. -->
     <string name="settings.server.off">Connect Voice to your own server</string>
     <!-- Settings title for the listener's own server, which keeps the listening history. Switches it on and off. -->

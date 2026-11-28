@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.media.AudioManager
+import android.os.SystemClock
 import androidx.core.content.ContextCompat
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesIntoSet
@@ -31,7 +32,13 @@ class SleepTimerVolumeObserver(
         ) {
           if (intent.getIntExtra(EXTRA_VOLUME_STREAM_TYPE, -1) == AudioManager.STREAM_MUSIC) {
             sleepTimer.onListenerAwake()
-            volumeChanges.onChanged()
+            volumeChanges.onChanged(
+              VolumeStep(
+                from = intent.getIntExtra(EXTRA_PREV_VOLUME_STREAM_VALUE, -1),
+                to = intent.getIntExtra(EXTRA_VOLUME_STREAM_VALUE, -1),
+                atMillis = SystemClock.elapsedRealtime(),
+              ),
+            )
           }
         }
       },
@@ -45,5 +52,7 @@ class SleepTimerVolumeObserver(
     // not part of the public SDK, but sent by every Android version
     const val VOLUME_CHANGED_ACTION = "android.media.VOLUME_CHANGED_ACTION"
     const val EXTRA_VOLUME_STREAM_TYPE = "android.media.EXTRA_VOLUME_STREAM_TYPE"
+    const val EXTRA_VOLUME_STREAM_VALUE = "android.media.EXTRA_VOLUME_STREAM_VALUE"
+    const val EXTRA_PREV_VOLUME_STREAM_VALUE = "android.media.EXTRA_PREV_VOLUME_STREAM_VALUE"
   }
 }
