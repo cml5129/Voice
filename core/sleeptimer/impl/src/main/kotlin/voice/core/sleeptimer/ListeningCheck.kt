@@ -4,7 +4,6 @@ import android.app.Application
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesIntoSet
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -61,11 +60,11 @@ class ListeningCheck(
   private var lostTrackSpot: PlaybackPosition? = null
 
   /**
-   * Where the book was when it last went off, before it went back, for [TAKE_BACK_TIME]. Turning the volume up or
-   * pressing play by then goes on from there. Later it can be half asleep, so then it stays where it went back to.
+   * Where the book was when it last went off, before it went back, and when, see [takeBackSpot]. Turning the volume
+   * up or pressing play within [TAKE_BACK_TIME] goes on from there. Later it can be half asleep, so then it stays
+   * where it went back to.
    */
-  private var wentOff: PlaybackPosition? = null
-  private var wentOffJob: Job? = null
+  private var wentOff: WentOff? = null
 
   override fun onAppStart(application: Application) {
     scope.launch {
@@ -96,7 +95,7 @@ class ListeningCheck(
    */
   private fun onVolumeChangedWhilePaused() {
     if (playStateManager.playState == Playing) return
-    if (wentOff == null) return
+    if (takeBackSpot() == null) return
     Logger.i("Volume changed right after going off, playing on from there")
     playerController.play(source = ListeningEvent.Source.SleepTimer)
   }
@@ -106,7 +105,7 @@ class ListeningCheck(
     var lostTrackAt = lostTrack.tonight(playing.bookId)
     lostTrackSpot = lostTrackAt?.position
     var awake = lostTrackAt?.position ?: playing
-    val undo = wentOff?.takeIf { it.bookId == playing.bookId }
+    val undo = takeBackSpot()?.takeIf { it.bookId == playing.bookId }
     if (undo != null) {
       takeBackGoingBack(undo)
       lostTrackAt = null
@@ -236,15 +235,28 @@ class ListeningCheck(
   }
 
   private fun rememberWentOff(at: PlaybackPosition?) {
-    wentOffJob?.cancel()
-    wentOff = at
-    wentOffJob = at?.let {
-      scope.launch {
-        delay(TAKE_BACK_TIME)
-        wentOff = null
-      }
-    }
+    wentOff = at?.let { WentOff(it, clock.millis()) }
   }
+
+  /**
+   * Where it went off, while that's at most [TAKE_BACK_TIME] ago by the clock on the wall. A timer that runs out
+   * after [TAKE_BACK_TIME] doesn't do: the phone sleeps soon after it pauses, and a delay doesn't count the time it
+   * sleeps, so on the night of Nov 26 2026 plays 6 and 12 minutes after going off still went on from there.
+   */
+  private fun takeBackSpot(): PlaybackPosition? {
+    val went = wentOff ?: return null
+    val ago = clock.millis() - went.atMillis
+    if (ago < 0 || ago > TAKE_BACK_TIME.inWholeMilliseconds) {
+      wentOff = null
+      return null
+    }
+    return went.position
+  }
+
+  private data class WentOff(
+    val position: PlaybackPosition,
+    val atMillis: Long,
+  )
 
   /**
    * Goes on from where the book went off instead of where it went back to, and counts as an answer, so the next

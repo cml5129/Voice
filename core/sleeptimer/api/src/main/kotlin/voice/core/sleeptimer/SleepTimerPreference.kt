@@ -24,14 +24,14 @@ data class SleepTimerPreference(
   val restartWhenAwake: Boolean = true,
   /**
    * Which default [duration] the stored one was last brought up to. Version 1 moved the default from 20 to 30
-   * minutes, see `SleepTimerDefaultDurationMigration`.
+   * minutes, version 2 from 30 to 21, see `SleepTimerDefaultDurationMigration`.
    */
   val defaultDurationVersion: Int = 0,
 ) {
 
   companion object {
-    val DEFAULT_DURATION: Duration = 30.minutes
-    const val CURRENT_DEFAULT_DURATION_VERSION: Int = 1
+    val DEFAULT_DURATION: Duration = 21.minutes
+    const val CURRENT_DEFAULT_DURATION_VERSION: Int = 2
 
     val Default: SleepTimerPreference = SleepTimerPreference(
       autoSleepTimerEnabled = false,

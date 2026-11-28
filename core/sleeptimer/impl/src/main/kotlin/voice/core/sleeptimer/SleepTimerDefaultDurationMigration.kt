@@ -10,8 +10,8 @@ import voice.core.sleeptimer.SleepTimerPreference.Companion.CURRENT_DEFAULT_DURA
 import kotlin.time.Duration.Companion.minutes
 
 /**
- * The sleep timer's default went from 20 to 30 minutes. A stored duration still at the old default of 20 minutes
- * moves to the new one, once, so picking 20 again later sticks.
+ * The sleep timer's default went from 20 to 30 minutes, then to 21, which fits falling asleep well. A stored
+ * duration still at the old default moves to the new one, once, so picking it again later sticks.
  */
 @ContributesIntoSet(AppScope::class)
 class SleepTimerDefaultDurationMigration(
@@ -28,8 +28,9 @@ class SleepTimerDefaultDurationMigration(
 
 internal fun SleepTimerPreference.migrateDefaultDuration(): SleepTimerPreference {
   if (defaultDurationVersion >= CURRENT_DEFAULT_DURATION_VERSION) return this
+  val oldDefault = if (defaultDurationVersion == 0) 20.minutes else 30.minutes
   return copy(
-    duration = if (duration == 20.minutes) SleepTimerPreference.DEFAULT_DURATION else duration,
+    duration = if (duration == oldDefault) SleepTimerPreference.DEFAULT_DURATION else duration,
     defaultDurationVersion = CURRENT_DEFAULT_DURATION_VERSION,
   )
 }
