@@ -427,6 +427,8 @@
     <string name="settings.playback.lock_screen_slider.title">Barra no ecrã de bloqueio</string>
     <string name="settings.playback.seek_time.summary">Quanto tempo saltar ao recuar e avançar</string>
     <string name="settings.playback.seek_time.title">Duração do salto</string>
+    <string name="settings.playback.volume_skip.summary">Prima duas vezes diminuir volume para recuar cerca de um minuto, ou aumentar volume duas vezes para avançar. Começa no início de uma frase e o volume volta ao que estava.</string>
+    <string name="settings.playback.volume_skip.title">Saltar com os botões de volume</string>
     <string name="settings.server.off">Ligue o Voice ao seu próprio servidor</string>
     <string name="settings.server.title">O seu servidor</string>
     <string name="settings.subtitle">Torne o Voice seu</string>

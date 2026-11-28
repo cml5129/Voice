@@ -409,6 +409,8 @@
     <string name="settings.playback.lock_screen_slider.title">Reglage på låsskärmen</string>
     <string name="settings.playback.seek_time.summary">Hur långt bakåt- och framåtspolning hoppar</string>
     <string name="settings.playback.seek_time.title">Hopplängd</string>
+    <string name="settings.playback.volume_skip.summary">Tryck två gånger på volym ned för att gå ungefär en minut bakåt, eller två gånger på volym upp för att gå framåt. Den fortsätter där en mening börjar, och volymen blir som förut.</string>
+    <string name="settings.playback.volume_skip.title">Hoppa med volymknapparna</string>
     <string name="settings.server.off">Anslut Voice till din egen server</string>
     <string name="settings.server.title">Din server</string>
     <string name="settings.subtitle">Gör Voice till ditt eget</string>

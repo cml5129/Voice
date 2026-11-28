@@ -445,6 +445,8 @@
     <string name="settings.playback.lock_screen_slider.title">Suwak na ekranie blokady</string>
     <string name="settings.playback.seek_time.summary">O ile przewijają przyciski do tyłu i do przodu</string>
     <string name="settings.playback.seek_time.title">Przewiń o</string>
+    <string name="settings.playback.volume_skip.summary">Naciśnij dwa razy ściszanie, aby cofnąć się o około minutę, albo dwa razy pogłaśnianie, aby przejść dalej. Odtwarzanie rusza od początku zdania, a głośność wraca do poprzedniej.</string>
+    <string name="settings.playback.volume_skip.title">Przewijanie przyciskami głośności</string>
     <string name="settings.server.off">Połącz Voice z własnym serwerem</string>
     <string name="settings.server.title">Twój serwer</string>
     <string name="settings.subtitle">Voice na twoją modłę</string>

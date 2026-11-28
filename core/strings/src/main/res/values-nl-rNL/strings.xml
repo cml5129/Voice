@@ -409,6 +409,8 @@
     <string name="settings.playback.lock_screen_slider.title">Schuifbalk op het vergrendelscherm</string>
     <string name="settings.playback.seek_time.summary">Hoe ver terugspoelen en vooruitspoelen springen</string>
     <string name="settings.playback.seek_time.title">Spoelafstand</string>
+    <string name="settings.playback.volume_skip.summary">Druk twee keer op volume omlaag om ongeveer een minuut terug te gaan, of twee keer op volume omhoog om vooruit te gaan. Het gaat verder bij het begin van een zin en het volume blijft zoals het was.</string>
+    <string name="settings.playback.volume_skip.title">Springen met de volumeknoppen</string>
     <string name="settings.server.off">Verbind Voice met je eigen server</string>
     <string name="settings.server.title">Je server</string>
     <string name="settings.subtitle">Maak Voice helemaal van jou</string>

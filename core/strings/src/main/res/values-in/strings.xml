@@ -391,6 +391,8 @@
     <string name="settings.playback.lock_screen_slider.title">Penggeser di layar kunci</string>
     <string name="settings.playback.seek_time.summary">Seberapa jauh mundur dan maju cepat melompat</string>
     <string name="settings.playback.seek_time.title">Durasi lompatan</string>
+    <string name="settings.playback.volume_skip.summary">Tekan tombol volume turun dua kali untuk mundur sekitar satu menit, atau volume naik dua kali untuk maju. Diputar dari awal kalimat, dan volume kembali seperti semula.</string>
+    <string name="settings.playback.volume_skip.title">Lompati dengan tombol volume</string>
     <string name="settings.server.off">Hubungkan Voice ke servermu sendiri</string>
     <string name="settings.server.title">Servermu</string>
     <string name="settings.subtitle">Jadikan Voice milik Anda</string>

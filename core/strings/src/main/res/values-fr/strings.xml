@@ -427,6 +427,8 @@
     <string name="settings.playback.lock_screen_slider.title">Curseur sur l\'écran de verrouillage</string>
     <string name="settings.playback.seek_time.summary">De combien le retour et l\'avance rapide sautent</string>
     <string name="settings.playback.seek_time.title">Durée du saut</string>
+    <string name="settings.playback.volume_skip.summary">Appuyez deux fois sur volume bas pour reculer d\'environ une minute, ou deux fois sur volume haut pour avancer. La lecture reprend au début d\'une phrase et le volume revient à son niveau.</string>
+    <string name="settings.playback.volume_skip.title">Sauter avec les boutons de volume</string>
     <string name="settings.server.off">Connecter Voice à votre propre serveur</string>
     <string name="settings.server.title">Votre serveur</string>
     <string name="settings.subtitle">Faites de Voice le vôtre</string>

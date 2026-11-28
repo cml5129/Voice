@@ -427,6 +427,8 @@
     <string name="settings.playback.lock_screen_slider.title">Barra en la pantalla de bloqueo</string>
     <string name="settings.playback.seek_time.summary">Cuánto saltan el retroceso y el avance rápido</string>
     <string name="settings.playback.seek_time.title">Segundos de avance/retroceso</string>
+    <string name="settings.playback.volume_skip.summary">Pulsa dos veces bajar volumen para retroceder un minuto, o dos veces subir volumen para avanzar. Empieza al inicio de una frase y el volumen vuelve a como estaba.</string>
+    <string name="settings.playback.volume_skip.title">Saltar con los botones de volumen</string>
     <string name="settings.server.off">Conecta Voice a tu propio servidor</string>
     <string name="settings.server.title">Tu servidor</string>
     <string name="settings.subtitle">Haz Voice a tu medida</string>

@@ -445,6 +445,8 @@
     <string name="settings.playback.lock_screen_slider.title">Повзунок на екрані блокування</string>
     <string name="settings.playback.seek_time.summary">Наскільки далеко перемотують кнопки назад і вперед</string>
     <string name="settings.playback.seek_time.title">Інтервал перемотування</string>
+    <string name="settings.playback.volume_skip.summary">Натисніть двічі «тихіше», щоб повернутися приблизно на хвилину, або двічі «гучніше», щоб перейти вперед. Відтворення почнеться з початку речення, а гучність повернеться до попередньої.</string>
+    <string name="settings.playback.volume_skip.title">Перемотування кнопками гучності</string>
     <string name="settings.server.off">Під\'єднати Voice до власного сервера</string>
     <string name="settings.server.title">Ваш сервер</string>
     <string name="settings.subtitle">Зробіть Voice своїм</string>

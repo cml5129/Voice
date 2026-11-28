@@ -409,6 +409,8 @@
     <string name="settings.playback.lock_screen_slider.title">लॉक स्क्रीन स्लाइडर</string>
     <string name="settings.playback.seek_time.summary">रिवाइंड और फ़ास्ट फ़ॉरवर्ड कितनी दूर जाते हैं</string>
     <string name="settings.playback.seek_time.title">जंप की अवधि</string>
+    <string name="settings.playback.volume_skip.summary">लगभग एक मिनट पीछे जाने के लिए वॉल्यूम कम करने वाला बटन दो बार दबाएँ, या आगे जाने के लिए बढ़ाने वाला बटन दो बार। कहानी किसी वाक्य की शुरुआत से चलती है और वॉल्यूम पहले जैसा हो जाता है।</string>
+    <string name="settings.playback.volume_skip.title">वॉल्यूम बटन से आगे-पीछे जाएँ</string>
     <string name="settings.server.off">Voice को अपने सर्वर से जोड़ें</string>
     <string name="settings.server.title">आपका सर्वर</string>
     <string name="settings.subtitle">Voice को अपना बनाएँ</string>
