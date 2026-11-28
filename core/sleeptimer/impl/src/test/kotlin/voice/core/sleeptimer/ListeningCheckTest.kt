@@ -83,8 +83,21 @@ class ListeningCheckTest {
   private val morningCheck = mockk<MorningCheck>(relaxed = true)
   private val volumeChanges = VolumeChanges()
 
+  /** Time that passed on the wall while the phone slept, which delays don't count. */
+  private var sleptMs = 0L
+
+  /** Follows the test's virtual time, plus [sleptMs]. */
+  private class TestClock(
+    private val start: Instant,
+    private val elapsedMs: () -> Long,
+  ) : Clock() {
+    override fun getZone(): ZoneId = ZoneId.of("UTC")
+    override fun withZone(zone: ZoneId?): Clock = this
+    override fun instant(): Instant = start.plusMillis(elapsedMs())
+  }
+
   private fun listeningCheck(time: LocalTime = LocalTime.of(23, 0)): ListeningCheck {
-    val clock = Clock.fixed(Instant.parse("2020-01-01T$time:00Z"), ZoneId.of("UTC"))
+    val clock = TestClock(Instant.parse("2020-01-01T$time:00Z")) { testScope.testScheduler.currentTime + sleptMs }
     return ListeningCheck(
       sleepTimerPreferenceStore = SleepTimerPreferenceStore(preferenceStore),
       playStateManager = playStateManager,
@@ -228,6 +241,35 @@ class ListeningCheckTest {
     verify(exactly = 0) { playerController.play(any()) }
     verifyWentOnFrom(700_000L, times = 0)
   }
+
+  @Test
+  fun `pressing play a while after going off stays there even when the phone slept through it`() = testScope.runTest {
+    listeningCheck().onAppStart(mockk())
+    missCheck()
+
+    // Nov 26 2026: the phone slept, so only a minute went by for delays while 12 went by on the wall
+    advanceTimeBy(1.minutes)
+    sleptMs = 11.minutes.inWholeMilliseconds
+    playStateManager.playState = PlayStateManager.PlayState.Playing
+    runCurrent()
+
+    verifyWentOnFrom(700_000L, times = 0)
+  }
+
+  @Test
+  fun `turning the volume up a while after going off does nothing even when the phone slept through it`() =
+    testScope.runTest {
+      listeningCheck().onAppStart(mockk())
+      missCheck()
+
+      advanceTimeBy(1.minutes)
+      sleptMs = 11.minutes.inWholeMilliseconds
+      volumeChanges.onChanged()
+      runCurrent()
+
+      verify(exactly = 0) { playerController.play(any()) }
+      verifyWentOnFrom(700_000L, times = 0)
+    }
 
   @Test
   fun `a shake keeps playing and moves where it goes back to`() = testScope.runTest {

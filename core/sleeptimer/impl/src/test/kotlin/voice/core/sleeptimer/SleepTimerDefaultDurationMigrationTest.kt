@@ -20,23 +20,33 @@ class SleepTimerDefaultDurationMigrationTest {
   )
 
   @Test
-  fun oldDefaultMovesToNewDefault() {
-    assertEquals(stored(30.minutes, version = 1), stored(20.minutes).migrateDefaultDuration())
+  fun firstOldDefaultMovesToNewDefault() {
+    assertEquals(stored(21.minutes, version = 2), stored(20.minutes).migrateDefaultDuration())
+  }
+
+  @Test
+  fun secondOldDefaultMovesToNewDefault() {
+    assertEquals(stored(21.minutes, version = 2), stored(30.minutes, version = 1).migrateDefaultDuration())
   }
 
   @Test
   fun chosenDurationIsKept() {
-    assertEquals(stored(45.minutes, version = 1), stored(45.minutes).migrateDefaultDuration())
+    assertEquals(stored(45.minutes, version = 2), stored(45.minutes).migrateDefaultDuration())
   }
 
   @Test
-  fun twentyPickedAfterTheMigrationSticks() {
-    assertEquals(stored(20.minutes, version = 1), stored(20.minutes, version = 1).migrateDefaultDuration())
+  fun twentyPickedAfterTheFirstMigrationSticks() {
+    assertEquals(stored(20.minutes, version = 2), stored(20.minutes, version = 1).migrateDefaultDuration())
   }
 
   @Test
-  fun newInstallsStartAtThirtyMinutes() {
-    assertEquals(30.minutes, SleepTimerPreference.Default.duration)
+  fun thirtyPickedAfterTheMigrationSticks() {
+    assertEquals(stored(30.minutes, version = 2), stored(30.minutes, version = 2).migrateDefaultDuration())
+  }
+
+  @Test
+  fun newInstallsStartAtTwentyOneMinutes() {
+    assertEquals(21.minutes, SleepTimerPreference.Default.duration)
     assertEquals(SleepTimerPreference.Default, SleepTimerPreference.Default.migrateDefaultDuration())
   }
 }
