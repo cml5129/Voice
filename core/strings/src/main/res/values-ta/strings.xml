@@ -409,7 +409,7 @@
     <string name="settings.playback.lock_screen_slider.title">பூட்டுத் திரை ஸ்லைடர்</string>
     <string name="settings.playback.seek_time.summary">பின்னோக்கியும் முன்னோக்கியும் எவ்வளவு தாவும்</string>
     <string name="settings.playback.seek_time.title">தாவும் நேரம்</string>
-    <string name="settings.playback.volume_skip.summary">சுமார் ஒரு நிமிடம் பின்னால் செல்ல ஒலியைக் குறைக்கும் பொத்தானை இருமுறை அழுத்துங்கள், முன்னே செல்ல கூட்டும் பொத்தானை இருமுறை அழுத்துங்கள். ஒரு வாக்கியத்தின் தொடக்கத்திலிருந்து தொடரும், ஒலியளவு முன்பு இருந்தபடி திரும்பும்.</string>
+    <string name="settings.playback.volume_skip.summary">பின்னால் செல்ல ஒலியைக் குறைக்கும் பொத்தானை இருமுறை அழுத்துங்கள், முன்னே செல்ல கூட்டும் பொத்தானை இருமுறை அழுத்துங்கள். கேட்கும் சோதனை நேரங்களில் நீங்கள் கடைசியாக விழித்திருந்த இடத்துக்குச் செல்லும், இல்லையெனில் ஒரு நிமிடம். ஒலியளவு முன்பு இருந்தபடி திரும்பும்.</string>
     <string name="settings.playback.volume_skip.title">ஒலியளவு பொத்தான்களால் தாவுதல்</string>
     <string name="settings.server.off">Voice-ஐ உங்கள் சொந்த சேவையகத்துடன் இணைக்கவும்</string>
     <string name="settings.server.title">உங்கள் சேவையகம்</string>

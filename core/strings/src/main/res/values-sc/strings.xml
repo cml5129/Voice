@@ -409,7 +409,7 @@
     <string name="settings.playback.lock_screen_slider.title">Cursore in s\'ischermu de blocu</string>
     <string name="settings.playback.seek_time.summary">Cantu brincant su torrare in segus e s\'andare a in antis</string>
     <string name="settings.playback.seek_time.title">Tempus de brincare</string>
-    <string name="settings.playback.volume_skip.summary">Incarca duas bortas su volume in bàsciu pro torrare a in segus unu minutu, o duas bortas in artu pro andare a in antis. Sighit dae su cumintzu de una frase e su volume torrat comente fiat.</string>
+    <string name="settings.playback.volume_skip.summary">Incarca duas bortas su volume in bàsciu pro torrare a in segus, o duas bortas in artu pro andare a in antis. In sas oras de su controllu de ascurta andat a s\'ùrtimu logu ue fias galu ascurtende, si nono unu minutu. Su volume torrat comente fiat.</string>
     <string name="settings.playback.volume_skip.title">Brinca cun sos butones de su volume</string>
     <string name="settings.server.off">Connete Voice a su serbidore tuo</string>
     <string name="settings.server.title">Su serbidore tuo</string>

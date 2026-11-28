@@ -427,7 +427,7 @@
     <string name="settings.playback.lock_screen_slider.title">Barra na tela de bloqueio</string>
     <string name="settings.playback.seek_time.summary">Quanto tempo pular ao retroceder e avançar</string>
     <string name="settings.playback.seek_time.title">Duração do pulo</string>
-    <string name="settings.playback.volume_skip.summary">Aperte diminuir volume duas vezes para voltar cerca de um minuto, ou aumentar volume duas vezes para avançar. Começa no início de uma frase e o volume volta ao que era.</string>
+    <string name="settings.playback.volume_skip.summary">Aperte diminuir volume duas vezes para voltar, ou aumentar volume duas vezes para avançar. Nas horas da verificação de escuta, vai para o último ponto em que você ainda estava ouvindo; se não, um minuto. O volume volta ao que era.</string>
     <string name="settings.playback.volume_skip.title">Pular com os botões de volume</string>
     <string name="settings.server.off">Conecte o Voice ao seu próprio servidor</string>
     <string name="settings.server.title">Seu servidor</string>

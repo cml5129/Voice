@@ -409,7 +409,7 @@
     <string name="settings.playback.lock_screen_slider.title">Лизгач на заклучениот екран</string>
     <string name="settings.playback.seek_time.summary">Колку далеку скокаат враќањето и брзото премотување</string>
     <string name="settings.playback.seek_time.title">Чекор на премотување</string>
-    <string name="settings.playback.volume_skip.summary">Притиснете двапати намали за да се вратите околу една минута, или двапати зголеми за да одите напред. Продолжува од почетокот на реченица, а јачината се враќа каква што беше.</string>
+    <string name="settings.playback.volume_skip.summary">Притиснете двапати намали за да се вратите, или двапати зголеми за да одите напред. Во часовите на проверката на слушањето оди таму каде што последно бевте будни, инаку една минута. Јачината се враќа каква што беше.</string>
     <string name="settings.playback.volume_skip.title">Прескокнување со копчињата за јачина</string>
     <string name="settings.server.off">Поврзи го Voice со сопствен сервер</string>
     <string name="settings.server.title">Твојот сервер</string>

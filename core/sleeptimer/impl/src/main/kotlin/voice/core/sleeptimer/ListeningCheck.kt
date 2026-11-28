@@ -52,10 +52,15 @@ class ListeningCheck(
   private val morningCheck: MorningCheck,
   private val clock: Clock,
   private val scope: CoroutineScope,
+  private val awakeSpots: AwakeSpots,
 ) : AppInitializer {
 
   /** Where the listener last showed they were awake, kept after playback stops. */
   private var lastAwake: PlaybackPosition? = null
+    set(value) {
+      field = value
+      if (value != null) awakeSpots.add(value)
+    }
 
   /** Already backed up when the listener lost track there, so backing up never goes before it. */
   private var lostTrackSpot: PlaybackPosition? = null

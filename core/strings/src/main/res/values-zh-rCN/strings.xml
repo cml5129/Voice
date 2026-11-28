@@ -391,7 +391,7 @@
     <string name="settings.playback.lock_screen_slider.title">锁屏进度条</string>
     <string name="settings.playback.seek_time.summary">快退和快进跳转的时长</string>
     <string name="settings.playback.seek_time.title">跳过时间</string>
-    <string name="settings.playback.volume_skip.summary">连按两次音量减键可后退约一分钟，连按两次音量加键可前进。会从一句话的开头播放，音量也会恢复原样。</string>
+    <string name="settings.playback.volume_skip.summary">连按两次音量减键后退，连按两次音量加键前进。在收听确认的时段内，会跳到您最后一次醒着时的位置，其他时候跳一分钟。音量会恢复原样。</string>
     <string name="settings.playback.volume_skip.title">用音量键跳转</string>
     <string name="settings.server.off">将 Voice 连接到你自己的服务器</string>
     <string name="settings.server.title">你的服务器</string>

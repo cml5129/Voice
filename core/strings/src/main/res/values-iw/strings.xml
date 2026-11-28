@@ -427,7 +427,7 @@
     <string name="settings.playback.lock_screen_slider.title">פס ההתקדמות במסך הנעילה</string>
     <string name="settings.playback.seek_time.summary">כמה רחוק מדלגים בהרצה אחורה וקדימה</string>
     <string name="settings.playback.seek_time.title">משך הדילוג</string>
-    <string name="settings.playback.volume_skip.summary">לחיצה כפולה על הנמכת עוצמת הקול חוזרת כדקה אחורה, ולחיצה כפולה על הגברה מדלגת קדימה. ההשמעה ממשיכה מתחילת משפט, ועוצמת הקול חוזרת למה שהייתה.</string>
+    <string name="settings.playback.volume_skip.summary">לחיצה כפולה על הנמכת עוצמת הקול חוזרת אחורה, ולחיצה כפולה על הגברה מדלגת קדימה. בשעות בדיקת ההאזנה ההשמעה עוברת למקום האחרון שבו הייתם ערים, ואם אין כזה, דקה. עוצמת הקול חוזרת למה שהייתה.</string>
     <string name="settings.playback.volume_skip.title">דילוג עם לחצני עוצמת הקול</string>
     <string name="settings.server.off">לחבר את Voice לשרת שלך</string>
     <string name="settings.server.title">השרת שלך</string>

@@ -25,7 +25,7 @@ class VolumeChanges {
   }
 }
 
-/** The media volume going from [from] to [to], at [atMillis] of `SystemClock.elapsedRealtime`. */
+/** The media volume going from [from] to [to], at [atMillis] of the clock. */
 data class VolumeStep(
   val from: Int,
   val to: Int,

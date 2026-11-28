@@ -409,7 +409,7 @@
     <string name="settings.playback.lock_screen_slider.title">Spolelinje på låseskjermen</string>
     <string name="settings.playback.seek_time.summary">Hvor langt tilbake- og fremoverspoling hopper</string>
     <string name="settings.playback.seek_time.title">Hoppintervall</string>
-    <string name="settings.playback.volume_skip.summary">Trykk to ganger på volum ned for å gå omtrent ett minutt tilbake, eller to ganger på volum opp for å gå fram. Den starter der en setning begynner, og volumet blir som før.</string>
+    <string name="settings.playback.volume_skip.summary">Trykk to ganger på volum ned for å gå tilbake, eller to ganger på volum opp for å gå fram. I lyttesjekkens timer går den dit du sist var våken, ellers ett minutt. Volumet blir som før.</string>
     <string name="settings.playback.volume_skip.title">Hopp med volumknappene</string>
     <string name="settings.server.off">Koble Voice til din egen server</string>
     <string name="settings.server.title">Din server</string>

@@ -409,7 +409,7 @@
     <string name="settings.playback.lock_screen_slider.title">Lukitusnäytön liukusäädin</string>
     <string name="settings.playback.seek_time.summary">Kuinka pitkälle taakse- ja eteenpäinkelaus hyppäävät</string>
     <string name="settings.playback.seek_time.title">Siirtymän pituus</string>
-    <string name="settings.playback.volume_skip.summary">Paina äänen hiljennystä kahdesti, niin palaat noin minuutin taaksepäin, tai voimistusta kahdesti, niin siirryt eteenpäin. Kuuntelu jatkuu lauseen alusta, ja äänenvoimakkuus palaa ennalleen.</string>
+    <string name="settings.playback.volume_skip.summary">Paina äänen hiljennystä kahdesti, niin palaat taaksepäin, tai voimistusta kahdesti, niin siirryt eteenpäin. Kuuntelutarkistuksen tunteina siirrytään kohtaan, jossa olit viimeksi hereillä, muuten minuutti. Äänenvoimakkuus palaa ennalleen.</string>
     <string name="settings.playback.volume_skip.title">Siirry äänenvoimakkuusnäppäimillä</string>
     <string name="settings.server.off">Yhdistä Voice omaan palvelimeesi</string>
     <string name="settings.server.title">Oma palvelin</string>

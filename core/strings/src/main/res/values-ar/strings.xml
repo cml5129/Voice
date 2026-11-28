@@ -481,7 +481,7 @@
     <string name="settings.playback.lock_screen_slider.title">شريط التقدم في شاشة القفل</string>
     <string name="settings.playback.seek_time.summary">مقدار القفز عند الإرجاع والتقديم السريع</string>
     <string name="settings.playback.seek_time.title">مقدار القفز</string>
-    <string name="settings.playback.volume_skip.summary">اضغط على زر خفض الصوت مرتين للرجوع دقيقة تقريبًا، أو على زر رفعه مرتين للتقدم. يبدأ التشغيل من بداية جملة، ويعود الصوت إلى ما كان عليه.</string>
+    <string name="settings.playback.volume_skip.summary">اضغط على زر خفض الصوت مرتين للرجوع، أو على زر رفعه مرتين للتقدم. في ساعات التحقق من الاستماع ينتقل إلى آخر موضع كنت فيه مستيقظًا، وإلا فدقيقة واحدة. ويعود الصوت إلى ما كان عليه.</string>
     <string name="settings.playback.volume_skip.title">التخطي بأزرار الصوت</string>
     <string name="settings.server.off">اربط Voice بخادمك الخاص</string>
     <string name="settings.server.title">خادمك</string>

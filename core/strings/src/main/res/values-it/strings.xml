@@ -427,7 +427,7 @@
     <string name="settings.playback.lock_screen_slider.title">Cursore nella schermata di blocco</string>
     <string name="settings.playback.seek_time.summary">Di quanto saltano il riavvolgimento e l\'avanzamento veloce</string>
     <string name="settings.playback.seek_time.title">Durata del salto</string>
-    <string name="settings.playback.volume_skip.summary">Premi due volte volume giù per tornare indietro di circa un minuto, o due volte volume su per andare avanti. Riparte dall\'inizio di una frase e il volume torna com\'era.</string>
+    <string name="settings.playback.volume_skip.summary">Premi due volte volume giù per tornare indietro, o due volte volume su per andare avanti. Nelle ore del controllo d\'ascolto va all\'ultimo punto in cui stavi ancora ascoltando, altrimenti di un minuto. Il volume torna com\'era.</string>
     <string name="settings.playback.volume_skip.title">Salta con i tasti del volume</string>
     <string name="settings.server.off">Collega Voice al tuo server</string>
     <string name="settings.server.title">Il tuo server</string>

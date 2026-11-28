@@ -409,7 +409,7 @@
     <string name="settings.playback.lock_screen_slider.title">Csúszka a lezárási képernyőn</string>
     <string name="settings.playback.seek_time.summary">Mennyit ugrik a visszatekerés és az előretekerés</string>
     <string name="settings.playback.seek_time.title">Kihagyás mértéke</string>
-    <string name="settings.playback.volume_skip.summary">Nyomja meg kétszer a halkítást, hogy kb. egy percet visszaugorjon, vagy kétszer a hangosítást az előreugráshoz. Egy mondat elejétől folytatódik, a hangerő pedig visszaáll.</string>
+    <string name="settings.playback.volume_skip.summary">Nyomja meg kétszer a halkítást a visszaugráshoz, vagy kétszer a hangosítást az előreugráshoz. A hallgatásellenőrzés óráiban oda ugrik, ahol utoljára ébren volt, egyébként egy percet. A hangerő visszaáll.</string>
     <string name="settings.playback.volume_skip.title">Ugrás a hangerőgombokkal</string>
     <string name="settings.server.off">Csatlakoztasd a Voice-t a saját szerveredhez</string>
     <string name="settings.server.title">Saját szerver</string>

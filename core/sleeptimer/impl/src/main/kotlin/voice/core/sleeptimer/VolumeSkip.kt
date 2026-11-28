@@ -15,10 +15,10 @@ import voice.core.initializer.AppInitializer
 import voice.core.logging.api.Logger
 import voice.core.playback.PlayerController
 import voice.core.playback.VolumeSkipStore
+import voice.core.playback.history.PlaybackPosition
 import voice.core.playback.playstate.PlayStateManager
 import voice.core.playback.playstate.PlayStateManager.PlayState.Playing
-import voice.core.transcript.TranscriptCue
-import voice.core.transcript.TranscriptRepository
+import java.time.Clock
 import kotlin.math.abs
 import kotlin.math.sign
 import kotlin.time.Duration.Companion.milliseconds
@@ -26,9 +26,9 @@ import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
 
 /**
- * Pressing volume down twice in a row while playing goes back, volume up twice goes forward, by about a minute, to
- * where a sentence starts when the transcript has one, see [volumeSkipTarget]. The volume then goes back to where it
- * was before the first press.
+ * Pressing volume down twice in a row while playing goes back, volume up twice goes forward. During the listening
+ * check's hours it goes to the last place the listener was known to be awake in that direction, see [AwakeSpots],
+ * otherwise a minute. The volume then goes back to where it was before the first press.
  *
  * There's no way to see presses that don't change the volume, so at full volume going forward doesn't work, and at
  * no volume going back doesn't.
@@ -37,10 +37,13 @@ import kotlin.time.Duration.Companion.seconds
 class VolumeSkip(
   private val context: Context,
   private val store: VolumeSkipStore,
+  private val sleepTimerPreferenceStore: SleepTimerPreferenceStore,
   private val volumeChanges: VolumeChanges,
   private val playStateManager: PlayStateManager,
   private val playerController: PlayerController,
-  private val transcripts: TranscriptRepository,
+  private val awakeSpots: AwakeSpots,
+  private val lostTrack: LostTrack,
+  private val clock: Clock,
   private val scope: CoroutineScope,
 ) : AppInitializer {
 
@@ -78,7 +81,8 @@ class VolumeSkip(
     val first = presses.first()
     presses = emptyList()
     restoreVolume(first.step.from, atMillis = step.atMillis + HOLD_TIME.inWholeMilliseconds)
-    skip(forward = direction > 0)
+    // the first press itself showed they're awake right there, which isn't a place to go to
+    skip(forward = direction > 0, awakeBefore = first.step.atMillis)
   }
 
   private fun restoreVolume(
@@ -90,15 +94,42 @@ class VolumeSkip(
     audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, volume, 0)
   }
 
-  private suspend fun skip(forward: Boolean) {
+  private suspend fun skip(
+    forward: Boolean,
+    awakeBefore: Long,
+  ) {
     val live = playerController.livePlaybackState() ?: return
-    val target = volumeSkipTarget(transcripts.cues(live.chapterId), live.positionMs, forward)
-    Logger.i("Volume skip ${if (forward) "forward" else "back"} by ${abs(target - live.positionMs)} ms")
+    val now = PlaybackPosition(live.bookId, live.chapterId, live.positionMs)
+    val awake = if (inSleepHours()) awakeSpot(now, forward, awakeBefore) else null
+    val skipMs = SKIP.inWholeMilliseconds
+    val to = awake ?: now.copy(time = (if (forward) now.time + skipMs else now.time - skipMs).coerceAtLeast(0))
+    Logger.i("Volume skip ${if (forward) "forward" else "back"}, to where they were awake: ${awake != null}")
     playerController.setPosition(
-      time = target,
-      id = live.chapterId,
+      time = to.time,
+      id = to.chapterId,
       source = ListeningEvent.Source.Headset,
     )
+  }
+
+  private suspend fun awakeSpot(
+    now: PlaybackPosition,
+    forward: Boolean,
+    awakeBefore: Long,
+  ): PlaybackPosition? = awakeSpots.before(awakeBefore).firstOrNull { spot ->
+    spot.bookId == now.bookId &&
+      (spot.chapterId != now.chapterId || abs(spot.time - now.time) >= MIN_JUMP.inWholeMilliseconds) &&
+      if (forward) lostTrack.isBefore(now, spot) else lostTrack.isBefore(spot, now)
+  }
+
+  private suspend fun inSleepHours(): Boolean {
+    val preference = sleepTimerPreferenceStore.data.first()
+    return preference.autoSleepTimerEnabled &&
+      preference.listeningCheckEnabled &&
+      isTimeInRange(
+        currentTime = clock.instant().atZone(clock.zone).toLocalTime(),
+        startTime = preference.autoSleepStartTime,
+        endTime = preference.autoSleepEndTime,
+      )
   }
 
   private data class Press(
@@ -116,40 +147,7 @@ class VolumeSkip(
     val RESTORE_TIME = 1.seconds
     val SKIP = 1.minutes
 
-    /** How far from [SKIP] a sentence may start to be gone to instead. */
-    val SNAP = 20.seconds
+    /** A place they were awake closer than this is barely a jump, so the one before it is gone to instead. */
+    val MIN_JUMP = 15.seconds
   }
-}
-
-/**
- * About [VolumeSkip.SKIP] from [positionMs]. A sentence starting within [VolumeSkip.SNAP] of there is easier to pick up
- * from, and among those the one after the longest pause most likely starts a paragraph.
- */
-internal fun volumeSkipTarget(
-  cues: List<TranscriptCue>?,
-  positionMs: Long,
-  forward: Boolean,
-): Long {
-  val skipMs = VolumeSkip.SKIP.inWholeMilliseconds
-  val plain = if (forward) positionMs + skipMs else positionMs - skipMs
-  val snapMs = VolumeSkip.SNAP.inWholeMilliseconds
-  val all = cues.orEmpty()
-  val sentenceStart = all.withIndex()
-    .filter { (index, cue) ->
-      val start = cue.timestampStartMs
-      abs(start - plain) <= snapMs &&
-        (if (forward) start > positionMs else start < positionMs) &&
-        (index == 0 || all[index - 1].endsSentence())
-    }
-    .maxByOrNull { (index, cue) ->
-      if (index == 0) Long.MAX_VALUE else cue.timestampStartMs - all[index - 1].timestampEndMs
-    }
-    ?.value
-    ?.timestampStartMs
-  return (sentenceStart ?: plain).coerceAtLeast(0)
-}
-
-private fun TranscriptCue.endsSentence(): Boolean {
-  val last = text.trimEnd { it.isWhitespace() || it in "\"'”’)]" }.lastOrNull()
-  return last != null && last in ".?!…"
 }

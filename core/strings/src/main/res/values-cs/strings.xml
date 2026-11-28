@@ -445,7 +445,7 @@
     <string name="settings.playback.lock_screen_slider.title">Posuvník na zamykací obrazovce</string>
     <string name="settings.playback.seek_time.summary">Jak daleko skáče přetočení zpět a vpřed</string>
     <string name="settings.playback.seek_time.title">Přeskočit o</string>
-    <string name="settings.playback.volume_skip.summary">Dvojím stisknutím ztlumení se vrátíte asi o minutu, dvojím zesílením přeskočíte dopředu. Začne se na začátku věty a hlasitost se vrátí, kde byla.</string>
+    <string name="settings.playback.volume_skip.summary">Dvojím stisknutím ztlumení se vrátíte, dvojím zesílením přeskočíte dopředu. V hodinách kontroly poslechu se přejde tam, kde jste byli naposledy vzhůru, jinak o minutu. Hlasitost se vrátí, kde byla.</string>
     <string name="settings.playback.volume_skip.title">Přeskakování tlačítky hlasitosti</string>
     <string name="settings.server.off">Připoj Voice k vlastnímu serveru</string>
     <string name="settings.server.title">Tvůj server</string>

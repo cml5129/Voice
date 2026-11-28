@@ -409,7 +409,7 @@
     <string name="settings.playback.lock_screen_slider.title">نوار پیشرفت در صفحه قفل</string>
     <string name="settings.playback.seek_time.summary">میزان پرش عقب و جلو بردن سریع</string>
     <string name="settings.playback.seek_time.title">میزان پرش</string>
-    <string name="settings.playback.volume_skip.summary">دو بار دکمهٔ کم کردن صدا را بزنید تا حدود یک دقیقه عقب بروید، یا دو بار دکمهٔ زیاد کردن صدا را تا جلو بروید. از ابتدای یک جمله ادامه می‌دهد و صدا به حالت قبل برمی‌گردد.</string>
+    <string name="settings.playback.volume_skip.summary">دو بار دکمهٔ کم کردن صدا را بزنید تا عقب بروید، یا دو بار دکمهٔ زیاد کردن صدا را تا جلو بروید. در ساعت‌های بررسی گوش دادن به جایی می‌رود که آخرین بار بیدار بودید، وگرنه یک دقیقه. صدا به حالت قبل برمی‌گردد.</string>
     <string name="settings.playback.volume_skip.title">پرش با دکمه‌های صدا</string>
     <string name="settings.server.off">Voice را به سرور خودتان وصل کنید</string>
     <string name="settings.server.title">سرور شما</string>
